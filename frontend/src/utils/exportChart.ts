@@ -41,3 +41,4 @@ export function exportChartAsPng(containerElementId: string, filename: string = 
 
   img.src = url;
 }
+

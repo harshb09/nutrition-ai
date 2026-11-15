@@ -47,3 +47,4 @@ def get_burden_csv(
         "Content-Disposition": 'attachment; filename="malnutrition_burden_priority.csv"'
     }
     return Response(content=csv_str, media_type="text/csv", headers=headers)
+

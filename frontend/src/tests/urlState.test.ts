@@ -60,3 +60,4 @@ describe("URL State Utility", () => {
     expect(parsed.sortOrder).toBe("desc");
   });
 });
+

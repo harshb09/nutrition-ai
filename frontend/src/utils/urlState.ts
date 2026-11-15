@@ -45,3 +45,4 @@ export function encodeUrlFilters(filters: FilterState): string {
   const str = params.toString();
   return str ? `?${str}` : "";
 }
+

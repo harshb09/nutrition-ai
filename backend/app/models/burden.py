@@ -24,3 +24,4 @@ class BurdenResponse(BaseModel):
         default="Affected population counts reflect both prevalence and underlying paediatric population size. Sorted for health planning and resource allocation."
     )
     items: list[BurdenItem]
+

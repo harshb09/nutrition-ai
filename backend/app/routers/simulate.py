@@ -8,3 +8,4 @@ router = APIRouter(prefix="/simulate", tags=["Target Simulator"])
 def simulate_target(body: SimulationRequest):
     result = store.simulate_profile(body.model_dump())
     return result
+

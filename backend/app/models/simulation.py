@@ -37,3 +37,4 @@ class SimulationResponse(BaseModel):
     label: str = Field(
         default="Where this profile would sit relative to current countries. This is not a forecast."
     )
+
