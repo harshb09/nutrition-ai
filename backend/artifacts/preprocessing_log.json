@@ -1,0 +1,498 @@
+{
+  "country_universe_count": 202,
+  "eligible_countries_count": 156,
+  "complete_cases_count": 121,
+  "single_gap_imputed_count": 35,
+  "excluded_insufficient_data_count": 46,
+  "knn_k": 5,
+  "features": [
+    "stunting",
+    "child_overweight",
+    "wasting",
+    "adult_obesity",
+    "adult_diabetes",
+    "anaemia_women",
+    "low_birth_weight"
+  ],
+  "relevance_review": [
+    {
+      "feature": "stunting",
+      "label": "Child Stunting (% under 5)",
+      "target_population": "Children aged 0-59 months",
+      "description": "Height-for-age < -2 standard deviations from the WHO Child Growth Standards median.",
+      "public_health_relevance": "Key marker of chronic undernutrition and structural deprivation in early childhood.",
+      "source": "UNICEF / WHO / World Bank Joint Malnutrition Estimates (March 2026)",
+      "unit": "%",
+      "data_year_source": "Point estimate 2024"
+    },
+    {
+      "feature": "child_overweight",
+      "label": "Child Overweight (% under 5)",
+      "target_population": "Children aged 0-59 months",
+      "description": "Weight-for-height > +2 standard deviations from the WHO Child Growth Standards median.",
+      "public_health_relevance": "Emerging form of paediatric malnutrition signaling nutrition transition.",
+      "source": "UNICEF / WHO / World Bank Joint Malnutrition Estimates (March 2026)",
+      "unit": "%",
+      "data_year_source": "Point estimate 2024"
+    },
+    {
+      "feature": "wasting",
+      "label": "Child Wasting (% under 5)",
+      "target_population": "Children aged 0-59 months",
+      "description": "Weight-for-height < -2 standard deviations from the WHO Child Growth Standards median.",
+      "public_health_relevance": "Acute malnutrition indicator reflecting rapid weight loss or failure to gain weight.",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "unit": "%",
+      "data_year_source": "Latest available country survey"
+    },
+    {
+      "feature": "adult_obesity",
+      "label": "Adult Obesity (%)",
+      "target_population": "Adults aged 18+ (mean of female & male)",
+      "description": "Body Mass Index (BMI) >= 30 kg/m\u00b2.",
+      "public_health_relevance": "Primary driver of metabolic non-communicable diseases (NCDs) and cardiovascular morbidity.",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "unit": "%",
+      "data_year_source": "Latest available NCD-RisC / WHO estimate"
+    },
+    {
+      "feature": "adult_diabetes",
+      "label": "Adult Diabetes (%)",
+      "target_population": "Adults aged 18+ (mean of female & male)",
+      "description": "Fasting blood glucose >= 7.0 mmol/L or on medication for raised blood glucose.",
+      "public_health_relevance": "Major metabolic chronic outcome directly linked to dietary quality and adiposity.",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "unit": "%",
+      "data_year_source": "Latest available NCD-RisC / WHO estimate"
+    },
+    {
+      "feature": "anaemia_women",
+      "label": "Anaemia in Women of Reproductive Age (%)",
+      "target_population": "Women aged 15-49 years (all women)",
+      "description": "Haemoglobin concentration < 120 g/L for non-pregnant and < 110 g/L for pregnant women.",
+      "public_health_relevance": "Pivotal indicator of micronutrient deficiency (iron, folate) affecting maternal-child health.",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "unit": "%",
+      "data_year_source": "Latest available WHO estimate"
+    },
+    {
+      "feature": "low_birth_weight",
+      "label": "Low Birth Weight (% of live births)",
+      "target_population": "Newborns",
+      "description": "Birth weight strictly less than 2,500 grams (up to and including 2,499 g).",
+      "public_health_relevance": "Early life proxy for intrauterine growth restriction and maternal undernutrition.",
+      "source": "UNICEF-WHO Low Birthweight Estimates (2023)",
+      "unit": "%",
+      "data_year_source": "Modelled estimate 2020"
+    }
+  ],
+  "per_feature_missingness": [
+    {
+      "feature": "stunting",
+      "label": "Child Stunting (% under 5)",
+      "missing_count": 40,
+      "valid_count": 162,
+      "missing_pct": 19.8,
+      "year_min": 2024,
+      "year_max": 2024,
+      "year_median": 2024
+    },
+    {
+      "feature": "child_overweight",
+      "label": "Child Overweight (% under 5)",
+      "missing_count": 39,
+      "valid_count": 163,
+      "missing_pct": 19.31,
+      "year_min": 2024,
+      "year_max": 2024,
+      "year_median": 2024
+    },
+    {
+      "feature": "wasting",
+      "label": "Child Wasting (% under 5)",
+      "missing_count": 50,
+      "valid_count": 152,
+      "missing_pct": 24.75,
+      "year_min": 2000,
+      "year_max": 2021,
+      "year_median": 2017
+    },
+    {
+      "feature": "adult_obesity",
+      "label": "Adult Obesity (%)",
+      "missing_count": 12,
+      "valid_count": 190,
+      "missing_pct": 5.94,
+      "year_min": 2016,
+      "year_max": 2016,
+      "year_median": 2016
+    },
+    {
+      "feature": "adult_diabetes",
+      "label": "Adult Diabetes (%)",
+      "missing_count": 12,
+      "valid_count": 190,
+      "missing_pct": 5.94,
+      "year_min": 2014,
+      "year_max": 2014,
+      "year_median": 2014
+    },
+    {
+      "feature": "anaemia_women",
+      "label": "Anaemia in Women of Reproductive Age (%)",
+      "missing_count": 16,
+      "valid_count": 186,
+      "missing_pct": 7.92,
+      "year_min": 2016,
+      "year_max": 2019,
+      "year_median": 2019
+    },
+    {
+      "feature": "low_birth_weight",
+      "label": "Low Birth Weight (% of live births)",
+      "missing_count": 44,
+      "valid_count": 158,
+      "missing_pct": 21.78,
+      "year_min": 2020,
+      "year_max": 2020,
+      "year_median": 2020
+    }
+  ],
+  "correlation_matrix": {
+    "stunting": {
+      "stunting": 1.0,
+      "child_overweight": -0.3913,
+      "wasting": 0.51,
+      "adult_obesity": -0.4925,
+      "adult_diabetes": -0.1916,
+      "anaemia_women": 0.5824,
+      "low_birth_weight": 0.5786,
+      "child_anaemia": 0.6892
+    },
+    "child_overweight": {
+      "stunting": -0.3913,
+      "child_overweight": 1.0,
+      "wasting": -0.3441,
+      "adult_obesity": 0.4028,
+      "adult_diabetes": 0.1422,
+      "anaemia_women": -0.4509,
+      "low_birth_weight": -0.3597,
+      "child_anaemia": -0.4318
+    },
+    "wasting": {
+      "stunting": 0.51,
+      "child_overweight": -0.3441,
+      "wasting": 1.0,
+      "adult_obesity": -0.3853,
+      "adult_diabetes": -0.0621,
+      "anaemia_women": 0.5327,
+      "low_birth_weight": 0.6132,
+      "child_anaemia": 0.4673
+    },
+    "adult_obesity": {
+      "stunting": -0.4925,
+      "child_overweight": 0.4028,
+      "wasting": -0.3853,
+      "adult_obesity": 1.0,
+      "adult_diabetes": 0.6969,
+      "anaemia_women": -0.4536,
+      "low_birth_weight": -0.3657,
+      "child_anaemia": -0.4571
+    },
+    "adult_diabetes": {
+      "stunting": -0.1916,
+      "child_overweight": 0.1422,
+      "wasting": -0.0621,
+      "adult_obesity": 0.6969,
+      "adult_diabetes": 1.0,
+      "anaemia_women": 0.0727,
+      "low_birth_weight": 0.2077,
+      "child_anaemia": -0.0368
+    },
+    "anaemia_women": {
+      "stunting": 0.5824,
+      "child_overweight": -0.4509,
+      "wasting": 0.5327,
+      "adult_obesity": -0.4536,
+      "adult_diabetes": 0.0727,
+      "anaemia_women": 1.0,
+      "low_birth_weight": 0.5696,
+      "child_anaemia": 0.8982
+    },
+    "low_birth_weight": {
+      "stunting": 0.5786,
+      "child_overweight": -0.3597,
+      "wasting": 0.6132,
+      "adult_obesity": -0.3657,
+      "adult_diabetes": 0.2077,
+      "anaemia_women": 0.5696,
+      "low_birth_weight": 1.0,
+      "child_anaemia": 0.5817
+    },
+    "child_anaemia": {
+      "stunting": 0.6892,
+      "child_overweight": -0.4318,
+      "wasting": 0.4673,
+      "adult_obesity": -0.4571,
+      "adult_diabetes": -0.0368,
+      "anaemia_women": 0.8982,
+      "low_birth_weight": 0.5817,
+      "child_anaemia": 1.0
+    }
+  },
+  "child_anaemia_correlation_with_maternal_anaemia": 0.8982,
+  "child_anaemia_exclusion_reason": "Prevalence of anaemia in children under 5 correlates strongly (r = 0.8982) with anaemia in women of reproductive age. Retaining both would overweight haemoglobin deficiency relative to chronic and acute anthropometric measures. Child anaemia is retained as a validation and context metric.",
+  "scaling": {
+    "method": "StandardScaler",
+    "means": {
+      "stunting": 16.3628,
+      "child_overweight": 6.7878,
+      "wasting": 4.8815,
+      "adult_obesity": 17.9966,
+      "adult_diabetes": 9.5758,
+      "anaemia_women": 29.5242,
+      "low_birth_weight": 11.9295
+    },
+    "stds": {
+      "stunting": 12.8222,
+      "child_overweight": 4.1867,
+      "wasting": 3.7803,
+      "adult_obesity": 10.395,
+      "adult_diabetes": 3.8795,
+      "anaemia_women": 12.3337,
+      "low_birth_weight": 4.5296
+    }
+  },
+  "excluded_countries": [
+    {
+      "iso3": "AIA",
+      "country_name": "Anguilla",
+      "missing_feature_count": 7
+    },
+    {
+      "iso3": "AND",
+      "country_name": "Andorra",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "ARE",
+      "country_name": "United Arab Emirates",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "ATG",
+      "country_name": "Antigua and Barbuda",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "AUT",
+      "country_name": "Austria",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "BHR",
+      "country_name": "Bahrain",
+      "missing_feature_count": 2
+    },
+    {
+      "iso3": "BHS",
+      "country_name": "Bahamas",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "CAN",
+      "country_name": "Canada",
+      "missing_feature_count": 2
+    },
+    {
+      "iso3": "CHE",
+      "country_name": "Switzerland",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "COK",
+      "country_name": "Cook Islands",
+      "missing_feature_count": 6
+    },
+    {
+      "iso3": "CPV",
+      "country_name": "Cabo Verde",
+      "missing_feature_count": 2
+    },
+    {
+      "iso3": "CYP",
+      "country_name": "Cyprus",
+      "missing_feature_count": 4
+    },
+    {
+      "iso3": "DMA",
+      "country_name": "Dominica",
+      "missing_feature_count": 4
+    },
+    {
+      "iso3": "DNK",
+      "country_name": "Denmark",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "ESP",
+      "country_name": "Spain",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "FRA",
+      "country_name": "France",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "FSM",
+      "country_name": "Micronesia (Federated States of)",
+      "missing_feature_count": 4
+    },
+    {
+      "iso3": "GRD",
+      "country_name": "Grenada",
+      "missing_feature_count": 4
+    },
+    {
+      "iso3": "HRV",
+      "country_name": "Croatia",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "HUN",
+      "country_name": "Hungary",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "ISL",
+      "country_name": "Iceland",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "ISR",
+      "country_name": "Israel",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "ITA",
+      "country_name": "Italy",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "KNA",
+      "country_name": "Saint Kitts and Nevis",
+      "missing_feature_count": 5
+    },
+    {
+      "iso3": "LIE",
+      "country_name": "Liechtenstein",
+      "missing_feature_count": 7
+    },
+    {
+      "iso3": "LUX",
+      "country_name": "Luxembourg",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "MCO",
+      "country_name": "Monaco",
+      "missing_feature_count": 6
+    },
+    {
+      "iso3": "MSR",
+      "country_name": "Montserrat",
+      "missing_feature_count": 7
+    },
+    {
+      "iso3": "NIC",
+      "country_name": "Nicaragua",
+      "missing_feature_count": 2
+    },
+    {
+      "iso3": "NIU",
+      "country_name": "Niue",
+      "missing_feature_count": 7
+    },
+    {
+      "iso3": "NOR",
+      "country_name": "Norway",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "NRU",
+      "country_name": "Nauru",
+      "missing_feature_count": 2
+    },
+    {
+      "iso3": "NZL",
+      "country_name": "New Zealand",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "PLW",
+      "country_name": "Palau",
+      "missing_feature_count": 4
+    },
+    {
+      "iso3": "RUS",
+      "country_name": "Russian Federation",
+      "missing_feature_count": 2
+    },
+    {
+      "iso3": "SMR",
+      "country_name": "San Marino",
+      "missing_feature_count": 6
+    },
+    {
+      "iso3": "SSD",
+      "country_name": "South Sudan",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "SVK",
+      "country_name": "Slovakia",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "SVN",
+      "country_name": "Slovenia",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "SWE",
+      "country_name": "Sweden",
+      "missing_feature_count": 3
+    },
+    {
+      "iso3": "TCA",
+      "country_name": "Turks and Caicos Islands",
+      "missing_feature_count": 5
+    },
+    {
+      "iso3": "TKL",
+      "country_name": "Tokelau",
+      "missing_feature_count": 7
+    },
+    {
+      "iso3": "TUV",
+      "country_name": "Tuvalu",
+      "missing_feature_count": 2
+    },
+    {
+      "iso3": "VAT",
+      "country_name": "Holy See",
+      "missing_feature_count": 7
+    },
+    {
+      "iso3": "VCT",
+      "country_name": "Saint Vincent and the Grenadines",
+      "missing_feature_count": 4
+    },
+    {
+      "iso3": "VGB",
+      "country_name": "British Virgin Islands",
+      "missing_feature_count": 7
+    }
+  ]
+}

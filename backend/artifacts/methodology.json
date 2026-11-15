@@ -1,0 +1,6057 @@
+{
+  "preprocessing_log": {
+    "country_universe_count": 202,
+    "eligible_countries_count": 156,
+    "complete_cases_count": 121,
+    "single_gap_imputed_count": 35,
+    "excluded_insufficient_data_count": 46,
+    "knn_k": 5,
+    "features": [
+      "stunting",
+      "child_overweight",
+      "wasting",
+      "adult_obesity",
+      "adult_diabetes",
+      "anaemia_women",
+      "low_birth_weight"
+    ],
+    "relevance_review": [
+      {
+        "feature": "stunting",
+        "label": "Child Stunting (% under 5)",
+        "target_population": "Children aged 0-59 months",
+        "description": "Height-for-age < -2 standard deviations from the WHO Child Growth Standards median.",
+        "public_health_relevance": "Key marker of chronic undernutrition and structural deprivation in early childhood.",
+        "source": "UNICEF / WHO / World Bank Joint Malnutrition Estimates (March 2026)",
+        "unit": "%",
+        "data_year_source": "Point estimate 2024"
+      },
+      {
+        "feature": "child_overweight",
+        "label": "Child Overweight (% under 5)",
+        "target_population": "Children aged 0-59 months",
+        "description": "Weight-for-height > +2 standard deviations from the WHO Child Growth Standards median.",
+        "public_health_relevance": "Emerging form of paediatric malnutrition signaling nutrition transition.",
+        "source": "UNICEF / WHO / World Bank Joint Malnutrition Estimates (March 2026)",
+        "unit": "%",
+        "data_year_source": "Point estimate 2024"
+      },
+      {
+        "feature": "wasting",
+        "label": "Child Wasting (% under 5)",
+        "target_population": "Children aged 0-59 months",
+        "description": "Weight-for-height < -2 standard deviations from the WHO Child Growth Standards median.",
+        "public_health_relevance": "Acute malnutrition indicator reflecting rapid weight loss or failure to gain weight.",
+        "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+        "unit": "%",
+        "data_year_source": "Latest available country survey"
+      },
+      {
+        "feature": "adult_obesity",
+        "label": "Adult Obesity (%)",
+        "target_population": "Adults aged 18+ (mean of female & male)",
+        "description": "Body Mass Index (BMI) >= 30 kg/m\u00b2.",
+        "public_health_relevance": "Primary driver of metabolic non-communicable diseases (NCDs) and cardiovascular morbidity.",
+        "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+        "unit": "%",
+        "data_year_source": "Latest available NCD-RisC / WHO estimate"
+      },
+      {
+        "feature": "adult_diabetes",
+        "label": "Adult Diabetes (%)",
+        "target_population": "Adults aged 18+ (mean of female & male)",
+        "description": "Fasting blood glucose >= 7.0 mmol/L or on medication for raised blood glucose.",
+        "public_health_relevance": "Major metabolic chronic outcome directly linked to dietary quality and adiposity.",
+        "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+        "unit": "%",
+        "data_year_source": "Latest available NCD-RisC / WHO estimate"
+      },
+      {
+        "feature": "anaemia_women",
+        "label": "Anaemia in Women of Reproductive Age (%)",
+        "target_population": "Women aged 15-49 years (all women)",
+        "description": "Haemoglobin concentration < 120 g/L for non-pregnant and < 110 g/L for pregnant women.",
+        "public_health_relevance": "Pivotal indicator of micronutrient deficiency (iron, folate) affecting maternal-child health.",
+        "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+        "unit": "%",
+        "data_year_source": "Latest available WHO estimate"
+      },
+      {
+        "feature": "low_birth_weight",
+        "label": "Low Birth Weight (% of live births)",
+        "target_population": "Newborns",
+        "description": "Birth weight strictly less than 2,500 grams (up to and including 2,499 g).",
+        "public_health_relevance": "Early life proxy for intrauterine growth restriction and maternal undernutrition.",
+        "source": "UNICEF-WHO Low Birthweight Estimates (2023)",
+        "unit": "%",
+        "data_year_source": "Modelled estimate 2020"
+      }
+    ],
+    "per_feature_missingness": [
+      {
+        "feature": "stunting",
+        "label": "Child Stunting (% under 5)",
+        "missing_count": 40,
+        "valid_count": 162,
+        "missing_pct": 19.8,
+        "year_min": 2024,
+        "year_max": 2024,
+        "year_median": 2024
+      },
+      {
+        "feature": "child_overweight",
+        "label": "Child Overweight (% under 5)",
+        "missing_count": 39,
+        "valid_count": 163,
+        "missing_pct": 19.31,
+        "year_min": 2024,
+        "year_max": 2024,
+        "year_median": 2024
+      },
+      {
+        "feature": "wasting",
+        "label": "Child Wasting (% under 5)",
+        "missing_count": 50,
+        "valid_count": 152,
+        "missing_pct": 24.75,
+        "year_min": 2000,
+        "year_max": 2021,
+        "year_median": 2017
+      },
+      {
+        "feature": "adult_obesity",
+        "label": "Adult Obesity (%)",
+        "missing_count": 12,
+        "valid_count": 190,
+        "missing_pct": 5.94,
+        "year_min": 2016,
+        "year_max": 2016,
+        "year_median": 2016
+      },
+      {
+        "feature": "adult_diabetes",
+        "label": "Adult Diabetes (%)",
+        "missing_count": 12,
+        "valid_count": 190,
+        "missing_pct": 5.94,
+        "year_min": 2014,
+        "year_max": 2014,
+        "year_median": 2014
+      },
+      {
+        "feature": "anaemia_women",
+        "label": "Anaemia in Women of Reproductive Age (%)",
+        "missing_count": 16,
+        "valid_count": 186,
+        "missing_pct": 7.92,
+        "year_min": 2016,
+        "year_max": 2019,
+        "year_median": 2019
+      },
+      {
+        "feature": "low_birth_weight",
+        "label": "Low Birth Weight (% of live births)",
+        "missing_count": 44,
+        "valid_count": 158,
+        "missing_pct": 21.78,
+        "year_min": 2020,
+        "year_max": 2020,
+        "year_median": 2020
+      }
+    ],
+    "correlation_matrix": {
+      "stunting": {
+        "stunting": 1.0,
+        "child_overweight": -0.3913,
+        "wasting": 0.51,
+        "adult_obesity": -0.4925,
+        "adult_diabetes": -0.1916,
+        "anaemia_women": 0.5824,
+        "low_birth_weight": 0.5786,
+        "child_anaemia": 0.6892
+      },
+      "child_overweight": {
+        "stunting": -0.3913,
+        "child_overweight": 1.0,
+        "wasting": -0.3441,
+        "adult_obesity": 0.4028,
+        "adult_diabetes": 0.1422,
+        "anaemia_women": -0.4509,
+        "low_birth_weight": -0.3597,
+        "child_anaemia": -0.4318
+      },
+      "wasting": {
+        "stunting": 0.51,
+        "child_overweight": -0.3441,
+        "wasting": 1.0,
+        "adult_obesity": -0.3853,
+        "adult_diabetes": -0.0621,
+        "anaemia_women": 0.5327,
+        "low_birth_weight": 0.6132,
+        "child_anaemia": 0.4673
+      },
+      "adult_obesity": {
+        "stunting": -0.4925,
+        "child_overweight": 0.4028,
+        "wasting": -0.3853,
+        "adult_obesity": 1.0,
+        "adult_diabetes": 0.6969,
+        "anaemia_women": -0.4536,
+        "low_birth_weight": -0.3657,
+        "child_anaemia": -0.4571
+      },
+      "adult_diabetes": {
+        "stunting": -0.1916,
+        "child_overweight": 0.1422,
+        "wasting": -0.0621,
+        "adult_obesity": 0.6969,
+        "adult_diabetes": 1.0,
+        "anaemia_women": 0.0727,
+        "low_birth_weight": 0.2077,
+        "child_anaemia": -0.0368
+      },
+      "anaemia_women": {
+        "stunting": 0.5824,
+        "child_overweight": -0.4509,
+        "wasting": 0.5327,
+        "adult_obesity": -0.4536,
+        "adult_diabetes": 0.0727,
+        "anaemia_women": 1.0,
+        "low_birth_weight": 0.5696,
+        "child_anaemia": 0.8982
+      },
+      "low_birth_weight": {
+        "stunting": 0.5786,
+        "child_overweight": -0.3597,
+        "wasting": 0.6132,
+        "adult_obesity": -0.3657,
+        "adult_diabetes": 0.2077,
+        "anaemia_women": 0.5696,
+        "low_birth_weight": 1.0,
+        "child_anaemia": 0.5817
+      },
+      "child_anaemia": {
+        "stunting": 0.6892,
+        "child_overweight": -0.4318,
+        "wasting": 0.4673,
+        "adult_obesity": -0.4571,
+        "adult_diabetes": -0.0368,
+        "anaemia_women": 0.8982,
+        "low_birth_weight": 0.5817,
+        "child_anaemia": 1.0
+      }
+    },
+    "child_anaemia_correlation_with_maternal_anaemia": 0.8982,
+    "child_anaemia_exclusion_reason": "Prevalence of anaemia in children under 5 correlates strongly (r = 0.8982) with anaemia in women of reproductive age. Retaining both would overweight haemoglobin deficiency relative to chronic and acute anthropometric measures. Child anaemia is retained as a validation and context metric.",
+    "scaling": {
+      "method": "StandardScaler",
+      "means": {
+        "stunting": 16.3628,
+        "child_overweight": 6.7878,
+        "wasting": 4.8815,
+        "adult_obesity": 17.9966,
+        "adult_diabetes": 9.5758,
+        "anaemia_women": 29.5242,
+        "low_birth_weight": 11.9295
+      },
+      "stds": {
+        "stunting": 12.8222,
+        "child_overweight": 4.1867,
+        "wasting": 3.7803,
+        "adult_obesity": 10.395,
+        "adult_diabetes": 3.8795,
+        "anaemia_women": 12.3337,
+        "low_birth_weight": 4.5296
+      }
+    },
+    "excluded_countries": [
+      {
+        "iso3": "AIA",
+        "country_name": "Anguilla",
+        "missing_feature_count": 7
+      },
+      {
+        "iso3": "AND",
+        "country_name": "Andorra",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "ARE",
+        "country_name": "United Arab Emirates",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "ATG",
+        "country_name": "Antigua and Barbuda",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "AUT",
+        "country_name": "Austria",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "BHR",
+        "country_name": "Bahrain",
+        "missing_feature_count": 2
+      },
+      {
+        "iso3": "BHS",
+        "country_name": "Bahamas",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "CAN",
+        "country_name": "Canada",
+        "missing_feature_count": 2
+      },
+      {
+        "iso3": "CHE",
+        "country_name": "Switzerland",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "COK",
+        "country_name": "Cook Islands",
+        "missing_feature_count": 6
+      },
+      {
+        "iso3": "CPV",
+        "country_name": "Cabo Verde",
+        "missing_feature_count": 2
+      },
+      {
+        "iso3": "CYP",
+        "country_name": "Cyprus",
+        "missing_feature_count": 4
+      },
+      {
+        "iso3": "DMA",
+        "country_name": "Dominica",
+        "missing_feature_count": 4
+      },
+      {
+        "iso3": "DNK",
+        "country_name": "Denmark",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "ESP",
+        "country_name": "Spain",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "FRA",
+        "country_name": "France",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "FSM",
+        "country_name": "Micronesia (Federated States of)",
+        "missing_feature_count": 4
+      },
+      {
+        "iso3": "GRD",
+        "country_name": "Grenada",
+        "missing_feature_count": 4
+      },
+      {
+        "iso3": "HRV",
+        "country_name": "Croatia",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "HUN",
+        "country_name": "Hungary",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "ISL",
+        "country_name": "Iceland",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "ISR",
+        "country_name": "Israel",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "ITA",
+        "country_name": "Italy",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "KNA",
+        "country_name": "Saint Kitts and Nevis",
+        "missing_feature_count": 5
+      },
+      {
+        "iso3": "LIE",
+        "country_name": "Liechtenstein",
+        "missing_feature_count": 7
+      },
+      {
+        "iso3": "LUX",
+        "country_name": "Luxembourg",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "MCO",
+        "country_name": "Monaco",
+        "missing_feature_count": 6
+      },
+      {
+        "iso3": "MSR",
+        "country_name": "Montserrat",
+        "missing_feature_count": 7
+      },
+      {
+        "iso3": "NIC",
+        "country_name": "Nicaragua",
+        "missing_feature_count": 2
+      },
+      {
+        "iso3": "NIU",
+        "country_name": "Niue",
+        "missing_feature_count": 7
+      },
+      {
+        "iso3": "NOR",
+        "country_name": "Norway",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "NRU",
+        "country_name": "Nauru",
+        "missing_feature_count": 2
+      },
+      {
+        "iso3": "NZL",
+        "country_name": "New Zealand",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "PLW",
+        "country_name": "Palau",
+        "missing_feature_count": 4
+      },
+      {
+        "iso3": "RUS",
+        "country_name": "Russian Federation",
+        "missing_feature_count": 2
+      },
+      {
+        "iso3": "SMR",
+        "country_name": "San Marino",
+        "missing_feature_count": 6
+      },
+      {
+        "iso3": "SSD",
+        "country_name": "South Sudan",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "SVK",
+        "country_name": "Slovakia",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "SVN",
+        "country_name": "Slovenia",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "SWE",
+        "country_name": "Sweden",
+        "missing_feature_count": 3
+      },
+      {
+        "iso3": "TCA",
+        "country_name": "Turks and Caicos Islands",
+        "missing_feature_count": 5
+      },
+      {
+        "iso3": "TKL",
+        "country_name": "Tokelau",
+        "missing_feature_count": 7
+      },
+      {
+        "iso3": "TUV",
+        "country_name": "Tuvalu",
+        "missing_feature_count": 2
+      },
+      {
+        "iso3": "VAT",
+        "country_name": "Holy See",
+        "missing_feature_count": 7
+      },
+      {
+        "iso3": "VCT",
+        "country_name": "Saint Vincent and the Grenadines",
+        "missing_feature_count": 4
+      },
+      {
+        "iso3": "VGB",
+        "country_name": "British Virgin Islands",
+        "missing_feature_count": 7
+      }
+    ]
+  },
+  "selection": {
+    "rule_specification": "Among K=3..6, select highest silhouette score; tie-break lower Davies-Bouldin; require mean bootstrap ARI >= 0.60.",
+    "evaluated_candidates": [
+      {
+        "k": 3,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 535.365,
+        "silhouette": 0.3266,
+        "davies_bouldin": 1.2443,
+        "seed_ari_mean": 0.7937,
+        "seed_ari_std": 0.2142,
+        "bootstrap_ari_mean": 0.9278,
+        "bootstrap_ari_std": 0.0543
+      },
+      {
+        "k": 4,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 477.216,
+        "silhouette": 0.2397,
+        "davies_bouldin": 1.4195,
+        "seed_ari_mean": 0.6161,
+        "seed_ari_std": 0.1391,
+        "bootstrap_ari_mean": 0.7741,
+        "bootstrap_ari_std": 0.142
+      },
+      {
+        "k": 5,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 434.482,
+        "silhouette": 0.1849,
+        "davies_bouldin": 1.5636,
+        "seed_ari_mean": 0.5452,
+        "seed_ari_std": 0.1258,
+        "bootstrap_ari_mean": 0.6221,
+        "bootstrap_ari_std": 0.1666
+      },
+      {
+        "k": 6,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 403.177,
+        "silhouette": 0.1992,
+        "davies_bouldin": 1.4272,
+        "seed_ari_mean": 0.5063,
+        "seed_ari_std": 0.0992,
+        "bootstrap_ari_mean": 0.5257,
+        "bootstrap_ari_std": 0.1118
+      }
+    ],
+    "all_evaluations": [
+      {
+        "k": 2,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 673.452,
+        "silhouette": 0.342,
+        "davies_bouldin": 1.156,
+        "seed_ari_mean": 0.9877,
+        "seed_ari_std": 0.0128,
+        "bootstrap_ari_mean": 0.9741,
+        "bootstrap_ari_std": 0.0308
+      },
+      {
+        "k": 2,
+        "method": "K-Medians",
+        "distance_metric": "Manhattan",
+        "wcss": 629.328,
+        "silhouette": 0.3785,
+        "davies_bouldin": 0.9543,
+        "seed_ari_mean": 0.9537,
+        "seed_ari_std": 0.0501,
+        "bootstrap_ari_mean": 0.9574,
+        "bootstrap_ari_std": 0.0554
+      },
+      {
+        "k": 3,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 535.365,
+        "silhouette": 0.3266,
+        "davies_bouldin": 1.2443,
+        "seed_ari_mean": 0.7937,
+        "seed_ari_std": 0.2142,
+        "bootstrap_ari_mean": 0.9278,
+        "bootstrap_ari_std": 0.0543
+      },
+      {
+        "k": 3,
+        "method": "K-Medians",
+        "distance_metric": "Manhattan",
+        "wcss": 557.229,
+        "silhouette": 0.3316,
+        "davies_bouldin": 1.2508,
+        "seed_ari_mean": 0.865,
+        "seed_ari_std": 0.2115,
+        "bootstrap_ari_mean": 0.9406,
+        "bootstrap_ari_std": 0.0599
+      },
+      {
+        "k": 4,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 477.216,
+        "silhouette": 0.2397,
+        "davies_bouldin": 1.4195,
+        "seed_ari_mean": 0.6161,
+        "seed_ari_std": 0.1391,
+        "bootstrap_ari_mean": 0.7741,
+        "bootstrap_ari_std": 0.142
+      },
+      {
+        "k": 4,
+        "method": "K-Medians",
+        "distance_metric": "Manhattan",
+        "wcss": 525.219,
+        "silhouette": 0.2478,
+        "davies_bouldin": 1.3703,
+        "seed_ari_mean": 0.6329,
+        "seed_ari_std": 0.1244,
+        "bootstrap_ari_mean": 0.7334,
+        "bootstrap_ari_std": 0.1759
+      },
+      {
+        "k": 5,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 434.482,
+        "silhouette": 0.1849,
+        "davies_bouldin": 1.5636,
+        "seed_ari_mean": 0.5452,
+        "seed_ari_std": 0.1258,
+        "bootstrap_ari_mean": 0.6221,
+        "bootstrap_ari_std": 0.1666
+      },
+      {
+        "k": 5,
+        "method": "K-Medians",
+        "distance_metric": "Manhattan",
+        "wcss": 500.911,
+        "silhouette": 0.2189,
+        "davies_bouldin": 1.3988,
+        "seed_ari_mean": 0.5561,
+        "seed_ari_std": 0.1211,
+        "bootstrap_ari_mean": 0.6799,
+        "bootstrap_ari_std": 0.1393
+      },
+      {
+        "k": 6,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 403.177,
+        "silhouette": 0.1992,
+        "davies_bouldin": 1.4272,
+        "seed_ari_mean": 0.5063,
+        "seed_ari_std": 0.0992,
+        "bootstrap_ari_mean": 0.5257,
+        "bootstrap_ari_std": 0.1118
+      },
+      {
+        "k": 6,
+        "method": "K-Medians",
+        "distance_metric": "Manhattan",
+        "wcss": 481.062,
+        "silhouette": 0.1755,
+        "davies_bouldin": 1.9196,
+        "seed_ari_mean": 0.5036,
+        "seed_ari_std": 0.1125,
+        "bootstrap_ari_mean": 0.522,
+        "bootstrap_ari_std": 0.0985
+      },
+      {
+        "k": 7,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 367.662,
+        "silhouette": 0.1874,
+        "davies_bouldin": 1.4954,
+        "seed_ari_mean": 0.4909,
+        "seed_ari_std": 0.0816,
+        "bootstrap_ari_mean": 0.6246,
+        "bootstrap_ari_std": 0.1128
+      },
+      {
+        "k": 7,
+        "method": "K-Medians",
+        "distance_metric": "Manhattan",
+        "wcss": 465.594,
+        "silhouette": 0.1668,
+        "davies_bouldin": 1.8103,
+        "seed_ari_mean": 0.4714,
+        "seed_ari_std": 0.1053,
+        "bootstrap_ari_mean": 0.4714,
+        "bootstrap_ari_std": 0.09
+      },
+      {
+        "k": 8,
+        "method": "K-Means",
+        "distance_metric": "Euclidean",
+        "wcss": 346.496,
+        "silhouette": 0.1757,
+        "davies_bouldin": 1.4572,
+        "seed_ari_mean": 0.5013,
+        "seed_ari_std": 0.085,
+        "bootstrap_ari_mean": 0.5618,
+        "bootstrap_ari_std": 0.0888
+      },
+      {
+        "k": 8,
+        "method": "K-Medians",
+        "distance_metric": "Manhattan",
+        "wcss": 444.725,
+        "silhouette": 0.1725,
+        "davies_bouldin": 1.3971,
+        "seed_ari_mean": 0.4651,
+        "seed_ari_std": 0.096,
+        "bootstrap_ari_mean": 0.55,
+        "bootstrap_ari_std": 0.0994
+      }
+    ],
+    "selected_configuration": {
+      "k": 3,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 535.365,
+      "silhouette": 0.3266,
+      "davies_bouldin": 1.2443,
+      "seed_ari_mean": 0.7937,
+      "seed_ari_std": 0.2142,
+      "bootstrap_ari_mean": 0.9278,
+      "bootstrap_ari_std": 0.0543
+    },
+    "rationale": "Selected K=3 (K-Means, Euclidean): Achieved the highest silhouette score (0.3266) among K in [3..6] with a Davies-Bouldin index of 1.2443, satisfying the stability requirement with a mean bootstrap ARI of 0.9278 >= 0.60."
+  },
+  "model_evaluations": [
+    {
+      "k": 2,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 673.452,
+      "silhouette": 0.342,
+      "davies_bouldin": 1.156,
+      "seed_ari_mean": 0.9877,
+      "seed_ari_std": 0.0128,
+      "bootstrap_ari_mean": 0.9741,
+      "bootstrap_ari_std": 0.0308
+    },
+    {
+      "k": 2,
+      "method": "K-Medians",
+      "distance_metric": "Manhattan",
+      "wcss": 629.328,
+      "silhouette": 0.3785,
+      "davies_bouldin": 0.9543,
+      "seed_ari_mean": 0.9537,
+      "seed_ari_std": 0.0501,
+      "bootstrap_ari_mean": 0.9574,
+      "bootstrap_ari_std": 0.0554
+    },
+    {
+      "k": 3,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 535.365,
+      "silhouette": 0.3266,
+      "davies_bouldin": 1.2443,
+      "seed_ari_mean": 0.7937,
+      "seed_ari_std": 0.2142,
+      "bootstrap_ari_mean": 0.9278,
+      "bootstrap_ari_std": 0.0543
+    },
+    {
+      "k": 3,
+      "method": "K-Medians",
+      "distance_metric": "Manhattan",
+      "wcss": 557.229,
+      "silhouette": 0.3316,
+      "davies_bouldin": 1.2508,
+      "seed_ari_mean": 0.865,
+      "seed_ari_std": 0.2115,
+      "bootstrap_ari_mean": 0.9406,
+      "bootstrap_ari_std": 0.0599
+    },
+    {
+      "k": 4,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 477.216,
+      "silhouette": 0.2397,
+      "davies_bouldin": 1.4195,
+      "seed_ari_mean": 0.6161,
+      "seed_ari_std": 0.1391,
+      "bootstrap_ari_mean": 0.7741,
+      "bootstrap_ari_std": 0.142
+    },
+    {
+      "k": 4,
+      "method": "K-Medians",
+      "distance_metric": "Manhattan",
+      "wcss": 525.219,
+      "silhouette": 0.2478,
+      "davies_bouldin": 1.3703,
+      "seed_ari_mean": 0.6329,
+      "seed_ari_std": 0.1244,
+      "bootstrap_ari_mean": 0.7334,
+      "bootstrap_ari_std": 0.1759
+    },
+    {
+      "k": 5,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 434.482,
+      "silhouette": 0.1849,
+      "davies_bouldin": 1.5636,
+      "seed_ari_mean": 0.5452,
+      "seed_ari_std": 0.1258,
+      "bootstrap_ari_mean": 0.6221,
+      "bootstrap_ari_std": 0.1666
+    },
+    {
+      "k": 5,
+      "method": "K-Medians",
+      "distance_metric": "Manhattan",
+      "wcss": 500.911,
+      "silhouette": 0.2189,
+      "davies_bouldin": 1.3988,
+      "seed_ari_mean": 0.5561,
+      "seed_ari_std": 0.1211,
+      "bootstrap_ari_mean": 0.6799,
+      "bootstrap_ari_std": 0.1393
+    },
+    {
+      "k": 6,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 403.177,
+      "silhouette": 0.1992,
+      "davies_bouldin": 1.4272,
+      "seed_ari_mean": 0.5063,
+      "seed_ari_std": 0.0992,
+      "bootstrap_ari_mean": 0.5257,
+      "bootstrap_ari_std": 0.1118
+    },
+    {
+      "k": 6,
+      "method": "K-Medians",
+      "distance_metric": "Manhattan",
+      "wcss": 481.062,
+      "silhouette": 0.1755,
+      "davies_bouldin": 1.9196,
+      "seed_ari_mean": 0.5036,
+      "seed_ari_std": 0.1125,
+      "bootstrap_ari_mean": 0.522,
+      "bootstrap_ari_std": 0.0985
+    },
+    {
+      "k": 7,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 367.662,
+      "silhouette": 0.1874,
+      "davies_bouldin": 1.4954,
+      "seed_ari_mean": 0.4909,
+      "seed_ari_std": 0.0816,
+      "bootstrap_ari_mean": 0.6246,
+      "bootstrap_ari_std": 0.1128
+    },
+    {
+      "k": 7,
+      "method": "K-Medians",
+      "distance_metric": "Manhattan",
+      "wcss": 465.594,
+      "silhouette": 0.1668,
+      "davies_bouldin": 1.8103,
+      "seed_ari_mean": 0.4714,
+      "seed_ari_std": 0.1053,
+      "bootstrap_ari_mean": 0.4714,
+      "bootstrap_ari_std": 0.09
+    },
+    {
+      "k": 8,
+      "method": "K-Means",
+      "distance_metric": "Euclidean",
+      "wcss": 346.496,
+      "silhouette": 0.1757,
+      "davies_bouldin": 1.4572,
+      "seed_ari_mean": 0.5013,
+      "seed_ari_std": 0.085,
+      "bootstrap_ari_mean": 0.5618,
+      "bootstrap_ari_std": 0.0888
+    },
+    {
+      "k": 8,
+      "method": "K-Medians",
+      "distance_metric": "Manhattan",
+      "wcss": 444.725,
+      "silhouette": 0.1725,
+      "davies_bouldin": 1.3971,
+      "seed_ari_mean": 0.4651,
+      "seed_ari_std": 0.096,
+      "bootstrap_ari_mean": 0.55,
+      "bootstrap_ari_std": 0.0994
+    }
+  ],
+  "post_hoc_association_tests": {
+    "income_group": {
+      "chi2_statistic": 84.946,
+      "p_value": 3.386804359979783e-16,
+      "degrees_of_freedom": 6,
+      "cramers_v": 0.522,
+      "cross_tab": {
+        "High Income": {
+          "0": 5,
+          "1": 26,
+          "2": 0
+        },
+        "Low Income": {
+          "0": 1,
+          "1": 2,
+          "2": 30
+        },
+        "Lower Middle Income": {
+          "0": 7,
+          "1": 12,
+          "2": 24
+        },
+        "Upper Middle Income": {
+          "0": 17,
+          "1": 26,
+          "2": 6
+        }
+      }
+    },
+    "region": {
+      "chi2_statistic": 149.89,
+      "p_value": 5.968210917288998e-26,
+      "degrees_of_freedom": 12,
+      "cramers_v": 0.693,
+      "cross_tab": {
+        "East Asia & Pacific": {
+          "0": 8,
+          "1": 9,
+          "2": 8
+        },
+        "Europe & Central Asia": {
+          "0": 2,
+          "1": 30,
+          "2": 0
+        },
+        "Latin America & Caribbean": {
+          "0": 5,
+          "1": 20,
+          "2": 1
+        },
+        "Middle East & North Africa": {
+          "0": 13,
+          "1": 3,
+          "2": 2
+        },
+        "North America": {
+          "0": 0,
+          "1": 1,
+          "2": 0
+        },
+        "South Asia": {
+          "0": 0,
+          "1": 0,
+          "2": 8
+        },
+        "Sub-Saharan Africa": {
+          "0": 2,
+          "1": 3,
+          "2": 41
+        }
+      }
+    }
+  },
+  "hierarchical_analysis": {
+    "ward": {
+      "cophenetic_correlation": 0.5777,
+      "ari_vs_chosen_kmeans": 0.7609,
+      "linkage_matrix": [
+        [
+          8.0,
+          102.0,
+          0.37659669425623465,
+          2.0
+        ],
+        [
+          41.0,
+          81.0,
+          0.3930489694573489,
+          2.0
+        ],
+        [
+          14.0,
+          80.0,
+          0.40186168081418067,
+          2.0
+        ],
+        [
+          3.0,
+          145.0,
+          0.47754617708425345,
+          2.0
+        ],
+        [
+          17.0,
+          32.0,
+          0.5393749143683606,
+          2.0
+        ],
+        [
+          10.0,
+          120.0,
+          0.5485898779072372,
+          2.0
+        ],
+        [
+          31.0,
+          124.0,
+          0.5674670512627652,
+          2.0
+        ],
+        [
+          13.0,
+          126.0,
+          0.5683377948287228,
+          2.0
+        ],
+        [
+          16.0,
+          107.0,
+          0.5697035603977647,
+          2.0
+        ],
+        [
+          34.0,
+          156.0,
+          0.5913967706345387,
+          3.0
+        ],
+        [
+          60.0,
+          90.0,
+          0.6924308133513911,
+          2.0
+        ],
+        [
+          43.0,
+          165.0,
+          0.6952355220445721,
+          4.0
+        ],
+        [
+          9.0,
+          101.0,
+          0.7004292081406692,
+          2.0
+        ],
+        [
+          4.0,
+          18.0,
+          0.718258999866445,
+          2.0
+        ],
+        [
+          73.0,
+          132.0,
+          0.7350383067132242,
+          2.0
+        ],
+        [
+          15.0,
+          63.0,
+          0.7427312526646574,
+          2.0
+        ],
+        [
+          111.0,
+          143.0,
+          0.7597673972941362,
+          2.0
+        ],
+        [
+          25.0,
+          51.0,
+          0.7731391523312791,
+          2.0
+        ],
+        [
+          138.0,
+          151.0,
+          0.7814550103647687,
+          2.0
+        ],
+        [
+          33.0,
+          116.0,
+          0.7956964925122363,
+          2.0
+        ],
+        [
+          83.0,
+          147.0,
+          0.7997953124570469,
+          2.0
+        ],
+        [
+          49.0,
+          69.0,
+          0.807875763794233,
+          2.0
+        ],
+        [
+          22.0,
+          94.0,
+          0.8176062773470972,
+          2.0
+        ],
+        [
+          92.0,
+          160.0,
+          0.8182420296096766,
+          3.0
+        ],
+        [
+          38.0,
+          56.0,
+          0.8254090264139606,
+          2.0
+        ],
+        [
+          86.0,
+          162.0,
+          0.8406423625909822,
+          3.0
+        ],
+        [
+          142.0,
+          154.0,
+          0.843425864543679,
+          2.0
+        ],
+        [
+          65.0,
+          121.0,
+          0.8483679418579331,
+          2.0
+        ],
+        [
+          52.0,
+          127.0,
+          0.8782360774602551,
+          2.0
+        ],
+        [
+          29.0,
+          148.0,
+          0.8907648728700829,
+          2.0
+        ],
+        [
+          46.0,
+          166.0,
+          0.8925756072989,
+          3.0
+        ],
+        [
+          157.0,
+          158.0,
+          0.9039353110835403,
+          4.0
+        ],
+        [
+          88.0,
+          163.0,
+          0.9084055508381057,
+          3.0
+        ],
+        [
+          84.0,
+          137.0,
+          0.9136829433222078,
+          2.0
+        ],
+        [
+          35.0,
+          98.0,
+          0.9296304272081641,
+          2.0
+        ],
+        [
+          28.0,
+          123.0,
+          0.9479766566357305,
+          2.0
+        ],
+        [
+          91.0,
+          133.0,
+          0.9488266750982254,
+          2.0
+        ],
+        [
+          19.0,
+          130.0,
+          0.9579620240236273,
+          2.0
+        ],
+        [
+          11.0,
+          103.0,
+          0.9619074455457698,
+          2.0
+        ],
+        [
+          164.0,
+          179.0,
+          0.9622432614763053,
+          5.0
+        ],
+        [
+          112.0,
+          186.0,
+          1.0129153259355015,
+          4.0
+        ],
+        [
+          61.0,
+          128.0,
+          1.0329101375306187,
+          2.0
+        ],
+        [
+          89.0,
+          161.0,
+          1.0342256903757021,
+          3.0
+        ],
+        [
+          2.0,
+          113.0,
+          1.0368491575908907,
+          2.0
+        ],
+        [
+          67.0,
+          172.0,
+          1.0461828278197731,
+          3.0
+        ],
+        [
+          66.0,
+          136.0,
+          1.0489660895485393,
+          2.0
+        ],
+        [
+          37.0,
+          140.0,
+          1.049045566370299,
+          2.0
+        ],
+        [
+          39.0,
+          118.0,
+          1.0554617453043855,
+          2.0
+        ],
+        [
+          0.0,
+          105.0,
+          1.0651801134113483,
+          2.0
+        ],
+        [
+          12.0,
+          175.0,
+          1.0805744153586572,
+          3.0
+        ],
+        [
+          36.0,
+          141.0,
+          1.0874943757041622,
+          2.0
+        ],
+        [
+          44.0,
+          115.0,
+          1.1201078276288228,
+          2.0
+        ],
+        [
+          1.0,
+          178.0,
+          1.121435508643711,
+          3.0
+        ],
+        [
+          106.0,
+          129.0,
+          1.129866158758765,
+          2.0
+        ],
+        [
+          62.0,
+          114.0,
+          1.138181364301683,
+          2.0
+        ],
+        [
+          177.0,
+          191.0,
+          1.1395351841029606,
+          4.0
+        ],
+        [
+          45.0,
+          50.0,
+          1.1476002426789451,
+          2.0
+        ],
+        [
+          85.0,
+          95.0,
+          1.19368802614838,
+          2.0
+        ],
+        [
+          47.0,
+          176.0,
+          1.2243936151836337,
+          3.0
+        ],
+        [
+          48.0,
+          192.0,
+          1.2250635241762742,
+          3.0
+        ],
+        [
+          74.0,
+          76.0,
+          1.231090142285735,
+          2.0
+        ],
+        [
+          75.0,
+          173.0,
+          1.2320393900964757,
+          3.0
+        ],
+        [
+          82.0,
+          153.0,
+          1.2353671418611087,
+          2.0
+        ],
+        [
+          6.0,
+          135.0,
+          1.2369476006616797,
+          2.0
+        ],
+        [
+          23.0,
+          146.0,
+          1.254447442307228,
+          2.0
+        ],
+        [
+          155.0,
+          200.0,
+          1.2607399083071102,
+          4.0
+        ],
+        [
+          104.0,
+          131.0,
+          1.2689478278137662,
+          2.0
+        ],
+        [
+          110.0,
+          195.0,
+          1.2762661066542347,
+          6.0
+        ],
+        [
+          40.0,
+          100.0,
+          1.3029228602671623,
+          2.0
+        ],
+        [
+          55.0,
+          96.0,
+          1.3037479861790624,
+          2.0
+        ],
+        [
+          30.0,
+          194.0,
+          1.3317172212358095,
+          3.0
+        ],
+        [
+          71.0,
+          183.0,
+          1.346784075485153,
+          3.0
+        ],
+        [
+          93.0,
+          159.0,
+          1.3550267148292614,
+          3.0
+        ],
+        [
+          57.0,
+          212.0,
+          1.3648303172624618,
+          3.0
+        ],
+        [
+          122.0,
+          150.0,
+          1.3785757485916945,
+          2.0
+        ],
+        [
+          171.0,
+          197.0,
+          1.3899455776633276,
+          4.0
+        ],
+        [
+          42.0,
+          97.0,
+          1.3984512051505813,
+          2.0
+        ],
+        [
+          20.0,
+          184.0,
+          1.4038143296065189,
+          3.0
+        ],
+        [
+          99.0,
+          190.0,
+          1.4050343205454272,
+          3.0
+        ],
+        [
+          181.0,
+          185.0,
+          1.4213201129475814,
+          5.0
+        ],
+        [
+          196.0,
+          220.0,
+          1.4446239972566028,
+          6.0
+        ],
+        [
+          119.0,
+          125.0,
+          1.45189485934264,
+          2.0
+        ],
+        [
+          201.0,
+          214.0,
+          1.49610341842016,
+          5.0
+        ],
+        [
+          53.0,
+          199.0,
+          1.5368942868602915,
+          3.0
+        ],
+        [
+          7.0,
+          27.0,
+          1.5490743242950331,
+          2.0
+        ],
+        [
+          68.0,
+          209.0,
+          1.5735166523999256,
+          3.0
+        ],
+        [
+          168.0,
+          208.0,
+          1.6084984133883828,
+          5.0
+        ],
+        [
+          134.0,
+          193.0,
+          1.6383108779719593,
+          3.0
+        ],
+        [
+          207.0,
+          210.0,
+          1.6768845088230289,
+          4.0
+        ],
+        [
+          188.0,
+          223.0,
+          1.6844458869808507,
+          9.0
+        ],
+        [
+          77.0,
+          231.0,
+          1.710498946343095,
+          5.0
+        ],
+        [
+          182.0,
+          221.0,
+          1.7113951029911418,
+          6.0
+        ],
+        [
+          72.0,
+          174.0,
+          1.7842677487554015,
+          3.0
+        ],
+        [
+          21.0,
+          26.0,
+          1.7870977631361848,
+          2.0
+        ],
+        [
+          24.0,
+          149.0,
+          1.8146999489474849,
+          2.0
+        ],
+        [
+          70.0,
+          87.0,
+          1.8903263306431812,
+          2.0
+        ],
+        [
+          58.0,
+          215.0,
+          1.908013936133451,
+          4.0
+        ],
+        [
+          79.0,
+          232.0,
+          1.9253673946096077,
+          3.0
+        ],
+        [
+          180.0,
+          235.0,
+          1.9283710664032616,
+          7.0
+        ],
+        [
+          203.0,
+          222.0,
+          1.9288529421040876,
+          4.0
+        ],
+        [
+          78.0,
+          237.0,
+          1.93159654845938,
+          3.0
+        ],
+        [
+          144.0,
+          169.0,
+          2.0033115578037677,
+          3.0
+        ],
+        [
+          211.0,
+          213.0,
+          2.01916111115958,
+          6.0
+        ],
+        [
+          170.0,
+          189.0,
+          2.0249179444961367,
+          4.0
+        ],
+        [
+          117.0,
+          247.0,
+          2.112472176565678,
+          7.0
+        ],
+        [
+          206.0,
+          246.0,
+          2.1148020031935824,
+          7.0
+        ],
+        [
+          219.0,
+          233.0,
+          2.1180070504767583,
+          5.0
+        ],
+        [
+          139.0,
+          243.0,
+          2.162712425377231,
+          4.0
+        ],
+        [
+          228.0,
+          239.0,
+          2.165139849439864,
+          6.0
+        ],
+        [
+          252.0,
+          258.0,
+          2.2114012579762576,
+          10.0
+        ],
+        [
+          167.0,
+          187.0,
+          2.290698366622598,
+          8.0
+        ],
+        [
+          253.0,
+          260.0,
+          2.332548639278437,
+          10.0
+        ],
+        [
+          64.0,
+          218.0,
+          2.3703603063424326,
+          3.0
+        ],
+        [
+          217.0,
+          242.0,
+          2.4113686991207817,
+          8.0
+        ],
+        [
+          205.0,
+          254.0,
+          2.4151423895487474,
+          10.0
+        ],
+        [
+          216.0,
+          255.0,
+          2.4296228732161556,
+          6.0
+        ],
+        [
+          241.0,
+          245.0,
+          2.4880080266870737,
+          12.0
+        ],
+        [
+          229.0,
+          262.0,
+          2.5061582253315393,
+          8.0
+        ],
+        [
+          225.0,
+          234.0,
+          2.553759568367548,
+          5.0
+        ],
+        [
+          224.0,
+          259.0,
+          2.6114761607699988,
+          6.0
+        ],
+        [
+          204.0,
+          269.0,
+          2.722898218495826,
+          10.0
+        ],
+        [
+          226.0,
+          256.0,
+          2.7570546375030323,
+          6.0
+        ],
+        [
+          59.0,
+          152.0,
+          2.7950612846476974,
+          2.0
+        ],
+        [
+          240.0,
+          275.0,
+          2.816485420514139,
+          8.0
+        ],
+        [
+          202.0,
+          257.0,
+          2.8397231377456946,
+          5.0
+        ],
+        [
+          54.0,
+          108.0,
+          2.858187551234801,
+          2.0
+        ],
+        [
+          264.0,
+          280.0,
+          2.925942272806879,
+          11.0
+        ],
+        [
+          198.0,
+          265.0,
+          3.0059939531500435,
+          13.0
+        ],
+        [
+          249.0,
+          263.0,
+          3.0945677367180484,
+          6.0
+        ],
+        [
+          227.0,
+          250.0,
+          3.2243171397807835,
+          5.0
+        ],
+        [
+          230.0,
+          271.0,
+          3.2372870529721367,
+          8.0
+        ],
+        [
+          248.0,
+          251.0,
+          3.41730912985889,
+          5.0
+        ],
+        [
+          236.0,
+          266.0,
+          3.7297975595994455,
+          14.0
+        ],
+        [
+          238.0,
+          270.0,
+          3.7837318649273195,
+          15.0
+        ],
+        [
+          272.0,
+          282.0,
+          3.880415827243432,
+          23.0
+        ],
+        [
+          261.0,
+          268.0,
+          4.084312488841802,
+          10.0
+        ],
+        [
+          244.0,
+          286.0,
+          4.144775793408261,
+          12.0
+        ],
+        [
+          274.0,
+          284.0,
+          4.164142735642765,
+          11.0
+        ],
+        [
+          267.0,
+          281.0,
+          4.1673866669003585,
+          12.0
+        ],
+        [
+          277.0,
+          278.0,
+          4.389375552644456,
+          8.0
+        ],
+        [
+          276.0,
+          279.0,
+          4.713215738687132,
+          18.0
+        ],
+        [
+          273.0,
+          283.0,
+          5.0036464579542885,
+          21.0
+        ],
+        [
+          288.0,
+          289.0,
+          5.059453393782933,
+          29.0
+        ],
+        [
+          5.0,
+          290.0,
+          5.182010631453934,
+          24.0
+        ],
+        [
+          285.0,
+          298.0,
+          5.444627994576854,
+          34.0
+        ],
+        [
+          291.0,
+          292.0,
+          5.709377998825526,
+          22.0
+        ],
+        [
+          109.0,
+          293.0,
+          5.975719262658832,
+          12.0
+        ],
+        [
+          294.0,
+          302.0,
+          7.581513694148206,
+          24.0
+        ],
+        [
+          295.0,
+          296.0,
+          7.653518120764826,
+          26.0
+        ],
+        [
+          287.0,
+          301.0,
+          7.779135696277551,
+          27.0
+        ],
+        [
+          297.0,
+          303.0,
+          8.390871852941258,
+          45.0
+        ],
+        [
+          299.0,
+          300.0,
+          8.533557705442345,
+          58.0
+        ],
+        [
+          304.0,
+          306.0,
+          10.971733861952435,
+          71.0
+        ],
+        [
+          305.0,
+          307.0,
+          16.88098972027556,
+          85.0
+        ],
+        [
+          308.0,
+          309.0,
+          27.904008674136488,
+          156.0
+        ]
+      ]
+    },
+    "average": {
+      "cophenetic_correlation": 0.7127,
+      "ari_vs_chosen_kmeans": 0.0045,
+      "linkage_matrix": [
+        [
+          8.0,
+          102.0,
+          0.37659669425623465,
+          2.0
+        ],
+        [
+          41.0,
+          81.0,
+          0.3930489694573489,
+          2.0
+        ],
+        [
+          14.0,
+          80.0,
+          0.40186168081418067,
+          2.0
+        ],
+        [
+          3.0,
+          145.0,
+          0.47754617708425345,
+          2.0
+        ],
+        [
+          34.0,
+          156.0,
+          0.5349109585042179,
+          3.0
+        ],
+        [
+          17.0,
+          32.0,
+          0.5393749143683606,
+          2.0
+        ],
+        [
+          10.0,
+          120.0,
+          0.5485898779072372,
+          2.0
+        ],
+        [
+          31.0,
+          124.0,
+          0.5674670512627652,
+          2.0
+        ],
+        [
+          13.0,
+          126.0,
+          0.5683377948287228,
+          2.0
+        ],
+        [
+          16.0,
+          107.0,
+          0.5697035603977647,
+          2.0
+        ],
+        [
+          43.0,
+          160.0,
+          0.6321994658411692,
+          4.0
+        ],
+        [
+          60.0,
+          90.0,
+          0.6924308133513911,
+          2.0
+        ],
+        [
+          157.0,
+          158.0,
+          0.6940490169384922,
+          4.0
+        ],
+        [
+          9.0,
+          101.0,
+          0.7004292081406692,
+          2.0
+        ],
+        [
+          4.0,
+          18.0,
+          0.718258999866445,
+          2.0
+        ],
+        [
+          73.0,
+          132.0,
+          0.7350383067132242,
+          2.0
+        ],
+        [
+          15.0,
+          63.0,
+          0.7427312526646574,
+          2.0
+        ],
+        [
+          25.0,
+          162.0,
+          0.7435903298152056,
+          3.0
+        ],
+        [
+          92.0,
+          161.0,
+          0.7520849635328956,
+          3.0
+        ],
+        [
+          111.0,
+          143.0,
+          0.7597673972941362,
+          2.0
+        ],
+        [
+          86.0,
+          163.0,
+          0.7813457575156507,
+          3.0
+        ],
+        [
+          138.0,
+          151.0,
+          0.7814550103647687,
+          2.0
+        ],
+        [
+          165.0,
+          174.0,
+          0.7901667119471765,
+          5.0
+        ],
+        [
+          33.0,
+          116.0,
+          0.7956964925122363,
+          2.0
+        ],
+        [
+          83.0,
+          147.0,
+          0.7997953124570469,
+          2.0
+        ],
+        [
+          49.0,
+          69.0,
+          0.807875763794233,
+          2.0
+        ],
+        [
+          88.0,
+          164.0,
+          0.8081159064545146,
+          3.0
+        ],
+        [
+          22.0,
+          94.0,
+          0.8176062773470972,
+          2.0
+        ],
+        [
+          38.0,
+          56.0,
+          0.8254090264139606,
+          2.0
+        ],
+        [
+          142.0,
+          154.0,
+          0.843425864543679,
+          2.0
+        ],
+        [
+          46.0,
+          167.0,
+          0.8450268257972324,
+          3.0
+        ],
+        [
+          65.0,
+          121.0,
+          0.8483679418579331,
+          2.0
+        ],
+        [
+          52.0,
+          127.0,
+          0.8782360774602551,
+          2.0
+        ],
+        [
+          29.0,
+          148.0,
+          0.8907648728700829,
+          2.0
+        ],
+        [
+          51.0,
+          75.0,
+          0.8961261065326693,
+          2.0
+        ],
+        [
+          84.0,
+          137.0,
+          0.9136829433222078,
+          2.0
+        ],
+        [
+          35.0,
+          98.0,
+          0.9296304272081641,
+          2.0
+        ],
+        [
+          28.0,
+          181.0,
+          0.9390757986969875,
+          3.0
+        ],
+        [
+          112.0,
+          186.0,
+          0.9466377306275975,
+          4.0
+        ],
+        [
+          91.0,
+          133.0,
+          0.9488266750982254,
+          2.0
+        ],
+        [
+          19.0,
+          130.0,
+          0.9579620240236273,
+          2.0
+        ],
+        [
+          11.0,
+          103.0,
+          0.9619074455457698,
+          2.0
+        ],
+        [
+          67.0,
+          175.0,
+          0.9813433386887556,
+          3.0
+        ],
+        [
+          106.0,
+          178.0,
+          0.9852630199956364,
+          6.0
+        ],
+        [
+          169.0,
+          183.0,
+          0.9901863080388222,
+          4.0
+        ],
+        [
+          61.0,
+          172.0,
+          0.9934225237997171,
+          3.0
+        ],
+        [
+          12.0,
+          179.0,
+          1.0167945802477034,
+          3.0
+        ],
+        [
+          2.0,
+          113.0,
+          1.0368491575908907,
+          2.0
+        ],
+        [
+          123.0,
+          193.0,
+          1.041668411064714,
+          4.0
+        ],
+        [
+          66.0,
+          136.0,
+          1.0489660895485393,
+          2.0
+        ],
+        [
+          37.0,
+          140.0,
+          1.049045566370299,
+          2.0
+        ],
+        [
+          39.0,
+          118.0,
+          1.0554617453043855,
+          2.0
+        ],
+        [
+          0.0,
+          105.0,
+          1.0651801134113483,
+          2.0
+        ],
+        [
+          89.0,
+          173.0,
+          1.065673494043847,
+          4.0
+        ],
+        [
+          110.0,
+          168.0,
+          1.0807574205430703,
+          5.0
+        ],
+        [
+          36.0,
+          141.0,
+          1.0874943757041622,
+          2.0
+        ],
+        [
+          176.0,
+          189.0,
+          1.0946328051892553,
+          5.0
+        ],
+        [
+          182.0,
+          199.0,
+          1.1102742328515525,
+          9.0
+        ],
+        [
+          44.0,
+          115.0,
+          1.1201078276288228,
+          2.0
+        ],
+        [
+          47.0,
+          180.0,
+          1.1222218778228563,
+          3.0
+        ],
+        [
+          62.0,
+          114.0,
+          1.138181364301683,
+          2.0
+        ],
+        [
+          45.0,
+          50.0,
+          1.1476002426789451,
+          2.0
+        ],
+        [
+          155.0,
+          198.0,
+          1.1554849147432449,
+          4.0
+        ],
+        [
+          48.0,
+          195.0,
+          1.1621008316553527,
+          3.0
+        ],
+        [
+          146.0,
+          194.0,
+          1.1703515388284758,
+          5.0
+        ],
+        [
+          85.0,
+          95.0,
+          1.19368802614838,
+          2.0
+        ],
+        [
+          128.0,
+          201.0,
+          1.1943600659590425,
+          4.0
+        ],
+        [
+          93.0,
+          159.0,
+          1.1969679738561783,
+          3.0
+        ],
+        [
+          68.0,
+          129.0,
+          1.203268037140983,
+          2.0
+        ],
+        [
+          23.0,
+          220.0,
+          1.217702054148841,
+          6.0
+        ],
+        [
+          205.0,
+          215.0,
+          1.2303157039071675,
+          5.0
+        ],
+        [
+          74.0,
+          76.0,
+          1.231090142285735,
+          2.0
+        ],
+        [
+          71.0,
+          187.0,
+          1.2328780225670282,
+          3.0
+        ],
+        [
+          188.0,
+          217.0,
+          1.2329276346300864,
+          4.0
+        ],
+        [
+          82.0,
+          153.0,
+          1.2353671418611087,
+          2.0
+        ],
+        [
+          6.0,
+          135.0,
+          1.2369476006616797,
+          2.0
+        ],
+        [
+          30.0,
+          197.0,
+          1.242471478863294,
+          3.0
+        ],
+        [
+          104.0,
+          131.0,
+          1.2689478278137662,
+          2.0
+        ],
+        [
+          185.0,
+          218.0,
+          1.2874366676957436,
+          6.0
+        ],
+        [
+          99.0,
+          192.0,
+          1.2874437041712463,
+          3.0
+        ],
+        [
+          40.0,
+          100.0,
+          1.3029228602671623,
+          2.0
+        ],
+        [
+          55.0,
+          96.0,
+          1.3037479861790624,
+          2.0
+        ],
+        [
+          1.0,
+          200.0,
+          1.3235553139966858,
+          5.0
+        ],
+        [
+          166.0,
+          210.0,
+          1.334654454536745,
+          9.0
+        ],
+        [
+          184.0,
+          212.0,
+          1.3466302823934972,
+          7.0
+        ],
+        [
+          122.0,
+          150.0,
+          1.3785757485916945,
+          2.0
+        ],
+        [
+          53.0,
+          203.0,
+          1.38527130585257,
+          3.0
+        ],
+        [
+          42.0,
+          97.0,
+          1.3984512051505813,
+          2.0
+        ],
+        [
+          213.0,
+          223.0,
+          1.4165894762737212,
+          12.0
+        ],
+        [
+          214.0,
+          216.0,
+          1.4269287654449836,
+          4.0
+        ],
+        [
+          204.0,
+          219.0,
+          1.4308098548514636,
+          7.0
+        ],
+        [
+          125.0,
+          171.0,
+          1.436934319045574,
+          3.0
+        ],
+        [
+          190.0,
+          238.0,
+          1.4473823982723197,
+          7.0
+        ],
+        [
+          211.0,
+          222.0,
+          1.4520964981013877,
+          6.0
+        ],
+        [
+          202.0,
+          240.0,
+          1.4783451245453756,
+          10.0
+        ],
+        [
+          225.0,
+          244.0,
+          1.4826715200150729,
+          18.0
+        ],
+        [
+          134.0,
+          196.0,
+          1.4869836908726115,
+          3.0
+        ],
+        [
+          57.0,
+          229.0,
+          1.5023475678496048,
+          5.0
+        ],
+        [
+          221.0,
+          246.0,
+          1.510355980044125,
+          9.0
+        ],
+        [
+          7.0,
+          27.0,
+          1.5490743242950331,
+          2.0
+        ],
+        [
+          234.0,
+          243.0,
+          1.5825861382948476,
+          8.0
+        ],
+        [
+          207.0,
+          233.0,
+          1.586022715842945,
+          4.0
+        ],
+        [
+          72.0,
+          177.0,
+          1.5937000753427224,
+          3.0
+        ],
+        [
+          226.0,
+          231.0,
+          1.6380892864329932,
+          7.0
+        ],
+        [
+          209.0,
+          254.0,
+          1.6428549455162764,
+          13.0
+        ],
+        [
+          77.0,
+          249.0,
+          1.6476794013637324,
+          7.0
+        ],
+        [
+          242.0,
+          251.0,
+          1.6739792183185582,
+          21.0
+        ],
+        [
+          247.0,
+          260.0,
+          1.695994942707003,
+          16.0
+        ],
+        [
+          20.0,
+          253.0,
+          1.702663267029329,
+          6.0
+        ],
+        [
+          21.0,
+          235.0,
+          1.7388417232319455,
+          4.0
+        ],
+        [
+          170.0,
+          252.0,
+          1.7601156663553255,
+          5.0
+        ],
+        [
+          208.0,
+          248.0,
+          1.7630792394868615,
+          9.0
+        ],
+        [
+          227.0,
+          257.0,
+          1.7920128202309134,
+          6.0
+        ],
+        [
+          24.0,
+          149.0,
+          1.8146999489474849,
+          2.0
+        ],
+        [
+          224.0,
+          259.0,
+          1.8162545654770206,
+          9.0
+        ],
+        [
+          79.0,
+          256.0,
+          1.8172580887062184,
+          9.0
+        ],
+        [
+          250.0,
+          261.0,
+          1.8213204156864664,
+          17.0
+        ],
+        [
+          117.0,
+          271.0,
+          1.8565599612040908,
+          10.0
+        ],
+        [
+          139.0,
+          266.0,
+          1.8817444135335275,
+          6.0
+        ],
+        [
+          191.0,
+          255.0,
+          1.8859901075223524,
+          4.0
+        ],
+        [
+          70.0,
+          87.0,
+          1.8903263306431812,
+          2.0
+        ],
+        [
+          78.0,
+          232.0,
+          1.9303268521690928,
+          4.0
+        ],
+        [
+          119.0,
+          236.0,
+          1.952012612501231,
+          3.0
+        ],
+        [
+          237.0,
+          265.0,
+          1.976216114735191,
+          6.0
+        ],
+        [
+          58.0,
+          263.0,
+          1.9822514090141046,
+          17.0
+        ],
+        [
+          239.0,
+          262.0,
+          2.0126158425927247,
+          30.0
+        ],
+        [
+          270.0,
+          272.0,
+          2.058607411387038,
+          26.0
+        ],
+        [
+          267.0,
+          275.0,
+          2.079930939373839,
+          13.0
+        ],
+        [
+          264.0,
+          280.0,
+          2.1213634960375125,
+          23.0
+        ],
+        [
+          64.0,
+          230.0,
+          2.1220161564024007,
+          3.0
+        ],
+        [
+          245.0,
+          268.0,
+          2.200785781024448,
+          10.0
+        ],
+        [
+          281.0,
+          282.0,
+          2.2602154025608803,
+          56.0
+        ],
+        [
+          228.0,
+          269.0,
+          2.326753789517475,
+          5.0
+        ],
+        [
+          144.0,
+          274.0,
+          2.352924045298892,
+          7.0
+        ],
+        [
+          283.0,
+          284.0,
+          2.3543715163540666,
+          36.0
+        ],
+        [
+          241.0,
+          286.0,
+          2.380065015612535,
+          12.0
+        ],
+        [
+          206.0,
+          289.0,
+          2.4073324635939417,
+          9.0
+        ],
+        [
+          273.0,
+          290.0,
+          2.483182650815016,
+          46.0
+        ],
+        [
+          258.0,
+          276.0,
+          2.515826810491075,
+          5.0
+        ],
+        [
+          287.0,
+          292.0,
+          2.5248689640867847,
+          65.0
+        ],
+        [
+          277.0,
+          279.0,
+          2.6200321550786687,
+          10.0
+        ],
+        [
+          152.0,
+          278.0,
+          2.66747864772427,
+          4.0
+        ],
+        [
+          288.0,
+          295.0,
+          2.700657328018135,
+          70.0
+        ],
+        [
+          108.0,
+          296.0,
+          2.7154636249691357,
+          11.0
+        ],
+        [
+          285.0,
+          291.0,
+          2.7330841102647674,
+          15.0
+        ],
+        [
+          293.0,
+          299.0,
+          2.8044480005526697,
+          57.0
+        ],
+        [
+          26.0,
+          301.0,
+          2.971385100053592,
+          58.0
+        ],
+        [
+          59.0,
+          297.0,
+          3.0301056205835346,
+          5.0
+        ],
+        [
+          294.0,
+          300.0,
+          3.233440482416438,
+          20.0
+        ],
+        [
+          302.0,
+          303.0,
+          3.6149954391211,
+          63.0
+        ],
+        [
+          298.0,
+          304.0,
+          3.7111171659824214,
+          90.0
+        ],
+        [
+          54.0,
+          306.0,
+          4.056805635305443,
+          91.0
+        ],
+        [
+          305.0,
+          307.0,
+          4.193187193557733,
+          154.0
+        ],
+        [
+          109.0,
+          308.0,
+          5.561470539228833,
+          155.0
+        ],
+        [
+          5.0,
+          309.0,
+          6.01144867529596,
+          156.0
+        ]
+      ]
+    },
+    "dendrogram": {
+      "icoord": [
+        [
+          15.0,
+          15.0,
+          25.0,
+          25.0
+        ],
+        [
+          5.0,
+          5.0,
+          20.0,
+          20.0
+        ],
+        [
+          45.0,
+          45.0,
+          55.0,
+          55.0
+        ],
+        [
+          35.0,
+          35.0,
+          50.0,
+          50.0
+        ],
+        [
+          12.5,
+          12.5,
+          42.5,
+          42.5
+        ],
+        [
+          65.0,
+          65.0,
+          75.0,
+          75.0
+        ],
+        [
+          27.5,
+          27.5,
+          70.0,
+          70.0
+        ],
+        [
+          85.0,
+          85.0,
+          95.0,
+          95.0
+        ],
+        [
+          115.0,
+          115.0,
+          125.0,
+          125.0
+        ],
+        [
+          105.0,
+          105.0,
+          120.0,
+          120.0
+        ],
+        [
+          135.0,
+          135.0,
+          145.0,
+          145.0
+        ],
+        [
+          165.0,
+          165.0,
+          175.0,
+          175.0
+        ],
+        [
+          155.0,
+          155.0,
+          170.0,
+          170.0
+        ],
+        [
+          140.0,
+          140.0,
+          162.5,
+          162.5
+        ],
+        [
+          112.5,
+          112.5,
+          151.25,
+          151.25
+        ],
+        [
+          90.0,
+          90.0,
+          131.875,
+          131.875
+        ],
+        [
+          185.0,
+          185.0,
+          195.0,
+          195.0
+        ],
+        [
+          205.0,
+          205.0,
+          215.0,
+          215.0
+        ],
+        [
+          225.0,
+          225.0,
+          235.0,
+          235.0
+        ],
+        [
+          245.0,
+          245.0,
+          255.0,
+          255.0
+        ],
+        [
+          230.0,
+          230.0,
+          250.0,
+          250.0
+        ],
+        [
+          210.0,
+          210.0,
+          240.0,
+          240.0
+        ],
+        [
+          190.0,
+          190.0,
+          225.0,
+          225.0
+        ],
+        [
+          110.9375,
+          110.9375,
+          207.5,
+          207.5
+        ],
+        [
+          48.75,
+          48.75,
+          159.21875,
+          159.21875
+        ],
+        [
+          275.0,
+          275.0,
+          285.0,
+          285.0
+        ],
+        [
+          265.0,
+          265.0,
+          280.0,
+          280.0
+        ],
+        [
+          295.0,
+          295.0,
+          305.0,
+          305.0
+        ],
+        [
+          325.0,
+          325.0,
+          335.0,
+          335.0
+        ],
+        [
+          315.0,
+          315.0,
+          330.0,
+          330.0
+        ],
+        [
+          300.0,
+          300.0,
+          322.5,
+          322.5
+        ],
+        [
+          272.5,
+          272.5,
+          311.25,
+          311.25
+        ],
+        [
+          355.0,
+          355.0,
+          365.0,
+          365.0
+        ],
+        [
+          345.0,
+          345.0,
+          360.0,
+          360.0
+        ],
+        [
+          395.0,
+          395.0,
+          405.0,
+          405.0
+        ],
+        [
+          385.0,
+          385.0,
+          400.0,
+          400.0
+        ],
+        [
+          375.0,
+          375.0,
+          392.5,
+          392.5
+        ],
+        [
+          415.0,
+          415.0,
+          425.0,
+          425.0
+        ],
+        [
+          435.0,
+          435.0,
+          445.0,
+          445.0
+        ],
+        [
+          420.0,
+          420.0,
+          440.0,
+          440.0
+        ],
+        [
+          455.0,
+          455.0,
+          465.0,
+          465.0
+        ],
+        [
+          430.0,
+          430.0,
+          460.0,
+          460.0
+        ],
+        [
+          383.75,
+          383.75,
+          445.0,
+          445.0
+        ],
+        [
+          352.5,
+          352.5,
+          414.375,
+          414.375
+        ],
+        [
+          291.875,
+          291.875,
+          383.4375,
+          383.4375
+        ],
+        [
+          485.0,
+          485.0,
+          495.0,
+          495.0
+        ],
+        [
+          475.0,
+          475.0,
+          490.0,
+          490.0
+        ],
+        [
+          515.0,
+          515.0,
+          525.0,
+          525.0
+        ],
+        [
+          555.0,
+          555.0,
+          565.0,
+          565.0
+        ],
+        [
+          545.0,
+          545.0,
+          560.0,
+          560.0
+        ],
+        [
+          535.0,
+          535.0,
+          552.5,
+          552.5
+        ],
+        [
+          520.0,
+          520.0,
+          543.75,
+          543.75
+        ],
+        [
+          505.0,
+          505.0,
+          531.875,
+          531.875
+        ],
+        [
+          482.5,
+          482.5,
+          518.4375,
+          518.4375
+        ],
+        [
+          575.0,
+          575.0,
+          585.0,
+          585.0
+        ],
+        [
+          500.46875,
+          500.46875,
+          580.0,
+          580.0
+        ],
+        [
+          605.0,
+          605.0,
+          615.0,
+          615.0
+        ],
+        [
+          635.0,
+          635.0,
+          645.0,
+          645.0
+        ],
+        [
+          625.0,
+          625.0,
+          640.0,
+          640.0
+        ],
+        [
+          610.0,
+          610.0,
+          632.5,
+          632.5
+        ],
+        [
+          655.0,
+          655.0,
+          665.0,
+          665.0
+        ],
+        [
+          695.0,
+          695.0,
+          705.0,
+          705.0
+        ],
+        [
+          685.0,
+          685.0,
+          700.0,
+          700.0
+        ],
+        [
+          675.0,
+          675.0,
+          692.5,
+          692.5
+        ],
+        [
+          660.0,
+          660.0,
+          683.75,
+          683.75
+        ],
+        [
+          621.25,
+          621.25,
+          671.875,
+          671.875
+        ],
+        [
+          595.0,
+          595.0,
+          646.5625,
+          646.5625
+        ],
+        [
+          540.234375,
+          540.234375,
+          620.78125,
+          620.78125
+        ],
+        [
+          337.65625,
+          337.65625,
+          580.5078125,
+          580.5078125
+        ],
+        [
+          103.984375,
+          103.984375,
+          459.08203125,
+          459.08203125
+        ],
+        [
+          725.0,
+          725.0,
+          735.0,
+          735.0
+        ],
+        [
+          715.0,
+          715.0,
+          730.0,
+          730.0
+        ],
+        [
+          745.0,
+          745.0,
+          755.0,
+          755.0
+        ],
+        [
+          722.5,
+          722.5,
+          750.0,
+          750.0
+        ],
+        [
+          765.0,
+          765.0,
+          775.0,
+          775.0
+        ],
+        [
+          795.0,
+          795.0,
+          805.0,
+          805.0
+        ],
+        [
+          815.0,
+          815.0,
+          825.0,
+          825.0
+        ],
+        [
+          800.0,
+          800.0,
+          820.0,
+          820.0
+        ],
+        [
+          785.0,
+          785.0,
+          810.0,
+          810.0
+        ],
+        [
+          770.0,
+          770.0,
+          797.5,
+          797.5
+        ],
+        [
+          845.0,
+          845.0,
+          855.0,
+          855.0
+        ],
+        [
+          835.0,
+          835.0,
+          850.0,
+          850.0
+        ],
+        [
+          783.75,
+          783.75,
+          842.5,
+          842.5
+        ],
+        [
+          865.0,
+          865.0,
+          875.0,
+          875.0
+        ],
+        [
+          885.0,
+          885.0,
+          895.0,
+          895.0
+        ],
+        [
+          870.0,
+          870.0,
+          890.0,
+          890.0
+        ],
+        [
+          905.0,
+          905.0,
+          915.0,
+          915.0
+        ],
+        [
+          925.0,
+          925.0,
+          935.0,
+          935.0
+        ],
+        [
+          945.0,
+          945.0,
+          955.0,
+          955.0
+        ],
+        [
+          965.0,
+          965.0,
+          975.0,
+          975.0
+        ],
+        [
+          950.0,
+          950.0,
+          970.0,
+          970.0
+        ],
+        [
+          930.0,
+          930.0,
+          960.0,
+          960.0
+        ],
+        [
+          910.0,
+          910.0,
+          945.0,
+          945.0
+        ],
+        [
+          880.0,
+          880.0,
+          927.5,
+          927.5
+        ],
+        [
+          813.125,
+          813.125,
+          903.75,
+          903.75
+        ],
+        [
+          736.25,
+          736.25,
+          858.4375,
+          858.4375
+        ],
+        [
+          1005.0,
+          1005.0,
+          1015.0,
+          1015.0
+        ],
+        [
+          995.0,
+          995.0,
+          1010.0,
+          1010.0
+        ],
+        [
+          1035.0,
+          1035.0,
+          1045.0,
+          1045.0
+        ],
+        [
+          1025.0,
+          1025.0,
+          1040.0,
+          1040.0
+        ],
+        [
+          1065.0,
+          1065.0,
+          1075.0,
+          1075.0
+        ],
+        [
+          1095.0,
+          1095.0,
+          1105.0,
+          1105.0
+        ],
+        [
+          1085.0,
+          1085.0,
+          1100.0,
+          1100.0
+        ],
+        [
+          1070.0,
+          1070.0,
+          1092.5,
+          1092.5
+        ],
+        [
+          1055.0,
+          1055.0,
+          1081.25,
+          1081.25
+        ],
+        [
+          1032.5,
+          1032.5,
+          1068.125,
+          1068.125
+        ],
+        [
+          1002.5,
+          1002.5,
+          1050.3125,
+          1050.3125
+        ],
+        [
+          1125.0,
+          1125.0,
+          1135.0,
+          1135.0
+        ],
+        [
+          1115.0,
+          1115.0,
+          1130.0,
+          1130.0
+        ],
+        [
+          1155.0,
+          1155.0,
+          1165.0,
+          1165.0
+        ],
+        [
+          1145.0,
+          1145.0,
+          1160.0,
+          1160.0
+        ],
+        [
+          1122.5,
+          1122.5,
+          1152.5,
+          1152.5
+        ],
+        [
+          1175.0,
+          1175.0,
+          1185.0,
+          1185.0
+        ],
+        [
+          1205.0,
+          1205.0,
+          1215.0,
+          1215.0
+        ],
+        [
+          1195.0,
+          1195.0,
+          1210.0,
+          1210.0
+        ],
+        [
+          1180.0,
+          1180.0,
+          1202.5,
+          1202.5
+        ],
+        [
+          1137.5,
+          1137.5,
+          1191.25,
+          1191.25
+        ],
+        [
+          1026.40625,
+          1026.40625,
+          1164.375,
+          1164.375
+        ],
+        [
+          985.0,
+          985.0,
+          1095.390625,
+          1095.390625
+        ],
+        [
+          1235.0,
+          1235.0,
+          1245.0,
+          1245.0
+        ],
+        [
+          1225.0,
+          1225.0,
+          1240.0,
+          1240.0
+        ],
+        [
+          1255.0,
+          1255.0,
+          1265.0,
+          1265.0
+        ],
+        [
+          1232.5,
+          1232.5,
+          1260.0,
+          1260.0
+        ],
+        [
+          1295.0,
+          1295.0,
+          1305.0,
+          1305.0
+        ],
+        [
+          1285.0,
+          1285.0,
+          1300.0,
+          1300.0
+        ],
+        [
+          1275.0,
+          1275.0,
+          1292.5,
+          1292.5
+        ],
+        [
+          1315.0,
+          1315.0,
+          1325.0,
+          1325.0
+        ],
+        [
+          1283.75,
+          1283.75,
+          1320.0,
+          1320.0
+        ],
+        [
+          1355.0,
+          1355.0,
+          1365.0,
+          1365.0
+        ],
+        [
+          1345.0,
+          1345.0,
+          1360.0,
+          1360.0
+        ],
+        [
+          1335.0,
+          1335.0,
+          1352.5,
+          1352.5
+        ],
+        [
+          1375.0,
+          1375.0,
+          1385.0,
+          1385.0
+        ],
+        [
+          1395.0,
+          1395.0,
+          1405.0,
+          1405.0
+        ],
+        [
+          1380.0,
+          1380.0,
+          1400.0,
+          1400.0
+        ],
+        [
+          1343.75,
+          1343.75,
+          1390.0,
+          1390.0
+        ],
+        [
+          1301.875,
+          1301.875,
+          1366.875,
+          1366.875
+        ],
+        [
+          1415.0,
+          1415.0,
+          1425.0,
+          1425.0
+        ],
+        [
+          1445.0,
+          1445.0,
+          1455.0,
+          1455.0
+        ],
+        [
+          1435.0,
+          1435.0,
+          1450.0,
+          1450.0
+        ],
+        [
+          1420.0,
+          1420.0,
+          1442.5,
+          1442.5
+        ],
+        [
+          1475.0,
+          1475.0,
+          1485.0,
+          1485.0
+        ],
+        [
+          1465.0,
+          1465.0,
+          1480.0,
+          1480.0
+        ],
+        [
+          1495.0,
+          1495.0,
+          1505.0,
+          1505.0
+        ],
+        [
+          1525.0,
+          1525.0,
+          1535.0,
+          1535.0
+        ],
+        [
+          1515.0,
+          1515.0,
+          1530.0,
+          1530.0
+        ],
+        [
+          1545.0,
+          1545.0,
+          1555.0,
+          1555.0
+        ],
+        [
+          1522.5,
+          1522.5,
+          1550.0,
+          1550.0
+        ],
+        [
+          1500.0,
+          1500.0,
+          1536.25,
+          1536.25
+        ],
+        [
+          1472.5,
+          1472.5,
+          1518.125,
+          1518.125
+        ],
+        [
+          1431.25,
+          1431.25,
+          1495.3125,
+          1495.3125
+        ],
+        [
+          1334.375,
+          1334.375,
+          1463.28125,
+          1463.28125
+        ],
+        [
+          1246.25,
+          1246.25,
+          1398.828125,
+          1398.828125
+        ],
+        [
+          1040.1953125,
+          1040.1953125,
+          1322.5390625,
+          1322.5390625
+        ],
+        [
+          797.34375,
+          797.34375,
+          1181.3671875,
+          1181.3671875
+        ],
+        [
+          281.533203125,
+          281.533203125,
+          989.35546875,
+          989.35546875
+        ]
+      ],
+      "dcoord": [
+        [
+          0.0,
+          0.9619074455457698,
+          0.9619074455457698,
+          0.0
+        ],
+        [
+          0.0,
+          1.3317172212358095,
+          1.3317172212358095,
+          0.9619074455457698
+        ],
+        [
+          0.0,
+          1.45189485934264,
+          1.45189485934264,
+          0.0
+        ],
+        [
+          0.0,
+          1.93159654845938,
+          1.93159654845938,
+          1.45189485934264
+        ],
+        [
+          1.3317172212358095,
+          2.7570546375030323,
+          2.7570546375030323,
+          1.93159654845938
+        ],
+        [
+          0.0,
+          2.7950612846476974,
+          2.7950612846476974,
+          0.0
+        ],
+        [
+          2.7570546375030323,
+          4.389375552644456,
+          4.389375552644456,
+          2.7950612846476974
+        ],
+        [
+          0.0,
+          1.0651801134113483,
+          1.0651801134113483,
+          0.0
+        ],
+        [
+          0.0,
+          0.7731391523312791,
+          0.7731391523312791,
+          0.0
+        ],
+        [
+          0.0,
+          1.2320393900964757,
+          1.2320393900964757,
+          0.7731391523312791
+        ],
+        [
+          0.0,
+          0.7004292081406692,
+          0.7004292081406692,
+          0.0
+        ],
+        [
+          0.0,
+          0.8176062773470972,
+          0.8176062773470972,
+          0.0
+        ],
+        [
+          0.0,
+          1.121435508643711,
+          1.121435508643711,
+          0.8176062773470972
+        ],
+        [
+          0.7004292081406692,
+          1.6084984133883828,
+          1.6084984133883828,
+          1.121435508643711
+        ],
+        [
+          1.2320393900964757,
+          2.4113686991207817,
+          2.4113686991207817,
+          1.6084984133883828
+        ],
+        [
+          1.0651801134113483,
+          2.722898218495826,
+          2.722898218495826,
+          2.4113686991207817
+        ],
+        [
+          0.0,
+          1.5490743242950331,
+          1.5490743242950331,
+          0.0
+        ],
+        [
+          0.0,
+          1.3029228602671623,
+          1.3029228602671623,
+          0.0
+        ],
+        [
+          0.0,
+          0.7350383067132242,
+          0.7350383067132242,
+          0.0
+        ],
+        [
+          0.0,
+          0.9136829433222078,
+          0.9136829433222078,
+          0.0
+        ],
+        [
+          0.7350383067132242,
+          2.0249179444961367,
+          2.0249179444961367,
+          0.9136829433222078
+        ],
+        [
+          1.3029228602671623,
+          2.6114761607699988,
+          2.6114761607699988,
+          2.0249179444961367
+        ],
+        [
+          1.5490743242950331,
+          2.816485420514139,
+          2.816485420514139,
+          2.6114761607699988
+        ],
+        [
+          2.722898218495826,
+          4.713215738687132,
+          4.713215738687132,
+          2.816485420514139
+        ],
+        [
+          4.389375552644456,
+          7.653518120764826,
+          7.653518120764826,
+          4.713215738687132
+        ],
+        [
+          0.0,
+          1.1476002426789451,
+          1.1476002426789451,
+          0.0
+        ],
+        [
+          0.0,
+          1.3648303172624618,
+          1.3648303172624618,
+          1.1476002426789451
+        ],
+        [
+          0.0,
+          1.2369476006616797,
+          1.2369476006616797,
+          0.0
+        ],
+        [
+          0.0,
+          0.8782360774602551,
+          0.8782360774602551,
+          0.0
+        ],
+        [
+          0.0,
+          1.4038143296065189,
+          1.4038143296065189,
+          0.8782360774602551
+        ],
+        [
+          1.2369476006616797,
+          2.1180070504767583,
+          2.1180070504767583,
+          1.4038143296065189
+        ],
+        [
+          1.3648303172624618,
+          2.5061582253315393,
+          2.5061582253315393,
+          2.1180070504767583
+        ],
+        [
+          0.0,
+          0.5485898779072372,
+          0.5485898779072372,
+          0.0
+        ],
+        [
+          0.0,
+          1.0342256903757021,
+          1.0342256903757021,
+          0.5485898779072372
+        ],
+        [
+          0.0,
+          0.9488266750982254,
+          0.9488266750982254,
+          0.0
+        ],
+        [
+          0.0,
+          1.2250635241762742,
+          1.2250635241762742,
+          0.9488266750982254
+        ],
+        [
+          0.0,
+          1.908013936133451,
+          1.908013936133451,
+          1.2250635241762742
+        ],
+        [
+          0.0,
+          0.807875763794233,
+          0.807875763794233,
+          0.0
+        ],
+        [
+          0.0,
+          0.9479766566357305,
+          0.9479766566357305,
+          0.0
+        ],
+        [
+          0.807875763794233,
+          1.1395351841029606,
+          1.1395351841029606,
+          0.9479766566357305
+        ],
+        [
+          0.0,
+          1.19368802614838,
+          1.19368802614838,
+          0.0
+        ],
+        [
+          1.1395351841029606,
+          2.01916111115958,
+          2.01916111115958,
+          1.19368802614838
+        ],
+        [
+          1.908013936133451,
+          2.2114012579762576,
+          2.2114012579762576,
+          2.01916111115958
+        ],
+        [
+          1.0342256903757021,
+          3.0059939531500435,
+          3.0059939531500435,
+          2.2114012579762576
+        ],
+        [
+          2.5061582253315393,
+          5.0036464579542885,
+          5.0036464579542885,
+          3.0059939531500435
+        ],
+        [
+          0.0,
+          1.3984512051505813,
+          1.3984512051505813,
+          0.0
+        ],
+        [
+          0.0,
+          1.9253673946096077,
+          1.9253673946096077,
+          1.3984512051505813
+        ],
+        [
+          0.0,
+          0.843425864543679,
+          0.843425864543679,
+          0.0
+        ],
+        [
+          0.0,
+          0.7597673972941362,
+          0.7597673972941362,
+          0.0
+        ],
+        [
+          0.0,
+          1.0461828278197731,
+          1.0461828278197731,
+          0.7597673972941362
+        ],
+        [
+          0.0,
+          1.2607399083071102,
+          1.2607399083071102,
+          1.0461828278197731
+        ],
+        [
+          0.843425864543679,
+          1.7113951029911418,
+          1.7113951029911418,
+          1.2607399083071102
+        ],
+        [
+          0.0,
+          2.112472176565678,
+          2.112472176565678,
+          1.7113951029911418
+        ],
+        [
+          1.9253673946096077,
+          2.332548639278437,
+          2.332548639278437,
+          2.112472176565678
+        ],
+        [
+          0.0,
+          2.858187551234801,
+          2.858187551234801,
+          0.0
+        ],
+        [
+          2.332548639278437,
+          4.1673866669003585,
+          4.1673866669003585,
+          2.858187551234801
+        ],
+        [
+          0.0,
+          1.3037479861790624,
+          1.3037479861790624,
+          0.0
+        ],
+        [
+          0.0,
+          0.9296304272081641,
+          0.9296304272081641,
+          0.0
+        ],
+        [
+          0.0,
+          1.4050343205454272,
+          1.4050343205454272,
+          0.9296304272081641
+        ],
+        [
+          1.3037479861790624,
+          2.553759568367548,
+          2.553759568367548,
+          1.4050343205454272
+        ],
+        [
+          0.0,
+          1.7870977631361848,
+          1.7870977631361848,
+          0.0
+        ],
+        [
+          0.0,
+          0.9579620240236273,
+          0.9579620240236273,
+          0.0
+        ],
+        [
+          0.0,
+          1.6383108779719593,
+          1.6383108779719593,
+          0.9579620240236273
+        ],
+        [
+          0.0,
+          2.162712425377231,
+          2.162712425377231,
+          1.6383108779719593
+        ],
+        [
+          1.7870977631361848,
+          3.0945677367180484,
+          3.0945677367180484,
+          2.162712425377231
+        ],
+        [
+          2.553759568367548,
+          4.164142735642765,
+          4.164142735642765,
+          3.0945677367180484
+        ],
+        [
+          0.0,
+          5.975719262658832,
+          5.975719262658832,
+          4.164142735642765
+        ],
+        [
+          4.1673866669003585,
+          7.581513694148206,
+          7.581513694148206,
+          5.975719262658832
+        ],
+        [
+          5.0036464579542885,
+          8.390871852941258,
+          8.390871852941258,
+          7.581513694148206
+        ],
+        [
+          7.653518120764826,
+          10.971733861952435,
+          10.971733861952435,
+          8.390871852941258
+        ],
+        [
+          0.0,
+          0.7814550103647687,
+          0.7814550103647687,
+          0.0
+        ],
+        [
+          0.0,
+          1.7842677487554015,
+          1.7842677487554015,
+          0.7814550103647687
+        ],
+        [
+          0.0,
+          1.8903263306431812,
+          1.8903263306431812,
+          0.0
+        ],
+        [
+          1.7842677487554015,
+          3.41730912985889,
+          3.41730912985889,
+          1.8903263306431812
+        ],
+        [
+          0.0,
+          1.0874943757041622,
+          1.0874943757041622,
+          0.0
+        ],
+        [
+          0.0,
+          0.7427312526646574,
+          0.7427312526646574,
+          0.0
+        ],
+        [
+          0.0,
+          1.0329101375306187,
+          1.0329101375306187,
+          0.0
+        ],
+        [
+          0.7427312526646574,
+          1.3899455776633276,
+          1.3899455776633276,
+          1.0329101375306187
+        ],
+        [
+          0.0,
+          1.710498946343095,
+          1.710498946343095,
+          1.3899455776633276
+        ],
+        [
+          1.0874943757041622,
+          2.1148020031935824,
+          2.1148020031935824,
+          1.710498946343095
+        ],
+        [
+          0.0,
+          1.2353671418611087,
+          1.2353671418611087,
+          0.0
+        ],
+        [
+          0.0,
+          2.3703603063424326,
+          2.3703603063424326,
+          1.2353671418611087
+        ],
+        [
+          2.1148020031935824,
+          4.084312488841802,
+          4.084312488841802,
+          2.3703603063424326
+        ],
+        [
+          0.0,
+          1.1201078276288228,
+          1.1201078276288228,
+          0.0
+        ],
+        [
+          0.0,
+          1.138181364301683,
+          1.138181364301683,
+          0.0
+        ],
+        [
+          1.1201078276288228,
+          1.6768845088230289,
+          1.6768845088230289,
+          1.138181364301683
+        ],
+        [
+          0.0,
+          1.3785757485916945,
+          1.3785757485916945,
+          0.0
+        ],
+        [
+          0.0,
+          1.231090142285735,
+          1.231090142285735,
+          0.0
+        ],
+        [
+          0.0,
+          1.0554617453043855,
+          1.0554617453043855,
+          0.0
+        ],
+        [
+          0.0,
+          1.2689478278137662,
+          1.2689478278137662,
+          0.0
+        ],
+        [
+          1.0554617453043855,
+          1.9288529421040876,
+          1.9288529421040876,
+          1.2689478278137662
+        ],
+        [
+          1.231090142285735,
+          2.4296228732161556,
+          2.4296228732161556,
+          1.9288529421040876
+        ],
+        [
+          1.3785757485916945,
+          3.2372870529721367,
+          3.2372870529721367,
+          2.4296228732161556
+        ],
+        [
+          1.6768845088230289,
+          4.144775793408261,
+          4.144775793408261,
+          3.2372870529721367
+        ],
+        [
+          4.084312488841802,
+          5.709377998825526,
+          5.709377998825526,
+          4.144775793408261
+        ],
+        [
+          3.41730912985889,
+          7.779135696277551,
+          7.779135696277551,
+          5.709377998825526
+        ],
+        [
+          0.0,
+          1.129866158758765,
+          1.129866158758765,
+          0.0
+        ],
+        [
+          0.0,
+          1.5735166523999256,
+          1.5735166523999256,
+          1.129866158758765
+        ],
+        [
+          0.0,
+          0.5683377948287228,
+          0.5683377948287228,
+          0.0
+        ],
+        [
+          0.0,
+          0.9084055508381057,
+          0.9084055508381057,
+          0.5683377948287228
+        ],
+        [
+          0.0,
+          0.5697035603977647,
+          0.5697035603977647,
+          0.0
+        ],
+        [
+          0.0,
+          0.5393749143683606,
+          0.5393749143683606,
+          0.0
+        ],
+        [
+          0.0,
+          0.8182420296096766,
+          0.8182420296096766,
+          0.5393749143683606
+        ],
+        [
+          0.5697035603977647,
+          0.9622432614763053,
+          0.9622432614763053,
+          0.8182420296096766
+        ],
+        [
+          0.0,
+          1.2762661066542347,
+          1.2762661066542347,
+          0.9622432614763053
+        ],
+        [
+          0.9084055508381057,
+          1.6844458869808507,
+          1.6844458869808507,
+          1.2762661066542347
+        ],
+        [
+          1.5735166523999256,
+          2.4880080266870737,
+          2.4880080266870737,
+          1.6844458869808507
+        ],
+        [
+          0.0,
+          0.47754617708425345,
+          0.47754617708425345,
+          0.0
+        ],
+        [
+          0.0,
+          1.3550267148292614,
+          1.3550267148292614,
+          0.47754617708425345
+        ],
+        [
+          0.0,
+          1.0368491575908907,
+          1.0368491575908907,
+          0.0
+        ],
+        [
+          0.0,
+          1.5368942868602915,
+          1.5368942868602915,
+          1.0368491575908907
+        ],
+        [
+          1.3550267148292614,
+          2.165139849439864,
+          2.165139849439864,
+          1.5368942868602915
+        ],
+        [
+          0.0,
+          1.049045566370299,
+          1.049045566370299,
+          0.0
+        ],
+        [
+          0.0,
+          0.718258999866445,
+          0.718258999866445,
+          0.0
+        ],
+        [
+          0.0,
+          2.0033115578037677,
+          2.0033115578037677,
+          0.718258999866445
+        ],
+        [
+          1.049045566370299,
+          2.8397231377456946,
+          2.8397231377456946,
+          2.0033115578037677
+        ],
+        [
+          2.165139849439864,
+          2.925942272806879,
+          2.925942272806879,
+          2.8397231377456946
+        ],
+        [
+          2.4880080266870737,
+          3.880415827243432,
+          3.880415827243432,
+          2.925942272806879
+        ],
+        [
+          0.0,
+          5.182010631453934,
+          5.182010631453934,
+          3.880415827243432
+        ],
+        [
+          0.0,
+          0.8483679418579331,
+          0.8483679418579331,
+          0.0
+        ],
+        [
+          0.0,
+          1.346784075485153,
+          1.346784075485153,
+          0.8483679418579331
+        ],
+        [
+          0.0,
+          1.8146999489474849,
+          1.8146999489474849,
+          0.0
+        ],
+        [
+          1.346784075485153,
+          3.2243171397807835,
+          3.2243171397807835,
+          1.8146999489474849
+        ],
+        [
+          0.0,
+          0.6924308133513911,
+          0.6924308133513911,
+          0.0
+        ],
+        [
+          0.0,
+          0.8925756072989,
+          0.8925756072989,
+          0.6924308133513911
+        ],
+        [
+          0.0,
+          1.0129153259355015,
+          1.0129153259355015,
+          0.8925756072989
+        ],
+        [
+          0.0,
+          1.254447442307228,
+          1.254447442307228,
+          0.0
+        ],
+        [
+          1.0129153259355015,
+          1.4446239972566028,
+          1.4446239972566028,
+          1.254447442307228
+        ],
+        [
+          0.0,
+          0.37659669425623465,
+          0.37659669425623465,
+          0.0
+        ],
+        [
+          0.0,
+          0.5913967706345387,
+          0.5913967706345387,
+          0.37659669425623465
+        ],
+        [
+          0.0,
+          0.6952355220445721,
+          0.6952355220445721,
+          0.5913967706345387
+        ],
+        [
+          0.0,
+          0.3930489694573489,
+          0.3930489694573489,
+          0.0
+        ],
+        [
+          0.0,
+          0.40186168081418067,
+          0.40186168081418067,
+          0.0
+        ],
+        [
+          0.3930489694573489,
+          0.9039353110835403,
+          0.9039353110835403,
+          0.40186168081418067
+        ],
+        [
+          0.6952355220445721,
+          2.290698366622598,
+          2.290698366622598,
+          0.9039353110835403
+        ],
+        [
+          1.4446239972566028,
+          3.7297975595994455,
+          3.7297975595994455,
+          2.290698366622598
+        ],
+        [
+          0.0,
+          1.0489660895485393,
+          1.0489660895485393,
+          0.0
+        ],
+        [
+          0.0,
+          0.7997953124570469,
+          0.7997953124570469,
+          0.0
+        ],
+        [
+          0.0,
+          1.2243936151836337,
+          1.2243936151836337,
+          0.7997953124570469
+        ],
+        [
+          1.0489660895485393,
+          1.49610341842016,
+          1.49610341842016,
+          1.2243936151836337
+        ],
+        [
+          0.0,
+          0.7956964925122363,
+          0.7956964925122363,
+          0.0
+        ],
+        [
+          0.0,
+          1.0805744153586572,
+          1.0805744153586572,
+          0.7956964925122363
+        ],
+        [
+          0.0,
+          0.8254090264139606,
+          0.8254090264139606,
+          0.0
+        ],
+        [
+          0.0,
+          0.5674670512627652,
+          0.5674670512627652,
+          0.0
+        ],
+        [
+          0.0,
+          0.8406423625909822,
+          0.8406423625909822,
+          0.5674670512627652
+        ],
+        [
+          0.0,
+          0.8907648728700829,
+          0.8907648728700829,
+          0.0
+        ],
+        [
+          0.8406423625909822,
+          1.4213201129475814,
+          1.4213201129475814,
+          0.8907648728700829
+        ],
+        [
+          0.8254090264139606,
+          1.9283710664032616,
+          1.9283710664032616,
+          1.4213201129475814
+        ],
+        [
+          1.0805744153586572,
+          2.4151423895487474,
+          2.4151423895487474,
+          1.9283710664032616
+        ],
+        [
+          1.49610341842016,
+          3.7837318649273195,
+          3.7837318649273195,
+          2.4151423895487474
+        ],
+        [
+          3.7297975595994455,
+          5.059453393782933,
+          5.059453393782933,
+          3.7837318649273195
+        ],
+        [
+          3.2243171397807835,
+          5.444627994576854,
+          5.444627994576854,
+          5.059453393782933
+        ],
+        [
+          5.182010631453934,
+          8.533557705442345,
+          8.533557705442345,
+          5.444627994576854
+        ],
+        [
+          7.779135696277551,
+          16.88098972027556,
+          16.88098972027556,
+          8.533557705442345
+        ],
+        [
+          10.971733861952435,
+          27.904008674136488,
+          27.904008674136488,
+          16.88098972027556
+        ]
+      ],
+      "ivl": [
+        "30",
+        "11",
+        "103",
+        "78",
+        "119",
+        "125",
+        "59",
+        "152",
+        "0",
+        "105",
+        "75",
+        "25",
+        "51",
+        "9",
+        "101",
+        "1",
+        "22",
+        "94",
+        "7",
+        "27",
+        "40",
+        "100",
+        "73",
+        "132",
+        "84",
+        "137",
+        "57",
+        "45",
+        "50",
+        "6",
+        "135",
+        "20",
+        "52",
+        "127",
+        "89",
+        "10",
+        "120",
+        "58",
+        "48",
+        "91",
+        "133",
+        "49",
+        "69",
+        "28",
+        "123",
+        "85",
+        "95",
+        "79",
+        "42",
+        "97",
+        "117",
+        "142",
+        "154",
+        "155",
+        "67",
+        "111",
+        "143",
+        "54",
+        "108",
+        "109",
+        "55",
+        "96",
+        "99",
+        "35",
+        "98",
+        "21",
+        "26",
+        "139",
+        "134",
+        "19",
+        "130",
+        "72",
+        "138",
+        "151",
+        "70",
+        "87",
+        "36",
+        "141",
+        "77",
+        "15",
+        "63",
+        "61",
+        "128",
+        "64",
+        "82",
+        "153",
+        "44",
+        "115",
+        "62",
+        "114",
+        "122",
+        "150",
+        "74",
+        "76",
+        "39",
+        "118",
+        "104",
+        "131",
+        "5",
+        "68",
+        "106",
+        "129",
+        "88",
+        "13",
+        "126",
+        "110",
+        "16",
+        "107",
+        "92",
+        "17",
+        "32",
+        "93",
+        "3",
+        "145",
+        "53",
+        "2",
+        "113",
+        "37",
+        "140",
+        "144",
+        "4",
+        "18",
+        "71",
+        "65",
+        "121",
+        "24",
+        "149",
+        "112",
+        "46",
+        "60",
+        "90",
+        "23",
+        "146",
+        "43",
+        "34",
+        "8",
+        "102",
+        "41",
+        "81",
+        "14",
+        "80",
+        "66",
+        "136",
+        "47",
+        "83",
+        "147",
+        "12",
+        "33",
+        "116",
+        "38",
+        "56",
+        "86",
+        "31",
+        "124",
+        "29",
+        "148"
+      ],
+      "leaves": [
+        30,
+        11,
+        103,
+        78,
+        119,
+        125,
+        59,
+        152,
+        0,
+        105,
+        75,
+        25,
+        51,
+        9,
+        101,
+        1,
+        22,
+        94,
+        7,
+        27,
+        40,
+        100,
+        73,
+        132,
+        84,
+        137,
+        57,
+        45,
+        50,
+        6,
+        135,
+        20,
+        52,
+        127,
+        89,
+        10,
+        120,
+        58,
+        48,
+        91,
+        133,
+        49,
+        69,
+        28,
+        123,
+        85,
+        95,
+        79,
+        42,
+        97,
+        117,
+        142,
+        154,
+        155,
+        67,
+        111,
+        143,
+        54,
+        108,
+        109,
+        55,
+        96,
+        99,
+        35,
+        98,
+        21,
+        26,
+        139,
+        134,
+        19,
+        130,
+        72,
+        138,
+        151,
+        70,
+        87,
+        36,
+        141,
+        77,
+        15,
+        63,
+        61,
+        128,
+        64,
+        82,
+        153,
+        44,
+        115,
+        62,
+        114,
+        122,
+        150,
+        74,
+        76,
+        39,
+        118,
+        104,
+        131,
+        5,
+        68,
+        106,
+        129,
+        88,
+        13,
+        126,
+        110,
+        16,
+        107,
+        92,
+        17,
+        32,
+        93,
+        3,
+        145,
+        53,
+        2,
+        113,
+        37,
+        140,
+        144,
+        4,
+        18,
+        71,
+        65,
+        121,
+        24,
+        149,
+        112,
+        46,
+        60,
+        90,
+        23,
+        146,
+        43,
+        34,
+        8,
+        102,
+        41,
+        81,
+        14,
+        80,
+        66,
+        136,
+        47,
+        83,
+        147,
+        12,
+        33,
+        116,
+        38,
+        56,
+        86,
+        31,
+        124,
+        29,
+        148
+      ],
+      "color_list": [
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C1",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C2",
+        "C0"
+      ]
+    }
+  },
+  "pca_analysis": {
+    "explained_variance_ratio": [
+      0.4967,
+      0.2093
+    ],
+    "cumulative_variance": 0.706,
+    "loadings": [
+      {
+        "feature": "stunting",
+        "pc1": 0.4354,
+        "pc2": 0.0402
+      },
+      {
+        "feature": "child_overweight",
+        "pc1": -0.3471,
+        "pc2": 0.0605
+      },
+      {
+        "feature": "wasting",
+        "pc1": 0.4017,
+        "pc2": 0.2601
+      },
+      {
+        "feature": "adult_obesity",
+        "pc1": -0.395,
+        "pc2": 0.4791
+      },
+      {
+        "feature": "adult_diabetes",
+        "pc1": -0.1587,
+        "pc2": 0.7525
+      },
+      {
+        "feature": "anaemia_women",
+        "pc1": 0.4229,
+        "pc2": 0.1948
+      },
+      {
+        "feature": "low_birth_weight",
+        "pc1": 0.4105,
+        "pc2": 0.3054
+      }
+    ],
+    "coordinates": [
+      {
+        "iso3": "AFG",
+        "x": 2.267,
+        "y": 0.3976
+      },
+      {
+        "iso3": "AGO",
+        "x": 2.5158,
+        "y": -0.1799
+      },
+      {
+        "iso3": "ALB",
+        "x": -2.2275,
+        "y": -0.8418
+      },
+      {
+        "iso3": "ARG",
+        "x": -2.5581,
+        "y": -0.2258
+      },
+      {
+        "iso3": "ARM",
+        "x": -1.8066,
+        "y": 0.0508
+      },
+      {
+        "iso3": "AUS",
+        "x": -4.0696,
+        "y": -0.9965
+      },
+      {
+        "iso3": "AZE",
+        "x": -0.3593,
+        "y": 0.4491
+      },
+      {
+        "iso3": "BDI",
+        "x": 3.0427,
+        "y": -1.1822
+      },
+      {
+        "iso3": "BEL",
+        "x": -1.7512,
+        "y": -1.7658
+      },
+      {
+        "iso3": "BEN",
+        "x": 2.5492,
+        "y": -0.1324
+      },
+      {
+        "iso3": "BFA",
+        "x": 2.7282,
+        "y": -0.2464
+      },
+      {
+        "iso3": "BGD",
+        "x": 3.0449,
+        "y": 0.5304
+      },
+      {
+        "iso3": "BGR",
+        "x": -0.5497,
+        "y": -0.1406
+      },
+      {
+        "iso3": "BIH",
+        "x": -1.7658,
+        "y": -1.0731
+      },
+      {
+        "iso3": "BLR",
+        "x": -1.606,
+        "y": -0.9434
+      },
+      {
+        "iso3": "BLZ",
+        "x": -1.0846,
+        "y": 0.4476
+      },
+      {
+        "iso3": "BOL",
+        "x": -1.3097,
+        "y": -0.7453
+      },
+      {
+        "iso3": "BRA",
+        "x": -1.7675,
+        "y": -0.6804
+      },
+      {
+        "iso3": "BRB",
+        "x": -1.6662,
+        "y": 0.5117
+      },
+      {
+        "iso3": "BRN",
+        "x": -0.7872,
+        "y": -0.408
+      },
+      {
+        "iso3": "BTN",
+        "x": 0.6656,
+        "y": 0.0906
+      },
+      {
+        "iso3": "BWA",
+        "x": 0.5863,
+        "y": 0.457
+      },
+      {
+        "iso3": "CAF",
+        "x": 2.6627,
+        "y": -0.2267
+      },
+      {
+        "iso3": "CHL",
+        "x": -2.7331,
+        "y": -0.3706
+      },
+      {
+        "iso3": "CHN",
+        "x": -1.707,
+        "y": -1.5707
+      },
+      {
+        "iso3": "CIV",
+        "x": 2.2374,
+        "y": -0.0677
+      },
+      {
+        "iso3": "CMR",
+        "x": 0.5465,
+        "y": -0.5587
+      },
+      {
+        "iso3": "COD",
+        "x": 2.1756,
+        "y": -0.9493
+      },
+      {
+        "iso3": "COG",
+        "x": 1.5318,
+        "y": -0.252
+      },
+      {
+        "iso3": "COL",
+        "x": -0.993,
+        "y": -0.4498
+      },
+      {
+        "iso3": "COM",
+        "x": 2.5563,
+        "y": 0.4225
+      },
+      {
+        "iso3": "CRI",
+        "x": -1.7158,
+        "y": -0.4614
+      },
+      {
+        "iso3": "CUB",
+        "x": -1.9232,
+        "y": -0.5743
+      },
+      {
+        "iso3": "CZE",
+        "x": -1.3818,
+        "y": -0.5193
+      },
+      {
+        "iso3": "DEU",
+        "x": -1.7363,
+        "y": -1.7411
+      },
+      {
+        "iso3": "DJI",
+        "x": 1.4756,
+        "y": 0.1541
+      },
+      {
+        "iso3": "DOM",
+        "x": -1.0649,
+        "y": 0.3714
+      },
+      {
+        "iso3": "DZA",
+        "x": -1.7986,
+        "y": 0.6476
+      },
+      {
+        "iso3": "ECU",
+        "x": -0.4467,
+        "y": -0.6175
+      },
+      {
+        "iso3": "EGY",
+        "x": -0.9202,
+        "y": 2.5961
+      },
+      {
+        "iso3": "ERI",
+        "x": 3.6495,
+        "y": -0.3553
+      },
+      {
+        "iso3": "EST",
+        "x": -1.7533,
+        "y": -1.2755
+      },
+      {
+        "iso3": "ETH",
+        "x": 1.8043,
+        "y": -1.2573
+      },
+      {
+        "iso3": "FIN",
+        "x": -2.1243,
+        "y": -1.8266
+      },
+      {
+        "iso3": "FJI",
+        "x": -1.3109,
+        "y": 1.8909
+      },
+      {
+        "iso3": "GAB",
+        "x": 0.9434,
+        "y": 0.3696
+      },
+      {
+        "iso3": "GBR",
+        "x": -2.294,
+        "y": -1.246
+      },
+      {
+        "iso3": "GEO",
+        "x": -1.362,
+        "y": 0.0568
+      },
+      {
+        "iso3": "GHA",
+        "x": 1.4277,
+        "y": -0.618
+      },
+      {
+        "iso3": "GIN",
+        "x": 2.3165,
+        "y": -0.3949
+      },
+      {
+        "iso3": "GMB",
+        "x": 1.4152,
+        "y": -0.1803
+      },
+      {
+        "iso3": "GNB",
+        "x": 2.4514,
+        "y": -0.0648
+      },
+      {
+        "iso3": "GNQ",
+        "x": 0.715,
+        "y": -0.3391
+      },
+      {
+        "iso3": "GRC",
+        "x": -2.1814,
+        "y": -0.7641
+      },
+      {
+        "iso3": "GTM",
+        "x": 0.1419,
+        "y": -0.2761
+      },
+      {
+        "iso3": "GUY",
+        "x": 0.4249,
+        "y": 0.7702
+      },
+      {
+        "iso3": "HND",
+        "x": -0.4516,
+        "y": -0.2592
+      },
+      {
+        "iso3": "HTI",
+        "x": 0.9886,
+        "y": 0.3589
+      },
+      {
+        "iso3": "IDN",
+        "x": 1.5017,
+        "y": -0.6615
+      },
+      {
+        "iso3": "IND",
+        "x": 4.919,
+        "y": 1.4566
+      },
+      {
+        "iso3": "IRL",
+        "x": -2.6033,
+        "y": -1.2841
+      },
+      {
+        "iso3": "IRN",
+        "x": -0.6516,
+        "y": 0.6679
+      },
+      {
+        "iso3": "IRQ",
+        "x": -1.1631,
+        "y": 1.8056
+      },
+      {
+        "iso3": "JAM",
+        "x": -0.8695,
+        "y": 0.5282
+      },
+      {
+        "iso3": "JOR",
+        "x": -1.1159,
+        "y": 2.5581
+      },
+      {
+        "iso3": "JPN",
+        "x": -0.0326,
+        "y": -1.6859
+      },
+      {
+        "iso3": "KAZ",
+        "x": -1.583,
+        "y": -0.0212
+      },
+      {
+        "iso3": "KEN",
+        "x": 0.5435,
+        "y": -1.4278
+      },
+      {
+        "iso3": "KGZ",
+        "x": -1.0318,
+        "y": -0.3872
+      },
+      {
+        "iso3": "KHM",
+        "x": 1.9945,
+        "y": -0.5453
+      },
+      {
+        "iso3": "KIR",
+        "x": -1.551,
+        "y": 3.4459
+      },
+      {
+        "iso3": "KOR",
+        "x": -1.161,
+        "y": -1.7911
+      },
+      {
+        "iso3": "KWT",
+        "x": -2.1359,
+        "y": 2.8595
+      },
+      {
+        "iso3": "LAO",
+        "x": 2.4965,
+        "y": -0.1964
+      },
+      {
+        "iso3": "LBN",
+        "x": -0.5168,
+        "y": 1.48
+      },
+      {
+        "iso3": "LBR",
+        "x": 1.8136,
+        "y": -0.0774
+      },
+      {
+        "iso3": "LBY",
+        "x": -0.3956,
+        "y": 2.1288
+      },
+      {
+        "iso3": "LCA",
+        "x": -0.9736,
+        "y": 0.9402
+      },
+      {
+        "iso3": "LKA",
+        "x": 2.6624,
+        "y": 0.0591
+      },
+      {
+        "iso3": "LSO",
+        "x": 0.5762,
+        "y": -0.2824
+      },
+      {
+        "iso3": "LTU",
+        "x": -1.8042,
+        "y": -0.8255
+      },
+      {
+        "iso3": "LVA",
+        "x": -1.8277,
+        "y": -1.077
+      },
+      {
+        "iso3": "MAR",
+        "x": -0.8955,
+        "y": 1.2581
+      },
+      {
+        "iso3": "MDA",
+        "x": -1.0819,
+        "y": -0.9612
+      },
+      {
+        "iso3": "MDG",
+        "x": 2.9672,
+        "y": -0.582
+      },
+      {
+        "iso3": "MDV",
+        "x": 1.9369,
+        "y": 0.5329
+      },
+      {
+        "iso3": "MEX",
+        "x": -1.6276,
+        "y": 0.2295
+      },
+      {
+        "iso3": "MHL",
+        "x": -1.0653,
+        "y": 3.9258
+      },
+      {
+        "iso3": "MKD",
+        "x": -1.7937,
+        "y": -0.732
+      },
+      {
+        "iso3": "MLI",
+        "x": 3.0054,
+        "y": 0.1308
+      },
+      {
+        "iso3": "MLT",
+        "x": -2.4447,
+        "y": -0.6981
+      },
+      {
+        "iso3": "MMR",
+        "x": 2.0225,
+        "y": -0.6949
+      },
+      {
+        "iso3": "MNE",
+        "x": -1.7561,
+        "y": -1.0022
+      },
+      {
+        "iso3": "MNG",
+        "x": -2.5215,
+        "y": -0.4156
+      },
+      {
+        "iso3": "MOZ",
+        "x": 2.506,
+        "y": -0.4882
+      },
+      {
+        "iso3": "MRT",
+        "x": 2.0061,
+        "y": 0.2463
+      },
+      {
+        "iso3": "MUS",
+        "x": 0.5077,
+        "y": 0.6812
+      },
+      {
+        "iso3": "MWI",
+        "x": 1.5197,
+        "y": -1.0673
+      },
+      {
+        "iso3": "MYS",
+        "x": 1.1948,
+        "y": 0.6769
+      },
+      {
+        "iso3": "NAM",
+        "x": 0.6518,
+        "y": -0.1677
+      },
+      {
+        "iso3": "NER",
+        "x": 3.7284,
+        "y": -0.3219
+      },
+      {
+        "iso3": "NGA",
+        "x": 2.9319,
+        "y": -0.3136
+      },
+      {
+        "iso3": "NLD",
+        "x": -1.8135,
+        "y": -1.9219
+      },
+      {
+        "iso3": "NPL",
+        "x": 2.9052,
+        "y": 0.6244
+      },
+      {
+        "iso3": "OMN",
+        "x": -0.257,
+        "y": 1.6069
+      },
+      {
+        "iso3": "PAK",
+        "x": 2.2486,
+        "y": 0.7247
+      },
+      {
+        "iso3": "PAN",
+        "x": -1.4311,
+        "y": -0.2828
+      },
+      {
+        "iso3": "PER",
+        "x": -1.5484,
+        "y": -1.0298
+      },
+      {
+        "iso3": "PHL",
+        "x": 1.5567,
+        "y": -0.6067
+      },
+      {
+        "iso3": "PNG",
+        "x": 1.5704,
+        "y": 2.6467
+      },
+      {
+        "iso3": "POL",
+        "x": -1.9259,
+        "y": -0.9314
+      },
+      {
+        "iso3": "PRK",
+        "x": 0.9209,
+        "y": -1.2851
+      },
+      {
+        "iso3": "PRT",
+        "x": -1.9475,
+        "y": -1.1585
+      },
+      {
+        "iso3": "PRY",
+        "x": -2.0083,
+        "y": -0.5951
+      },
+      {
+        "iso3": "PSE",
+        "x": -1.8215,
+        "y": 1.7607
+      },
+      {
+        "iso3": "QAT",
+        "x": -1.8157,
+        "y": 2.5904
+      },
+      {
+        "iso3": "ROU",
+        "x": -0.8745,
+        "y": -0.7953
+      },
+      {
+        "iso3": "RWA",
+        "x": 0.2264,
+        "y": -2.1784
+      },
+      {
+        "iso3": "SAU",
+        "x": -0.7685,
+        "y": 2.7296
+      },
+      {
+        "iso3": "SDN",
+        "x": 3.4636,
+        "y": 0.7604
+      },
+      {
+        "iso3": "SEN",
+        "x": 2.4904,
+        "y": 0.0237
+      },
+      {
+        "iso3": "SGP",
+        "x": -0.4853,
+        "y": -1.365
+      },
+      {
+        "iso3": "SLB",
+        "x": 0.9381,
+        "y": 1.5374
+      },
+      {
+        "iso3": "SLE",
+        "x": 1.5401,
+        "y": -0.6631
+      },
+      {
+        "iso3": "SLV",
+        "x": -1.715,
+        "y": -0.248
+      },
+      {
+        "iso3": "SOM",
+        "x": 2.9,
+        "y": 0.0872
+      },
+      {
+        "iso3": "SRB",
+        "x": -1.8586,
+        "y": -0.9723
+      },
+      {
+        "iso3": "STP",
+        "x": 0.4489,
+        "y": -0.47
+      },
+      {
+        "iso3": "SUR",
+        "x": -0.266,
+        "y": 1.0445
+      },
+      {
+        "iso3": "SWZ",
+        "x": -0.5345,
+        "y": -0.3439
+      },
+      {
+        "iso3": "SYC",
+        "x": -0.7318,
+        "y": -0.0735
+      },
+      {
+        "iso3": "SYR",
+        "x": 0.3764,
+        "y": 2.2066
+      },
+      {
+        "iso3": "TCD",
+        "x": 2.8472,
+        "y": -0.2169
+      },
+      {
+        "iso3": "TGO",
+        "x": 1.8194,
+        "y": -0.4787
+      },
+      {
+        "iso3": "THA",
+        "x": -0.0818,
+        "y": -0.5507
+      },
+      {
+        "iso3": "TJK",
+        "x": 0.1727,
+        "y": -0.2016
+      },
+      {
+        "iso3": "TKM",
+        "x": -1.1674,
+        "y": -0.1538
+      },
+      {
+        "iso3": "TLS",
+        "x": 3.103,
+        "y": -0.7815
+      },
+      {
+        "iso3": "TON",
+        "x": -2.8013,
+        "y": 3.9937
+      },
+      {
+        "iso3": "TTO",
+        "x": -0.924,
+        "y": 0.7308
+      },
+      {
+        "iso3": "TUN",
+        "x": -2.1354,
+        "y": 0.6974
+      },
+      {
+        "iso3": "TUR",
+        "x": -1.34,
+        "y": 1.2632
+      },
+      {
+        "iso3": "TZA",
+        "x": 1.1163,
+        "y": -1.2079
+      },
+      {
+        "iso3": "UGA",
+        "x": 1.1982,
+        "y": -1.5551
+      },
+      {
+        "iso3": "UKR",
+        "x": -1.6646,
+        "y": -0.4308
+      },
+      {
+        "iso3": "URY",
+        "x": -2.4984,
+        "y": -0.253
+      },
+      {
+        "iso3": "USA",
+        "x": -2.7019,
+        "y": -0.4533
+      },
+      {
+        "iso3": "UZB",
+        "x": -1.2401,
+        "y": -0.6197
+      },
+      {
+        "iso3": "VEN",
+        "x": -0.986,
+        "y": 0.0026
+      },
+      {
+        "iso3": "VNM",
+        "x": -0.2148,
+        "y": -1.9903
+      },
+      {
+        "iso3": "VUT",
+        "x": 0.1271,
+        "y": 1.6241
+      },
+      {
+        "iso3": "WSM",
+        "x": -2.4546,
+        "y": 4.1608
+      },
+      {
+        "iso3": "YEM",
+        "x": 4.3753,
+        "y": 2.0785
+      },
+      {
+        "iso3": "ZAF",
+        "x": -0.3468,
+        "y": 1.0847
+      },
+      {
+        "iso3": "ZMB",
+        "x": 1.0211,
+        "y": -1.0598
+      },
+      {
+        "iso3": "ZWE",
+        "x": 0.4543,
+        "y": -0.8037
+      }
+    ]
+  },
+  "stability_audit": {
+    "bootstrap_summary": {
+      "n_bootstraps": 100,
+      "subsample_ratio": 0.8,
+      "mean_bootstrap_ari": 0.9278,
+      "std_bootstrap_ari": 0.0543,
+      "min_bootstrap_ari": 0.8057,
+      "max_bootstrap_ari": 1.0
+    },
+    "co_association_summary": {
+      "mean_intra_cluster_co_assoc": 0.9512,
+      "min_intra_cluster_co_assoc": 0.5228,
+      "max_intra_cluster_co_assoc": 0.9995
+    }
+  },
+  "sensitivity_analyses": {
+    "complete_case_analysis": {
+      "complete_cases_count": 121,
+      "ari_vs_main_imputed_clustering": 0.934,
+      "finding": "K-Means clustering on 121 complete cases achieves an ARI of 0.9340 against the 156-country KNN-imputed baseline, demonstrating high structural consistency."
+    },
+    "exclusive_breastfeeding": {
+      "with_stunting": 0.375,
+      "with_wasting": 0.1017,
+      "sample_size": 130
+    }
+  },
+  "limitations": [
+    "Data years vary across indicators and countries, reflecting asynchronous national survey schedules (e.g. DHS/MICS) and global reporting cycles.",
+    "Child malnutrition estimates for 2024 from JME represent modelled point estimates and carry uncertainty intervals.",
+    "Adult obesity and diabetes indicators aggregate modelled female and male estimates from the Global Nutrition Report.",
+    "Wasting represents acute malnutrition at survey time and can exhibit seasonal and crisis-driven volatility.",
+    "Clustering identifies mathematical similarity in multivariate space and must not be interpreted as policy compliance or clinical diagnosis."
+  ],
+  "responsible_use": [
+    "Health organizations should utilize peer benchmarks as starting points for bilateral peer learning, not competitive rankings.",
+    "Indicator deltas should guide targeted contextual inquiry rather than prescriptive policy mandates.",
+    "Double-burden designations flag concurrent high levels relative to this dataset, warranting integrated policy approaches to undernutrition and overnutrition."
+  ]
+}

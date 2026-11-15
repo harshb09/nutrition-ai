@@ -1,0 +1,32 @@
+services:
+  # 1. FastAPI Web Service (Backend)
+  - type: web
+    name: nutrition-atlas-api
+    env: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: ARTIFACTS_DIR
+        value: artifacts
+
+  # 2. React Static Site (Frontend)
+  - type: static
+    name: nutrition-atlas-web
+    rootDir: frontend
+    plan: free
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        value: https://nutrition-atlas-api.onrender.com

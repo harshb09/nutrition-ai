@@ -1,0 +1,1118 @@
+[
+  {
+    "id": "A",
+    "name": "Group A",
+    "provisional_name": "Group A: Higher maternal anaemia, stunting, low birth weight and wasting; lower adult obesity and child overweight (Provisional)",
+    "descriptor": "Higher maternal anaemia, stunting, low birth weight and wasting; lower adult obesity and child overweight",
+    "country_count": 60,
+    "member_iso3s": [
+      "AFG",
+      "AGO",
+      "BDI",
+      "BEN",
+      "BFA",
+      "BGD",
+      "BTN",
+      "BWA",
+      "CAF",
+      "CIV",
+      "CMR",
+      "COD",
+      "COG",
+      "COM",
+      "DJI",
+      "ERI",
+      "ETH",
+      "GAB",
+      "GHA",
+      "GIN",
+      "GMB",
+      "GNB",
+      "GNQ",
+      "HTI",
+      "IDN",
+      "IND",
+      "KEN",
+      "KHM",
+      "LAO",
+      "LBR",
+      "LKA",
+      "LSO",
+      "MDG",
+      "MDV",
+      "MLI",
+      "MMR",
+      "MOZ",
+      "MRT",
+      "MWI",
+      "MYS",
+      "NAM",
+      "NER",
+      "NGA",
+      "NPL",
+      "PAK",
+      "PHL",
+      "PRK",
+      "SDN",
+      "SEN",
+      "SLE",
+      "SOM",
+      "STP",
+      "TCD",
+      "TGO",
+      "TLS",
+      "TZA",
+      "UGA",
+      "YEM",
+      "ZMB",
+      "ZWE"
+    ],
+    "member_countries": [
+      {
+        "iso3": "AFG",
+        "country_name": "Afghanistan",
+        "stability_score": 0.998
+      },
+      {
+        "iso3": "AGO",
+        "country_name": "Angola",
+        "stability_score": 0.9982
+      },
+      {
+        "iso3": "BDI",
+        "country_name": "Burundi",
+        "stability_score": 0.998
+      },
+      {
+        "iso3": "BEN",
+        "country_name": "Benin",
+        "stability_score": 0.9982
+      },
+      {
+        "iso3": "BFA",
+        "country_name": "Burkina Faso",
+        "stability_score": 0.9984
+      },
+      {
+        "iso3": "BGD",
+        "country_name": "Bangladesh",
+        "stability_score": 0.9982
+      },
+      {
+        "iso3": "BTN",
+        "country_name": "Bhutan",
+        "stability_score": 0.9985
+      },
+      {
+        "iso3": "BWA",
+        "country_name": "Botswana",
+        "stability_score": 0.984
+      },
+      {
+        "iso3": "CAF",
+        "country_name": "Central African Republic",
+        "stability_score": 0.9984
+      },
+      {
+        "iso3": "CIV",
+        "country_name": "C\u00f4te d'Ivoire",
+        "stability_score": 0.9982
+      },
+      {
+        "iso3": "CMR",
+        "country_name": "Cameroon",
+        "stability_score": 0.9989
+      },
+      {
+        "iso3": "COD",
+        "country_name": "Democratic Republic of the Congo",
+        "stability_score": 0.9994
+      },
+      {
+        "iso3": "COG",
+        "country_name": "Congo",
+        "stability_score": 0.9989
+      },
+      {
+        "iso3": "COM",
+        "country_name": "Comoros",
+        "stability_score": 0.9992
+      },
+      {
+        "iso3": "DJI",
+        "country_name": "Djibouti",
+        "stability_score": 0.9982
+      },
+      {
+        "iso3": "ERI",
+        "country_name": "Eritrea",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "ETH",
+        "country_name": "Ethiopia",
+        "stability_score": 0.9987
+      },
+      {
+        "iso3": "GAB",
+        "country_name": "Gabon",
+        "stability_score": 0.9995
+      },
+      {
+        "iso3": "GHA",
+        "country_name": "Ghana",
+        "stability_score": 0.9992
+      },
+      {
+        "iso3": "GIN",
+        "country_name": "Guinea",
+        "stability_score": 0.9982
+      },
+      {
+        "iso3": "GMB",
+        "country_name": "Gambia",
+        "stability_score": 0.9985
+      },
+      {
+        "iso3": "GNB",
+        "country_name": "Guinea-Bissau",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "GNQ",
+        "country_name": "Equatorial Guinea",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "HTI",
+        "country_name": "Haiti",
+        "stability_score": 0.9984
+      },
+      {
+        "iso3": "IDN",
+        "country_name": "Indonesia",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "IND",
+        "country_name": "India**",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "KEN",
+        "country_name": "Kenya",
+        "stability_score": 0.9612
+      },
+      {
+        "iso3": "KHM",
+        "country_name": "Cambodia",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "LAO",
+        "country_name": "Lao People's Democratic Republic",
+        "stability_score": 0.9987
+      },
+      {
+        "iso3": "LBR",
+        "country_name": "Liberia",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "LKA",
+        "country_name": "Sri Lanka",
+        "stability_score": 0.9984
+      },
+      {
+        "iso3": "LSO",
+        "country_name": "Lesotho",
+        "stability_score": 0.9989
+      },
+      {
+        "iso3": "MDG",
+        "country_name": "Madagascar",
+        "stability_score": 0.9984
+      },
+      {
+        "iso3": "MDV",
+        "country_name": "Maldives",
+        "stability_score": 0.9984
+      },
+      {
+        "iso3": "MLI",
+        "country_name": "Mali",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "MMR",
+        "country_name": "Myanmar",
+        "stability_score": 0.9982
+      },
+      {
+        "iso3": "MOZ",
+        "country_name": "Mozambique",
+        "stability_score": 0.9989
+      },
+      {
+        "iso3": "MRT",
+        "country_name": "Mauritania",
+        "stability_score": 0.9978
+      },
+      {
+        "iso3": "MWI",
+        "country_name": "Malawi",
+        "stability_score": 0.9984
+      },
+      {
+        "iso3": "MYS",
+        "country_name": "Malaysia",
+        "stability_score": 0.9991
+      },
+      {
+        "iso3": "NAM",
+        "country_name": "Namibia",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "NER",
+        "country_name": "Niger",
+        "stability_score": 0.998
+      },
+      {
+        "iso3": "NGA",
+        "country_name": "Nigeria",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "NPL",
+        "country_name": "Nepal",
+        "stability_score": 0.998
+      },
+      {
+        "iso3": "PAK",
+        "country_name": "Pakistan",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "PHL",
+        "country_name": "Philippines",
+        "stability_score": 0.9983
+      },
+      {
+        "iso3": "PRK",
+        "country_name": "Democratic People's Republic of Korea",
+        "stability_score": 0.9988
+      },
+      {
+        "iso3": "SDN",
+        "country_name": "Sudan",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "SEN",
+        "country_name": "Senegal",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "SLE",
+        "country_name": "Sierra Leone",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "SOM",
+        "country_name": "Somalia",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "STP",
+        "country_name": "Sao Tome and Principe",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "TCD",
+        "country_name": "Chad",
+        "stability_score": 0.9985
+      },
+      {
+        "iso3": "TGO",
+        "country_name": "Togo",
+        "stability_score": 0.9991
+      },
+      {
+        "iso3": "TLS",
+        "country_name": "Timor-Leste",
+        "stability_score": 0.998
+      },
+      {
+        "iso3": "TZA",
+        "country_name": "United Republic of Tanzania",
+        "stability_score": 0.9988
+      },
+      {
+        "iso3": "UGA",
+        "country_name": "Uganda",
+        "stability_score": 0.9986
+      },
+      {
+        "iso3": "YEM",
+        "country_name": "Yemen",
+        "stability_score": 0.9981
+      },
+      {
+        "iso3": "ZMB",
+        "country_name": "Zambia",
+        "stability_score": 0.9989
+      },
+      {
+        "iso3": "ZWE",
+        "country_name": "Zimbabwe",
+        "stability_score": 0.9645
+      }
+    ],
+    "means": {
+      "stunting": 27.53,
+      "child_overweight": 3.98,
+      "wasting": 7.46,
+      "adult_obesity": 8.68,
+      "adult_diabetes": 7.66,
+      "anaemia_women": 41.1,
+      "low_birth_weight": 15.38
+    },
+    "medians": {
+      "stunting": 25.15,
+      "child_overweight": 3.65,
+      "wasting": 6.75,
+      "adult_obesity": 8.07,
+      "adult_diabetes": 7.37,
+      "anaemia_women": 42.25,
+      "low_birth_weight": 15.27
+    },
+    "stds": {
+      "stunting": 10.57,
+      "child_overweight": 2.35,
+      "wasting": 3.73,
+      "adult_obesity": 4.04,
+      "adult_diabetes": 1.82,
+      "anaemia_women": 9.52,
+      "low_birth_weight": 3.52
+    },
+    "centroid_z_scores": {
+      "stunting": 0.871,
+      "child_overweight": -0.671,
+      "wasting": 0.681,
+      "adult_obesity": -0.896,
+      "adult_diabetes": -0.493,
+      "anaemia_women": 0.939,
+      "low_birth_weight": 0.763
+    },
+    "income_distribution": {
+      "Low Income": 30,
+      "Lower Middle Income": 24,
+      "Upper Middle Income": 6
+    },
+    "region_distribution": {
+      "Sub-Saharan Africa": 41,
+      "South Asia": 8,
+      "East Asia & Pacific": 8,
+      "Middle East & North Africa": 2,
+      "Latin America & Caribbean": 1
+    }
+  },
+  {
+    "id": "B",
+    "name": "Group B",
+    "provisional_name": "Group B: Higher adult diabetes and adult obesity (Provisional)",
+    "descriptor": "Higher adult diabetes and adult obesity",
+    "country_count": 30,
+    "member_iso3s": [
+      "AZE",
+      "EGY",
+      "FJI",
+      "GUY",
+      "IRN",
+      "IRQ",
+      "JAM",
+      "JOR",
+      "KIR",
+      "KWT",
+      "LBN",
+      "LBY",
+      "LCA",
+      "MAR",
+      "MHL",
+      "MUS",
+      "OMN",
+      "PNG",
+      "PSE",
+      "QAT",
+      "SAU",
+      "SLB",
+      "SUR",
+      "SYR",
+      "TON",
+      "TTO",
+      "TUR",
+      "VUT",
+      "WSM",
+      "ZAF"
+    ],
+    "member_countries": [
+      {
+        "iso3": "AZE",
+        "country_name": "Azerbaijan",
+        "stability_score": 0.6563
+      },
+      {
+        "iso3": "EGY",
+        "country_name": "Egypt",
+        "stability_score": 0.8838
+      },
+      {
+        "iso3": "FJI",
+        "country_name": "Fiji",
+        "stability_score": 0.8834
+      },
+      {
+        "iso3": "GUY",
+        "country_name": "Guyana",
+        "stability_score": 0.6396
+      },
+      {
+        "iso3": "IRN",
+        "country_name": "Iran (Islamic Republic of)",
+        "stability_score": 0.7709
+      },
+      {
+        "iso3": "IRQ",
+        "country_name": "Iraq",
+        "stability_score": 0.8829
+      },
+      {
+        "iso3": "JAM",
+        "country_name": "Jamaica",
+        "stability_score": 0.616
+      },
+      {
+        "iso3": "JOR",
+        "country_name": "Jordan",
+        "stability_score": 0.8731
+      },
+      {
+        "iso3": "KIR",
+        "country_name": "Kiribati",
+        "stability_score": 0.8692
+      },
+      {
+        "iso3": "KWT",
+        "country_name": "Kuwait",
+        "stability_score": 0.882
+      },
+      {
+        "iso3": "LBN",
+        "country_name": "Lebanon",
+        "stability_score": 0.9034
+      },
+      {
+        "iso3": "LBY",
+        "country_name": "Libya",
+        "stability_score": 0.8921
+      },
+      {
+        "iso3": "LCA",
+        "country_name": "Saint Lucia",
+        "stability_score": 0.8445
+      },
+      {
+        "iso3": "MAR",
+        "country_name": "Morocco",
+        "stability_score": 0.9022
+      },
+      {
+        "iso3": "MHL",
+        "country_name": "Marshall Islands",
+        "stability_score": 0.8722
+      },
+      {
+        "iso3": "MUS",
+        "country_name": "Mauritius",
+        "stability_score": 0.6275
+      },
+      {
+        "iso3": "OMN",
+        "country_name": "Oman",
+        "stability_score": 0.8829
+      },
+      {
+        "iso3": "PNG",
+        "country_name": "Papua New Guinea",
+        "stability_score": 0.5228
+      },
+      {
+        "iso3": "PSE",
+        "country_name": "State of Palestine",
+        "stability_score": 0.8879
+      },
+      {
+        "iso3": "QAT",
+        "country_name": "Qatar",
+        "stability_score": 0.8737
+      },
+      {
+        "iso3": "SAU",
+        "country_name": "Saudi Arabia",
+        "stability_score": 0.889
+      },
+      {
+        "iso3": "SLB",
+        "country_name": "Solomon Islands",
+        "stability_score": 0.6391
+      },
+      {
+        "iso3": "SUR",
+        "country_name": "Suriname",
+        "stability_score": 0.8941
+      },
+      {
+        "iso3": "SYR",
+        "country_name": "Syrian Arab Republic",
+        "stability_score": 0.9138
+      },
+      {
+        "iso3": "TON",
+        "country_name": "Tonga",
+        "stability_score": 0.8546
+      },
+      {
+        "iso3": "TTO",
+        "country_name": "Trinidad and Tobago",
+        "stability_score": 0.5591
+      },
+      {
+        "iso3": "TUR",
+        "country_name": "T\u00fcrkiye",
+        "stability_score": 0.8942
+      },
+      {
+        "iso3": "VUT",
+        "country_name": "Vanuatu",
+        "stability_score": 0.8983
+      },
+      {
+        "iso3": "WSM",
+        "country_name": "Samoa",
+        "stability_score": 0.8627
+      },
+      {
+        "iso3": "ZAF",
+        "country_name": "South Africa",
+        "stability_score": 0.8617
+      }
+    ],
+    "means": {
+      "stunting": 12.69,
+      "child_overweight": 7.78,
+      "wasting": 5.42,
+      "adult_obesity": 30.25,
+      "adult_diabetes": 15.77,
+      "anaemia_women": 28.44,
+      "low_birth_weight": 13.55
+    },
+    "medians": {
+      "stunting": 8.2,
+      "child_overweight": 7.5,
+      "wasting": 4.52,
+      "adult_obesity": 29.24,
+      "adult_diabetes": 14.73,
+      "anaemia_women": 28.85,
+      "low_birth_weight": 13.15
+    },
+    "stds": {
+      "stunting": 10.43,
+      "child_overweight": 3.75,
+      "wasting": 3.46,
+      "adult_obesity": 9.71,
+      "adult_diabetes": 3.76,
+      "anaemia_women": 5.4,
+      "low_birth_weight": 2.97
+    },
+    "centroid_z_scores": {
+      "stunting": -0.287,
+      "child_overweight": 0.237,
+      "wasting": 0.143,
+      "adult_obesity": 1.179,
+      "adult_diabetes": 1.597,
+      "anaemia_women": -0.088,
+      "low_birth_weight": 0.357
+    },
+    "income_distribution": {
+      "Upper Middle Income": 17,
+      "Lower Middle Income": 7,
+      "High Income": 5,
+      "Low Income": 1
+    },
+    "region_distribution": {
+      "Middle East & North Africa": 13,
+      "East Asia & Pacific": 8,
+      "Latin America & Caribbean": 5,
+      "Europe & Central Asia": 2,
+      "Sub-Saharan Africa": 2
+    }
+  },
+  {
+    "id": "C",
+    "name": "Group C",
+    "provisional_name": "Group C: Higher child overweight; lower low birth weight, maternal anaemia, wasting and stunting (Provisional)",
+    "descriptor": "Higher child overweight; lower low birth weight, maternal anaemia, wasting and stunting",
+    "country_count": 66,
+    "member_iso3s": [
+      "ALB",
+      "ARG",
+      "ARM",
+      "AUS",
+      "BEL",
+      "BGR",
+      "BIH",
+      "BLR",
+      "BLZ",
+      "BOL",
+      "BRA",
+      "BRB",
+      "BRN",
+      "CHL",
+      "CHN",
+      "COL",
+      "CRI",
+      "CUB",
+      "CZE",
+      "DEU",
+      "DOM",
+      "DZA",
+      "ECU",
+      "EST",
+      "FIN",
+      "GBR",
+      "GEO",
+      "GRC",
+      "GTM",
+      "HND",
+      "IRL",
+      "JPN",
+      "KAZ",
+      "KGZ",
+      "KOR",
+      "LTU",
+      "LVA",
+      "MDA",
+      "MEX",
+      "MKD",
+      "MLT",
+      "MNE",
+      "MNG",
+      "NLD",
+      "PAN",
+      "PER",
+      "POL",
+      "PRT",
+      "PRY",
+      "ROU",
+      "RWA",
+      "SGP",
+      "SLV",
+      "SRB",
+      "SWZ",
+      "SYC",
+      "THA",
+      "TJK",
+      "TKM",
+      "TUN",
+      "UKR",
+      "URY",
+      "USA",
+      "UZB",
+      "VEN",
+      "VNM"
+    ],
+    "member_countries": [
+      {
+        "iso3": "ALB",
+        "country_name": "Albania",
+        "stability_score": 0.9842
+      },
+      {
+        "iso3": "ARG",
+        "country_name": "Argentina",
+        "stability_score": 0.9846
+      },
+      {
+        "iso3": "ARM",
+        "country_name": "Armenia",
+        "stability_score": 0.9842
+      },
+      {
+        "iso3": "AUS",
+        "country_name": "Australia",
+        "stability_score": 0.9834
+      },
+      {
+        "iso3": "BEL",
+        "country_name": "Belgium",
+        "stability_score": 0.9857
+      },
+      {
+        "iso3": "BGR",
+        "country_name": "Bulgaria",
+        "stability_score": 0.9845
+      },
+      {
+        "iso3": "BIH",
+        "country_name": "Bosnia and Herzegovina",
+        "stability_score": 0.9833
+      },
+      {
+        "iso3": "BLR",
+        "country_name": "Belarus",
+        "stability_score": 0.9879
+      },
+      {
+        "iso3": "BLZ",
+        "country_name": "Belize",
+        "stability_score": 0.6732
+      },
+      {
+        "iso3": "BOL",
+        "country_name": "Bolivia (Plurinational State of)",
+        "stability_score": 0.9852
+      },
+      {
+        "iso3": "BRA",
+        "country_name": "Brazil",
+        "stability_score": 0.9847
+      },
+      {
+        "iso3": "BRB",
+        "country_name": "Barbados",
+        "stability_score": 0.986
+      },
+      {
+        "iso3": "BRN",
+        "country_name": "Brunei Darussalam",
+        "stability_score": 0.9878
+      },
+      {
+        "iso3": "CHL",
+        "country_name": "Chile",
+        "stability_score": 0.9871
+      },
+      {
+        "iso3": "CHN",
+        "country_name": "China",
+        "stability_score": 0.9842
+      },
+      {
+        "iso3": "COL",
+        "country_name": "Colombia",
+        "stability_score": 0.9856
+      },
+      {
+        "iso3": "CRI",
+        "country_name": "Costa Rica",
+        "stability_score": 0.9863
+      },
+      {
+        "iso3": "CUB",
+        "country_name": "Cuba",
+        "stability_score": 0.9852
+      },
+      {
+        "iso3": "CZE",
+        "country_name": "Czechia",
+        "stability_score": 0.9856
+      },
+      {
+        "iso3": "DEU",
+        "country_name": "Germany",
+        "stability_score": 0.9838
+      },
+      {
+        "iso3": "DOM",
+        "country_name": "Dominican Republic",
+        "stability_score": 0.8925
+      },
+      {
+        "iso3": "DZA",
+        "country_name": "Algeria",
+        "stability_score": 0.9881
+      },
+      {
+        "iso3": "ECU",
+        "country_name": "Ecuador",
+        "stability_score": 0.9869
+      },
+      {
+        "iso3": "EST",
+        "country_name": "Estonia",
+        "stability_score": 0.9865
+      },
+      {
+        "iso3": "FIN",
+        "country_name": "Finland",
+        "stability_score": 0.9848
+      },
+      {
+        "iso3": "GBR",
+        "country_name": "United Kingdom",
+        "stability_score": 0.9858
+      },
+      {
+        "iso3": "GEO",
+        "country_name": "Georgia",
+        "stability_score": 0.9846
+      },
+      {
+        "iso3": "GRC",
+        "country_name": "Greece",
+        "stability_score": 0.9839
+      },
+      {
+        "iso3": "GTM",
+        "country_name": "Guatemala",
+        "stability_score": 0.7696
+      },
+      {
+        "iso3": "HND",
+        "country_name": "Honduras",
+        "stability_score": 0.9866
+      },
+      {
+        "iso3": "IRL",
+        "country_name": "Ireland",
+        "stability_score": 0.9834
+      },
+      {
+        "iso3": "JPN",
+        "country_name": "Japan",
+        "stability_score": 0.9854
+      },
+      {
+        "iso3": "KAZ",
+        "country_name": "Kazakhstan",
+        "stability_score": 0.9852
+      },
+      {
+        "iso3": "KGZ",
+        "country_name": "Kyrgyzstan",
+        "stability_score": 0.9861
+      },
+      {
+        "iso3": "KOR",
+        "country_name": "Republic of Korea",
+        "stability_score": 0.9865
+      },
+      {
+        "iso3": "LTU",
+        "country_name": "Lithuania",
+        "stability_score": 0.9845
+      },
+      {
+        "iso3": "LVA",
+        "country_name": "Latvia",
+        "stability_score": 0.9852
+      },
+      {
+        "iso3": "MDA",
+        "country_name": "Republic of Moldova",
+        "stability_score": 0.9844
+      },
+      {
+        "iso3": "MEX",
+        "country_name": "Mexico",
+        "stability_score": 0.986
+      },
+      {
+        "iso3": "MKD",
+        "country_name": "North Macedonia",
+        "stability_score": 0.9842
+      },
+      {
+        "iso3": "MLT",
+        "country_name": "Malta",
+        "stability_score": 0.9836
+      },
+      {
+        "iso3": "MNE",
+        "country_name": "Montenegro",
+        "stability_score": 0.9835
+      },
+      {
+        "iso3": "MNG",
+        "country_name": "Mongolia",
+        "stability_score": 0.9855
+      },
+      {
+        "iso3": "NLD",
+        "country_name": "Netherlands",
+        "stability_score": 0.9846
+      },
+      {
+        "iso3": "PAN",
+        "country_name": "Panama",
+        "stability_score": 0.9868
+      },
+      {
+        "iso3": "PER",
+        "country_name": "Peru",
+        "stability_score": 0.9868
+      },
+      {
+        "iso3": "POL",
+        "country_name": "Poland",
+        "stability_score": 0.9854
+      },
+      {
+        "iso3": "PRT",
+        "country_name": "Portugal",
+        "stability_score": 0.9836
+      },
+      {
+        "iso3": "PRY",
+        "country_name": "Paraguay",
+        "stability_score": 0.9857
+      },
+      {
+        "iso3": "ROU",
+        "country_name": "Romania",
+        "stability_score": 0.9849
+      },
+      {
+        "iso3": "RWA",
+        "country_name": "Rwanda",
+        "stability_score": 0.9744
+      },
+      {
+        "iso3": "SGP",
+        "country_name": "Singapore",
+        "stability_score": 0.9857
+      },
+      {
+        "iso3": "SLV",
+        "country_name": "El Salvador",
+        "stability_score": 0.9867
+      },
+      {
+        "iso3": "SRB",
+        "country_name": "Serbia",
+        "stability_score": 0.9853
+      },
+      {
+        "iso3": "SWZ",
+        "country_name": "Eswatini",
+        "stability_score": 0.9871
+      },
+      {
+        "iso3": "SYC",
+        "country_name": "Seychelles",
+        "stability_score": 0.9848
+      },
+      {
+        "iso3": "THA",
+        "country_name": "Thailand",
+        "stability_score": 0.9866
+      },
+      {
+        "iso3": "TJK",
+        "country_name": "Tajikistan",
+        "stability_score": 0.7136
+      },
+      {
+        "iso3": "TKM",
+        "country_name": "Turkmenistan",
+        "stability_score": 0.9878
+      },
+      {
+        "iso3": "TUN",
+        "country_name": "Tunisia",
+        "stability_score": 0.985
+      },
+      {
+        "iso3": "UKR",
+        "country_name": "Ukraine",
+        "stability_score": 0.9852
+      },
+      {
+        "iso3": "URY",
+        "country_name": "Uruguay",
+        "stability_score": 0.9851
+      },
+      {
+        "iso3": "USA",
+        "country_name": "United States",
+        "stability_score": 0.9826
+      },
+      {
+        "iso3": "UZB",
+        "country_name": "Uzbekistan",
+        "stability_score": 0.9857
+      },
+      {
+        "iso3": "VEN",
+        "country_name": "Venezuela (Bolivarian Republic of)",
+        "stability_score": 0.9877
+      },
+      {
+        "iso3": "VNM",
+        "country_name": "Viet Nam",
+        "stability_score": 0.9847
+      }
+    ],
+    "means": {
+      "stunting": 7.88,
+      "child_overweight": 8.89,
+      "wasting": 2.29,
+      "adult_obesity": 20.9,
+      "adult_diabetes": 8.5,
+      "anaemia_women": 19.49,
+      "low_birth_weight": 8.05
+    },
+    "medians": {
+      "stunting": 6.35,
+      "child_overweight": 8.65,
+      "wasting": 1.9,
+      "adult_obesity": 22.07,
+      "adult_diabetes": 8.05,
+      "anaemia_women": 19.3,
+      "low_birth_weight": 7.54
+    },
+    "stds": {
+      "stunting": 7.1,
+      "child_overweight": 4.3,
+      "wasting": 1.8,
+      "adult_obesity": 6.67,
+      "adult_diabetes": 2.13,
+      "anaemia_women": 6.59,
+      "low_birth_weight": 2.57
+    },
+    "centroid_z_scores": {
+      "stunting": -0.661,
+      "child_overweight": 0.503,
+      "wasting": -0.684,
+      "adult_obesity": 0.279,
+      "adult_diabetes": -0.278,
+      "anaemia_women": -0.813,
+      "low_birth_weight": -0.856
+    },
+    "income_distribution": {
+      "Upper Middle Income": 26,
+      "High Income": 26,
+      "Lower Middle Income": 12,
+      "Low Income": 2
+    },
+    "region_distribution": {
+      "Europe & Central Asia": 30,
+      "Latin America & Caribbean": 20,
+      "East Asia & Pacific": 9,
+      "Middle East & North Africa": 3,
+      "Sub-Saharan Africa": 3,
+      "North America": 1
+    }
+  }
+]

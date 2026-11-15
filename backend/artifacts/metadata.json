@@ -1,0 +1,119 @@
+{
+  "dataset_name": "Nutrition Atlas \u2014 Country Malnutrition Profile Dataset",
+  "description": "Production data artifact containing multi-source country malnutrition indicators, similarity clustering, and peer benchmarks.",
+  "generated_at": "2026-11-15T03:41:00.867736+00:00Z",
+  "counts": {
+    "country_universe": 202,
+    "analyzed_countries": 156,
+    "insufficient_data_countries": 46,
+    "complete_cases": 121,
+    "single_gap_imputed": 35,
+    "clusters_count": 3
+  },
+  "chosen_model": {
+    "algorithm": "K-Means",
+    "k": 3,
+    "distance_metric": "Euclidean",
+    "silhouette": 0.3266,
+    "davies_bouldin": 1.2443,
+    "bootstrap_ari_mean": 0.9278
+  },
+  "thresholds_75th_percentile": {
+    "stunting": 24.2,
+    "child_overweight": 9.5,
+    "wasting": 6.89,
+    "adult_obesity": 25.58,
+    "adult_diabetes": 11.44,
+    "anaemia_women": 35.4,
+    "low_birth_weight": 14.2
+  },
+  "dataset_medians": {
+    "stunting": 11.7,
+    "child_overweight": 5.5,
+    "wasting": 3.81,
+    "adult_obesity": 20.5,
+    "adult_diabetes": 8.11,
+    "anaemia_women": 25.15,
+    "low_birth_weight": 10.21
+  },
+  "features": {
+    "stunting": {
+      "label": "Child Stunting (% under 5)",
+      "source": "UNICEF / WHO / World Bank Joint Malnutrition Estimates (March 2026)",
+      "target_pop": "Children aged 0-59 months",
+      "description": "Height-for-age < -2 standard deviations from the WHO Child Growth Standards median.",
+      "relevance": "Key marker of chronic undernutrition and structural deprivation in early childhood.",
+      "unit": "%",
+      "year_source": "Point estimate 2024"
+    },
+    "child_overweight": {
+      "label": "Child Overweight (% under 5)",
+      "source": "UNICEF / WHO / World Bank Joint Malnutrition Estimates (March 2026)",
+      "target_pop": "Children aged 0-59 months",
+      "description": "Weight-for-height > +2 standard deviations from the WHO Child Growth Standards median.",
+      "relevance": "Emerging form of paediatric malnutrition signaling nutrition transition.",
+      "unit": "%",
+      "year_source": "Point estimate 2024"
+    },
+    "wasting": {
+      "label": "Child Wasting (% under 5)",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "target_pop": "Children aged 0-59 months",
+      "description": "Weight-for-height < -2 standard deviations from the WHO Child Growth Standards median.",
+      "relevance": "Acute malnutrition indicator reflecting rapid weight loss or failure to gain weight.",
+      "unit": "%",
+      "year_source": "Latest available country survey"
+    },
+    "adult_obesity": {
+      "label": "Adult Obesity (%)",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "target_pop": "Adults aged 18+ (mean of female & male)",
+      "description": "Body Mass Index (BMI) >= 30 kg/m\u00b2.",
+      "relevance": "Primary driver of metabolic non-communicable diseases (NCDs) and cardiovascular morbidity.",
+      "unit": "%",
+      "year_source": "Latest available NCD-RisC / WHO estimate"
+    },
+    "adult_diabetes": {
+      "label": "Adult Diabetes (%)",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "target_pop": "Adults aged 18+ (mean of female & male)",
+      "description": "Fasting blood glucose >= 7.0 mmol/L or on medication for raised blood glucose.",
+      "relevance": "Major metabolic chronic outcome directly linked to dietary quality and adiposity.",
+      "unit": "%",
+      "year_source": "Latest available NCD-RisC / WHO estimate"
+    },
+    "anaemia_women": {
+      "label": "Anaemia in Women of Reproductive Age (%)",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "target_pop": "Women aged 15-49 years (all women)",
+      "description": "Haemoglobin concentration < 120 g/L for non-pregnant and < 110 g/L for pregnant women.",
+      "relevance": "Pivotal indicator of micronutrient deficiency (iron, folate) affecting maternal-child health.",
+      "unit": "%",
+      "year_source": "Latest available WHO estimate"
+    },
+    "low_birth_weight": {
+      "label": "Low Birth Weight (% of live births)",
+      "source": "UNICEF-WHO Low Birthweight Estimates (2023)",
+      "target_pop": "Newborns",
+      "description": "Birth weight strictly less than 2,500 grams (up to and including 2,499 g).",
+      "relevance": "Early life proxy for intrauterine growth restriction and maternal undernutrition.",
+      "unit": "%",
+      "year_source": "Modelled estimate 2020"
+    }
+  },
+  "context_features": {
+    "child_anaemia": {
+      "label": "Prevalence of Anaemia in Children (% of children under 5)",
+      "source": "World Bank World Development Indicators (SH.ANM.CHLD.ZS)",
+      "relevance": "Contextual validation indicator. Excluded from clustering due to strong correlation (~0.90) with anaemia in women to avoid double-weighting.",
+      "unit": "%"
+    },
+    "exclusive_breastfeeding": {
+      "label": "Exclusive Breastfeeding (% under 6 months)",
+      "source": "Global Nutrition Report (Country Nutrition Profiles Feb 2023)",
+      "relevance": "Infant feeding protection factor used solely in sensitivity analysis.",
+      "unit": "%"
+    }
+  },
+  "mandatory_caveat": "Groups are exploratory similarity groupings, not official categories or rankings. Data years differ between indicators. Not for clinical use."
+}
