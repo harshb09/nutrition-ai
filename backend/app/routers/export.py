@@ -33,3 +33,4 @@ def download_country_pdf_brief(
         "Content-Disposition": f'inline; filename="{iso3.upper()}_malnutrition_brief.pdf"'
     }
     return Response(content=pdf_bytes, media_type="application/pdf", headers=headers)
+

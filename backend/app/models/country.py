@@ -46,3 +46,4 @@ class CountryTrends(BaseModel):
     series: list[TrendPoint]
     peers: dict[str, Any]
     group_average: list[TrendPoint]
+

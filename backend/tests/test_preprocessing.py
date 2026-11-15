@@ -76,3 +76,4 @@ def test_relative_flags_double_burden():
     }
     res_no_db = check_relative_flags(vals_no_db, p75)
     assert res_no_db["is_double_burden"] is False
+

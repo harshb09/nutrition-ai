@@ -20,3 +20,4 @@ class GroupSummary(BaseModel):
     centroid_z_scores: dict[str, float]
     income_distribution: dict[str, int]
     region_distribution: dict[str, int]
+

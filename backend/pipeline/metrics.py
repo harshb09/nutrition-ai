@@ -82,3 +82,4 @@ def compute_davies_bouldin(X: np.ndarray, labels: np.ndarray, centers: np.ndarra
         db_values[i] = np.max(r_ij) if len(r_ij) > 0 else 0.0
         
     return float(np.mean(db_values))
+

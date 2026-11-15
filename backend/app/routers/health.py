@@ -19,3 +19,4 @@ def get_health():
 @router.get("/meta")
 def get_meta():
     return store.get_metadata()
+

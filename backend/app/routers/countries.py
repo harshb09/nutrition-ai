@@ -29,3 +29,4 @@ def get_country_trends(
     iso3: str = Path(..., description="3-letter ISO country code", min_length=3, max_length=3)
 ):
     return store.get_trends(iso3)
+

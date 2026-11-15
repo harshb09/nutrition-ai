@@ -9,3 +9,4 @@ if CORS_ORIGINS_RAW.strip() == "*":
     CORS_ORIGINS = ["*"]
 else:
     CORS_ORIGINS = [origin.strip() for origin in CORS_ORIGINS_RAW.split(",") if origin.strip()]
+

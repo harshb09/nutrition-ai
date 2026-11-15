@@ -33,3 +33,4 @@ def run_pca_analysis(X: np.ndarray, iso3_list: list[str]) -> dict:
         "loadings": loadings,
         "coordinates": points
     }
+

@@ -251,3 +251,4 @@ def ingest_all(raw_dir: str = "data/raw") -> tuple[pd.DataFrame, dict, pd.DataFr
     merged = pd.merge(merged, gnr_ebf, on="iso3", how="left")
     
     return merged, trends, universe
+

@@ -112,3 +112,4 @@ def run_kmedians(X: np.ndarray, k: int, random_state: int = 42, n_init: int = 20
     kmed = KMedians(n_clusters=k, n_init=n_init, random_state=random_state)
     kmed.fit(X)
     return kmed.labels_, kmed.cluster_centers_, float(kmed.inertia_)
+

@@ -12,3 +12,4 @@ class MethodologyResponse(BaseModel):
     sensitivity_analyses: dict[str, Any]
     limitations: list[str]
     responsible_use: list[str]
+

@@ -38,3 +38,4 @@ export const BentoCard: React.FC<BentoCardProps> = ({
     </div>
   );
 };
+

@@ -13,3 +13,4 @@ def get_group_detail(
     id: str = Path(..., description="Group identifier, e.g. 'A', 'B', 'C'")
 ):
     return store.get_group(id)
+

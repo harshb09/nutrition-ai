@@ -447,3 +447,4 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
         
     print(f"Artifacts successfully written to {artifacts_dir}/")
     return metadata_payload
+

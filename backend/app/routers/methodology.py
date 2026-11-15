@@ -7,3 +7,4 @@ router = APIRouter(prefix="/methodology", tags=["Methodology"])
 @router.get("", response_model=MethodologyResponse)
 def get_methodology():
     return store.get_methodology()
+

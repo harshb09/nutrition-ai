@@ -36,3 +36,4 @@ def test_wcss_manhattan():
     wcss = compute_wcss(X, labels, centers, metric="cityblock")
     # |0-0| + |0-1| + |0-0| + |2-1| = 1 + 1 = 2.0
     assert np.isclose(wcss, 2.0)
+

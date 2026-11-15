@@ -25,3 +25,4 @@ def test_stability_co_association_properties():
     # High bootstrap ARI on well-separated clusters
     assert stats["mean_bootstrap_ari"] > 0.85
     assert len(per_country) == 40
+

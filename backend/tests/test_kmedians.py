@@ -29,3 +29,4 @@ def test_kmedians_predict():
     
     preds = kmed.predict(np.array([[-5.0, -5.0], [5.0, 5.0]]))
     assert preds[0] != preds[1]
+

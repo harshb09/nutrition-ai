@@ -47,3 +47,4 @@ def root():
         "docs_url": "/docs",
         "health_check": "/api/health"
     }
+

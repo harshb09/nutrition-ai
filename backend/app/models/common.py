@@ -10,3 +10,4 @@ class HealthResponse(BaseModel):
 
 class ErrorResponse(BaseModel):
     detail: str = Field(..., description="Human-readable error explanation")
+

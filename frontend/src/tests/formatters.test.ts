@@ -44,3 +44,4 @@ describe("Frontend Formatting & Helper Utilities", () => {
     expect(checkDoubleBurden(false, false).isDoubleBurden).toBe(false);
   });
 });
+

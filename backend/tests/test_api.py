@@ -149,3 +149,4 @@ def test_api_pdf_brief(client):
     # PDF for unknown country 404
     res_404 = client.get("/api/countries/XYZ/brief.pdf")
     assert res_404.status_code == 404
+
