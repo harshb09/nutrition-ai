@@ -2,7 +2,7 @@ services:
   # 1. FastAPI Web Service (Backend)
   - type: web
     name: nutrition-atlas-api
-    env: python
+    runtime: python
     rootDir: backend
     plan: free
     buildCommand: pip install -r requirements.txt
@@ -17,12 +17,13 @@ services:
         value: artifacts
 
   # 2. React Static Site (Frontend)
-  - type: static
+  - type: web
     name: nutrition-atlas-web
+    runtime: static
     rootDir: frontend
     plan: free
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    staticPublishPath: ./dist
     routes:
       - type: rewrite
         source: /*
