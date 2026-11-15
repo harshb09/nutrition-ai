@@ -15,6 +15,12 @@ export interface CountrySummary {
   data_years: Record<string, number | null>;
   stability_score: number | null;
   missing_feature_count: number;
+  stunting_count_thousands?: number | null;
+  stunting_count_year?: number | null;
+  child_overweight_count_thousands?: number | null;
+  child_overweight_count_year?: number | null;
+  stunting_change_2000_2024?: number | null;
+  story?: string | null;
 }
 
 export interface CountryDetail extends CountrySummary {
@@ -40,6 +46,15 @@ export interface PeerCountry {
   distance: number;
   differences: Record<string, number | null>;
   values: Record<string, number | null>;
+}
+
+export interface LearnPeerCountry {
+  iso3: string;
+  country_name: string;
+  distance: number;
+  stunting_change_2000_2024: number | null;
+  stunting_2024: number | null;
+  series: TrendPoint[];
 }
 
 export interface TrendPoint {
@@ -104,7 +119,66 @@ export interface DatasetMetadata {
   dataset_medians: Record<string, number>;
   features: Record<string, any>;
   context_features: Record<string, any>;
+  feature_ranges?: Record<string, { min: number; max: number; step: number }>;
   mandatory_caveat: string;
+}
+
+export interface SimulationRequest {
+  stunting: number;
+  child_overweight: number;
+  wasting: number;
+  adult_obesity: number;
+  adult_diabetes: number;
+  anaemia_women: number;
+  low_birth_weight: number;
+}
+
+export interface SimulationResponse {
+  closest_group: {
+    id: string;
+    name: string;
+    provisional_name: string;
+    descriptor: string;
+  };
+  group_closeness: Array<{
+    group_id: string;
+    group_name: string;
+    distance: number;
+    closeness_score: number;
+    is_closest: boolean;
+  }>;
+  closest_countries: Array<{
+    iso3: string;
+    country_name: string;
+    group_id: string | null;
+    distance: number;
+  }>;
+  clamped_inputs: Record<string, number>;
+  label: string;
+}
+
+export interface BurdenItem {
+  iso3: string;
+  country_name: string;
+  region: string;
+  income_group: string;
+  group_id: string | null;
+  group_name: string | null;
+  double_burden: boolean;
+  stunting_prevalence: number | null;
+  stunting_prevalence_year: number | null;
+  stunting_count_thousands: number | null;
+  stunting_count_year: number | null;
+  child_overweight_prevalence: number | null;
+  child_overweight_prevalence_year: number | null;
+  child_overweight_count_thousands: number | null;
+  child_overweight_count_year: number | null;
+}
+
+export interface BurdenResponse {
+  total_count: number;
+  note: string;
+  items: BurdenItem[];
 }
 
 export interface MethodologyData {

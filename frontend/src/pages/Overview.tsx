@@ -179,7 +179,7 @@ export const Overview: React.FC = () => {
                     {grp.descriptor}
                   </h4>
                   <p className="text-[11px] text-brand-muted mt-2 italic">
-                    Provisional label based on centroid z-scores (|z| ≥ 0.5)
+                    Provisional label derived from relative group averages
                   </p>
                 </div>
 

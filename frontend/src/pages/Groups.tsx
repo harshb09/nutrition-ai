@@ -115,7 +115,7 @@ export const Groups: React.FC = () => {
                 {/* Indicator Averages */}
                 <div className="lg:col-span-2 bg-brand-raised/50 border border-brand-border rounded-xl p-4">
                   <h3 className="text-xs font-semibold text-brand-text uppercase tracking-wider mb-3">
-                    Average Indicator Profile &amp; Centroid Z-Scores
+                    Average Indicator Profile &amp; Relative Departures
                   </h3>
                   <div className="overflow-x-auto">
                     <table className="w-full text-left text-xs border-collapse">
@@ -124,7 +124,7 @@ export const Groups: React.FC = () => {
                           <th className="py-2 px-2">Indicator</th>
                           <th className="py-2 px-2 text-right">Group Mean</th>
                           <th className="py-2 px-2 text-right">Group Median</th>
-                          <th className="py-2 px-2 text-right">Centroid Z-Score</th>
+                          <th className="py-2 px-2 text-right">Relative Departure (z)</th>
                           <th className="py-2 px-2 text-center">Departure</th>
                         </tr>
                       </thead>

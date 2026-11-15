@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import {
   Download,
   AlertTriangle,
   Calendar,
   Layers,
   ChevronDown,
-  Info
+  Info,
+  Bookmark,
+  BookmarkCheck
 } from "lucide-react";
 import { BentoCard } from "../components/BentoCard";
 import { StatusNotice } from "../components/StatusNotice";
 import { DisclaimerBanner } from "../components/DisclaimerBanner";
+import { TargetSimulator } from "../components/TargetSimulator";
+import { LearnFromPeers } from "../components/LearnFromPeers";
+import { CountryStory } from "../components/CountryStory";
 import { api } from "../api/client";
-import { CountryDetail, CountrySummary } from "../api/types";
+import { CountryDetail, CountrySummary, DatasetMetadata } from "../api/types";
+import { isInWatchlist, addToWatchlist, removeFromWatchlist } from "../utils/watchlist";
 
 const FEATURE_ORDER = [
   { key: "stunting", label: "Child Stunting (% under 5)" },
@@ -26,41 +32,50 @@ const FEATURE_ORDER = [
 
 export const CountryProfile: React.FC = () => {
   const { iso3 } = useParams<{ iso3?: string }>();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  const countryQueryParam = searchParams.get("country");
+  const targetIso = (iso3 || countryQueryParam || "IND").toUpperCase();
+
   const [allCountries, setAllCountries] = useState<CountrySummary[]>([]);
-  const [selectedIso, setSelectedIso] = useState<string>(iso3 || "IND");
+  const [selectedIso, setSelectedIso] = useState<string>(targetIso);
   const [country, setCountry] = useState<CountryDetail | null>(null);
+  const [metadata, setMetadata] = useState<DatasetMetadata | null>(null);
+  const [isSaved, setIsSaved] = useState<boolean>(false);
+  const [saveMessage, setSaveMessage] = useState<string | null>(null);
+
   const [loading, setLoading] = useState(true);
   const [coldStartSeconds, setColdStartSeconds] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // Load all countries once for the dropdown picker
   useEffect(() => {
     api.getCountries().then(setAllCountries).catch(() => {});
+    api.getMetadata().then(setMetadata).catch(() => {});
   }, []);
 
-  // Update selectedIso when url param changes
   useEffect(() => {
     if (iso3) {
       setSelectedIso(iso3.toUpperCase());
+    } else if (countryQueryParam) {
+      setSelectedIso(countryQueryParam.toUpperCase());
     }
-  }, [iso3]);
+  }, [iso3, countryQueryParam]);
 
-  // Load country detail
-  const fetchCountry = (targetIso: string) => {
+  const fetchCountry = (iso: string) => {
     setLoading(true);
     setError(null);
     setColdStartSeconds(null);
 
-    api.getCountry(targetIso, setColdStartSeconds)
+    api.getCountry(iso, setColdStartSeconds)
       .then((data) => {
         setCountry(data);
+        setIsSaved(isInWatchlist(data.iso3));
         setColdStartSeconds(null);
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message || `Failed to load profile for ${targetIso}.`);
+        setError(err.message || `Failed to load profile for ${iso}.`);
         setLoading(false);
       });
   };
@@ -74,6 +89,24 @@ export const CountryProfile: React.FC = () => {
   const handleCountryChange = (newIso: string) => {
     setSelectedIso(newIso);
     navigate(`/countries/${newIso}`);
+  };
+
+  const handleToggleWatchlist = () => {
+    if (!country) return;
+    if (isSaved) {
+      removeFromWatchlist(country.iso3);
+      setIsSaved(false);
+      setSaveMessage(null);
+    } else {
+      const res = addToWatchlist(country.iso3);
+      if (res.success) {
+        setIsSaved(true);
+        setSaveMessage(null);
+      } else {
+        setSaveMessage(res.message || "Failed to add country to watchlist.");
+        setTimeout(() => setSaveMessage(null), 3500);
+      }
+    }
   };
 
   if (loading || coldStartSeconds !== null || error) {
@@ -153,18 +186,54 @@ export const CountryProfile: React.FC = () => {
             <ChevronDown className="w-4 h-4 text-brand-muted absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>
 
+          {/* Watchlist Bookmark Toggle */}
+          <button
+            onClick={handleToggleWatchlist}
+            className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium border transition-colors ${
+              isSaved
+                ? "bg-brand-accent/10 border-brand-accent/40 text-brand-accent"
+                : "bg-brand-raised hover:bg-brand-border border-brand-border text-brand-text"
+            }`}
+          >
+            {isSaved ? (
+              <>
+                <BookmarkCheck className="w-4 h-4 text-brand-accent" />
+                <span>On Watchlist</span>
+              </>
+            ) : (
+              <>
+                <Bookmark className="w-4 h-4 text-brand-muted" />
+                <span>Save to Watchlist</span>
+              </>
+            )}
+          </button>
+
           {/* PDF Download Button */}
           <a
             href={pdfUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-brand-accent hover:bg-brand-accent/90 text-brand-bg font-semibold text-xs rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 focus:ring-offset-brand-bg"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-brand-accent hover:bg-brand-accent/90 text-brand-bg font-semibold text-xs rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-accent"
           >
             <Download className="w-4 h-4" />
             Download brief (PDF)
           </a>
         </div>
       </div>
+
+      {saveMessage && (
+        <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl text-xs text-amber-300">
+          {saveMessage}
+        </div>
+      )}
+
+      {/* Feature D: Country Story */}
+      <CountryStory
+        countryName={country.country_name}
+        iso3={country.iso3}
+        story={country.story}
+        pdfUrl={pdfUrl}
+      />
 
       {/* Excluded notice if applicable */}
       {country.status === "insufficient_data" && (
@@ -275,24 +344,21 @@ export const CountryProfile: React.FC = () => {
         </div>
       </BentoCard>
 
-      {/* Quick Navigation to Similar Countries */}
+      {/* Feature B: Target Simulator */}
       {country.status === "analyzed" && (
-        <div className="bg-brand-surface border border-brand-border rounded-2xl p-5 flex items-center justify-between">
-          <div>
-            <h4 className="text-sm font-semibold text-brand-text">
-              Looking for peer comparisons?
-            </h4>
-            <p className="text-xs text-brand-muted mt-0.5">
-              Explore the 5 most statistically similar countries to {country.country_name} with time series trend lines.
-            </p>
-          </div>
-          <button
-            onClick={() => navigate(`/similar?country=${country.iso3}`)}
-            className="px-4 py-2 bg-brand-raised hover:bg-brand-border text-brand-text border border-brand-border rounded-xl text-xs font-medium transition-colors"
-          >
-            View Similar Countries →
-          </button>
-        </div>
+        <TargetSimulator
+          countryName={country.country_name}
+          initialValues={country.indicators}
+          featureRanges={metadata?.feature_ranges}
+        />
+      )}
+
+      {/* Feature C: Learn from Peers Panel */}
+      {country.status === "analyzed" && (
+        <LearnFromPeers
+          countryIso={country.iso3}
+          countryName={country.country_name}
+        />
       )}
     </div>
   );

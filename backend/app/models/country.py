@@ -18,6 +18,12 @@ class CountrySummary(BaseModel):
     data_years: dict[str, int | None]
     stability_score: float | None = None
     missing_feature_count: int
+    stunting_count_thousands: float | None = None
+    stunting_count_year: int | None = None
+    child_overweight_count_thousands: float | None = None
+    child_overweight_count_year: int | None = None
+    stunting_change_2000_2024: float | None = None
+    story: str | None = None
 
 class CountryDetail(CountrySummary):
     group_means: dict[str, float] | None = None
@@ -34,6 +40,14 @@ class PeerCountry(BaseModel):
     differences: dict[str, float | None]
     values: dict[str, float | None]
 
+class LearnPeerCountry(BaseModel):
+    iso3: str
+    country_name: str
+    distance: float
+    stunting_change_2000_2024: float | None
+    stunting_2024: float | None
+    series: list[dict[str, Any]] = Field(default_factory=list)
+
 class TrendPoint(BaseModel):
     year: int
     stunting: float | None = None
@@ -46,4 +60,3 @@ class CountryTrends(BaseModel):
     series: list[TrendPoint]
     peers: dict[str, Any]
     group_average: list[TrendPoint]
-

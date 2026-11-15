@@ -23,6 +23,76 @@ from pipeline.interpretation import (
 )
 from sklearn.metrics import adjusted_rand_score
 
+def generate_country_story(
+    country_name: str,
+    iso3: str,
+    status: str,
+    group_name: str | None,
+    group_desc: str | None,
+    rel_flags: dict[str, bool],
+    indicators: dict[str, float | None],
+    years: dict[str, int | None],
+    stunting_change: float | None,
+    peer_names: list[str]
+) -> str:
+    """Generates a neutral, rule-based 3-to-5 sentence summary strictly from pipeline outputs."""
+    sentences = []
+    
+    # Sentence 1: Profile & Grouping
+    if status == "analyzed" and group_name and group_desc:
+        sentences.append(f"{country_name} ({iso3}) is grouped in {group_name}, characterized provisionally by {group_desc.lower()}.")
+    else:
+        sentences.append(f"{country_name} ({iso3}) has unobserved data across multiple indicators and is presented without an exploratory group classification.")
+        
+    # Sentence 2: Relative concerns (indicators exceeding the 75th percentile)
+    high_feats = [f for f, is_high in rel_flags.items() if is_high]
+    feat_labels = {
+        "stunting": "child stunting",
+        "child_overweight": "child overweight",
+        "wasting": "child wasting",
+        "adult_obesity": "adult obesity",
+        "adult_diabetes": "adult diabetes",
+        "anaemia_women": "maternal anaemia",
+        "low_birth_weight": "low birth weight"
+    }
+    if high_feats:
+        concerns_text = ", ".join([f"{feat_labels[f]} ({indicators.get(f)}%)" for f in high_feats])
+        sentences.append(f"Relative to other countries in this dataset, {concerns_text} exceed the 75th percentile threshold.")
+    else:
+        sentences.append("Relative to other countries in this dataset, indicator levels for this country remain below the 75th percentile across all monitored malnutrition measures.")
+        
+    # Sentence 3: Historical trajectory since 2000
+    if stunting_change is not None:
+        if stunting_change < -0.5:
+            sentences.append(f"Between 2000 and 2024, child stunting prevalence decreased by {abs(stunting_change):.1f} percentage points.")
+        elif stunting_change > 0.5:
+            sentences.append(f"Between 2000 and 2024, child stunting prevalence increased by {stunting_change:.1f} percentage points.")
+        else:
+            sentences.append("Between 2000 and 2024, child stunting prevalence remained relatively stable (less than 0.5 percentage point change).")
+            
+    # Sentence 4: Double burden & peers
+    under_high = rel_flags.get("stunting", False) or rel_flags.get("wasting", False) or rel_flags.get("anaemia_women", False)
+    over_high = rel_flags.get("child_overweight", False) or rel_flags.get("adult_obesity", False)
+    db_status = "exhibits a concurrent relative double-burden of malnutrition" if (under_high and over_high) else "does not exhibit a concurrent double-burden of malnutrition"
+    
+    if peer_names:
+        p_str = ", ".join(peer_names[:3])
+        sentences.append(f"The country {db_status}; its closest statistical peers in multivariate indicator space are {p_str}.")
+    else:
+        sentences.append(f"The country {db_status}.")
+        
+    # Sentence 5: Data year vintage
+    valid_years = [y for y in years.values() if y is not None]
+    if valid_years:
+        min_yr = min(valid_years)
+        max_yr = max(valid_years)
+        if min_yr == max_yr:
+            sentences.append(f"Reported figures reflect national primary and modelled estimates from {min_yr}.")
+        else:
+            sentences.append(f"Reported figures reflect primary surveys and modelled estimates collected between {min_yr} and {max_yr}.")
+            
+    return " ".join(sentences)
+
 def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/artifacts"):
     os.makedirs(artifacts_dir, exist_ok=True)
     
@@ -95,7 +165,6 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
         model_evaluations.append(kmed_entry)
         
     # 4. Selection Rule (coded not hardcoded)
-    # Among K=3..6 choose highest silhouette, tie-break lower Davies-Bouldin, require mean bootstrap ARI >= 0.6
     print("4/7 Applying selection rule...")
     sorted_candidates = sorted(
         candidates_for_selection,
@@ -116,7 +185,6 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
             break
             
     if chosen_candidate is None:
-        # Fallback to next best with explanation
         chosen_candidate = sorted_candidates[0]
         selection_reason = (
             f"Fallback selection K={chosen_candidate['k']} ({chosen_candidate['method']}, {chosen_candidate['distance_metric']}): "
@@ -143,11 +211,10 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
     # Complete-case sensitivity analysis
     km_cc = KMeans(n_clusters=chosen_k, n_init=20, random_state=42)
     km_cc.fit(X_scaled_cc)
-    # Find matching indices for complete cases in df_eligible
     cc_indices_in_eligible = [i for i, row in df_eligible.iterrows() if row["iso3"] in set(df_complete["iso3"])]
     ari_cc = adjusted_rand_score(raw_cluster_labels[cc_indices_in_eligible], km_cc.labels_)
     
-    # Exclusive breastfeeding sensitivity (correlation with stunting, wasting)
+    # Exclusive breastfeeding sensitivity
     sub_ebf = merged[["exclusive_breastfeeding", "stunting", "wasting"]].dropna()
     ebf_corr = {
         "with_stunting": round(float(sub_ebf.corr().loc["exclusive_breastfeeding", "stunting"]), 4),
@@ -165,13 +232,11 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
     post_hoc_res = test_post_hoc_associations(df_eligible, raw_cluster_labels)
     
     # 6. Group Ordering (Descending mean stunting) & Naming
-    # Compute mean stunting for each raw cluster
     raw_group_stunting = {}
     for c_idx in range(chosen_k):
         c_mask = (raw_cluster_labels == c_idx)
         raw_group_stunting[c_idx] = float(np.mean(df_eligible.loc[c_mask, "stunting"]))
         
-    # Sort clusters by stunting descending
     sorted_raw_clusters = sorted(raw_group_stunting.keys(), key=lambda c: raw_group_stunting[c], reverse=True)
     cluster_to_letter = {raw_c: chr(ord("A") + i) for i, raw_c in enumerate(sorted_raw_clusters)}
     
@@ -183,6 +248,7 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
     group_profiles = []
     group_means_dict = {}
     group_members_map = {}
+    group_centres_std = {}
     
     for i, raw_c in enumerate(sorted_raw_clusters):
         letter = cluster_to_letter[raw_c]
@@ -191,6 +257,7 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
         
         # Centroid z-scores for descriptor
         z_dict = {f: round(float(centroids[raw_c, idx]), 3) for idx, f in enumerate(CLUSTERING_FEATURES)}
+        group_centres_std[letter] = [round(float(centroids[raw_c, idx]), 4) for idx in range(len(CLUSTERING_FEATURES))]
         descriptor = format_descriptor(z_dict)
         provisional_name = f"Group {letter}: {descriptor} (Provisional)"
         
@@ -226,10 +293,30 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
     p75 = thresholds["p75"]
     all_medians = thresholds["medians"]
     
+    # Feature ranges for Target Simulator bounds clamping
+    feature_ranges = {}
+    for f in CLUSTERING_FEATURES:
+        feature_ranges[f] = {
+            "min": round(float(df_eligible[f].min()), 1),
+            "max": round(float(df_eligible[f].max()), 1),
+            "step": 0.1
+        }
+        
+    # Standardized country vectors for fast simulator peer lookup
+    analysed_country_vectors = []
+    for idx, row in df_eligible.iterrows():
+        analysed_country_vectors.append({
+            "iso3": row["iso3"],
+            "country_name": row["country_name"],
+            "group_id": row["group_id"],
+            "vector": [round(float(v), 4) for v in X_scaled[idx]]
+        })
+        
     # 7. Countries and Peers
-    print("6/7 Generating country profiles, relative flags, and peer matrices...")
+    print("6/7 Generating country profiles, relative flags, peer matrices, and stories...")
     countries_data = []
     peers_dict = {}
+    learn_peers_dict = {}
     
     eligible_by_iso = {row["iso3"]: row for _, row in df_eligible.iterrows()}
     
@@ -239,14 +326,21 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
         income_grp = row["income_group"]
         reg = row["region"]
         
+        stunt_count = round(float(row["stunting_count_thousands"]), 1) if pd.notna(row.get("stunting_count_thousands")) else None
+        stunt_count_yr = int(row["stunting_count_year"]) if pd.notna(row.get("stunting_count_year")) else None
+        over_count = round(float(row["child_overweight_count_thousands"]), 1) if pd.notna(row.get("child_overweight_count_thousands")) else None
+        over_count_yr = int(row["child_overweight_count_year"]) if pd.notna(row.get("child_overweight_count_year")) else None
+        stunt_change = round(float(row["stunting_change_2000_2024"]), 2) if pd.notna(row.get("stunting_change_2000_2024")) else None
+        
         if iso in eligible_by_iso:
             el_row = eligible_by_iso[iso]
             grp_id = el_row["group_id"]
             status = "analyzed"
             stab_score = el_row["stability_score"]
             notice = None
+            grp_desc = [g["descriptor"] for g in group_profiles if g["id"] == grp_id][0]
+            grp_name = f"Group {grp_id}"
             
-            # Values (imputed for clustering, plus raw indicator values)
             vals = {f: round(float(el_row[f]), 2) for f in CLUSTERING_FEATURES}
             raw_vals = {f: (round(float(el_row[f"{f}_raw"]), 2) if pd.notna(el_row[f"{f}_raw"]) else None) for f in CLUSTERING_FEATURES}
             is_imputed = {f: bool(pd.isna(el_row[f"{f}_raw"]) and pd.notna(el_row[f])) for f in CLUSTERING_FEATURES}
@@ -260,9 +354,33 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
             flags_res = check_relative_flags(vals, p75)
             peer_list = find_peers(iso, X_scaled, df_eligible)
             peers_dict[iso] = peer_list
+            peer_names = [p["country_name"] for p in peer_list]
+            
+            # Learn-from-peers: rank peers by stunting change 2000-2024
+            learn_peers = []
+            for p in peer_list:
+                p_iso = p["iso3"]
+                p_change = None
+                p_merged_row = merged[merged["iso3"] == p_iso]
+                if not p_merged_row.empty:
+                    val = p_merged_row.iloc[0].get("stunting_change_2000_2024")
+                    if pd.notna(val):
+                        p_change = round(float(val), 2)
+                learn_peers.append({
+                    "iso3": p_iso,
+                    "country_name": p["country_name"],
+                    "distance": p["distance"],
+                    "stunting_change_2000_2024": p_change,
+                    "stunting_2024": p["values"]["stunting"]
+                })
+            # Sort by stunting change ascending (greatest reduction first, e.g. -15.0 before -5.0)
+            learn_peers.sort(key=lambda x: (x["stunting_change_2000_2024"] if x["stunting_change_2000_2024"] is not None else 999.0))
+            learn_peers_dict[iso] = learn_peers
             
         else:
             grp_id = None
+            grp_name = None
+            grp_desc = None
             status = "insufficient_data"
             stab_score = None
             notice = "Insufficient data for grouping"
@@ -279,7 +397,22 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
                 
             flags_res = check_relative_flags(vals, p75)
             peers_dict[iso] = []
+            learn_peers_dict[iso] = []
+            peer_names = []
             
+        story = generate_country_story(
+            country_name=country_name,
+            iso3=iso,
+            status=status,
+            group_name=grp_name,
+            group_desc=grp_desc,
+            rel_flags=flags_res["indicator_flags"],
+            indicators=vals,
+            years=years,
+            stunting_change=stunt_change,
+            peer_names=peer_names
+        )
+        
         countries_data.append({
             "iso3": iso,
             "country_name": country_name,
@@ -287,7 +420,7 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
             "region": reg,
             "status": status,
             "group_id": grp_id,
-            "group_name": f"Group {grp_id}" if grp_id else None,
+            "group_name": grp_name,
             "notice": notice,
             "double_burden": flags_res["is_double_burden"],
             "relative_flags": flags_res["indicator_flags"],
@@ -296,7 +429,13 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
             "is_imputed": is_imputed,
             "data_years": years,
             "stability_score": stab_score,
-            "missing_feature_count": int(row[CLUSTERING_FEATURES].isna().sum())
+            "missing_feature_count": int(row[CLUSTERING_FEATURES].isna().sum()),
+            "stunting_count_thousands": stunt_count,
+            "stunting_count_year": stunt_count_yr,
+            "child_overweight_count_thousands": over_count,
+            "child_overweight_count_year": over_count_yr,
+            "stunting_change_2000_2024": stunt_change,
+            "story": story
         })
         
     # Group Average Trends (stunting and child overweight 2000-2024)
@@ -320,7 +459,6 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
             for y in range(2000, 2025)
         ]
         
-    # Trends artifact structure: {countries: trends, group_averages: group_trends}
     trends_payload = {
         "countries": trends,
         "group_averages": group_trends
@@ -351,6 +489,13 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
         "dataset_medians": all_medians,
         "features": {f: FEATURE_METADATA[f] for f in CLUSTERING_FEATURES},
         "context_features": CONTEXT_METADATA,
+        "feature_ranges": feature_ranges,
+        "scaler_parameters": {
+            "means": {f: round(float(m), 4) for f, m in zip(CLUSTERING_FEATURES, scaler.mean_)},
+            "stds": {f: round(float(s), 4) for f, s in zip(CLUSTERING_FEATURES, scaler.scale_)}
+        },
+        "group_centres": group_centres_std,
+        "analysed_country_vectors": analysed_country_vectors,
         "mandatory_caveat": "Groups are exploratory similarity groupings, not official categories or rankings. Data years differ between indicators. Not for clinical use."
     }
     
@@ -415,7 +560,10 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
             "group_name": c["group_name"] or "",
             "double_burden": "Yes" if c["double_burden"] else "No",
             "stability_score": c["stability_score"] if c["stability_score"] is not None else "",
-            "missing_features": c["missing_feature_count"]
+            "missing_features": c["missing_feature_count"],
+            "stunting_count_thousands_2024": c["stunting_count_thousands"] if c["stunting_count_thousands"] is not None else "",
+            "child_overweight_count_thousands_2024": c["child_overweight_count_thousands"] if c["child_overweight_count_thousands"] is not None else "",
+            "stunting_change_2000_2024": c["stunting_change_2000_2024"] if c["stunting_change_2000_2024"] is not None else ""
         }
         for f in CLUSTERING_FEATURES:
             row_dict[f"{f}_value"] = c["indicators"][f] if c["indicators"][f] is not None else ""
@@ -436,6 +584,8 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
         json.dump(group_profiles, f, indent=2)
     with open(os.path.join(artifacts_dir, "peers.json"), "w") as f:
         json.dump(peers_dict, f, indent=2)
+    with open(os.path.join(artifacts_dir, "learn_peers.json"), "w") as f:
+        json.dump(learn_peers_dict, f, indent=2)
     with open(os.path.join(artifacts_dir, "trends.json"), "w") as f:
         json.dump(trends_payload, f, indent=2)
     with open(os.path.join(artifacts_dir, "methodology.json"), "w") as f:
@@ -447,4 +597,3 @@ def execute_pipeline(raw_dir: str = "data/raw", artifacts_dir: str = "backend/ar
         
     print(f"Artifacts successfully written to {artifacts_dir}/")
     return metadata_payload
-

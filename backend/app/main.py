@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import CORS_ORIGINS
 from app.services.data_store import store
-from app.routers import health, countries, groups, methodology, export
+from app.routers import health, countries, groups, methodology, export, burden, simulate
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("nutrition_atlas")
@@ -38,6 +38,8 @@ app.include_router(countries.router, prefix="/api")
 app.include_router(groups.router, prefix="/api")
 app.include_router(methodology.router, prefix="/api")
 app.include_router(export.router, prefix="/api")
+app.include_router(burden.router, prefix="/api")
+app.include_router(simulate.router, prefix="/api")
 
 @app.get("/")
 def root():

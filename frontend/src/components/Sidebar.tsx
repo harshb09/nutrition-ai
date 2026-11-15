@@ -4,7 +4,11 @@ import {
   LayoutDashboard,
   UserCheck,
   GitCompare,
+  BarChart3,
+  Bookmark,
+  HelpCircle,
   Layers,
+  Compass,
   FlaskConical,
   Database,
   X
@@ -19,7 +23,11 @@ const navItems = [
   { to: "/", label: "Overview", icon: LayoutDashboard },
   { to: "/profile", label: "Country Profile", icon: UserCheck },
   { to: "/similar", label: "Similar Countries", icon: GitCompare },
+  { to: "/burden", label: "Burden & Priority", icon: BarChart3 },
+  { to: "/watchlist", label: "Watchlist", icon: Bookmark },
+  { to: "/gaps", label: "Data Gaps", icon: HelpCircle },
   { to: "/groups", label: "Groups", icon: Layers },
+  { to: "/use-cases", label: "Use Cases", icon: Compass },
   { to: "/methodology", label: "Methodology & Validation", icon: FlaskConical },
   { to: "/data", label: "Data & Sources", icon: Database },
 ];

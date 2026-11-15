@@ -1,0 +1,5820 @@
+{
+  "AFG": [
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 1.647,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "PAK",
+      "country_name": "Pakistan",
+      "distance": 1.065,
+      "stunting_change_2000_2024": -6.7,
+      "stunting_2024": 33.6
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 1.268,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "distance": 1.789,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "AGO",
+      "country_name": "Angola",
+      "distance": 1.105,
+      "stunting_change_2000_2024": 0.2,
+      "stunting_2024": 47.7
+    }
+  ],
+  "AGO": [
+    {
+      "iso3": "AFG",
+      "country_name": "Afghanistan",
+      "distance": 1.105,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 42.0
+    },
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 1.15,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "BDI",
+      "country_name": "Burundi",
+      "distance": 1.449,
+      "stunting_change_2000_2024": -7.7,
+      "stunting_2024": 55.3
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 0.947,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    },
+    {
+      "iso3": "COD",
+      "country_name": "Democratic Republic of the Congo",
+      "distance": 1.408,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 44.1
+    }
+  ],
+  "AIA": [],
+  "ALB": [
+    {
+      "iso3": "PRY",
+      "country_name": "Paraguay",
+      "distance": 1.037,
+      "stunting_change_2000_2024": -15.3,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 1.418,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.367,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "BIH",
+      "country_name": "Bosnia and Herzegovina",
+      "distance": 1.0,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.9
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "distance": 1.151,
+      "stunting_change_2000_2024": -4.2,
+      "stunting_2024": 4.6
+    }
+  ],
+  "AND": [],
+  "ARE": [],
+  "ARG": [
+    {
+      "iso3": "MNG",
+      "country_name": "Mongolia",
+      "distance": 1.234,
+      "stunting_change_2000_2024": -22.6,
+      "stunting_2024": 7.1
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 0.478,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "distance": 1.286,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 1.172,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 1.199,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    }
+  ],
+  "ARM": [
+    {
+      "iso3": "MNG",
+      "country_name": "Mongolia",
+      "distance": 1.224,
+      "stunting_change_2000_2024": -22.6,
+      "stunting_2024": 7.1
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 1.236,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.197,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "BRB",
+      "country_name": "Barbados",
+      "distance": 0.718,
+      "stunting_change_2000_2024": -2.3,
+      "stunting_2024": 5.8
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 1.224,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    }
+  ],
+  "ATG": [],
+  "AUS": [
+    {
+      "iso3": "ALB",
+      "country_name": "Albania",
+      "distance": 2.838,
+      "stunting_change_2000_2024": -22.5,
+      "stunting_2024": 7.4
+    },
+    {
+      "iso3": "PRY",
+      "country_name": "Paraguay",
+      "distance": 3.154,
+      "stunting_change_2000_2024": -15.3,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 3.304,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "GRC",
+      "country_name": "Greece",
+      "distance": 3.34,
+      "stunting_change_2000_2024": -0.2,
+      "stunting_2024": 2.0
+    },
+    {
+      "iso3": "ARG",
+      "country_name": "Argentina",
+      "distance": 3.158,
+      "stunting_change_2000_2024": 1.4,
+      "stunting_2024": 10.7
+    }
+  ],
+  "AUT": [],
+  "AZE": [
+    {
+      "iso3": "TJK",
+      "country_name": "Tajikistan",
+      "distance": 1.237,
+      "stunting_change_2000_2024": -28.2,
+      "stunting_2024": 13.1
+    },
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 1.408,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "GEO",
+      "country_name": "Georgia",
+      "distance": 1.237,
+      "stunting_change_2000_2024": -11.5,
+      "stunting_2024": 4.7
+    },
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "distance": 1.217,
+      "stunting_change_2000_2024": -10.0,
+      "stunting_2024": 4.8
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 1.457,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    }
+  ],
+  "BDI": [
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 1.702,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    },
+    {
+      "iso3": "TLS",
+      "country_name": "Timor-Leste",
+      "distance": 1.528,
+      "stunting_change_2000_2024": -9.6,
+      "stunting_2024": 45.4
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 1.769,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    },
+    {
+      "iso3": "COD",
+      "country_name": "Democratic Republic of the Congo",
+      "distance": 1.549,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 44.1
+    },
+    {
+      "iso3": "AGO",
+      "country_name": "Angola",
+      "distance": 1.449,
+      "stunting_change_2000_2024": 0.2,
+      "stunting_2024": 47.7
+    }
+  ],
+  "BEL": [
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 1.155,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    },
+    {
+      "iso3": "FIN",
+      "country_name": "Finland",
+      "distance": 0.671,
+      "stunting_change_2000_2024": -0.5,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 0.964,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "NLD",
+      "country_name": "Netherlands",
+      "distance": 0.377,
+      "stunting_change_2000_2024": 0.3,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "DEU",
+      "country_name": "Germany",
+      "distance": 0.427,
+      "stunting_change_2000_2024": 1.1,
+      "stunting_2024": 2.2
+    }
+  ],
+  "BEN": [
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 1.184,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 0.858,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "NGA",
+      "country_name": "Nigeria",
+      "distance": 0.7,
+      "stunting_change_2000_2024": -8.0,
+      "stunting_2024": 33.8
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "distance": 0.974,
+      "stunting_change_2000_2024": -5.1,
+      "stunting_2024": 28.3
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 0.923,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    }
+  ],
+  "BFA": [
+    {
+      "iso3": "MLI",
+      "country_name": "Mali",
+      "distance": 1.04,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 23.2
+    },
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 0.707,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.287,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "SEN",
+      "country_name": "Senegal",
+      "distance": 0.549,
+      "stunting_change_2000_2024": -7.4,
+      "stunting_2024": 17.2
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "distance": 1.159,
+      "stunting_change_2000_2024": -5.1,
+      "stunting_2024": 28.3
+    }
+  ],
+  "BGD": [
+    {
+      "iso3": "NPL",
+      "country_name": "Nepal",
+      "distance": 0.962,
+      "stunting_change_2000_2024": -29.9,
+      "stunting_2024": 26.0
+    },
+    {
+      "iso3": "COM",
+      "country_name": "Comoros",
+      "distance": 1.109,
+      "stunting_change_2000_2024": -26.4,
+      "stunting_2024": 17.4
+    },
+    {
+      "iso3": "BFA",
+      "country_name": "Burkina Faso",
+      "distance": 2.007,
+      "stunting_change_2000_2024": -20.9,
+      "stunting_2024": 19.5
+    },
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.659,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 1.885,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    }
+  ],
+  "BGR": [
+    {
+      "iso3": "ECU",
+      "country_name": "Ecuador",
+      "distance": 1.395,
+      "stunting_change_2000_2024": -9.5,
+      "stunting_2024": 17.7
+    },
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "distance": 1.005,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 7.0
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "distance": 1.089,
+      "stunting_change_2000_2024": -5.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.415,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "CZE",
+      "country_name": "Czechia",
+      "distance": 1.029,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 2.4
+    }
+  ],
+  "BHR": [],
+  "BHS": [],
+  "BIH": [
+    {
+      "iso3": "ALB",
+      "country_name": "Albania",
+      "distance": 1.0,
+      "stunting_change_2000_2024": -22.5,
+      "stunting_2024": 7.4
+    },
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 1.023,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.024,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "distance": 0.568,
+      "stunting_change_2000_2024": -4.2,
+      "stunting_2024": 4.6
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 1.089,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    }
+  ],
+  "BLR": [
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 0.82,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "distance": 1.105,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 7.0
+    },
+    {
+      "iso3": "LVA",
+      "country_name": "Latvia",
+      "distance": 0.813,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "LTU",
+      "country_name": "Lithuania",
+      "distance": 0.402,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 0.692,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    }
+  ],
+  "BLZ": [
+    {
+      "iso3": "HND",
+      "country_name": "Honduras",
+      "distance": 1.15,
+      "stunting_change_2000_2024": -18.5,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "distance": 1.178,
+      "stunting_change_2000_2024": -10.0,
+      "stunting_2024": 4.8
+    },
+    {
+      "iso3": "MEX",
+      "country_name": "Mexico",
+      "distance": 0.891,
+      "stunting_change_2000_2024": -7.2,
+      "stunting_2024": 13.1
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.113,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 0.743,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    }
+  ],
+  "BOL": [
+    {
+      "iso3": "PER",
+      "country_name": "Peru",
+      "distance": 0.57,
+      "stunting_change_2000_2024": -23.8,
+      "stunting_2024": 10.6
+    },
+    {
+      "iso3": "PAN",
+      "country_name": "Panama",
+      "distance": 0.843,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.774,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.72,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.875,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "BRA": [
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 0.774,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 0.764,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "PAN",
+      "country_name": "Panama",
+      "distance": 0.76,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "PRT",
+      "country_name": "Portugal",
+      "distance": 0.795,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.539,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    }
+  ],
+  "BRB": [
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "distance": 0.718,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "UKR",
+      "country_name": "Ukraine",
+      "distance": 1.712,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 1.671,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.591,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "SYC",
+      "country_name": "Seychelles",
+      "distance": 1.632,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 6.2
+    }
+  ],
+  "BRN": [
+    {
+      "iso3": "SLV",
+      "country_name": "El Salvador",
+      "distance": 1.349,
+      "stunting_change_2000_2024": -19.3,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.294,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "SYC",
+      "country_name": "Seychelles",
+      "distance": 0.958,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "PAN",
+      "country_name": "Panama",
+      "distance": 1.347,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 1.433,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    }
+  ],
+  "BTN": [
+    {
+      "iso3": "TJK",
+      "country_name": "Tajikistan",
+      "distance": 1.393,
+      "stunting_change_2000_2024": -28.2,
+      "stunting_2024": 13.1
+    },
+    {
+      "iso3": "GNQ",
+      "country_name": "Equatorial Guinea",
+      "distance": 1.106,
+      "stunting_change_2000_2024": -21.2,
+      "stunting_2024": 17.1
+    },
+    {
+      "iso3": "STP",
+      "country_name": "Sao Tome and Principe",
+      "distance": 1.455,
+      "stunting_change_2000_2024": -20.8,
+      "stunting_2024": 10.0
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 1.635,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "THA",
+      "country_name": "Thailand",
+      "distance": 1.695,
+      "stunting_change_2000_2024": -3.8,
+      "stunting_2024": 12.3
+    }
+  ],
+  "BWA": [
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "distance": 1.593,
+      "stunting_change_2000_2024": -13.3,
+      "stunting_2024": 16.4
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "distance": 1.715,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 20.9
+    },
+    {
+      "iso3": "CMR",
+      "country_name": "Cameroon",
+      "distance": 1.787,
+      "stunting_change_2000_2024": -10.2,
+      "stunting_2024": 27.2
+    },
+    {
+      "iso3": "ZAF",
+      "country_name": "South Africa",
+      "distance": 1.558,
+      "stunting_change_2000_2024": -2.2,
+      "stunting_2024": 24.4
+    },
+    {
+      "iso3": "MYS",
+      "country_name": "Malaysia",
+      "distance": 1.909,
+      "stunting_change_2000_2024": 5.0,
+      "stunting_2024": 24.3
+    }
+  ],
+  "CAF": [
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 0.818,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "NGA",
+      "country_name": "Nigeria",
+      "distance": 0.962,
+      "stunting_change_2000_2024": -8.0,
+      "stunting_2024": 33.8
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "distance": 1.168,
+      "stunting_change_2000_2024": -5.1,
+      "stunting_2024": 28.3
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "distance": 0.923,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "AGO",
+      "country_name": "Angola",
+      "distance": 0.947,
+      "stunting_change_2000_2024": 0.2,
+      "stunting_2024": 47.7
+    }
+  ],
+  "CAN": [],
+  "CHE": [],
+  "CHL": [
+    {
+      "iso3": "SLV",
+      "country_name": "El Salvador",
+      "distance": 1.161,
+      "stunting_change_2000_2024": -19.3,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "distance": 0.921,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 1.258,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "USA",
+      "country_name": "United States",
+      "distance": 1.254,
+      "stunting_change_2000_2024": 1.1,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "distance": 1.107,
+      "stunting_change_2000_2024": 3.5,
+      "stunting_2024": 10.6
+    }
+  ],
+  "CHN": [
+    {
+      "iso3": "PER",
+      "country_name": "Peru",
+      "distance": 1.694,
+      "stunting_change_2000_2024": -23.8,
+      "stunting_2024": 10.6
+    },
+    {
+      "iso3": "MNG",
+      "country_name": "Mongolia",
+      "distance": 1.619,
+      "stunting_change_2000_2024": -22.6,
+      "stunting_2024": 7.1
+    },
+    {
+      "iso3": "BIH",
+      "country_name": "Bosnia and Herzegovina",
+      "distance": 1.475,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.9
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "distance": 1.71,
+      "stunting_change_2000_2024": -4.2,
+      "stunting_2024": 4.6
+    },
+    {
+      "iso3": "KOR",
+      "country_name": "Republic of Korea",
+      "distance": 1.502,
+      "stunting_change_2000_2024": -0.7,
+      "stunting_2024": 1.8
+    }
+  ],
+  "CIV": [
+    {
+      "iso3": "BFA",
+      "country_name": "Burkina Faso",
+      "distance": 0.707,
+      "stunting_change_2000_2024": -20.9,
+      "stunting_2024": 19.5
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.034,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "SEN",
+      "country_name": "Senegal",
+      "distance": 0.78,
+      "stunting_change_2000_2024": -7.4,
+      "stunting_2024": 17.2
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "distance": 0.773,
+      "stunting_change_2000_2024": -5.1,
+      "stunting_2024": 28.3
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "distance": 1.184,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 33.2
+    }
+  ],
+  "CMR": [
+    {
+      "iso3": "BTN",
+      "country_name": "Bhutan",
+      "distance": 2.107,
+      "stunting_change_2000_2024": -26.9,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "GNQ",
+      "country_name": "Equatorial Guinea",
+      "distance": 1.869,
+      "stunting_change_2000_2024": -21.2,
+      "stunting_2024": 17.1
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.98,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "SWZ",
+      "country_name": "Eswatini",
+      "distance": 1.755,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 18.9
+    },
+    {
+      "iso3": "BWA",
+      "country_name": "Botswana",
+      "distance": 1.787,
+      "stunting_change_2000_2024": -9.3,
+      "stunting_2024": 21.0
+    }
+  ],
+  "COD": [
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.52,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "TZA",
+      "country_name": "United Republic of Tanzania",
+      "distance": 1.401,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "SLE",
+      "country_name": "Sierra Leone",
+      "distance": 1.601,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 25.2
+    },
+    {
+      "iso3": "BDI",
+      "country_name": "Burundi",
+      "distance": 1.549,
+      "stunting_change_2000_2024": -7.7,
+      "stunting_2024": 55.3
+    },
+    {
+      "iso3": "AGO",
+      "country_name": "Angola",
+      "distance": 1.408,
+      "stunting_change_2000_2024": 0.2,
+      "stunting_2024": 47.7
+    }
+  ],
+  "COG": [
+    {
+      "iso3": "KHM",
+      "country_name": "Cambodia",
+      "distance": 0.853,
+      "stunting_change_2000_2024": -28.6,
+      "stunting_2024": 22.0
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.119,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "SLE",
+      "country_name": "Sierra Leone",
+      "distance": 0.948,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 25.2
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.108,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.025,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "COK": [],
+  "COL": [
+    {
+      "iso3": "HND",
+      "country_name": "Honduras",
+      "distance": 0.981,
+      "stunting_change_2000_2024": -18.5,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "ECU",
+      "country_name": "Ecuador",
+      "distance": 0.98,
+      "stunting_change_2000_2024": -9.5,
+      "stunting_2024": 17.7
+    },
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "distance": 1.012,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 7.0
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "distance": 0.891,
+      "stunting_change_2000_2024": -5.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "distance": 0.905,
+      "stunting_change_2000_2024": 3.5,
+      "stunting_2024": 10.6
+    }
+  ],
+  "COM": [
+    {
+      "iso3": "NPL",
+      "country_name": "Nepal",
+      "distance": 1.375,
+      "stunting_change_2000_2024": -29.9,
+      "stunting_2024": 26.0
+    },
+    {
+      "iso3": "BGD",
+      "country_name": "Bangladesh",
+      "distance": 1.109,
+      "stunting_change_2000_2024": -29.8,
+      "stunting_2024": 25.1
+    },
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.87,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "distance": 1.82,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 20.9
+    },
+    {
+      "iso3": "LKA",
+      "country_name": "Sri Lanka",
+      "distance": 1.793,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 10.1
+    }
+  ],
+  "CPV": [],
+  "CRI": [
+    {
+      "iso3": "SLV",
+      "country_name": "El Salvador",
+      "distance": 0.567,
+      "stunting_change_2000_2024": -19.3,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "MEX",
+      "country_name": "Mexico",
+      "distance": 0.778,
+      "stunting_change_2000_2024": -7.2,
+      "stunting_2024": 13.1
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 0.905,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.853,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.854,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "CUB": [
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 0.72,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 0.765,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "distance": 0.766,
+      "stunting_change_2000_2024": -4.2,
+      "stunting_2024": 4.6
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.539,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.656,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "CYP": [],
+  "CZE": [
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "distance": 0.796,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 7.0
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "distance": 1.013,
+      "stunting_change_2000_2024": -5.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "BGR",
+      "country_name": "Bulgaria",
+      "distance": 1.029,
+      "stunting_change_2000_2024": -3.2,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "LVA",
+      "country_name": "Latvia",
+      "distance": 0.996,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "LTU",
+      "country_name": "Lithuania",
+      "distance": 1.013,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 1.6
+    }
+  ],
+  "DEU": [
+    {
+      "iso3": "BLR",
+      "country_name": "Belarus",
+      "distance": 1.212,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 1.1
+    },
+    {
+      "iso3": "BEL",
+      "country_name": "Belgium",
+      "distance": 0.427,
+      "stunting_change_2000_2024": -1.4,
+      "stunting_2024": 2.6
+    },
+    {
+      "iso3": "FIN",
+      "country_name": "Finland",
+      "distance": 0.688,
+      "stunting_change_2000_2024": -0.5,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 1.223,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "NLD",
+      "country_name": "Netherlands",
+      "distance": 0.643,
+      "stunting_change_2000_2024": 0.3,
+      "stunting_2024": 1.6
+    }
+  ],
+  "DJI": [
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.343,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.393,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "GHA",
+      "country_name": "Ghana",
+      "distance": 1.444,
+      "stunting_change_2000_2024": -17.2,
+      "stunting_2024": 15.6
+    },
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "distance": 1.09,
+      "stunting_change_2000_2024": -13.3,
+      "stunting_2024": 16.4
+    },
+    {
+      "iso3": "MYS",
+      "country_name": "Malaysia",
+      "distance": 0.93,
+      "stunting_change_2000_2024": 5.0,
+      "stunting_2024": 24.3
+    }
+  ],
+  "DMA": [],
+  "DNK": [],
+  "DOM": [
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 1.181,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "TUR",
+      "country_name": "T\u00fcrkiye",
+      "distance": 1.087,
+      "stunting_change_2000_2024": -11.9,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "distance": 1.189,
+      "stunting_change_2000_2024": -5.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.082,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 1.0,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    }
+  ],
+  "DZA": [
+    {
+      "iso3": "KGZ",
+      "country_name": "Kyrgyzstan",
+      "distance": 1.495,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 11.0
+    },
+    {
+      "iso3": "KAZ",
+      "country_name": "Kazakhstan",
+      "distance": 1.444,
+      "stunting_change_2000_2024": -11.7,
+      "stunting_2024": 4.4
+    },
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "distance": 1.6,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "TUN",
+      "country_name": "Tunisia",
+      "distance": 1.049,
+      "stunting_change_2000_2024": -3.6,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 1.698,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    }
+  ],
+  "ECU": [
+    {
+      "iso3": "HND",
+      "country_name": "Honduras",
+      "distance": 0.825,
+      "stunting_change_2000_2024": -18.5,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.241,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    },
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "distance": 1.101,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 7.0
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "distance": 1.215,
+      "stunting_change_2000_2024": -5.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 0.98,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    }
+  ],
+  "EGY": [
+    {
+      "iso3": "SYR",
+      "country_name": "Syrian Arab Republic",
+      "distance": 1.542,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 1.542,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "OMN",
+      "country_name": "Oman",
+      "distance": 1.397,
+      "stunting_change_2000_2024": -1.7,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "SAU",
+      "country_name": "Saudi Arabia",
+      "distance": 1.055,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 11.1
+    },
+    {
+      "iso3": "FJI",
+      "country_name": "Fiji",
+      "distance": 1.685,
+      "stunting_change_2000_2024": 1.2,
+      "stunting_2024": 7.2
+    }
+  ],
+  "ERI": [
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 1.908,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "SOM",
+      "country_name": "Somalia",
+      "distance": 2.004,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 23.9
+    },
+    {
+      "iso3": "TLS",
+      "country_name": "Timor-Leste",
+      "distance": 1.93,
+      "stunting_change_2000_2024": -9.6,
+      "stunting_2024": 45.4
+    },
+    {
+      "iso3": "NER",
+      "country_name": "Niger",
+      "distance": 1.303,
+      "stunting_change_2000_2024": -3.8,
+      "stunting_2024": 48.3
+    },
+    {
+      "iso3": "SDN",
+      "country_name": "Sudan",
+      "distance": 1.628,
+      "stunting_change_2000_2024": -2.9,
+      "stunting_2024": 35.4
+    }
+  ],
+  "ESP": [],
+  "EST": [
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 0.83,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "BLR",
+      "country_name": "Belarus",
+      "distance": 0.692,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 1.1
+    },
+    {
+      "iso3": "POL",
+      "country_name": "Poland",
+      "distance": 0.905,
+      "stunting_change_2000_2024": -2.5,
+      "stunting_2024": 1.0
+    },
+    {
+      "iso3": "LVA",
+      "country_name": "Latvia",
+      "distance": 0.393,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "LTU",
+      "country_name": "Lithuania",
+      "distance": 0.671,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 1.6
+    }
+  ],
+  "ETH": [
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "distance": 1.398,
+      "stunting_change_2000_2024": -22.9,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 1.507,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.392,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 1.622,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    },
+    {
+      "iso3": "TLS",
+      "country_name": "Timor-Leste",
+      "distance": 1.484,
+      "stunting_change_2000_2024": -9.6,
+      "stunting_2024": 45.4
+    }
+  ],
+  "FIN": [
+    {
+      "iso3": "BEL",
+      "country_name": "Belgium",
+      "distance": 0.671,
+      "stunting_change_2000_2024": -1.4,
+      "stunting_2024": 2.6
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 1.052,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 1.115,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "NLD",
+      "country_name": "Netherlands",
+      "distance": 0.538,
+      "stunting_change_2000_2024": 0.3,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "DEU",
+      "country_name": "Germany",
+      "distance": 0.688,
+      "stunting_change_2000_2024": 1.1,
+      "stunting_2024": 2.2
+    }
+  ],
+  "FJI": [
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "distance": 1.361,
+      "stunting_change_2000_2024": -18.6,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "distance": 1.685,
+      "stunting_change_2000_2024": -13.0,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "LBY",
+      "country_name": "Libya",
+      "distance": 1.505,
+      "stunting_change_2000_2024": -10.6,
+      "stunting_2024": 9.2
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 1.12,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 1.547,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    }
+  ],
+  "FRA": [],
+  "FSM": [],
+  "GAB": [
+    {
+      "iso3": "GNQ",
+      "country_name": "Equatorial Guinea",
+      "distance": 1.14,
+      "stunting_change_2000_2024": -21.2,
+      "stunting_2024": 17.1
+    },
+    {
+      "iso3": "STP",
+      "country_name": "Sao Tome and Principe",
+      "distance": 1.222,
+      "stunting_change_2000_2024": -20.8,
+      "stunting_2024": 10.0
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.148,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "HTI",
+      "country_name": "Haiti",
+      "distance": 1.205,
+      "stunting_change_2000_2024": -8.8,
+      "stunting_2024": 21.6
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.585,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    }
+  ],
+  "GBR": [
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "distance": 0.787,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "PRT",
+      "country_name": "Portugal",
+      "distance": 0.958,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "IRL",
+      "country_name": "Ireland",
+      "distance": 0.903,
+      "stunting_change_2000_2024": -1.5,
+      "stunting_2024": 2.2
+    },
+    {
+      "iso3": "BEL",
+      "country_name": "Belgium",
+      "distance": 0.964,
+      "stunting_change_2000_2024": -1.4,
+      "stunting_2024": 2.6
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.962,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "GEO": [
+    {
+      "iso3": "UZB",
+      "country_name": "Uzbekistan",
+      "distance": 0.964,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 6.7
+    },
+    {
+      "iso3": "TKM",
+      "country_name": "Turkmenistan",
+      "distance": 1.216,
+      "stunting_change_2000_2024": -20.0,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "AZE",
+      "country_name": "Azerbaijan",
+      "distance": 1.237,
+      "stunting_change_2000_2024": -17.5,
+      "stunting_2024": 6.8
+    },
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 1.316,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 1.28,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    }
+  ],
+  "GHA": [
+    {
+      "iso3": "PRK",
+      "country_name": "Democratic People's Republic of Korea",
+      "distance": 1.291,
+      "stunting_change_2000_2024": -35.9,
+      "stunting_2024": 16.6
+    },
+    {
+      "iso3": "MMR",
+      "country_name": "Myanmar",
+      "distance": 1.149,
+      "stunting_change_2000_2024": -21.4,
+      "stunting_2024": 24.5
+    },
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.363,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.402,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.175,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    }
+  ],
+  "GIN": [
+    {
+      "iso3": "KHM",
+      "country_name": "Cambodia",
+      "distance": 0.808,
+      "stunting_change_2000_2024": -28.6,
+      "stunting_2024": 22.0
+    },
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.096,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 1.025,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 0.812,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.029,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    }
+  ],
+  "GMB": [
+    {
+      "iso3": "STP",
+      "country_name": "Sao Tome and Principe",
+      "distance": 1.187,
+      "stunting_change_2000_2024": -20.8,
+      "stunting_2024": 10.0
+    },
+    {
+      "iso3": "MDV",
+      "country_name": "Maldives",
+      "distance": 1.255,
+      "stunting_change_2000_2024": -19.6,
+      "stunting_2024": 14.2
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 1.119,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "GAB",
+      "country_name": "Gabon",
+      "distance": 1.148,
+      "stunting_change_2000_2024": -11.8,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 0.955,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    }
+  ],
+  "GNB": [
+    {
+      "iso3": "BFA",
+      "country_name": "Burkina Faso",
+      "distance": 1.159,
+      "stunting_change_2000_2024": -20.9,
+      "stunting_2024": 19.5
+    },
+    {
+      "iso3": "LBR",
+      "country_name": "Liberia",
+      "distance": 0.896,
+      "stunting_change_2000_2024": -18.1,
+      "stunting_2024": 26.9
+    },
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 0.773,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 0.92,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "distance": 0.974,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 33.2
+    }
+  ],
+  "GNQ": [
+    {
+      "iso3": "BTN",
+      "country_name": "Bhutan",
+      "distance": 1.106,
+      "stunting_change_2000_2024": -26.9,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "STP",
+      "country_name": "Sao Tome and Principe",
+      "distance": 0.878,
+      "stunting_change_2000_2024": -20.8,
+      "stunting_2024": 10.0
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.382,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "GAB",
+      "country_name": "Gabon",
+      "distance": 1.14,
+      "stunting_change_2000_2024": -11.8,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.436,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    }
+  ],
+  "GRC": [
+    {
+      "iso3": "PRY",
+      "country_name": "Paraguay",
+      "distance": 1.037,
+      "stunting_change_2000_2024": -15.3,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 1.19,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.143,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "PRT",
+      "country_name": "Portugal",
+      "distance": 1.202,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 1.181,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    }
+  ],
+  "GRD": [],
+  "GTM": [
+    {
+      "iso3": "RWA",
+      "country_name": "Rwanda",
+      "distance": 2.7,
+      "stunting_change_2000_2024": -18.9,
+      "stunting_2024": 29.8
+    },
+    {
+      "iso3": "HND",
+      "country_name": "Honduras",
+      "distance": 2.299,
+      "stunting_change_2000_2024": -18.5,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "ECU",
+      "country_name": "Ecuador",
+      "distance": 2.576,
+      "stunting_change_2000_2024": -9.5,
+      "stunting_2024": 17.7
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 2.669,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    },
+    {
+      "iso3": "LSO",
+      "country_name": "Lesotho",
+      "distance": 2.141,
+      "stunting_change_2000_2024": -7.1,
+      "stunting_2024": 35.0
+    }
+  ],
+  "GUY": [
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "distance": 1.369,
+      "stunting_change_2000_2024": -13.3,
+      "stunting_2024": 16.4
+    },
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "distance": 1.593,
+      "stunting_change_2000_2024": -10.0,
+      "stunting_2024": 4.8
+    },
+    {
+      "iso3": "SUR",
+      "country_name": "Suriname",
+      "distance": 1.204,
+      "stunting_change_2000_2024": -5.6,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "MUS",
+      "country_name": "Mauritius",
+      "distance": 1.304,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.8
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 1.584,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    }
+  ],
+  "HND": [
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 1.15,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "ECU",
+      "country_name": "Ecuador",
+      "distance": 0.825,
+      "stunting_change_2000_2024": -9.5,
+      "stunting_2024": 17.7
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.348,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 0.981,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 1.218,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    }
+  ],
+  "HRV": [],
+  "HTI": [
+    {
+      "iso3": "STP",
+      "country_name": "Sao Tome and Principe",
+      "distance": 1.654,
+      "stunting_change_2000_2024": -20.8,
+      "stunting_2024": 10.0
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.415,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 1.685,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "GAB",
+      "country_name": "Gabon",
+      "distance": 1.205,
+      "stunting_change_2000_2024": -11.8,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.535,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    }
+  ],
+  "HUN": [],
+  "IDN": [
+    {
+      "iso3": "KHM",
+      "country_name": "Cambodia",
+      "distance": 1.564,
+      "stunting_change_2000_2024": -28.6,
+      "stunting_2024": 22.0
+    },
+    {
+      "iso3": "MMR",
+      "country_name": "Myanmar",
+      "distance": 1.491,
+      "stunting_change_2000_2024": -21.4,
+      "stunting_2024": 24.5
+    },
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.428,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "GHA",
+      "country_name": "Ghana",
+      "distance": 1.566,
+      "stunting_change_2000_2024": -17.2,
+      "stunting_2024": 15.6
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "distance": 1.578,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 20.9
+    }
+  ],
+  "IND": [
+    {
+      "iso3": "NPL",
+      "country_name": "Nepal",
+      "distance": 2.75,
+      "stunting_change_2000_2024": -29.9,
+      "stunting_2024": 26.0
+    },
+    {
+      "iso3": "BGD",
+      "country_name": "Bangladesh",
+      "distance": 2.7,
+      "stunting_change_2000_2024": -29.8,
+      "stunting_2024": 25.1
+    },
+    {
+      "iso3": "COM",
+      "country_name": "Comoros",
+      "distance": 2.757,
+      "stunting_change_2000_2024": -26.4,
+      "stunting_2024": 17.4
+    },
+    {
+      "iso3": "YEM",
+      "country_name": "Yemen",
+      "distance": 2.795,
+      "stunting_change_2000_2024": -7.9,
+      "stunting_2024": 47.4
+    },
+    {
+      "iso3": "SDN",
+      "country_name": "Sudan",
+      "distance": 2.422,
+      "stunting_change_2000_2024": -2.9,
+      "stunting_2024": 35.4
+    }
+  ],
+  "IRL": [
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "distance": 0.692,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "PRT",
+      "country_name": "Portugal",
+      "distance": 0.969,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 0.903,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 1.039,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 1.018,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "IRN": [
+    {
+      "iso3": "AZE",
+      "country_name": "Azerbaijan",
+      "distance": 1.217,
+      "stunting_change_2000_2024": -17.5,
+      "stunting_2024": 6.8
+    },
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 1.178,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "LBN",
+      "country_name": "Lebanon",
+      "distance": 1.153,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 10.1
+    },
+    {
+      "iso3": "SUR",
+      "country_name": "Suriname",
+      "distance": 1.033,
+      "stunting_change_2000_2024": -5.6,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 0.809,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    }
+  ],
+  "IRQ": [
+    {
+      "iso3": "TUR",
+      "country_name": "T\u00fcrkiye",
+      "distance": 1.401,
+      "stunting_change_2000_2024": -11.9,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "LBN",
+      "country_name": "Lebanon",
+      "distance": 1.465,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 10.1
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 1.468,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 1.138,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "FJI",
+      "country_name": "Fiji",
+      "distance": 1.361,
+      "stunting_change_2000_2024": 1.2,
+      "stunting_2024": 7.2
+    }
+  ],
+  "ISL": [],
+  "ISR": [],
+  "ITA": [],
+  "JAM": [
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 0.743,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "distance": 0.809,
+      "stunting_change_2000_2024": -10.0,
+      "stunting_2024": 4.8
+    },
+    {
+      "iso3": "SUR",
+      "country_name": "Suriname",
+      "distance": 0.968,
+      "stunting_change_2000_2024": -5.6,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "DOM",
+      "country_name": "Dominican Republic",
+      "distance": 1.0,
+      "stunting_change_2000_2024": -4.5,
+      "stunting_2024": 5.6
+    },
+    {
+      "iso3": "LCA",
+      "country_name": "Saint Lucia",
+      "distance": 1.217,
+      "stunting_change_2000_2024": -0.2,
+      "stunting_2024": 2.8
+    }
+  ],
+  "JOR": [
+    {
+      "iso3": "TUR",
+      "country_name": "T\u00fcrkiye",
+      "distance": 1.871,
+      "stunting_change_2000_2024": -11.9,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "MAR",
+      "country_name": "Morocco",
+      "distance": 1.818,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "ZAF",
+      "country_name": "South Africa",
+      "distance": 2.426,
+      "stunting_change_2000_2024": -2.2,
+      "stunting_2024": 24.4
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 2.079,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "KWT",
+      "country_name": "Kuwait",
+      "distance": 1.813,
+      "stunting_change_2000_2024": 0.8,
+      "stunting_2024": 4.5
+    }
+  ],
+  "JPN": [
+    {
+      "iso3": "PRK",
+      "country_name": "Democratic People's Republic of Korea",
+      "distance": 1.64,
+      "stunting_change_2000_2024": -35.9,
+      "stunting_2024": 16.6
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.529,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 1.947,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "SGP",
+      "country_name": "Singapore",
+      "distance": 0.848,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 2.8
+    },
+    {
+      "iso3": "KOR",
+      "country_name": "Republic of Korea",
+      "distance": 1.375,
+      "stunting_change_2000_2024": -0.7,
+      "stunting_2024": 1.8
+    }
+  ],
+  "KAZ": [
+    {
+      "iso3": "UZB",
+      "country_name": "Uzbekistan",
+      "distance": 1.062,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 6.7
+    },
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 1.378,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "TKM",
+      "country_name": "Turkmenistan",
+      "distance": 1.049,
+      "stunting_change_2000_2024": -20.0,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "KGZ",
+      "country_name": "Kyrgyzstan",
+      "distance": 1.056,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 11.0
+    },
+    {
+      "iso3": "POL",
+      "country_name": "Poland",
+      "distance": 1.314,
+      "stunting_change_2000_2024": -2.5,
+      "stunting_2024": 1.0
+    }
+  ],
+  "KEN": [
+    {
+      "iso3": "PRK",
+      "country_name": "Democratic People's Republic of Korea",
+      "distance": 1.028,
+      "stunting_change_2000_2024": -35.9,
+      "stunting_2024": 16.6
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 0.935,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.286,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "TZA",
+      "country_name": "United Republic of Tanzania",
+      "distance": 1.274,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.079,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    }
+  ],
+  "KGZ": [
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 1.244,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "UZB",
+      "country_name": "Uzbekistan",
+      "distance": 1.421,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 6.7
+    },
+    {
+      "iso3": "SWZ",
+      "country_name": "Eswatini",
+      "distance": 1.203,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 18.9
+    },
+    {
+      "iso3": "KAZ",
+      "country_name": "Kazakhstan",
+      "distance": 1.056,
+      "stunting_change_2000_2024": -11.7,
+      "stunting_2024": 4.4
+    },
+    {
+      "iso3": "BIH",
+      "country_name": "Bosnia and Herzegovina",
+      "distance": 1.449,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.9
+    }
+  ],
+  "KHM": [
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 0.853,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "SLE",
+      "country_name": "Sierra Leone",
+      "distance": 1.081,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 25.2
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 1.401,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.4,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 0.808,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "KIR": [
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "distance": 2.176,
+      "stunting_change_2000_2024": -18.6,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "TON",
+      "country_name": "Tonga",
+      "distance": 2.398,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "MHL",
+      "country_name": "Marshall Islands",
+      "distance": 1.89,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 30.0
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 2.189,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "WSM",
+      "country_name": "Samoa",
+      "distance": 2.119,
+      "stunting_change_2000_2024": 2.4,
+      "stunting_2024": 8.4
+    }
+  ],
+  "KNA": [],
+  "KOR": [
+    {
+      "iso3": "UZB",
+      "country_name": "Uzbekistan",
+      "distance": 1.694,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 6.7
+    },
+    {
+      "iso3": "CHN",
+      "country_name": "China",
+      "distance": 1.502,
+      "stunting_change_2000_2024": -15.5,
+      "stunting_2024": 4.5
+    },
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 1.759,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "SGP",
+      "country_name": "Singapore",
+      "distance": 1.09,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 2.8
+    },
+    {
+      "iso3": "JPN",
+      "country_name": "Japan",
+      "distance": 1.375,
+      "stunting_change_2000_2024": -0.5,
+      "stunting_2024": 5.2
+    }
+  ],
+  "KWT": [
+    {
+      "iso3": "TON",
+      "country_name": "Tonga",
+      "distance": 1.571,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 1.38,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "JOR",
+      "country_name": "Jordan",
+      "distance": 1.813,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 7.7
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 1.478,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "WSM",
+      "country_name": "Samoa",
+      "distance": 1.616,
+      "stunting_change_2000_2024": 2.4,
+      "stunting_2024": 8.4
+    }
+  ],
+  "LAO": [
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 1.086,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "distance": 1.343,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 20.9
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 0.735,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.302,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.096,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "LBN": [
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "distance": 1.465,
+      "stunting_change_2000_2024": -18.6,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "LBY",
+      "country_name": "Libya",
+      "distance": 1.231,
+      "stunting_change_2000_2024": -10.6,
+      "stunting_2024": 9.2
+    },
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "distance": 1.153,
+      "stunting_change_2000_2024": -10.0,
+      "stunting_2024": 4.8
+    },
+    {
+      "iso3": "SUR",
+      "country_name": "Suriname",
+      "distance": 1.277,
+      "stunting_change_2000_2024": -5.6,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "OMN",
+      "country_name": "Oman",
+      "distance": 1.333,
+      "stunting_change_2000_2024": -1.7,
+      "stunting_2024": 12.9
+    }
+  ],
+  "LBR": [
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 1.331,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 1.185,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.569,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "distance": 0.896,
+      "stunting_change_2000_2024": -5.1,
+      "stunting_2024": 28.3
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "distance": 1.543,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 33.2
+    }
+  ],
+  "LBY": [
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "distance": 1.692,
+      "stunting_change_2000_2024": -13.0,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "LBN",
+      "country_name": "Lebanon",
+      "distance": 1.231,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 10.1
+    },
+    {
+      "iso3": "OMN",
+      "country_name": "Oman",
+      "distance": 1.405,
+      "stunting_change_2000_2024": -1.7,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "SAU",
+      "country_name": "Saudi Arabia",
+      "distance": 1.148,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 11.1
+    },
+    {
+      "iso3": "FJI",
+      "country_name": "Fiji",
+      "distance": 1.505,
+      "stunting_change_2000_2024": 1.2,
+      "stunting_2024": 7.2
+    }
+  ],
+  "LCA": [
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 1.601,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "distance": 1.748,
+      "stunting_change_2000_2024": -10.0,
+      "stunting_2024": 4.8
+    },
+    {
+      "iso3": "SUR",
+      "country_name": "Suriname",
+      "distance": 1.41,
+      "stunting_change_2000_2024": -5.6,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "MUS",
+      "country_name": "Mauritius",
+      "distance": 1.542,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.8
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 1.217,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    }
+  ],
+  "LIE": [],
+  "LKA": [
+    {
+      "iso3": "NPL",
+      "country_name": "Nepal",
+      "distance": 1.761,
+      "stunting_change_2000_2024": -29.9,
+      "stunting_2024": 26.0
+    },
+    {
+      "iso3": "COM",
+      "country_name": "Comoros",
+      "distance": 1.793,
+      "stunting_change_2000_2024": -26.4,
+      "stunting_2024": 17.4
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "distance": 2.155,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 20.9
+    },
+    {
+      "iso3": "SOM",
+      "country_name": "Somalia",
+      "distance": 1.483,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 23.9
+    },
+    {
+      "iso3": "SDN",
+      "country_name": "Sudan",
+      "distance": 2.11,
+      "stunting_change_2000_2024": -2.9,
+      "stunting_2024": 35.4
+    }
+  ],
+  "LSO": [
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "distance": 1.411,
+      "stunting_change_2000_2024": -22.9,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.36,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "HND",
+      "country_name": "Honduras",
+      "distance": 1.859,
+      "stunting_change_2000_2024": -18.5,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "SWZ",
+      "country_name": "Eswatini",
+      "distance": 1.728,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 18.9
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.423,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    }
+  ],
+  "LTU": [
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 1.029,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "BLR",
+      "country_name": "Belarus",
+      "distance": 0.402,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 1.1
+    },
+    {
+      "iso3": "LVA",
+      "country_name": "Latvia",
+      "distance": 0.601,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 0.671,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    },
+    {
+      "iso3": "CZE",
+      "country_name": "Czechia",
+      "distance": 1.013,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 2.4
+    }
+  ],
+  "LUX": [],
+  "LVA": [
+    {
+      "iso3": "BLR",
+      "country_name": "Belarus",
+      "distance": 0.813,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 1.1
+    },
+    {
+      "iso3": "POL",
+      "country_name": "Poland",
+      "distance": 0.794,
+      "stunting_change_2000_2024": -2.5,
+      "stunting_2024": 1.0
+    },
+    {
+      "iso3": "LTU",
+      "country_name": "Lithuania",
+      "distance": 0.601,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 0.393,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.891,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "MAR": [
+    {
+      "iso3": "TUR",
+      "country_name": "T\u00fcrkiye",
+      "distance": 1.295,
+      "stunting_change_2000_2024": -11.9,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "DOM",
+      "country_name": "Dominican Republic",
+      "distance": 1.513,
+      "stunting_change_2000_2024": -4.5,
+      "stunting_2024": 5.6
+    },
+    {
+      "iso3": "SYC",
+      "country_name": "Seychelles",
+      "distance": 1.726,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "ZAF",
+      "country_name": "South Africa",
+      "distance": 1.235,
+      "stunting_change_2000_2024": -2.2,
+      "stunting_2024": 24.4
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 1.645,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    }
+  ],
+  "MCO": [],
+  "MDA": [
+    {
+      "iso3": "UZB",
+      "country_name": "Uzbekistan",
+      "distance": 0.8,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 6.7
+    },
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "distance": 0.916,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 7.0
+    },
+    {
+      "iso3": "BLR",
+      "country_name": "Belarus",
+      "distance": 0.82,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 1.1
+    },
+    {
+      "iso3": "LVA",
+      "country_name": "Latvia",
+      "distance": 1.022,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 0.83,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    }
+  ],
+  "MDG": [
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.086,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 1.435,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 1.337,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "TLS",
+      "country_name": "Timor-Leste",
+      "distance": 0.914,
+      "stunting_change_2000_2024": -9.6,
+      "stunting_2024": 45.4
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 1.247,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    }
+  ],
+  "MDV": [
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.194,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 1.151,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "MLI",
+      "country_name": "Mali",
+      "distance": 1.441,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 23.2
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.255,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "SEN",
+      "country_name": "Senegal",
+      "distance": 1.259,
+      "stunting_change_2000_2024": -7.4,
+      "stunting_2024": 17.2
+    }
+  ],
+  "MEX": [
+    {
+      "iso3": "SLV",
+      "country_name": "El Salvador",
+      "distance": 0.785,
+      "stunting_change_2000_2024": -19.3,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 0.891,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "distance": 1.138,
+      "stunting_change_2000_2024": -5.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.075,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "distance": 0.778,
+      "stunting_change_2000_2024": 3.5,
+      "stunting_2024": 10.6
+    }
+  ],
+  "MHL": [
+    {
+      "iso3": "TON",
+      "country_name": "Tonga",
+      "distance": 2.76,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "KIR",
+      "country_name": "Kiribati",
+      "distance": 1.89,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 14.7
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 2.858,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "KWT",
+      "country_name": "Kuwait",
+      "distance": 2.809,
+      "stunting_change_2000_2024": 0.8,
+      "stunting_2024": 4.5
+    },
+    {
+      "iso3": "WSM",
+      "country_name": "Samoa",
+      "distance": 2.337,
+      "stunting_change_2000_2024": 2.4,
+      "stunting_2024": 8.4
+    }
+  ],
+  "MKD": [
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 1.01,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "BIH",
+      "country_name": "Bosnia and Herzegovina",
+      "distance": 1.024,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.9
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "distance": 0.592,
+      "stunting_change_2000_2024": -4.2,
+      "stunting_2024": 4.6
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.764,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.765,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    }
+  ],
+  "MLI": [
+    {
+      "iso3": "BFA",
+      "country_name": "Burkina Faso",
+      "distance": 1.04,
+      "stunting_change_2000_2024": -20.9,
+      "stunting_2024": 19.5
+    },
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 1.336,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "NGA",
+      "country_name": "Nigeria",
+      "distance": 1.209,
+      "stunting_change_2000_2024": -8.0,
+      "stunting_2024": 33.8
+    },
+    {
+      "iso3": "SEN",
+      "country_name": "Senegal",
+      "distance": 0.821,
+      "stunting_change_2000_2024": -7.4,
+      "stunting_2024": 17.2
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.341,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "MLT": [
+    {
+      "iso3": "IRL",
+      "country_name": "Ireland",
+      "distance": 0.692,
+      "stunting_change_2000_2024": -1.5,
+      "stunting_2024": 2.2
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 0.787,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.774,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.902,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "USA",
+      "country_name": "United States",
+      "distance": 0.805,
+      "stunting_change_2000_2024": 1.1,
+      "stunting_2024": 4.2
+    }
+  ],
+  "MMR": [
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.258,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "GHA",
+      "country_name": "Ghana",
+      "distance": 1.149,
+      "stunting_change_2000_2024": -17.2,
+      "stunting_2024": 15.6
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.342,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 0.949,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.296,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "MNE": [
+    {
+      "iso3": "PER",
+      "country_name": "Peru",
+      "distance": 0.745,
+      "stunting_change_2000_2024": -23.8,
+      "stunting_2024": 10.6
+    },
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 0.875,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.848,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.656,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "distance": 0.854,
+      "stunting_change_2000_2024": 3.5,
+      "stunting_2024": 10.6
+    }
+  ],
+  "MNG": [
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "distance": 1.224,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 1.16,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 1.312,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 1.226,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "ARG",
+      "country_name": "Argentina",
+      "distance": 1.234,
+      "stunting_change_2000_2024": 1.4,
+      "stunting_2024": 10.7
+    }
+  ],
+  "MOZ": [
+    {
+      "iso3": "LBR",
+      "country_name": "Liberia",
+      "distance": 1.185,
+      "stunting_change_2000_2024": -18.1,
+      "stunting_2024": 26.9
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "distance": 0.92,
+      "stunting_change_2000_2024": -5.1,
+      "stunting_2024": 28.3
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 0.818,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "distance": 0.858,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "AGO",
+      "country_name": "Angola",
+      "distance": 1.15,
+      "stunting_change_2000_2024": 0.2,
+      "stunting_2024": 47.7
+    }
+  ],
+  "MRT": [
+    {
+      "iso3": "MMR",
+      "country_name": "Myanmar",
+      "distance": 1.258,
+      "stunting_change_2000_2024": -21.4,
+      "stunting_2024": 24.5
+    },
+    {
+      "iso3": "MDV",
+      "country_name": "Maldives",
+      "distance": 1.194,
+      "stunting_change_2000_2024": -19.6,
+      "stunting_2024": 14.2
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 1.31,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 1.225,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.21,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "MSR": [],
+  "MUS": [
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "distance": 1.871,
+      "stunting_change_2000_2024": -13.3,
+      "stunting_2024": 16.4
+    },
+    {
+      "iso3": "GUY",
+      "country_name": "Guyana",
+      "distance": 1.304,
+      "stunting_change_2000_2024": -7.3,
+      "stunting_2024": 7.1
+    },
+    {
+      "iso3": "SUR",
+      "country_name": "Suriname",
+      "distance": 1.631,
+      "stunting_change_2000_2024": -5.6,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 1.897,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    },
+    {
+      "iso3": "LCA",
+      "country_name": "Saint Lucia",
+      "distance": 1.542,
+      "stunting_change_2000_2024": -0.2,
+      "stunting_2024": 2.8
+    }
+  ],
+  "MWI": [
+    {
+      "iso3": "PRK",
+      "country_name": "Democratic People's Republic of Korea",
+      "distance": 1.421,
+      "stunting_change_2000_2024": -35.9,
+      "stunting_2024": 16.6
+    },
+    {
+      "iso3": "ETH",
+      "country_name": "Ethiopia",
+      "distance": 1.398,
+      "stunting_change_2000_2024": -21.4,
+      "stunting_2024": 35.5
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 1.115,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.172,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "LSO",
+      "country_name": "Lesotho",
+      "distance": 1.411,
+      "stunting_change_2000_2024": -7.1,
+      "stunting_2024": 35.0
+    }
+  ],
+  "MYS": [
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.44,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "IDN",
+      "country_name": "Indonesia",
+      "distance": 1.624,
+      "stunting_change_2000_2024": -17.2,
+      "stunting_2024": 22.6
+    },
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "distance": 1.485,
+      "stunting_change_2000_2024": -13.3,
+      "stunting_2024": 16.4
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "distance": 0.93,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 20.9
+    },
+    {
+      "iso3": "SLB",
+      "country_name": "Solomon Islands",
+      "distance": 1.24,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 29.8
+    }
+  ],
+  "NAM": [
+    {
+      "iso3": "GHA",
+      "country_name": "Ghana",
+      "distance": 1.432,
+      "stunting_change_2000_2024": -17.2,
+      "stunting_2024": 15.6
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "distance": 1.09,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 20.9
+    },
+    {
+      "iso3": "GUY",
+      "country_name": "Guyana",
+      "distance": 1.369,
+      "stunting_change_2000_2024": -7.3,
+      "stunting_2024": 7.1
+    },
+    {
+      "iso3": "BGR",
+      "country_name": "Bulgaria",
+      "distance": 1.524,
+      "stunting_change_2000_2024": -3.2,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "MYS",
+      "country_name": "Malaysia",
+      "distance": 1.485,
+      "stunting_change_2000_2024": 5.0,
+      "stunting_2024": 24.3
+    }
+  ],
+  "NER": [
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 1.782,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 1.445,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "NGA",
+      "country_name": "Nigeria",
+      "distance": 1.866,
+      "stunting_change_2000_2024": -8.0,
+      "stunting_2024": 33.8
+    },
+    {
+      "iso3": "COD",
+      "country_name": "Democratic Republic of the Congo",
+      "distance": 1.879,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 44.1
+    },
+    {
+      "iso3": "ERI",
+      "country_name": "Eritrea",
+      "distance": 1.303,
+      "stunting_change_2000_2024": 4.6,
+      "stunting_2024": 48.0
+    }
+  ],
+  "NGA": [
+    {
+      "iso3": "MLI",
+      "country_name": "Mali",
+      "distance": 1.209,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 23.2
+    },
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "distance": 1.218,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 37.0
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "distance": 1.228,
+      "stunting_change_2000_2024": -5.1,
+      "stunting_2024": 28.3
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 0.962,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "distance": 0.7,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 33.2
+    }
+  ],
+  "NIC": [],
+  "NIU": [],
+  "NLD": [
+    {
+      "iso3": "BEL",
+      "country_name": "Belgium",
+      "distance": 0.377,
+      "stunting_change_2000_2024": -1.4,
+      "stunting_2024": 2.6
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 1.079,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    },
+    {
+      "iso3": "FIN",
+      "country_name": "Finland",
+      "distance": 0.538,
+      "stunting_change_2000_2024": -0.5,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 1.047,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "DEU",
+      "country_name": "Germany",
+      "distance": 0.643,
+      "stunting_change_2000_2024": 1.1,
+      "stunting_2024": 2.2
+    }
+  ],
+  "NOR": [],
+  "NPL": [
+    {
+      "iso3": "BGD",
+      "country_name": "Bangladesh",
+      "distance": 0.962,
+      "stunting_change_2000_2024": -29.8,
+      "stunting_2024": 25.1
+    },
+    {
+      "iso3": "COM",
+      "country_name": "Comoros",
+      "distance": 1.375,
+      "stunting_change_2000_2024": -26.4,
+      "stunting_2024": 17.4
+    },
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.427,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "SOM",
+      "country_name": "Somalia",
+      "distance": 1.646,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 23.9
+    },
+    {
+      "iso3": "SDN",
+      "country_name": "Sudan",
+      "distance": 1.509,
+      "stunting_change_2000_2024": -2.9,
+      "stunting_2024": 35.4
+    }
+  ],
+  "NRU": [],
+  "NZL": [],
+  "OMN": [
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "distance": 1.397,
+      "stunting_change_2000_2024": -13.0,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "LBY",
+      "country_name": "Libya",
+      "distance": 1.405,
+      "stunting_change_2000_2024": -10.6,
+      "stunting_2024": 9.2
+    },
+    {
+      "iso3": "LBN",
+      "country_name": "Lebanon",
+      "distance": 1.333,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 10.1
+    },
+    {
+      "iso3": "SYR",
+      "country_name": "Syrian Arab Republic",
+      "distance": 1.269,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "SAU",
+      "country_name": "Saudi Arabia",
+      "distance": 1.564,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 11.1
+    }
+  ],
+  "PAK": [
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.447,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.697,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "AFG",
+      "country_name": "Afghanistan",
+      "distance": 1.065,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 42.0
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 1.673,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 1.405,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    }
+  ],
+  "PAN": [
+    {
+      "iso3": "PER",
+      "country_name": "Peru",
+      "distance": 0.983,
+      "stunting_change_2000_2024": -23.8,
+      "stunting_2024": 10.6
+    },
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 0.843,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.043,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.76,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.982,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    }
+  ],
+  "PER": [
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 0.57,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "PRT",
+      "country_name": "Portugal",
+      "distance": 0.927,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.8,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.827,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.745,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "PHL": [
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "distance": 2.225,
+      "stunting_change_2000_2024": -22.9,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "ETH",
+      "country_name": "Ethiopia",
+      "distance": 2.052,
+      "stunting_change_2000_2024": -21.4,
+      "stunting_2024": 35.5
+    },
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 2.398,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    },
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "distance": 2.193,
+      "stunting_change_2000_2024": -13.3,
+      "stunting_2024": 16.4
+    },
+    {
+      "iso3": "TLS",
+      "country_name": "Timor-Leste",
+      "distance": 2.303,
+      "stunting_change_2000_2024": -9.6,
+      "stunting_2024": 45.4
+    }
+  ],
+  "PLW": [],
+  "PNG": [
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "distance": 4.072,
+      "stunting_change_2000_2024": -13.0,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "BWA",
+      "country_name": "Botswana",
+      "distance": 3.652,
+      "stunting_change_2000_2024": -9.3,
+      "stunting_2024": 21.0
+    },
+    {
+      "iso3": "SYR",
+      "country_name": "Syrian Arab Republic",
+      "distance": 2.953,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "ZAF",
+      "country_name": "South Africa",
+      "distance": 3.849,
+      "stunting_change_2000_2024": -2.2,
+      "stunting_2024": 24.4
+    },
+    {
+      "iso3": "SLB",
+      "country_name": "Solomon Islands",
+      "distance": 3.839,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 29.8
+    }
+  ],
+  "POL": [
+    {
+      "iso3": "PER",
+      "country_name": "Peru",
+      "distance": 1.008,
+      "stunting_change_2000_2024": -23.8,
+      "stunting_2024": 10.6
+    },
+    {
+      "iso3": "LVA",
+      "country_name": "Latvia",
+      "distance": 0.794,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 0.905,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 1.011,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.98,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "PRK": [
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "distance": 1.421,
+      "stunting_change_2000_2024": -22.9,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.028,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 0.76,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "GHA",
+      "country_name": "Ghana",
+      "distance": 1.291,
+      "stunting_change_2000_2024": -17.2,
+      "stunting_2024": 15.6
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.176,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    }
+  ],
+  "PRT": [
+    {
+      "iso3": "PER",
+      "country_name": "Peru",
+      "distance": 0.927,
+      "stunting_change_2000_2024": -23.8,
+      "stunting_2024": 10.6
+    },
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "distance": 0.914,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.795,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 0.958,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "distance": 0.935,
+      "stunting_change_2000_2024": 0.6,
+      "stunting_2024": 8.0
+    }
+  ],
+  "PRY": [
+    {
+      "iso3": "ALB",
+      "country_name": "Albania",
+      "distance": 1.037,
+      "stunting_change_2000_2024": -22.5,
+      "stunting_2024": 7.4
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 1.251,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.13,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "distance": 1.264,
+      "stunting_change_2000_2024": -4.2,
+      "stunting_2024": 4.6
+    },
+    {
+      "iso3": "GRC",
+      "country_name": "Greece",
+      "distance": 1.037,
+      "stunting_change_2000_2024": -0.2,
+      "stunting_2024": 2.0
+    }
+  ],
+  "PSE": [
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "distance": 1.138,
+      "stunting_change_2000_2024": -18.6,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "TUR",
+      "country_name": "T\u00fcrkiye",
+      "distance": 1.096,
+      "stunting_change_2000_2024": -11.9,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 1.331,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "KWT",
+      "country_name": "Kuwait",
+      "distance": 1.478,
+      "stunting_change_2000_2024": 0.8,
+      "stunting_2024": 4.5
+    },
+    {
+      "iso3": "FJI",
+      "country_name": "Fiji",
+      "distance": 1.547,
+      "stunting_change_2000_2024": 1.2,
+      "stunting_2024": 7.2
+    }
+  ],
+  "QAT": [
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "distance": 1.468,
+      "stunting_change_2000_2024": -18.6,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "distance": 1.542,
+      "stunting_change_2000_2024": -13.0,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 1.331,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "KWT",
+      "country_name": "Kuwait",
+      "distance": 1.38,
+      "stunting_change_2000_2024": 0.8,
+      "stunting_2024": 4.5
+    },
+    {
+      "iso3": "FJI",
+      "country_name": "Fiji",
+      "distance": 1.12,
+      "stunting_change_2000_2024": 1.2,
+      "stunting_2024": 7.2
+    }
+  ],
+  "ROU": [
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 0.916,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "distance": 1.042,
+      "stunting_change_2000_2024": -5.9,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.012,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "BGR",
+      "country_name": "Bulgaria",
+      "distance": 1.005,
+      "stunting_change_2000_2024": -3.2,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "CZE",
+      "country_name": "Czechia",
+      "distance": 0.796,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 2.4
+    }
+  ],
+  "RUS": [],
+  "RWA": [
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "distance": 1.915,
+      "stunting_change_2000_2024": -22.9,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.619,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 1.694,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.634,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.723,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    }
+  ],
+  "SAU": [
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "distance": 1.055,
+      "stunting_change_2000_2024": -13.0,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "LBY",
+      "country_name": "Libya",
+      "distance": 1.148,
+      "stunting_change_2000_2024": -10.6,
+      "stunting_2024": 9.2
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 1.786,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "OMN",
+      "country_name": "Oman",
+      "distance": 1.564,
+      "stunting_change_2000_2024": -1.7,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "FJI",
+      "country_name": "Fiji",
+      "distance": 1.832,
+      "stunting_change_2000_2024": 1.2,
+      "stunting_2024": 7.2
+    }
+  ],
+  "SDN": [
+    {
+      "iso3": "NPL",
+      "country_name": "Nepal",
+      "distance": 1.509,
+      "stunting_change_2000_2024": -29.9,
+      "stunting_2024": 26.0
+    },
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 2.096,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 2.016,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "SOM",
+      "country_name": "Somalia",
+      "distance": 1.452,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 23.9
+    },
+    {
+      "iso3": "ERI",
+      "country_name": "Eritrea",
+      "distance": 1.628,
+      "stunting_change_2000_2024": 4.6,
+      "stunting_2024": 48.0
+    }
+  ],
+  "SEN": [
+    {
+      "iso3": "BFA",
+      "country_name": "Burkina Faso",
+      "distance": 0.549,
+      "stunting_change_2000_2024": -20.9,
+      "stunting_2024": 19.5
+    },
+    {
+      "iso3": "MDV",
+      "country_name": "Maldives",
+      "distance": 1.259,
+      "stunting_change_2000_2024": -19.6,
+      "stunting_2024": 14.2
+    },
+    {
+      "iso3": "MLI",
+      "country_name": "Mali",
+      "distance": 0.821,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 23.2
+    },
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 0.78,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.223,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    }
+  ],
+  "SGP": [
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.831,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "BRN",
+      "country_name": "Brunei Darussalam",
+      "distance": 1.84,
+      "stunting_change_2000_2024": -11.2,
+      "stunting_2024": 9.9
+    },
+    {
+      "iso3": "ECU",
+      "country_name": "Ecuador",
+      "distance": 1.804,
+      "stunting_change_2000_2024": -9.5,
+      "stunting_2024": 17.7
+    },
+    {
+      "iso3": "KOR",
+      "country_name": "Republic of Korea",
+      "distance": 1.09,
+      "stunting_change_2000_2024": -0.7,
+      "stunting_2024": 1.8
+    },
+    {
+      "iso3": "JPN",
+      "country_name": "Japan",
+      "distance": 0.848,
+      "stunting_change_2000_2024": -0.5,
+      "stunting_2024": 5.2
+    }
+  ],
+  "SLB": [
+    {
+      "iso3": "PAK",
+      "country_name": "Pakistan",
+      "distance": 1.91,
+      "stunting_change_2000_2024": -6.7,
+      "stunting_2024": 33.6
+    },
+    {
+      "iso3": "SYR",
+      "country_name": "Syrian Arab Republic",
+      "distance": 1.664,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "OMN",
+      "country_name": "Oman",
+      "distance": 1.729,
+      "stunting_change_2000_2024": -1.7,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "MYS",
+      "country_name": "Malaysia",
+      "distance": 1.24,
+      "stunting_change_2000_2024": 5.0,
+      "stunting_2024": 24.3
+    },
+    {
+      "iso3": "VUT",
+      "country_name": "Vanuatu",
+      "distance": 1.379,
+      "stunting_change_2000_2024": 7.0,
+      "stunting_2024": 31.0
+    }
+  ],
+  "SLE": [
+    {
+      "iso3": "KHM",
+      "country_name": "Cambodia",
+      "distance": 1.081,
+      "stunting_change_2000_2024": -28.6,
+      "stunting_2024": 22.0
+    },
+    {
+      "iso3": "TZA",
+      "country_name": "United Republic of Tanzania",
+      "distance": 1.17,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 0.948,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "distance": 1.024,
+      "stunting_change_2000_2024": -8.6,
+      "stunting_2024": 23.0
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.096,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "SLV": [
+    {
+      "iso3": "MEX",
+      "country_name": "Mexico",
+      "distance": 0.785,
+      "stunting_change_2000_2024": -7.2,
+      "stunting_2024": 13.1
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.071,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "PRT",
+      "country_name": "Portugal",
+      "distance": 1.147,
+      "stunting_change_2000_2024": -1.6,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.941,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "distance": 0.567,
+      "stunting_change_2000_2024": 3.5,
+      "stunting_2024": 10.6
+    }
+  ],
+  "SMR": [],
+  "SOM": [
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.418,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "distance": 1.282,
+      "stunting_change_2000_2024": -10.7,
+      "stunting_2024": 31.5
+    },
+    {
+      "iso3": "LKA",
+      "country_name": "Sri Lanka",
+      "distance": 1.483,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 10.1
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.565,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    },
+    {
+      "iso3": "SDN",
+      "country_name": "Sudan",
+      "distance": 1.452,
+      "stunting_change_2000_2024": -2.9,
+      "stunting_2024": 35.4
+    }
+  ],
+  "SRB": [
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 0.904,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 0.592,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "BIH",
+      "country_name": "Bosnia and Herzegovina",
+      "distance": 0.568,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.9
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.989,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.766,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    }
+  ],
+  "SSD": [],
+  "STP": [
+    {
+      "iso3": "TJK",
+      "country_name": "Tajikistan",
+      "distance": 1.232,
+      "stunting_change_2000_2024": -28.2,
+      "stunting_2024": 13.1
+    },
+    {
+      "iso3": "GNQ",
+      "country_name": "Equatorial Guinea",
+      "distance": 0.878,
+      "stunting_change_2000_2024": -21.2,
+      "stunting_2024": 17.1
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "distance": 1.31,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 16.3
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 1.187,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "GAB",
+      "country_name": "Gabon",
+      "distance": 1.222,
+      "stunting_change_2000_2024": -11.8,
+      "stunting_2024": 13.7
+    }
+  ],
+  "SUR": [
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "distance": 1.033,
+      "stunting_change_2000_2024": -10.0,
+      "stunting_2024": 4.8
+    },
+    {
+      "iso3": "LBN",
+      "country_name": "Lebanon",
+      "distance": 1.277,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 10.1
+    },
+    {
+      "iso3": "GUY",
+      "country_name": "Guyana",
+      "distance": 1.204,
+      "stunting_change_2000_2024": -7.3,
+      "stunting_2024": 7.1
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "distance": 0.968,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 6.9
+    },
+    {
+      "iso3": "LCA",
+      "country_name": "Saint Lucia",
+      "distance": 1.41,
+      "stunting_change_2000_2024": -0.2,
+      "stunting_2024": 2.8
+    }
+  ],
+  "SVK": [],
+  "SVN": [],
+  "SWE": [],
+  "SWZ": [
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "distance": 1.125,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 10.7
+    },
+    {
+      "iso3": "KGZ",
+      "country_name": "Kyrgyzstan",
+      "distance": 1.203,
+      "stunting_change_2000_2024": -17.3,
+      "stunting_2024": 11.0
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 1.433,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "PAN",
+      "country_name": "Panama",
+      "distance": 1.13,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "SYC",
+      "country_name": "Seychelles",
+      "distance": 1.382,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 6.2
+    }
+  ],
+  "SYC": [
+    {
+      "iso3": "SWZ",
+      "country_name": "Eswatini",
+      "distance": 1.382,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 18.9
+    },
+    {
+      "iso3": "BRN",
+      "country_name": "Brunei Darussalam",
+      "distance": 0.958,
+      "stunting_change_2000_2024": -11.2,
+      "stunting_2024": 9.9
+    },
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "distance": 1.382,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "PAN",
+      "country_name": "Panama",
+      "distance": 1.485,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "THA",
+      "country_name": "Thailand",
+      "distance": 1.31,
+      "stunting_change_2000_2024": -3.8,
+      "stunting_2024": 12.3
+    }
+  ],
+  "SYR": [
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "distance": 1.542,
+      "stunting_change_2000_2024": -13.0,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "OMN",
+      "country_name": "Oman",
+      "distance": 1.269,
+      "stunting_change_2000_2024": -1.7,
+      "stunting_2024": 12.9
+    },
+    {
+      "iso3": "SLB",
+      "country_name": "Solomon Islands",
+      "distance": 1.664,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 29.8
+    },
+    {
+      "iso3": "SAU",
+      "country_name": "Saudi Arabia",
+      "distance": 1.841,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 11.1
+    },
+    {
+      "iso3": "MYS",
+      "country_name": "Malaysia",
+      "distance": 2.092,
+      "stunting_change_2000_2024": 5.0,
+      "stunting_2024": 24.3
+    }
+  ],
+  "TCA": [],
+  "TCD": [
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 0.735,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "distance": 1.225,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 21.5
+    },
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 1.337,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    },
+    {
+      "iso3": "SOM",
+      "country_name": "Somalia",
+      "distance": 1.282,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 23.9
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 0.812,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "TGO": [
+    {
+      "iso3": "MMR",
+      "country_name": "Myanmar",
+      "distance": 0.949,
+      "stunting_change_2000_2024": -21.4,
+      "stunting_2024": 24.5
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "distance": 0.955,
+      "stunting_change_2000_2024": -13.7,
+      "stunting_2024": 14.0
+    },
+    {
+      "iso3": "SLE",
+      "country_name": "Sierra Leone",
+      "distance": 1.024,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 25.2
+    },
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "distance": 1.034,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 20.3
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "distance": 1.029,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 26.6
+    }
+  ],
+  "THA": [
+    {
+      "iso3": "BTN",
+      "country_name": "Bhutan",
+      "distance": 1.695,
+      "stunting_change_2000_2024": -26.9,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "VNM",
+      "country_name": "Viet Nam",
+      "distance": 1.682,
+      "stunting_change_2000_2024": -21.9,
+      "stunting_2024": 19.2
+    },
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "distance": 1.713,
+      "stunting_change_2000_2024": -13.3,
+      "stunting_2024": 16.4
+    },
+    {
+      "iso3": "BRN",
+      "country_name": "Brunei Darussalam",
+      "distance": 1.664,
+      "stunting_change_2000_2024": -11.2,
+      "stunting_2024": 9.9
+    },
+    {
+      "iso3": "SYC",
+      "country_name": "Seychelles",
+      "distance": 1.31,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 6.2
+    }
+  ],
+  "TJK": [
+    {
+      "iso3": "BTN",
+      "country_name": "Bhutan",
+      "distance": 1.393,
+      "stunting_change_2000_2024": -26.9,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "STP",
+      "country_name": "Sao Tome and Principe",
+      "distance": 1.232,
+      "stunting_change_2000_2024": -20.8,
+      "stunting_2024": 10.0
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.49,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "TKM",
+      "country_name": "Turkmenistan",
+      "distance": 1.522,
+      "stunting_change_2000_2024": -20.0,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "AZE",
+      "country_name": "Azerbaijan",
+      "distance": 1.237,
+      "stunting_change_2000_2024": -17.5,
+      "stunting_2024": 6.8
+    }
+  ],
+  "TKL": [],
+  "TKM": [
+    {
+      "iso3": "UZB",
+      "country_name": "Uzbekistan",
+      "distance": 0.855,
+      "stunting_change_2000_2024": -22.3,
+      "stunting_2024": 6.7
+    },
+    {
+      "iso3": "KAZ",
+      "country_name": "Kazakhstan",
+      "distance": 1.049,
+      "stunting_change_2000_2024": -11.7,
+      "stunting_2024": 4.4
+    },
+    {
+      "iso3": "GEO",
+      "country_name": "Georgia",
+      "distance": 1.216,
+      "stunting_change_2000_2024": -11.5,
+      "stunting_2024": 4.7
+    },
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 1.316,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "LTU",
+      "country_name": "Lithuania",
+      "distance": 1.504,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 1.6
+    }
+  ],
+  "TLS": [
+    {
+      "iso3": "ETH",
+      "country_name": "Ethiopia",
+      "distance": 1.484,
+      "stunting_change_2000_2024": -21.4,
+      "stunting_2024": 35.5
+    },
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "distance": 1.706,
+      "stunting_change_2000_2024": -19.0,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "distance": 0.914,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 38.4
+    },
+    {
+      "iso3": "BDI",
+      "country_name": "Burundi",
+      "distance": 1.528,
+      "stunting_change_2000_2024": -7.7,
+      "stunting_2024": 55.3
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "distance": 1.856,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 38.9
+    }
+  ],
+  "TON": [
+    {
+      "iso3": "KIR",
+      "country_name": "Kiribati",
+      "distance": 2.398,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 14.7
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 2.189,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 2.499,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    },
+    {
+      "iso3": "KWT",
+      "country_name": "Kuwait",
+      "distance": 1.571,
+      "stunting_change_2000_2024": 0.8,
+      "stunting_2024": 4.5
+    },
+    {
+      "iso3": "WSM",
+      "country_name": "Samoa",
+      "distance": 0.781,
+      "stunting_change_2000_2024": 2.4,
+      "stunting_2024": 8.4
+    }
+  ],
+  "TTO": [
+    {
+      "iso3": "MAR",
+      "country_name": "Morocco",
+      "distance": 1.98,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "BRN",
+      "country_name": "Brunei Darussalam",
+      "distance": 1.859,
+      "stunting_change_2000_2024": -11.2,
+      "stunting_2024": 9.9
+    },
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "distance": 1.92,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "SYC",
+      "country_name": "Seychelles",
+      "distance": 1.623,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "BRB",
+      "country_name": "Barbados",
+      "distance": 1.756,
+      "stunting_change_2000_2024": -2.3,
+      "stunting_2024": 5.8
+    }
+  ],
+  "TUN": [
+    {
+      "iso3": "ALB",
+      "country_name": "Albania",
+      "distance": 1.622,
+      "stunting_change_2000_2024": -22.5,
+      "stunting_2024": 7.4
+    },
+    {
+      "iso3": "PRY",
+      "country_name": "Paraguay",
+      "distance": 1.693,
+      "stunting_change_2000_2024": -15.3,
+      "stunting_2024": 3.2
+    },
+    {
+      "iso3": "DZA",
+      "country_name": "Algeria",
+      "distance": 1.049,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "distance": 1.885,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "distance": 1.88,
+      "stunting_change_2000_2024": -9.8,
+      "stunting_2024": 6.5
+    }
+  ],
+  "TUR": [
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "distance": 1.401,
+      "stunting_change_2000_2024": -18.6,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 1.384,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "MAR",
+      "country_name": "Morocco",
+      "distance": 1.295,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "DOM",
+      "country_name": "Dominican Republic",
+      "distance": 1.087,
+      "stunting_change_2000_2024": -4.5,
+      "stunting_2024": 5.6
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "distance": 1.096,
+      "stunting_change_2000_2024": -1.9,
+      "stunting_2024": 8.0
+    }
+  ],
+  "TUV": [],
+  "TZA": [
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.274,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 1.1,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 0.843,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "SLE",
+      "country_name": "Sierra Leone",
+      "distance": 1.17,
+      "stunting_change_2000_2024": -13.5,
+      "stunting_2024": 25.2
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.28,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    }
+  ],
+  "UGA": [
+    {
+      "iso3": "PRK",
+      "country_name": "Democratic People's Republic of Korea",
+      "distance": 0.76,
+      "stunting_change_2000_2024": -35.9,
+      "stunting_2024": 16.6
+    },
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "distance": 1.115,
+      "stunting_change_2000_2024": -22.9,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 0.935,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.103,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "TZA",
+      "country_name": "United Republic of Tanzania",
+      "distance": 1.1,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 29.9
+    }
+  ],
+  "UKR": [
+    {
+      "iso3": "ALB",
+      "country_name": "Albania",
+      "distance": 1.896,
+      "stunting_change_2000_2024": -22.5,
+      "stunting_2024": 7.4
+    },
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "distance": 1.83,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 6.2
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.779,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "distance": 1.888,
+      "stunting_change_2000_2024": -4.2,
+      "stunting_2024": 4.6
+    },
+    {
+      "iso3": "BRB",
+      "country_name": "Barbados",
+      "distance": 1.712,
+      "stunting_change_2000_2024": -2.3,
+      "stunting_2024": 5.8
+    }
+  ],
+  "URY": [
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "distance": 1.066,
+      "stunting_change_2000_2024": -4.8,
+      "stunting_2024": 3.8
+    },
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "distance": 0.988,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "distance": 0.944,
+      "stunting_change_2000_2024": -1.0,
+      "stunting_2024": 8.9
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "distance": 0.905,
+      "stunting_change_2000_2024": 0.1,
+      "stunting_2024": 7.3
+    },
+    {
+      "iso3": "ARG",
+      "country_name": "Argentina",
+      "distance": 0.478,
+      "stunting_change_2000_2024": 1.4,
+      "stunting_2024": 10.7
+    }
+  ],
+  "USA": [
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "distance": 0.805,
+      "stunting_change_2000_2024": -3.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "IRL",
+      "country_name": "Ireland",
+      "distance": 1.299,
+      "stunting_change_2000_2024": -1.5,
+      "stunting_2024": 2.2
+    },
+    {
+      "iso3": "CHL",
+      "country_name": "Chile",
+      "distance": 1.254,
+      "stunting_change_2000_2024": -1.2,
+      "stunting_2024": 1.7
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "distance": 1.067,
+      "stunting_change_2000_2024": -0.1,
+      "stunting_2024": 3.5
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "distance": 1.36,
+      "stunting_change_2000_2024": 3.5,
+      "stunting_2024": 10.6
+    }
+  ],
+  "UZB": [
+    {
+      "iso3": "TKM",
+      "country_name": "Turkmenistan",
+      "distance": 0.855,
+      "stunting_change_2000_2024": -20.0,
+      "stunting_2024": 6.5
+    },
+    {
+      "iso3": "KAZ",
+      "country_name": "Kazakhstan",
+      "distance": 1.062,
+      "stunting_change_2000_2024": -11.7,
+      "stunting_2024": 4.4
+    },
+    {
+      "iso3": "GEO",
+      "country_name": "Georgia",
+      "distance": 0.964,
+      "stunting_change_2000_2024": -11.5,
+      "stunting_2024": 4.7
+    },
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "distance": 0.8,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 4.2
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "distance": 1.174,
+      "stunting_change_2000_2024": -0.8,
+      "stunting_2024": 1.3
+    }
+  ],
+  "VAT": [],
+  "VCT": [],
+  "VEN": [
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "distance": 1.042,
+      "stunting_change_2000_2024": -6.5,
+      "stunting_2024": 7.0
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "distance": 0.891,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 11.6
+    },
+    {
+      "iso3": "BGR",
+      "country_name": "Bulgaria",
+      "distance": 1.089,
+      "stunting_change_2000_2024": -3.2,
+      "stunting_2024": 5.5
+    },
+    {
+      "iso3": "CZE",
+      "country_name": "Czechia",
+      "distance": 1.013,
+      "stunting_change_2000_2024": -0.3,
+      "stunting_2024": 2.4
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "distance": 1.081,
+      "stunting_change_2000_2024": 3.5,
+      "stunting_2024": 10.6
+    }
+  ],
+  "VGB": [],
+  "VNM": [
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.9,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "RWA",
+      "country_name": "Rwanda",
+      "distance": 2.055,
+      "stunting_change_2000_2024": -18.9,
+      "stunting_2024": 29.8
+    },
+    {
+      "iso3": "CHN",
+      "country_name": "China",
+      "distance": 1.815,
+      "stunting_change_2000_2024": -15.5,
+      "stunting_2024": 4.5
+    },
+    {
+      "iso3": "BIH",
+      "country_name": "Bosnia and Herzegovina",
+      "distance": 2.107,
+      "stunting_change_2000_2024": -4.6,
+      "stunting_2024": 7.9
+    },
+    {
+      "iso3": "THA",
+      "country_name": "Thailand",
+      "distance": 1.682,
+      "stunting_change_2000_2024": -3.8,
+      "stunting_2024": 12.3
+    }
+  ],
+  "VUT": [
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "distance": 1.927,
+      "stunting_change_2000_2024": -18.6,
+      "stunting_2024": 9.4
+    },
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "distance": 2.032,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 11.7
+    },
+    {
+      "iso3": "MAR",
+      "country_name": "Morocco",
+      "distance": 2.111,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "LBN",
+      "country_name": "Lebanon",
+      "distance": 1.962,
+      "stunting_change_2000_2024": -8.7,
+      "stunting_2024": 10.1
+    },
+    {
+      "iso3": "SLB",
+      "country_name": "Solomon Islands",
+      "distance": 1.379,
+      "stunting_change_2000_2024": -1.3,
+      "stunting_2024": 29.8
+    }
+  ],
+  "WSM": [
+    {
+      "iso3": "TON",
+      "country_name": "Tonga",
+      "distance": 0.781,
+      "stunting_change_2000_2024": -12.1,
+      "stunting_2024": 1.6
+    },
+    {
+      "iso3": "MHL",
+      "country_name": "Marshall Islands",
+      "distance": 2.337,
+      "stunting_change_2000_2024": -10.9,
+      "stunting_2024": 30.0
+    },
+    {
+      "iso3": "KIR",
+      "country_name": "Kiribati",
+      "distance": 2.119,
+      "stunting_change_2000_2024": -5.8,
+      "stunting_2024": 14.7
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "distance": 1.979,
+      "stunting_change_2000_2024": -4.0,
+      "stunting_2024": 5.4
+    },
+    {
+      "iso3": "KWT",
+      "country_name": "Kuwait",
+      "distance": 1.616,
+      "stunting_change_2000_2024": 0.8,
+      "stunting_2024": 4.5
+    }
+  ],
+  "YEM": [
+    {
+      "iso3": "IND",
+      "country_name": "India",
+      "distance": 2.795,
+      "stunting_change_2000_2024": -17.1,
+      "stunting_2024": 32.9
+    },
+    {
+      "iso3": "SOM",
+      "country_name": "Somalia",
+      "distance": 2.912,
+      "stunting_change_2000_2024": -9.7,
+      "stunting_2024": 23.9
+    },
+    {
+      "iso3": "NER",
+      "country_name": "Niger",
+      "distance": 2.598,
+      "stunting_change_2000_2024": -3.8,
+      "stunting_2024": 48.3
+    },
+    {
+      "iso3": "SDN",
+      "country_name": "Sudan",
+      "distance": 2.484,
+      "stunting_change_2000_2024": -2.9,
+      "stunting_2024": 35.4
+    },
+    {
+      "iso3": "ERI",
+      "country_name": "Eritrea",
+      "distance": 2.92,
+      "stunting_change_2000_2024": 4.6,
+      "stunting_2024": 48.0
+    }
+  ],
+  "ZAF": [
+    {
+      "iso3": "SWZ",
+      "country_name": "Eswatini",
+      "distance": 2.039,
+      "stunting_change_2000_2024": -16.8,
+      "stunting_2024": 18.9
+    },
+    {
+      "iso3": "MAR",
+      "country_name": "Morocco",
+      "distance": 1.235,
+      "stunting_change_2000_2024": -11.6,
+      "stunting_2024": 13.7
+    },
+    {
+      "iso3": "BWA",
+      "country_name": "Botswana",
+      "distance": 1.558,
+      "stunting_change_2000_2024": -9.3,
+      "stunting_2024": 21.0
+    },
+    {
+      "iso3": "LSO",
+      "country_name": "Lesotho",
+      "distance": 2.102,
+      "stunting_change_2000_2024": -7.1,
+      "stunting_2024": 35.0
+    },
+    {
+      "iso3": "PAN",
+      "country_name": "Panama",
+      "distance": 2.052,
+      "stunting_change_2000_2024": -4.3,
+      "stunting_2024": 14.0
+    }
+  ],
+  "ZMB": [
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "distance": 1.172,
+      "stunting_change_2000_2024": -22.9,
+      "stunting_2024": 33.2
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.286,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 1.103,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "TZA",
+      "country_name": "United Republic of Tanzania",
+      "distance": 0.843,
+      "stunting_change_2000_2024": -17.7,
+      "stunting_2024": 29.9
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "distance": 1.187,
+      "stunting_change_2000_2024": -9.4,
+      "stunting_2024": 23.7
+    }
+  ],
+  "ZWE": [
+    {
+      "iso3": "PRK",
+      "country_name": "Democratic People's Republic of Korea",
+      "distance": 1.176,
+      "stunting_change_2000_2024": -35.9,
+      "stunting_2024": 16.6
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "distance": 1.079,
+      "stunting_change_2000_2024": -20.7,
+      "stunting_2024": 17.9
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "distance": 1.212,
+      "stunting_change_2000_2024": -20.5,
+      "stunting_2024": 23.5
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "distance": 1.187,
+      "stunting_change_2000_2024": -19.8,
+      "stunting_2024": 32.3
+    },
+    {
+      "iso3": "ECU",
+      "country_name": "Ecuador",
+      "distance": 1.241,
+      "stunting_change_2000_2024": -9.5,
+      "stunting_2024": 17.7
+    }
+  ]
+}

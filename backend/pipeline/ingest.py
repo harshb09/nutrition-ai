@@ -25,7 +25,7 @@ def load_country_universe(raw_dir: str) -> pd.DataFrame:
     
     # Standardize column names
     df["iso3"] = df["ISO3"].astype(str).str.strip().str.upper()
-    df["country_name"] = df["Countries and areas"].astype(str).str.strip()
+    df["country_name"] = df["Countries and areas"].astype(str).str.strip().str.rstrip("*").str.strip()
     df["income_group"] = df["World Bank Income Classification (FY 2022)"].astype(str).str.strip()
     df["region"] = df["World Bank Regions"].astype(str).str.strip()
     
@@ -39,18 +39,23 @@ def load_country_universe(raw_dir: str) -> pd.DataFrame:
     return universe
 
 def load_jme(raw_dir: str) -> tuple[pd.DataFrame, dict]:
-    """Loads stunting and child overweight from JME_Country_Estimates_March_2026.xlsx.
+    """Loads stunting, child overweight prevalence, and numbers affected from JME_Country_Estimates_March_2026.xlsx.
     
     Returns:
-      - 2024 features dataframe (iso3, stunting, stunting_year, child_overweight, child_overweight_year)
+      - 2024 features dataframe (iso3, stunting, stunting_year, child_overweight, child_overweight_year,
+                                 stunting_count_thousands, stunting_count_year,
+                                 child_overweight_count_thousands, child_overweight_count_year,
+                                 stunting_change_2000_2024)
       - trends dictionary: {iso3: [{'year': int, 'stunting': float|None, 'child_overweight': float|None}, ...]}
     """
     jme_path = os.path.join(raw_dir, "JME_Country_Estimates_March_2026.xlsx")
     
     df_stunt = pd.read_excel(jme_path, sheet_name="Stunting Prevalence")
     df_overweight = pd.read_excel(jme_path, sheet_name="Overweight Prevalence")
+    df_stunt_num = pd.read_excel(jme_path, sheet_name="Stunting Numbers Affected")
+    df_over_num = pd.read_excel(jme_path, sheet_name="Overweight Numbers Affected")
     
-    for df in [df_stunt, df_overweight]:
+    for df in [df_stunt, df_overweight, df_stunt_num, df_over_num]:
         df["iso3"] = df["ISO Code"].astype(str).str.strip().str.upper()
         df["point_est"] = df["Both Sexes - Point Estimates"].apply(clean_val)
         df["year_int"] = pd.to_numeric(df["Year"], errors="coerce")
@@ -66,7 +71,32 @@ def load_jme(raw_dir: str) -> tuple[pd.DataFrame, dict]:
     o_2024["child_overweight_year"] = o_2024["child_overweight"].apply(lambda v: 2024 if pd.notna(v) else np.nan)
     o_feats = o_2024[["iso3", "child_overweight", "child_overweight_year"]].drop_duplicates(subset=["iso3"])
     
+    # Numbers affected 2024 (in thousands '000s)
+    sn_2024 = df_stunt_num[df_stunt_num["year_int"] == 2024].copy()
+    sn_2024["stunting_count_thousands"] = sn_2024["point_est"]
+    sn_2024["stunting_count_year"] = sn_2024["stunting_count_thousands"].apply(lambda v: 2024 if pd.notna(v) else np.nan)
+    sn_feats = sn_2024[["iso3", "stunting_count_thousands", "stunting_count_year"]].drop_duplicates(subset=["iso3"])
+    
+    on_2024 = df_over_num[df_over_num["year_int"] == 2024].copy()
+    on_2024["child_overweight_count_thousands"] = on_2024["point_est"]
+    on_2024["child_overweight_count_year"] = on_2024["child_overweight_count_thousands"].apply(lambda v: 2024 if pd.notna(v) else np.nan)
+    on_feats = on_2024[["iso3", "child_overweight_count_thousands", "child_overweight_count_year"]].drop_duplicates(subset=["iso3"])
+    
+    # 2000 point estimate for stunting change calculation
+    s_2000 = df_stunt[df_stunt["year_int"] == 2000].copy()
+    s_2000["stunting_2000"] = s_2000["point_est"]
+    s_2000_feats = s_2000[["iso3", "stunting_2000"]].drop_duplicates(subset=["iso3"])
+    
     jme_feats = pd.merge(s_feats, o_feats, on="iso3", how="outer")
+    jme_feats = pd.merge(jme_feats, sn_feats, on="iso3", how="outer")
+    jme_feats = pd.merge(jme_feats, on_feats, on="iso3", how="outer")
+    jme_feats = pd.merge(jme_feats, s_2000_feats, on="iso3", how="outer")
+    
+    # Calculate stunting change 2000 to 2024 (percentage points)
+    jme_feats["stunting_change_2000_2024"] = (
+        jme_feats["stunting"] - jme_feats["stunting_2000"]
+    ).round(2)
+    jme_feats = jme_feats.drop(columns=["stunting_2000"])
     
     # Trends 2000-2024
     trends = {}

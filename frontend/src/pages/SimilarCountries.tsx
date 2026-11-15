@@ -10,12 +10,13 @@ import {
   ResponsiveContainer,
   Legend
 } from "recharts";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import { BentoCard } from "../components/BentoCard";
 import { StatusNotice } from "../components/StatusNotice";
 import { DisclaimerBanner } from "../components/DisclaimerBanner";
 import { api } from "../api/client";
 import { CountrySummary, PeerCountry, CountryTrends } from "../api/types";
+import { exportChartAsPng } from "../utils/exportChart";
 
 const PEER_COLORS = ["#38BDF8", "#F472B6", "#A78BFA", "#34D399", "#FB923C"];
 
@@ -276,8 +277,17 @@ export const SimilarCountries: React.FC = () => {
         <BentoCard
           title="Child Stunting Trajectory (2000–2024)"
           subtitle={`Prevalence (%) among children under 5: ${targetCountry.country_name} vs 5 nearest peers`}
+          action={
+            <button
+              onClick={() => exportChartAsPng("stunting-trend-chart", `${targetCountry.iso3}_stunting_trends.png`)}
+              className="flex items-center gap-1.5 px-2 py-1 text-[11px] font-medium bg-brand-raised border border-brand-border text-brand-muted hover:text-brand-text rounded-md transition-colors"
+            >
+              <Download className="w-3 h-3 text-brand-accent" />
+              <span>Export PNG</span>
+            </button>
+          }
         >
-          <div className="h-72 w-full pt-4">
+          <div id="stunting-trend-chart" className="h-72 w-full pt-4">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={chartData} margin={{ top: 10, right: 20, left: -10, bottom: 0 }}>
                 <CartesianGrid stroke="#243042" strokeDasharray="3 3" opacity={0.6} />
@@ -344,8 +354,17 @@ export const SimilarCountries: React.FC = () => {
         <BentoCard
           title="Child Overweight Trajectory (2000–2024)"
           subtitle={`Prevalence (%) among children under 5: ${targetCountry.country_name} vs 5 nearest peers`}
+          action={
+            <button
+              onClick={() => exportChartAsPng("overweight-trend-chart", `${targetCountry.iso3}_overweight_trends.png`)}
+              className="flex items-center gap-1.5 px-2 py-1 text-[11px] font-medium bg-brand-raised border border-brand-border text-brand-muted hover:text-brand-text rounded-md transition-colors"
+            >
+              <Download className="w-3 h-3 text-brand-accent" />
+              <span>Export PNG</span>
+            </button>
+          }
         >
-          <div className="h-72 w-full pt-4">
+          <div id="overweight-trend-chart" className="h-72 w-full pt-4">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={chartData} margin={{ top: 10, right: 20, left: -10, bottom: 0 }}>
                 <CartesianGrid stroke="#243042" strokeDasharray="3 3" opacity={0.6} />

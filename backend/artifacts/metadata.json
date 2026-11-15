@@ -1,7 +1,7 @@
 {
   "dataset_name": "Nutrition Atlas \u2014 Country Malnutrition Profile Dataset",
   "description": "Production data artifact containing multi-source country malnutrition indicators, similarity clustering, and peer benchmarks.",
-  "generated_at": "2026-11-15T03:41:00.867736+00:00Z",
+  "generated_at": "2026-11-15T06:11:19.264570+00:00Z",
   "counts": {
     "country_universe": 202,
     "analyzed_countries": 156,
@@ -115,5 +115,2277 @@
       "unit": "%"
     }
   },
+  "feature_ranges": {
+    "stunting": {
+      "min": 1.0,
+      "max": 55.3,
+      "step": 0.1
+    },
+    "child_overweight": {
+      "min": 0.6,
+      "max": 26.4,
+      "step": 0.1
+    },
+    "wasting": {
+      "min": 0.0,
+      "max": 17.3,
+      "step": 0.1
+    },
+    "adult_obesity": {
+      "min": 2.1,
+      "max": 52.9,
+      "step": 0.1
+    },
+    "adult_diabetes": {
+      "min": 4.2,
+      "max": 24.6,
+      "step": 0.1
+    },
+    "anaemia_women": {
+      "min": 7.4,
+      "max": 61.5,
+      "step": 0.1
+    },
+    "low_birth_weight": {
+      "min": 4.1,
+      "max": 27.4,
+      "step": 0.1
+    }
+  },
+  "scaler_parameters": {
+    "means": {
+      "stunting": 16.3628,
+      "child_overweight": 6.7878,
+      "wasting": 4.8815,
+      "adult_obesity": 17.9966,
+      "adult_diabetes": 9.5758,
+      "anaemia_women": 29.5242,
+      "low_birth_weight": 11.9295
+    },
+    "stds": {
+      "stunting": 12.8222,
+      "child_overweight": 4.1867,
+      "wasting": 3.7803,
+      "adult_obesity": 10.395,
+      "adult_diabetes": 3.8795,
+      "anaemia_women": 12.3337,
+      "low_birth_weight": 4.5296
+    }
+  },
+  "group_centres": {
+    "A": [
+      0.8707,
+      -0.6715,
+      0.6812,
+      -0.8964,
+      -0.4927,
+      0.9385,
+      0.7627
+    ],
+    "B": [
+      -0.2867,
+      0.237,
+      0.1434,
+      1.1787,
+      1.5973,
+      -0.0877,
+      0.357
+    ],
+    "C": [
+      -0.6612,
+      0.5027,
+      -0.6844,
+      0.2792,
+      -0.2782,
+      -0.8134,
+      -0.8556
+    ]
+  },
+  "analysed_country_vectors": [
+    {
+      "iso3": "AFG",
+      "country_name": "Afghanistan",
+      "group_id": "A",
+      "vector": [
+        1.9994,
+        -0.5703,
+        0.0657,
+        -1.2084,
+        0.6017,
+        1.0602,
+        0.8329
+      ]
+    },
+    {
+      "iso3": "AGO",
+      "country_name": "Angola",
+      "group_id": "A",
+      "vector": [
+        2.444,
+        -0.4987,
+        0.0102,
+        -0.9559,
+        -0.3611,
+        1.2142,
+        0.7944
+      ]
+    },
+    {
+      "iso3": "ALB",
+      "country_name": "Albania",
+      "group_id": "C",
+      "vector": [
+        -0.699,
+        2.3675,
+        -0.8734,
+        0.3548,
+        -0.5647,
+        -0.383,
+        -1.3107
+      ]
+    },
+    {
+      "iso3": "ARG",
+      "country_name": "Argentina",
+      "group_id": "C",
+      "vector": [
+        -0.4416,
+        1.7943,
+        -0.8337,
+        0.9772,
+        0.0243,
+        -1.4289,
+        -1.0084
+      ]
+    },
+    {
+      "iso3": "ARM",
+      "country_name": "Armenia",
+      "group_id": "C",
+      "vector": [
+        -0.7926,
+        1.4599,
+        -0.1194,
+        0.1975,
+        0.4921,
+        -0.9911,
+        -0.8074
+      ]
+    },
+    {
+      "iso3": "AUS",
+      "country_name": "Australia",
+      "group_id": "C",
+      "vector": [
+        -1.0344,
+        4.6844,
+        -1.2913,
+        1.0556,
+        -0.9488,
+        -1.7046,
+        -1.1868
+      ]
+    },
+    {
+      "iso3": "AZE",
+      "country_name": "Azerbaijan",
+      "group_id": "B",
+      "vector": [
+        -0.7458,
+        -0.6181,
+        -0.4554,
+        0.1644,
+        0.7022,
+        0.4521,
+        -0.1974
+      ]
+    },
+    {
+      "iso3": "BDI",
+      "country_name": "Burundi",
+      "group_id": "A",
+      "vector": [
+        3.0367,
+        -1.048,
+        0.2218,
+        -1.2161,
+        -1.3947,
+        0.7277,
+        0.6286
+      ]
+    },
+    {
+      "iso3": "BEL",
+      "country_name": "Belgium",
+      "group_id": "C",
+      "vector": [
+        -1.0734,
+        -0.4509,
+        -1.1881,
+        0.388,
+        -1.2916,
+        -1.2911,
+        -1.1421
+      ]
+    },
+    {
+      "iso3": "BEN",
+      "country_name": "Benin",
+      "group_id": "A",
+      "vector": [
+        1.3131,
+        -0.7375,
+        0.0234,
+        -0.8222,
+        -0.615,
+        2.0818,
+        0.9971
+      ]
+    },
+    {
+      "iso3": "BFA",
+      "country_name": "Burkina Faso",
+      "group_id": "A",
+      "vector": [
+        0.2447,
+        -0.9525,
+        0.7482,
+        -1.2166,
+        -0.816,
+        1.8628,
+        1.4436
+      ]
+    },
+    {
+      "iso3": "BGD",
+      "country_name": "Bangladesh",
+      "group_id": "A",
+      "vector": [
+        0.6814,
+        -1.2391,
+        1.309,
+        -1.384,
+        0.0501,
+        0.5818,
+        2.4543
+      ]
+    },
+    {
+      "iso3": "BGR",
+      "country_name": "Bulgaria",
+      "group_id": "C",
+      "vector": [
+        -0.8472,
+        -0.3076,
+        0.3752,
+        0.6636,
+        -0.4938,
+        -0.4803,
+        -0.1254
+      ]
+    },
+    {
+      "iso3": "BIH",
+      "country_name": "Bosnia and Herzegovina",
+      "group_id": "C",
+      "vector": [
+        -0.66,
+        1.4838,
+        -0.6697,
+        -0.0194,
+        -0.5518,
+        -0.4155,
+        -1.4957
+      ]
+    },
+    {
+      "iso3": "BLR",
+      "country_name": "Belarus",
+      "group_id": "C",
+      "vector": [
+        -1.1903,
+        -0.8092,
+        -0.7067,
+        0.5958,
+        -0.4629,
+        -0.7236,
+        -1.5027
+      ]
+    },
+    {
+      "iso3": "BLZ",
+      "country_name": "Belize",
+      "group_id": "C",
+      "vector": [
+        -0.3637,
+        -0.2837,
+        -0.8231,
+        0.5766,
+        0.777,
+        -0.7317,
+        -0.0818
+      ]
+    },
+    {
+      "iso3": "BOL",
+      "country_name": "Bolivia (Plurinational State of)",
+      "group_id": "C",
+      "vector": [
+        -0.4416,
+        0.7434,
+        -0.7728,
+        0.1966,
+        -0.4191,
+        -0.4155,
+        -0.8822
+      ]
+    },
+    {
+      "iso3": "BRA",
+      "country_name": "Brazil",
+      "group_id": "C",
+      "vector": [
+        -0.582,
+        0.9822,
+        -0.8072,
+        0.3808,
+        -0.3443,
+        -1.0884,
+        -0.7134
+      ]
+    },
+    {
+      "iso3": "BRB",
+      "country_name": "Barbados",
+      "group_id": "C",
+      "vector": [
+        -0.8238,
+        1.4838,
+        0.4996,
+        0.4833,
+        0.6532,
+        -1.0154,
+        -0.6557
+      ]
+    },
+    {
+      "iso3": "BRN",
+      "country_name": "Brunei Darussalam",
+      "group_id": "C",
+      "vector": [
+        -0.504,
+        0.6478,
+        -0.5242,
+        -0.372,
+        -0.0337,
+        -1.0398,
+        0.378
+      ]
+    },
+    {
+      "iso3": "BTN",
+      "country_name": "Bhutan",
+      "group_id": "A",
+      "vector": [
+        0.1199,
+        0.2895,
+        0.2562,
+        -1.0959,
+        0.554,
+        0.7358,
+        -0.1101
+      ]
+    },
+    {
+      "iso3": "BWA",
+      "country_name": "Botswana",
+      "group_id": "A",
+      "vector": [
+        0.3617,
+        1.1255,
+        0.6424,
+        0.0715,
+        -0.2721,
+        0.2413,
+        1.0829
+      ]
+    },
+    {
+      "iso3": "CAF",
+      "country_name": "Central African Republic",
+      "group_id": "A",
+      "vector": [
+        1.7577,
+        -1.0719,
+        0.1319,
+        -1.0281,
+        -0.459,
+        1.4007,
+        0.977
+      ]
+    },
+    {
+      "iso3": "CHL",
+      "country_name": "Chile",
+      "group_id": "C",
+      "vector": [
+        -1.1435,
+        0.4567,
+        -1.212,
+        0.9537,
+        0.2369,
+        -1.6884,
+        -1.1243
+      ]
+    },
+    {
+      "iso3": "CHN",
+      "country_name": "China",
+      "group_id": "C",
+      "vector": [
+        -0.9252,
+        1.03,
+        -0.7887,
+        -1.1353,
+        -0.2077,
+        -1.1371,
+        -1.5357
+      ]
+    },
+    {
+      "iso3": "CIV",
+      "country_name": "C\u00f4te d'Ivoire",
+      "group_id": "A",
+      "vector": [
+        0.3071,
+        -0.7853,
+        0.3091,
+        -0.7217,
+        -0.7091,
+        1.7331,
+        1.4042
+      ]
+    },
+    {
+      "iso3": "CMR",
+      "country_name": "Cameroon",
+      "group_id": "A",
+      "vector": [
+        0.8452,
+        1.6271,
+        -0.1538,
+        -0.6461,
+        -0.7387,
+        0.898,
+        0.1287
+      ]
+    },
+    {
+      "iso3": "COD",
+      "country_name": "Democratic Republic of the Congo",
+      "group_id": "A",
+      "vector": [
+        2.1632,
+        -0.6181,
+        0.4123,
+        -1.0944,
+        -0.8843,
+        1.0439,
+        -0.3913
+      ]
+    },
+    {
+      "iso3": "COG",
+      "country_name": "Congo",
+      "group_id": "A",
+      "vector": [
+        -0.0049,
+        -0.3554,
+        0.8699,
+        -0.8164,
+        -0.4912,
+        1.5628,
+        -0.0007
+      ]
+    },
+    {
+      "iso3": "COL",
+      "country_name": "Colombia",
+      "group_id": "C",
+      "vector": [
+        -0.3715,
+        0.0029,
+        -0.8548,
+        0.3952,
+        -0.2721,
+        -0.6749,
+        -0.2156
+      ]
+    },
+    {
+      "iso3": "COM",
+      "country_name": "Comoros",
+      "group_id": "A",
+      "vector": [
+        0.0809,
+        -0.6898,
+        1.6741,
+        -0.9872,
+        -0.4216,
+        0.3467,
+        2.45
+      ]
+    },
+    {
+      "iso3": "CRI",
+      "country_name": "Costa Rica",
+      "group_id": "C",
+      "vector": [
+        -0.4494,
+        0.2656,
+        -0.8204,
+        0.742,
+        -0.1793,
+        -1.283,
+        -0.7093
+      ]
+    },
+    {
+      "iso3": "CUB",
+      "country_name": "Cuba",
+      "group_id": "C",
+      "vector": [
+        -0.7068,
+        0.9105,
+        -0.7517,
+        0.6396,
+        -0.2953,
+        -0.829,
+        -1.0746
+      ]
+    },
+    {
+      "iso3": "CZE",
+      "country_name": "Czechia",
+      "group_id": "C",
+      "vector": [
+        -1.089,
+        -0.0449,
+        -0.0639,
+        0.7618,
+        -0.5273,
+        -0.683,
+        -0.9537
+      ]
+    },
+    {
+      "iso3": "DEU",
+      "country_name": "Germany",
+      "group_id": "C",
+      "vector": [
+        -1.1046,
+        -0.8331,
+        -1.212,
+        0.4121,
+        -1.1898,
+        -1.4452,
+        -1.1514
+      ]
+    },
+    {
+      "iso3": "DJI",
+      "country_name": "Djibouti",
+      "group_id": "A",
+      "vector": [
+        0.3539,
+        -0.3076,
+        1.3804,
+        -0.4359,
+        -0.3765,
+        0.2251,
+        0.8114
+      ]
+    },
+    {
+      "iso3": "DOM",
+      "country_name": "Dominican Republic",
+      "group_id": "C",
+      "vector": [
+        -0.8394,
+        0.1701,
+        -0.7173,
+        0.9186,
+        0.1184,
+        -0.2533,
+        0.3325
+      ]
+    },
+    {
+      "iso3": "DZA",
+      "country_name": "Algeria",
+      "group_id": "C",
+      "vector": [
+        -0.582,
+        1.5554,
+        -0.5771,
+        0.9051,
+        0.7344,
+        0.3061,
+        -1.0447
+      ]
+    },
+    {
+      "iso3": "ECU",
+      "country_name": "Ecuador",
+      "group_id": "C",
+      "vector": [
+        0.1043,
+        -0.4987,
+        -0.3046,
+        0.1725,
+        -0.4152,
+        -0.9992,
+        -0.2876
+      ]
+    },
+    {
+      "iso3": "EGY",
+      "country_name": "Egypt",
+      "group_id": "B",
+      "vector": [
+        -0.2701,
+        1.0539,
+        1.2164,
+        1.338,
+        2.147,
+        -0.0993,
+        -0.0345
+      ]
+    },
+    {
+      "iso3": "ERI",
+      "country_name": "Eritrea",
+      "group_id": "A",
+      "vector": [
+        2.4674,
+        -0.9525,
+        2.5576,
+        -1.2695,
+        -1.0493,
+        0.6061,
+        0.7132
+      ]
+    },
+    {
+      "iso3": "EST",
+      "country_name": "Estonia",
+      "group_id": "C",
+      "vector": [
+        -1.1747,
+        -0.2837,
+        -0.8813,
+        0.2923,
+        -0.6317,
+        -0.6344,
+        -1.7122
+      ]
+    },
+    {
+      "iso3": "ETH",
+      "country_name": "Ethiopia",
+      "group_id": "A",
+      "vector": [
+        1.4925,
+        -0.8331,
+        0.5075,
+        -1.3075,
+        -1.0738,
+        -0.456,
+        0.4077
+      ]
+    },
+    {
+      "iso3": "FIN",
+      "country_name": "Finland",
+      "group_id": "C",
+      "vector": [
+        -1.1435,
+        -0.4987,
+        -1.1532,
+        0.3996,
+        -1.0867,
+        -1.51,
+        -1.7353
+      ]
+    },
+    {
+      "iso3": "FJI",
+      "country_name": "Fiji",
+      "group_id": "B",
+      "vector": [
+        -0.7146,
+        0.1223,
+        0.3752,
+        1.1692,
+        2.0207,
+        0.2007,
+        -0.9996
+      ]
+    },
+    {
+      "iso3": "GAB",
+      "country_name": "Gabon",
+      "group_id": "A",
+      "vector": [
+        -0.2077,
+        -0.1643,
+        -0.3787,
+        -0.2916,
+        0.1081,
+        1.8547,
+        0.6006
+      ]
+    },
+    {
+      "iso3": "GBR",
+      "country_name": "United Kingdom",
+      "group_id": "C",
+      "vector": [
+        -1.0032,
+        0.2418,
+        -1.1532,
+        0.9392,
+        -0.9771,
+        -1.4938,
+        -1.1264
+      ]
+    },
+    {
+      "iso3": "GEO",
+      "country_name": "Georgia",
+      "group_id": "C",
+      "vector": [
+        -0.9096,
+        -0.642,
+        -1.1247,
+        0.3351,
+        0.7976,
+        -0.1641,
+        -0.9954
+      ]
+    },
+    {
+      "iso3": "GHA",
+      "country_name": "Ghana",
+      "group_id": "A",
+      "vector": [
+        -0.0595,
+        -1.1914,
+        0.5128,
+        -0.713,
+        -0.7915,
+        0.4764,
+        0.5489
+      ]
+    },
+    {
+      "iso3": "GIN",
+      "country_name": "Guinea",
+      "group_id": "A",
+      "vector": [
+        0.7984,
+        -0.5703,
+        1.1424,
+        -1.0006,
+        -0.8186,
+        1.498,
+        0.3735
+      ]
+    },
+    {
+      "iso3": "GMB",
+      "country_name": "Gambia",
+      "group_id": "A",
+      "vector": [
+        -0.1843,
+        -0.9764,
+        0.0499,
+        -0.7481,
+        -0.2296,
+        1.6196,
+        0.2913
+      ]
+    },
+    {
+      "iso3": "GNB",
+      "country_name": "Guinea-Bissau",
+      "group_id": "A",
+      "vector": [
+        0.931,
+        -0.7614,
+        0.0604,
+        -0.8323,
+        -0.6382,
+        1.5061,
+        1.6821
+      ]
+    },
+    {
+      "iso3": "GNQ",
+      "country_name": "Equatorial Guinea",
+      "group_id": "A",
+      "vector": [
+        0.0575,
+        0.1701,
+        -0.4713,
+        -0.9429,
+        -0.0608,
+        1.2142,
+        0.104
+      ]
+    },
+    {
+      "iso3": "GRC",
+      "country_name": "Greece",
+      "group_id": "C",
+      "vector": [
+        -1.1202,
+        1.6032,
+        -1.1379,
+        0.654,
+        -0.758,
+        -1.1695,
+        -0.1156
+      ]
+    },
+    {
+      "iso3": "GTM",
+      "country_name": "Guatemala",
+      "group_id": "C",
+      "vector": [
+        2.2022,
+        -0.7375,
+        -1.0929,
+        0.2658,
+        0.0178,
+        -1.7938,
+        0.5663
+      ]
+    },
+    {
+      "iso3": "GUY",
+      "country_name": "Guyana",
+      "group_id": "B",
+      "vector": [
+        -0.7224,
+        -0.427,
+        0.4123,
+        0.1821,
+        0.3233,
+        0.1764,
+        1.1554
+      ]
+    },
+    {
+      "iso3": "HND",
+      "country_name": "Honduras",
+      "group_id": "C",
+      "vector": [
+        0.1199,
+        -0.6181,
+        -0.794,
+        0.3139,
+        -0.0891,
+        -0.9344,
+        0.2572
+      ]
+    },
+    {
+      "iso3": "HTI",
+      "country_name": "Haiti",
+      "group_id": "A",
+      "vector": [
+        0.4084,
+        -0.6898,
+        -0.3073,
+        0.426,
+        -0.2361,
+        1.4737,
+        0.493
+      ]
+    },
+    {
+      "iso3": "IDN",
+      "country_name": "Indonesia",
+      "group_id": "A",
+      "vector": [
+        0.4864,
+        -1.0003,
+        1.4069,
+        -1.0737,
+        -0.4835,
+        0.1359,
+        -0.4405
+      ]
+    },
+    {
+      "iso3": "IND",
+      "country_name": "India",
+      "group_id": "A",
+      "vector": [
+        1.2897,
+        -0.7375,
+        3.2851,
+        -1.3556,
+        -0.2283,
+        1.9034,
+        3.4232
+      ]
+    },
+    {
+      "iso3": "IRL",
+      "country_name": "Ireland",
+      "group_id": "C",
+      "vector": [
+        -1.1046,
+        1.0539,
+        -1.1188,
+        0.7021,
+        -0.8637,
+        -1.4127,
+        -1.3873
+      ]
+    },
+    {
+      "iso3": "IRN",
+      "country_name": "Iran (Islamic Republic of)",
+      "group_id": "B",
+      "vector": [
+        -0.9018,
+        -0.9764,
+        -0.1538,
+        0.7468,
+        0.6571,
+        -0.4398,
+        0.1199
+      ]
+    },
+    {
+      "iso3": "IRQ",
+      "country_name": "Iraq",
+      "group_id": "B",
+      "vector": [
+        -0.543,
+        -0.5226,
+        -0.4898,
+        1.1754,
+        2.0065,
+        -0.0749,
+        -0.2358
+      ]
+    },
+    {
+      "iso3": "JAM",
+      "country_name": "Jamaica",
+      "group_id": "B",
+      "vector": [
+        -0.738,
+        -0.4031,
+        -0.4528,
+        0.6131,
+        0.5849,
+        -0.7803,
+        0.3867
+      ]
+    },
+    {
+      "iso3": "JOR",
+      "country_name": "Jordan",
+      "group_id": "B",
+      "vector": [
+        -0.6756,
+        0.9105,
+        -1.1299,
+        1.6954,
+        1.8738,
+        0.6629,
+        1.547
+      ]
+    },
+    {
+      "iso3": "JPN",
+      "country_name": "Japan",
+      "group_id": "C",
+      "vector": [
+        -0.8706,
+        -1.1436,
+        -0.6829,
+        -1.3234,
+        -0.7464,
+        -0.8533,
+        -0.1379
+      ]
+    },
+    {
+      "iso3": "KAZ",
+      "country_name": "Kazakhstan",
+      "group_id": "C",
+      "vector": [
+        -0.933,
+        0.4567,
+        -0.4713,
+        0.2668,
+        0.5901,
+        -0.0668,
+        -1.4655
+      ]
+    },
+    {
+      "iso3": "KEN",
+      "country_name": "Kenya",
+      "group_id": "A",
+      "vector": [
+        0.1199,
+        -0.5942,
+        -0.1856,
+        -1.0598,
+        -0.9243,
+        -0.0668,
+        -0.4323
+      ]
+    },
+    {
+      "iso3": "KGZ",
+      "country_name": "Kyrgyzstan",
+      "group_id": "C",
+      "vector": [
+        -0.4182,
+        0.7434,
+        -0.7543,
+        -0.1589,
+        0.206,
+        0.5088,
+        -1.3007
+      ]
+    },
+    {
+      "iso3": "KHM",
+      "country_name": "Cambodia",
+      "group_id": "A",
+      "vector": [
+        0.4396,
+        -0.2598,
+        1.2799,
+        -1.3686,
+        -0.624,
+        1.425,
+        -0.1061
+      ]
+    },
+    {
+      "iso3": "KIR",
+      "country_name": "Kiribati",
+      "group_id": "B",
+      "vector": [
+        -0.1297,
+        -1.1197,
+        -0.3549,
+        2.6901,
+        3.2811,
+        0.2494,
+        -0.6398
+      ]
+    },
+    {
+      "iso3": "KOR",
+      "country_name": "Republic of Korea",
+      "group_id": "C",
+      "vector": [
+        -1.1357,
+        -0.3076,
+        -0.9739,
+        -1.2868,
+        -0.4023,
+        -1.2992,
+        -0.986
+      ]
+    },
+    {
+      "iso3": "KWT",
+      "country_name": "Kuwait",
+      "group_id": "B",
+      "vector": [
+        -0.9252,
+        0.7911,
+        -0.63,
+        2.0624,
+        2.5942,
+        -0.4722,
+        0.5379
+      ]
+    },
+    {
+      "iso3": "LAO",
+      "country_name": "Lao People's Democratic Republic",
+      "group_id": "A",
+      "vector": [
+        1.0558,
+        -0.7375,
+        1.0947,
+        -1.2286,
+        -0.4938,
+        0.8088,
+        1.0603
+      ]
+    },
+    {
+      "iso3": "LBN",
+      "country_name": "Lebanon",
+      "group_id": "B",
+      "vector": [
+        -0.4884,
+        -0.5465,
+        0.4546,
+        1.3683,
+        0.9742,
+        -0.0993,
+        0.1479
+      ]
+    },
+    {
+      "iso3": "LBR",
+      "country_name": "Liberia",
+      "group_id": "A",
+      "vector": [
+        0.8218,
+        -0.1643,
+        -0.3919,
+        -0.7856,
+        -0.4848,
+        1.0602,
+        1.7555
+      ]
+    },
+    {
+      "iso3": "LBY",
+      "country_name": "Libya",
+      "group_id": "B",
+      "vector": [
+        -0.5586,
+        -0.4987,
+        1.4069,
+        1.376,
+        1.6289,
+        0.0305,
+        -0.2469
+      ]
+    },
+    {
+      "iso3": "LCA",
+      "country_name": "Saint Lucia",
+      "group_id": "B",
+      "vector": [
+        -1.0578,
+        0.0029,
+        -0.3126,
+        0.1446,
+        1.2538,
+        -1.2344,
+        0.9541
+      ]
+    },
+    {
+      "iso3": "LKA",
+      "country_name": "Sri Lanka",
+      "group_id": "A",
+      "vector": [
+        -0.4884,
+        -1.4063,
+        2.6952,
+        -1.2445,
+        -0.5699,
+        0.4115,
+        1.3354
+      ]
+    },
+    {
+      "iso3": "LSO",
+      "country_name": "Lesotho",
+      "group_id": "A",
+      "vector": [
+        1.4535,
+        0.1701,
+        -0.7464,
+        -0.2253,
+        -0.2567,
+        -0.1317,
+        0.5559
+      ]
+    },
+    {
+      "iso3": "LTU",
+      "country_name": "Lithuania",
+      "group_id": "C",
+      "vector": [
+        -1.1513,
+        -0.5226,
+        -0.5797,
+        0.7675,
+        -0.4049,
+        -0.7803,
+        -1.6627
+      ]
+    },
+    {
+      "iso3": "LVA",
+      "country_name": "Latvia",
+      "group_id": "C",
+      "vector": [
+        -1.1435,
+        -0.0449,
+        -0.6686,
+        0.5169,
+        -0.6085,
+        -0.6425,
+        -1.6992
+      ]
+    },
+    {
+      "iso3": "MAR",
+      "country_name": "Morocco",
+      "group_id": "B",
+      "vector": [
+        -0.2077,
+        1.0539,
+        -0.6062,
+        0.7497,
+        1.0682,
+        0.0305,
+        0.6263
+      ]
+    },
+    {
+      "iso3": "MDA",
+      "country_name": "Republic of Moldova",
+      "group_id": "C",
+      "vector": [
+        -0.9486,
+        -0.642,
+        -0.7861,
+        0.0619,
+        -0.3817,
+        -0.2776,
+        -1.2052
+      ]
+    },
+    {
+      "iso3": "MDG",
+      "country_name": "Madagascar",
+      "group_id": "A",
+      "vector": [
+        1.7187,
+        -1.0719,
+        0.7456,
+        -1.2257,
+        -1.0377,
+        0.671,
+        1.4974
+      ]
+    },
+    {
+      "iso3": "MDV",
+      "country_name": "Maldives",
+      "group_id": "A",
+      "vector": [
+        -0.1687,
+        -0.9047,
+        1.1291,
+        -0.9035,
+        0.3388,
+        1.8385,
+        0.3949
+      ]
+    },
+    {
+      "iso3": "MEX",
+      "country_name": "Mexico",
+      "group_id": "C",
+      "vector": [
+        -0.2545,
+        0.1462,
+        -0.8707,
+        1.0157,
+        0.4187,
+        -1.1533,
+        -0.392
+      ]
+    },
+    {
+      "iso3": "MHL",
+      "country_name": "Marshall Islands",
+      "group_id": "B",
+      "vector": [
+        1.0636,
+        -0.5226,
+        -0.3522,
+        3.3558,
+        2.9744,
+        0.0872,
+        0.469
+      ]
+    },
+    {
+      "iso3": "MKD",
+      "country_name": "North Macedonia",
+      "group_id": "C",
+      "vector": [
+        -0.9798,
+        1.3166,
+        -0.4025,
+        0.4193,
+        -0.6137,
+        -0.829,
+        -0.803
+      ]
+    },
+    {
+      "iso3": "MLI",
+      "country_name": "Mali",
+      "group_id": "A",
+      "vector": [
+        0.5332,
+        -1.3108,
+        1.1741,
+        -0.9174,
+        -0.5686,
+        2.3898,
+        0.9338
+      ]
+    },
+    {
+      "iso3": "MLT",
+      "country_name": "Malta",
+      "group_id": "C",
+      "vector": [
+        -1.0032,
+        0.7911,
+        -1.0569,
+        1.0436,
+        -0.4796,
+        -1.283,
+        -1.0476
+      ]
+    },
+    {
+      "iso3": "MMR",
+      "country_name": "Myanmar",
+      "group_id": "A",
+      "vector": [
+        0.6346,
+        -1.478,
+        0.481,
+        -1.1877,
+        -0.5621,
+        1.0196,
+        0.1225
+      ]
+    },
+    {
+      "iso3": "MNE",
+      "country_name": "Montenegro",
+      "group_id": "C",
+      "vector": [
+        -0.6522,
+        0.4328,
+        -0.712,
+        0.5011,
+        -0.6356,
+        -0.9992,
+        -1.2578
+      ]
+    },
+    {
+      "iso3": "MNG",
+      "country_name": "Mongolia",
+      "group_id": "C",
+      "vector": [
+        -0.7224,
+        1.3166,
+        -1.0479,
+        0.2288,
+        0.5424,
+        -1.2181,
+        -1.5527
+      ]
+    },
+    {
+      "iso3": "MOZ",
+      "country_name": "Mozambique",
+      "group_id": "A",
+      "vector": [
+        1.6095,
+        -0.5703,
+        -0.2596,
+        -1.0675,
+        -0.8276,
+        1.4899,
+        1.2872
+      ]
+    },
+    {
+      "iso3": "MRT",
+      "country_name": "Mauritania",
+      "group_id": "A",
+      "vector": [
+        0.4006,
+        -1.2391,
+        1.3857,
+        -0.524,
+        -0.1665,
+        1.1169,
+        0.339
+      ]
+    },
+    {
+      "iso3": "MUS",
+      "country_name": "Mauritius",
+      "group_id": "B",
+      "vector": [
+        -0.6678,
+        -0.4748,
+        0.2149,
+        -0.7087,
+        0.8762,
+        -0.4884,
+        1.4935
+      ]
+    },
+    {
+      "iso3": "MWI",
+      "country_name": "Malawi",
+      "group_id": "A",
+      "vector": [
+        1.3131,
+        -0.5703,
+        -0.6141,
+        -1.1853,
+        -0.8418,
+        0.1521,
+        0.8051
+      ]
+    },
+    {
+      "iso3": "MYS",
+      "country_name": "Malaysia",
+      "group_id": "A",
+      "vector": [
+        0.619,
+        -0.3554,
+        1.2746,
+        -0.2435,
+        0.389,
+        0.2007,
+        0.4155
+      ]
+    },
+    {
+      "iso3": "NAM",
+      "country_name": "Namibia",
+      "group_id": "A",
+      "vector": [
+        0.0029,
+        -0.2359,
+        0.5974,
+        -0.1473,
+        -0.5531,
+        -0.3506,
+        0.8063
+      ]
+    },
+    {
+      "iso3": "NER",
+      "country_name": "Niger",
+      "group_id": "A",
+      "vector": [
+        2.4908,
+        -1.0003,
+        1.7455,
+        -1.194,
+        -1.0171,
+        1.6196,
+        0.6761
+      ]
+    },
+    {
+      "iso3": "NGA",
+      "country_name": "Nigeria",
+      "group_id": "A",
+      "vector": [
+        1.3599,
+        -1.2391,
+        0.4176,
+        -0.8804,
+        -0.883,
+        2.0736,
+        0.9187
+      ]
+    },
+    {
+      "iso3": "NLD",
+      "country_name": "Netherlands",
+      "group_id": "C",
+      "vector": [
+        -1.1513,
+        -0.3315,
+        -1.0162,
+        0.2293,
+        -1.347,
+        -1.356,
+        -1.3859
+      ]
+    },
+    {
+      "iso3": "NPL",
+      "country_name": "Nepal",
+      "group_id": "A",
+      "vector": [
+        0.7516,
+        -1.1914,
+        1.883,
+        -1.3436,
+        0.2614,
+        0.5007,
+        1.7224
+      ]
+    },
+    {
+      "iso3": "OMN",
+      "country_name": "Oman",
+      "group_id": "B",
+      "vector": [
+        -0.2701,
+        0.4806,
+        1.1688,
+        0.9936,
+        0.9664,
+        -0.0344,
+        0.2884
+      ]
+    },
+    {
+      "iso3": "PAK",
+      "country_name": "Pakistan",
+      "group_id": "A",
+      "vector": [
+        1.3443,
+        -1.1197,
+        0.5842,
+        -0.9011,
+        0.7164,
+        0.9548,
+        0.9598
+      ]
+    },
+    {
+      "iso3": "PAN",
+      "country_name": "Panama",
+      "group_id": "C",
+      "vector": [
+        -0.1843,
+        0.9822,
+        -1.0109,
+        0.4534,
+        -0.0621,
+        -0.6749,
+        -0.3633
+      ]
+    },
+    {
+      "iso3": "PER",
+      "country_name": "Peru",
+      "group_id": "C",
+      "vector": [
+        -0.4494,
+        0.5284,
+        -1.1802,
+        0.1615,
+        -0.4951,
+        -0.7236,
+        -0.9842
+      ]
+    },
+    {
+      "iso3": "PHL",
+      "country_name": "Philippines",
+      "group_id": "A",
+      "vector": [
+        0.8842,
+        -0.8331,
+        0.243,
+        -1.118,
+        -0.6227,
+        -1.3965,
+        2.0343
+      ]
+    },
+    {
+      "iso3": "PNG",
+      "country_name": "Papua New Guinea",
+      "group_id": "B",
+      "vector": [
+        2.4362,
+        2.7975,
+        2.428,
+        0.3077,
+        1.3569,
+        0.3953,
+        1.6449
+      ]
+    },
+    {
+      "iso3": "POL",
+      "country_name": "Poland",
+      "group_id": "C",
+      "vector": [
+        -1.1981,
+        0.4328,
+        -1.0929,
+        0.4765,
+        -0.4874,
+        -0.3101,
+        -1.3958
+      ]
+    },
+    {
+      "iso3": "PRK",
+      "country_name": "Democratic People's Republic of Korea",
+      "group_id": "A",
+      "vector": [
+        0.0185,
+        -0.8331,
+        -0.63,
+        -1.0891,
+        -0.9642,
+        0.3548,
+        0.3494
+      ]
+    },
+    {
+      "iso3": "PRT",
+      "country_name": "Portugal",
+      "group_id": "C",
+      "vector": [
+        -1.0266,
+        0.6239,
+        -1.1379,
+        0.2678,
+        -0.7,
+        -1.3235,
+        -0.6638
+      ]
+    },
+    {
+      "iso3": "PRY",
+      "country_name": "Paraguay",
+      "group_id": "C",
+      "vector": [
+        -1.0266,
+        2.057,
+        -1.0374,
+        0.2206,
+        -0.3701,
+        -0.529,
+        -0.4348
+      ]
+    },
+    {
+      "iso3": "PSE",
+      "country_name": "State of Palestine",
+      "group_id": "B",
+      "vector": [
+        -0.6522,
+        0.4806,
+        -0.9395,
+        1.3943,
+        1.9111,
+        0.0045,
+        -0.3436
+      ]
+    },
+    {
+      "iso3": "QAT",
+      "country_name": "Qatar",
+      "group_id": "B",
+      "vector": [
+        -0.855,
+        0.4328,
+        0.1636,
+        1.9027,
+        2.3919,
+        -0.1155,
+        -0.4357
+      ]
+    },
+    {
+      "iso3": "ROU",
+      "country_name": "Romania",
+      "group_id": "C",
+      "vector": [
+        -0.7302,
+        -0.4748,
+        -0.3655,
+        0.4323,
+        -0.7065,
+        -0.5533,
+        -0.687
+      ]
+    },
+    {
+      "iso3": "RWA",
+      "country_name": "Rwanda",
+      "group_id": "C",
+      "vector": [
+        1.048,
+        -0.4031,
+        -0.995,
+        -1.1916,
+        -1.3303,
+        -0.9992,
+        -0.5588
+      ]
+    },
+    {
+      "iso3": "SAU",
+      "country_name": "Saudi Arabia",
+      "group_id": "B",
+      "vector": [
+        -0.4104,
+        0.3851,
+        1.8301,
+        1.7824,
+        1.9936,
+        -0.1641,
+        -0.2469
+      ]
+    },
+    {
+      "iso3": "SDN",
+      "country_name": "Sudan",
+      "group_id": "A",
+      "vector": [
+        1.4847,
+        -1.0003,
+        3.0232,
+        -0.954,
+        -0.1768,
+        0.5656,
+        1.4895
+      ]
+    },
+    {
+      "iso3": "SEN",
+      "country_name": "Senegal",
+      "group_id": "A",
+      "vector": [
+        0.0653,
+        -1.1197,
+        0.8593,
+        -0.9189,
+        -0.557,
+        1.8791,
+        1.1745
+      ]
+    },
+    {
+      "iso3": "SGP",
+      "country_name": "Singapore",
+      "group_id": "C",
+      "vector": [
+        -1.0578,
+        -0.7136,
+        -0.339,
+        -1.1454,
+        -0.4191,
+        -1.3398,
+        -0.216
+      ]
+    },
+    {
+      "iso3": "SLB",
+      "country_name": "Solomon Islands",
+      "group_id": "B",
+      "vector": [
+        1.048,
+        -0.1404,
+        0.9493,
+        0.4337,
+        1.1056,
+        0.6629,
+        0.288
+      ]
+    },
+    {
+      "iso3": "SLE",
+      "country_name": "Sierra Leone",
+      "group_id": "A",
+      "vector": [
+        0.6892,
+        -0.3315,
+        0.3779,
+        -0.9088,
+        -0.6975,
+        1.5304,
+        -0.3501
+      ]
+    },
+    {
+      "iso3": "SLV",
+      "country_name": "El Salvador",
+      "group_id": "C",
+      "vector": [
+        -0.543,
+        0.409,
+        -0.7252,
+        0.5703,
+        0.1042,
+        -1.5343,
+        -0.3767
+      ]
+    },
+    {
+      "iso3": "SOM",
+      "country_name": "Somalia",
+      "group_id": "A",
+      "vector": [
+        0.5878,
+        -1.0242,
+        2.4968,
+        -0.9516,
+        -0.7039,
+        1.1007,
+        0.8101
+      ]
+    },
+    {
+      "iso3": "SRB",
+      "country_name": "Serbia",
+      "group_id": "C",
+      "vector": [
+        -0.9174,
+        1.2927,
+        -0.5982,
+        0.3322,
+        -0.6975,
+        -0.5452,
+        -1.2644
+      ]
+    },
+    {
+      "iso3": "STP",
+      "country_name": "Sao Tome and Principe",
+      "group_id": "A",
+      "vector": [
+        -0.4962,
+        -0.0926,
+        -0.2094,
+        -0.5716,
+        -0.3894,
+        1.1899,
+        -0.1799
+      ]
+    },
+    {
+      "iso3": "SUR",
+      "country_name": "Suriname",
+      "group_id": "B",
+      "vector": [
+        -0.6522,
+        -0.7375,
+        0.1689,
+        0.7983,
+        0.688,
+        -0.6911,
+        1.0012
+      ]
+    },
+    {
+      "iso3": "SWZ",
+      "country_name": "Eswatini",
+      "group_id": "C",
+      "vector": [
+        0.1979,
+        0.815,
+        -0.7623,
+        -0.2128,
+        -0.0041,
+        0.0953,
+        -0.3815
+      ]
+    },
+    {
+      "iso3": "SYC",
+      "country_name": "Seychelles",
+      "group_id": "C",
+      "vector": [
+        -0.7926,
+        0.9822,
+        -0.1538,
+        -0.3792,
+        0.2034,
+        -0.3587,
+        0.1224
+      ]
+    },
+    {
+      "iso3": "SYR",
+      "country_name": "Syrian Arab Republic",
+      "group_id": "B",
+      "vector": [
+        0.5566,
+        1.0061,
+        1.764,
+        0.9441,
+        1.3028,
+        0.2656,
+        0.5898
+      ]
+    },
+    {
+      "iso3": "TCD",
+      "country_name": "Chad",
+      "group_id": "A",
+      "vector": [
+        1.1805,
+        -1.0242,
+        1.3963,
+        -1.1536,
+        -0.6588,
+        1.2872,
+        0.7604
+      ]
+    },
+    {
+      "iso3": "TGO",
+      "country_name": "Togo",
+      "group_id": "A",
+      "vector": [
+        0.5176,
+        -0.7614,
+        0.2218,
+        -0.9448,
+        -0.6279,
+        1.3115,
+        0.5192
+      ]
+    },
+    {
+      "iso3": "THA",
+      "country_name": "Thailand",
+      "group_id": "C",
+      "vector": [
+        -0.3169,
+        0.7434,
+        0.7429,
+        -0.7837,
+        -0.2709,
+        -0.4479,
+        -0.3591
+      ]
+    },
+    {
+      "iso3": "TJK",
+      "country_name": "Tajikistan",
+      "group_id": "C",
+      "vector": [
+        -0.2545,
+        -0.5226,
+        0.1795,
+        -0.3739,
+        0.1326,
+        0.4602,
+        -0.7094
+      ]
+    },
+    {
+      "iso3": "TKM",
+      "country_name": "Turkmenistan",
+      "group_id": "C",
+      "vector": [
+        -0.7692,
+        -0.4748,
+        -0.2067,
+        0.0393,
+        0.6674,
+        -0.2371,
+        -1.687
+      ]
+    },
+    {
+      "iso3": "TLS",
+      "country_name": "Timor-Leste",
+      "group_id": "A",
+      "vector": [
+        2.2646,
+        -1.3347,
+        0.9016,
+        -1.3681,
+        -1.0635,
+        0.0305,
+        1.387
+      ]
+    },
+    {
+      "iso3": "TON",
+      "country_name": "Tonga",
+      "group_id": "B",
+      "vector": [
+        -1.1513,
+        0.6478,
+        -1.0109,
+        2.8825,
+        3.7529,
+        -0.083,
+        0.2446
+      ]
+    },
+    {
+      "iso3": "TTO",
+      "country_name": "Trinidad and Tobago",
+      "group_id": "B",
+      "vector": [
+        -0.6678,
+        1.9615,
+        0.4017,
+        0.0398,
+        0.5437,
+        -0.9587,
+        0.9592
+      ]
+    },
+    {
+      "iso3": "TUN",
+      "country_name": "Tunisia",
+      "group_id": "C",
+      "vector": [
+        -0.582,
+        2.5586,
+        -0.7411,
+        0.8363,
+        0.7525,
+        0.2088,
+        -0.8152
+      ]
+    },
+    {
+      "iso3": "TUR",
+      "country_name": "T\u00fcrkiye",
+      "group_id": "B",
+      "vector": [
+        -0.8472,
+        0.2179,
+        -0.8495,
+        1.3265,
+        1.0399,
+        0.1115,
+        0.2136
+      ]
+    },
+    {
+      "iso3": "TZA",
+      "country_name": "United Republic of Tanzania",
+      "group_id": "A",
+      "vector": [
+        1.0558,
+        -0.4987,
+        -0.3655,
+        -0.9309,
+        -0.8998,
+        0.7602,
+        -0.4914
+      ]
+    },
+    {
+      "iso3": "UGA",
+      "country_name": "Uganda",
+      "group_id": "A",
+      "vector": [
+        0.5566,
+        -0.6181,
+        -0.3443,
+        -1.2286,
+        -1.2903,
+        0.2656,
+        0.1879
+      ]
+    },
+    {
+      "iso3": "UKR",
+      "country_name": "Ukraine",
+      "group_id": "C",
+      "vector": [
+        -0.3637,
+        2.2003,
+        0.8805,
+        0.5617,
+        -0.5879,
+        -0.9587,
+        -1.3695
+      ]
+    },
+    {
+      "iso3": "URY",
+      "country_name": "Uruguay",
+      "group_id": "C",
+      "vector": [
+        -0.7692,
+        1.6032,
+        -0.9183,
+        0.9388,
+        -0.0298,
+        -1.1776,
+        -0.911
+      ]
+    },
+    {
+      "iso3": "USA",
+      "country_name": "United States",
+      "group_id": "C",
+      "vector": [
+        -0.9486,
+        0.6956,
+        -1.2649,
+        1.7521,
+        -0.5853,
+        -1.4371,
+        -0.8098
+      ]
+    },
+    {
+      "iso3": "UZB",
+      "country_name": "Uzbekistan",
+      "group_id": "C",
+      "vector": [
+        -0.7536,
+        -0.3076,
+        -0.8072,
+        -0.1521,
+        0.2614,
+        -0.383,
+        -1.3425
+      ]
+    },
+    {
+      "iso3": "VEN",
+      "country_name": "Venezuela (Bolivarian Republic of)",
+      "group_id": "C",
+      "vector": [
+        -0.3637,
+        0.1223,
+        -0.2067,
+        0.7247,
+        -0.0298,
+        -0.4317,
+        -0.5799
+      ]
+    },
+    {
+      "iso3": "VNM",
+      "country_name": "Viet Nam",
+      "group_id": "C",
+      "vector": [
+        0.2213,
+        0.8867,
+        0.0842,
+        -1.5307,
+        -1.0918,
+        -0.7236,
+        -1.2403
+      ]
+    },
+    {
+      "iso3": "VUT",
+      "country_name": "Vanuatu",
+      "group_id": "B",
+      "vector": [
+        1.1415,
+        -0.3076,
+        -0.0401,
+        0.6867,
+        1.6186,
+        -0.083,
+        0.2502
+      ]
+    },
+    {
+      "iso3": "WSM",
+      "country_name": "Samoa",
+      "group_id": "B",
+      "vector": [
+        -0.621,
+        0.6239,
+        -0.4819,
+        2.8354,
+        3.8766,
+        -0.2209,
+        0.1331
+      ]
+    },
+    {
+      "iso3": "YEM",
+      "country_name": "Yemen",
+      "group_id": "A",
+      "vector": [
+        2.4206,
+        -1.2152,
+        3.047,
+        -0.0973,
+        0.4612,
+        2.5925,
+        1.4958
+      ]
+    },
+    {
+      "iso3": "ZAF",
+      "country_name": "South Africa",
+      "group_id": "B",
+      "vector": [
+        0.6268,
+        1.436,
+        -0.3919,
+        0.9104,
+        0.4058,
+        0.0791,
+        1.0396
+      ]
+    },
+    {
+      "iso3": "ZMB",
+      "country_name": "Zambia",
+      "group_id": "A",
+      "vector": [
+        1.2429,
+        -0.1165,
+        -0.1724,
+        -0.9622,
+        -0.7735,
+        0.1602,
+        -0.1507
+      ]
+    },
+    {
+      "iso3": "ZWE",
+      "country_name": "Zimbabwe",
+      "group_id": "A",
+      "vector": [
+        0.5722,
+        -0.6659,
+        -0.5321,
+        -0.2892,
+        -0.6549,
+        -0.0506,
+        -0.022
+      ]
+    }
+  ],
   "mandatory_caveat": "Groups are exploratory similarity groupings, not official categories or rankings. Data years differ between indicators. Not for clinical use."
 }
