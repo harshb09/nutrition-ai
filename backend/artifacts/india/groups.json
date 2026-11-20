@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1",
+    "name": "District Group 1",
+    "provisional_name": "District Group 1: Higher child underweight, women with low bmi, child stunting, child wasting and child anaemia; lower women overweight or obesity (Provisional)",
+    "descriptor": "Higher child underweight, women with low bmi, child stunting, child wasting and child anaemia; lower women overweight or obesity",
+    "district_count": 369,
+    "means": {
+      "stunting": 38.68,
+      "wasting": 21.81,
+      "underweight": 36.49,
+      "anaemia_children": 70.7,
+      "anaemia_women": 60.05,
+      "low_bmi_women": 23.02,
+      "overweight_women": 16.41
+    },
+    "medians": {
+      "stunting": 38.5,
+      "wasting": 21.0,
+      "underweight": 35.91,
+      "anaemia_children": 71.01,
+      "anaemia_women": 59.93,
+      "low_bmi_women": 22.63,
+      "overweight_women": 15.73
+    },
+    "z_scores": {
+      "stunting": 0.605,
+      "wasting": 0.497,
+      "underweight": 0.708,
+      "anaemia_children": 0.38,
+      "anaemia_women": 0.343,
+      "low_bmi_women": 0.69,
+      "overweight_women": -0.629
+    }
+  },
+  {
+    "id": "2",
+    "name": "District Group 2",
+    "provisional_name": "District Group 2: Higher women overweight or obesity; lower child stunting, child underweight, women with low bmi and child wasting (Provisional)",
+    "descriptor": "Higher women overweight or obesity; lower child stunting, child underweight, women with low bmi and child wasting",
+    "district_count": 245,
+    "means": {
+      "stunting": 27.74,
+      "wasting": 15.41,
+      "underweight": 23.11,
+      "anaemia_children": 66.32,
+      "anaemia_women": 57.22,
+      "low_bmi_women": 13.54,
+      "overweight_women": 31.71
+    },
+    "medians": {
+      "stunting": 27.5,
+      "wasting": 15.18,
+      "underweight": 23.01,
+      "anaemia_children": 67.02,
+      "anaemia_women": 56.86,
+      "low_bmi_women": 13.7,
+      "overweight_women": 31.61
+    },
+    "z_scores": {
+      "stunting": -0.66,
+      "wasting": -0.457,
+      "underweight": -0.634,
+      "anaemia_children": 0.06,
+      "anaemia_women": 0.106,
+      "low_bmi_women": -0.585,
+      "overweight_women": 0.816
+    }
+  },
+  {
+    "id": "3",
+    "name": "District Group 3",
+    "provisional_name": "District Group 3: Lower child anaemia, women anaemia, women with low bmi, child underweight, child wasting and child stunting (Provisional)",
+    "descriptor": "Lower child anaemia, women anaemia, women with low bmi, child underweight, child wasting and child stunting",
+    "district_count": 93,
+    "means": {
+      "stunting": 27.72,
+      "wasting": 13.34,
+      "underweight": 18.09,
+      "anaemia_children": 42.77,
+      "anaemia_women": 36.3,
+      "low_bmi_women": 8.97,
+      "overweight_women": 26.72
+    },
+    "medians": {
+      "stunting": 27.22,
+      "wasting": 12.43,
+      "underweight": 17.3,
+      "anaemia_children": 44.24,
+      "anaemia_women": 35.2,
+      "low_bmi_women": 8.48,
+      "overweight_women": 26.03
+    },
+    "z_scores": {
+      "stunting": -0.662,
+      "wasting": -0.767,
+      "underweight": -1.138,
+      "anaemia_children": -1.666,
+      "anaemia_women": -1.643,
+      "low_bmi_women": -1.198,
+      "overweight_women": 0.344
+    }
+  }
+]

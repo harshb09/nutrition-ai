@@ -1,0 +1,10 @@
+{
+  "total_nfhs_districts": 707,
+  "total_geo_features": 641,
+  "exact_matches": 604,
+  "close_matches": 15,
+  "total_matched": 619,
+  "unmatched_districts": 88,
+  "rapidfuzz_cutoff": 88.0,
+  "note": "Unmatched districts are newer districts created after the Census boundary file (e.g. Telangana, Chhattisgarh). They retain full data and profile access without spatial polygons."
+}

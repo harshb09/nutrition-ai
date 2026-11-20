@@ -1,0 +1,17 @@
+{
+  "chosen_k": 3,
+  "chosen_distance": "Euclidean",
+  "chosen_model": "K-Means",
+  "metrics": {
+    "k": 3,
+    "distance": "Euclidean",
+    "model_type": "K-Means",
+    "wcss": 2742.93,
+    "silhouette": 0.265,
+    "davies_bouldin": 1.3855,
+    "mean_bootstrap_ari": 0.8138,
+    "std_bootstrap_ari": 0.2945,
+    "mean_seed_ari": 0.62
+  },
+  "rationale": "Selected K=3 (K-Means, Euclidean): achieved highest silhouette score (0.265) among K in [3..6] with Davies-Bouldin index 1.3855, satisfying bootstrap stability constraint with mean ARI 0.8138 >= 0.60."
+}

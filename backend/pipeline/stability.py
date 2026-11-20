@@ -12,7 +12,7 @@ def compute_seed_stability(X: np.ndarray, k: int, model_type: str = "kmeans", n_
             km.fit(X)
             all_labels.append(km.labels_)
         else:
-            kmed = KMedians(n_clusters=k, n_init=1, random_state=seed)
+            kmed = KMedians(n_clusters=k, n_init=1, max_iter=60, random_state=seed)
             kmed.fit(X)
             all_labels.append(kmed.labels_)
             
@@ -35,7 +35,8 @@ def compute_bootstrap_stability(
     model_type: str = "kmeans",
     n_bootstraps: int = 100,
     subsample_ratio: float = 0.80,
-    random_state: int = 42
+    random_state: int = 42,
+    compute_coassoc: bool = True
 ) -> tuple[dict, np.ndarray, np.ndarray]:
     """Runs 100 bootstrap 80% subsamples to compute:
     1. Mean and SD of ARI vs baseline labels on subsamples
@@ -46,8 +47,8 @@ def compute_bootstrap_stability(
     subsample_size = int(np.floor(n_samples * subsample_ratio))
     rng = np.random.RandomState(random_state)
     
-    co_occurrences = np.zeros((n_samples, n_samples), dtype=float)
-    co_clusters = np.zeros((n_samples, n_samples), dtype=float)
+    co_occurrences = np.zeros((n_samples, n_samples), dtype=float) if compute_coassoc else None
+    co_clusters = np.zeros((n_samples, n_samples), dtype=float) if compute_coassoc else None
     ari_scores = []
     
     for b in range(n_bootstraps):
@@ -59,7 +60,7 @@ def compute_bootstrap_stability(
             km.fit(X_sub)
             sub_labels = km.labels_
         else:
-            kmed = KMedians(n_clusters=k, n_init=10, random_state=rng.randint(0, 100000))
+            kmed = KMedians(n_clusters=k, n_init=2, max_iter=60, random_state=rng.randint(0, 100000))
             kmed.fit(X_sub)
             sub_labels = kmed.labels_
             
@@ -68,27 +69,31 @@ def compute_bootstrap_stability(
         ari = adjusted_rand_score(baseline_sub, sub_labels)
         ari_scores.append(ari)
         
-        # Update co-association counts
-        for i_pos, i_orig in enumerate(sub_indices):
-            for j_pos, j_orig in enumerate(sub_indices):
-                co_occurrences[i_orig, j_orig] += 1
-                if sub_labels[i_pos] == sub_labels[j_pos]:
-                    co_clusters[i_orig, j_orig] += 1
+        # Vectorized co-association accumulation
+        if compute_coassoc:
+            ix = np.ix_(sub_indices, sub_indices)
+            co_occurrences[ix] += 1
+            same_cluster = (sub_labels[:, None] == sub_labels[None, :]).astype(float)
+            co_clusters[ix] += same_cluster
                     
     # Compute co-association matrix
-    with np.errstate(divide="ignore", invalid="ignore"):
-        co_assoc_matrix = np.where(co_occurrences > 0, co_clusters / co_occurrences, 0.0)
-    np.fill_diagonal(co_assoc_matrix, 1.0)
-    
-    # Per-country stability score: average co-association with members of the same baseline cluster
-    per_country_stability = np.zeros(n_samples, dtype=float)
-    for i in range(n_samples):
-        c_i = baseline_labels[i]
-        same_cluster_indices = [j for j in range(n_samples) if baseline_labels[j] == c_i and j != i]
-        if len(same_cluster_indices) > 0:
-            per_country_stability[i] = float(np.mean(co_assoc_matrix[i, same_cluster_indices]))
-        else:
-            per_country_stability[i] = 1.0
+    if compute_coassoc:
+        with np.errstate(divide="ignore", invalid="ignore"):
+            co_assoc_matrix = np.where(co_occurrences > 0, co_clusters / co_occurrences, 0.0)
+        np.fill_diagonal(co_assoc_matrix, 1.0)
+        
+        # Per-country stability score: average co-association with members of the same baseline cluster
+        per_country_stability = np.zeros(n_samples, dtype=float)
+        for i in range(n_samples):
+            c_i = baseline_labels[i]
+            same_cluster_indices = [j for j in range(n_samples) if baseline_labels[j] == c_i and j != i]
+            if len(same_cluster_indices) > 0:
+                per_country_stability[i] = float(np.mean(co_assoc_matrix[i, same_cluster_indices]))
+            else:
+                per_country_stability[i] = 1.0
+    else:
+        co_assoc_matrix = np.array([])
+        per_country_stability = np.array([])
             
     stats = {
         "n_bootstraps": n_bootstraps,

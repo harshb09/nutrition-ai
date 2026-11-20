@@ -1,0 +1,938 @@
+{
+  "Andaman and Nicobar Islands": {
+    "state": "Andaman and Nicobar Islands",
+    "district_count": 3,
+    "means": {
+      "stunting": 23.24,
+      "wasting": 18.43,
+      "underweight": 28.28,
+      "anaemia_children": 37.13,
+      "anaemia_women": 52.68,
+      "low_bmi_women": 8.91,
+      "overweight_women": 38.0,
+      "improved_drinking_water": 96.32,
+      "improved_sanitation": 86.39,
+      "clean_cooking_fuel": 70.03,
+      "women_literacy": 86.07,
+      "institutional_births": 98.32,
+      "immunization": -70.25,
+      "exclusive_breastfeeding": null,
+      "pregnant_women_anaemia": 52.81
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 1,
+      "anaemia_children": 0
+    }
+  },
+  "Andhra Pradesh": {
+    "state": "Andhra Pradesh",
+    "district_count": 13,
+    "means": {
+      "stunting": 30.38,
+      "wasting": 16.1,
+      "underweight": 28.77,
+      "anaemia_children": 63.47,
+      "anaemia_women": 59.02,
+      "low_bmi_women": 15.12,
+      "overweight_women": 35.47,
+      "improved_drinking_water": 96.34,
+      "improved_sanitation": 76.7,
+      "clean_cooking_fuel": 82.86,
+      "women_literacy": 67.63,
+      "institutional_births": 96.86,
+      "immunization": -40.47,
+      "exclusive_breastfeeding": -69.46,
+      "pregnant_women_anaemia": 59.18
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 1,
+      "anaemia_children": 1
+    }
+  },
+  "Arunachal Pradesh": {
+    "state": "Arunachal Pradesh",
+    "district_count": 20,
+    "means": {
+      "stunting": 26.74,
+      "wasting": 13.36,
+      "underweight": 14.12,
+      "anaemia_children": 56.62,
+      "anaemia_women": 38.84,
+      "low_bmi_women": 4.8,
+      "overweight_women": 24.04,
+      "improved_drinking_water": 94.28,
+      "improved_sanitation": 84.53,
+      "clean_cooking_fuel": 52.28,
+      "women_literacy": 73.09,
+      "institutional_births": 80.04,
+      "immunization": -7.64,
+      "exclusive_breastfeeding": -61.7,
+      "pregnant_women_anaemia": 39.45
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 1,
+      "anaemia_children": 2
+    }
+  },
+  "Assam": {
+    "state": "Assam",
+    "district_count": 33,
+    "means": {
+      "stunting": 35.69,
+      "wasting": 20.69,
+      "underweight": 31.59,
+      "anaemia_children": 69.81,
+      "anaemia_women": 65.74,
+      "low_bmi_women": 17.14,
+      "overweight_women": 15.05,
+      "improved_drinking_water": 85.43,
+      "improved_sanitation": 70.1,
+      "clean_cooking_fuel": 39.92,
+      "women_literacy": 77.4,
+      "institutional_births": 85.13,
+      "immunization": 30.21,
+      "exclusive_breastfeeding": -64.8,
+      "pregnant_women_anaemia": 66.24
+    },
+    "higher_than_most_summary": {
+      "stunting": 16,
+      "wasting": 13,
+      "anaemia_children": 14
+    }
+  },
+  "Bihar": {
+    "state": "Bihar",
+    "district_count": 38,
+    "means": {
+      "stunting": 42.58,
+      "wasting": 24.24,
+      "underweight": 41.72,
+      "anaemia_children": 70.08,
+      "anaemia_women": 64.68,
+      "low_bmi_women": 25.87,
+      "overweight_women": 15.26,
+      "improved_drinking_water": 99.0,
+      "improved_sanitation": 49.47,
+      "clean_cooking_fuel": 36.36,
+      "women_literacy": 57.64,
+      "institutional_births": 77.83,
+      "immunization": 72.36,
+      "exclusive_breastfeeding": -1.8,
+      "pregnant_women_anaemia": 64.78
+    },
+    "higher_than_most_summary": {
+      "stunting": 32,
+      "wasting": 25,
+      "anaemia_children": 13
+    }
+  },
+  "Chandigarh": {
+    "state": "Chandigarh",
+    "district_count": 1,
+    "means": {
+      "stunting": 25.3,
+      "wasting": 8.41,
+      "underweight": 20.56,
+      "anaemia_children": 54.58,
+      "anaemia_women": 60.3,
+      "low_bmi_women": 13.01,
+      "overweight_women": 44.02,
+      "improved_drinking_water": 99.12,
+      "improved_sanitation": 84.98,
+      "clean_cooking_fuel": 95.81,
+      "women_literacy": 82.96,
+      "institutional_births": 96.87,
+      "immunization": -80.93,
+      "exclusive_breastfeeding": null,
+      "pregnant_women_anaemia": 60.09
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 0,
+      "anaemia_children": 0
+    }
+  },
+  "Chhattisgarh": {
+    "state": "Chhattisgarh",
+    "district_count": 27,
+    "means": {
+      "stunting": 35.67,
+      "wasting": 19.08,
+      "underweight": 33.22,
+      "anaemia_children": 68.99,
+      "anaemia_women": 63.01,
+      "low_bmi_women": 24.98,
+      "overweight_women": 12.34,
+      "improved_drinking_water": 94.79,
+      "improved_sanitation": 72.8,
+      "clean_cooking_fuel": 28.26,
+      "women_literacy": 70.1,
+      "institutional_births": 84.47,
+      "immunization": 56.42,
+      "exclusive_breastfeeding": -82.31,
+      "pregnant_women_anaemia": 63.4
+    },
+    "higher_than_most_summary": {
+      "stunting": 11,
+      "wasting": 9,
+      "anaemia_children": 12
+    }
+  },
+  "Dadra and Nagar Haveli and Daman and Diu": {
+    "state": "Dadra and Nagar Haveli and Daman and Diu",
+    "district_count": 3,
+    "means": {
+      "stunting": 35.45,
+      "wasting": 21.15,
+      "underweight": 33.29,
+      "anaemia_children": 73.35,
+      "anaemia_women": 58.49,
+      "low_bmi_women": 21.87,
+      "overweight_women": 30.14,
+      "improved_drinking_water": 96.81,
+      "improved_sanitation": 73.28,
+      "clean_cooking_fuel": 83.9,
+      "women_literacy": 83.16,
+      "institutional_births": 96.45,
+      "immunization": -23.74,
+      "exclusive_breastfeeding": -88.83,
+      "pregnant_women_anaemia": 58.59
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 2,
+      "anaemia_children": 2
+    }
+  },
+  "Goa": {
+    "state": "Goa",
+    "district_count": 2,
+    "means": {
+      "stunting": 26.24,
+      "wasting": 19.53,
+      "underweight": 23.44,
+      "anaemia_children": 52.6,
+      "anaemia_women": 38.8,
+      "low_bmi_women": 13.79,
+      "overweight_women": 35.92,
+      "improved_drinking_water": 98.56,
+      "improved_sanitation": 87.95,
+      "clean_cooking_fuel": 96.47,
+      "women_literacy": 93.06,
+      "institutional_births": 99.78,
+      "immunization": -78.64,
+      "exclusive_breastfeeding": null,
+      "pregnant_women_anaemia": 38.72
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 1,
+      "anaemia_children": 0
+    }
+  },
+  "Gujarat": {
+    "state": "Gujarat",
+    "district_count": 33,
+    "means": {
+      "stunting": 38.65,
+      "wasting": 26.13,
+      "underweight": 40.33,
+      "anaemia_children": 79.84,
+      "anaemia_women": 64.56,
+      "low_bmi_women": 26.0,
+      "overweight_women": 20.99,
+      "improved_drinking_water": 96.85,
+      "improved_sanitation": 71.73,
+      "clean_cooking_fuel": 59.84,
+      "women_literacy": 74.75,
+      "institutional_births": 93.14,
+      "immunization": 19.83,
+      "exclusive_breastfeeding": -63.77,
+      "pregnant_women_anaemia": 64.68
+    },
+    "higher_than_most_summary": {
+      "stunting": 21,
+      "wasting": 27,
+      "anaemia_children": 29
+    }
+  },
+  "Haryana": {
+    "state": "Haryana",
+    "district_count": 22,
+    "means": {
+      "stunting": 26.54,
+      "wasting": 11.54,
+      "underweight": 20.91,
+      "anaemia_children": 69.62,
+      "anaemia_women": 60.68,
+      "low_bmi_women": 15.15,
+      "overweight_women": 32.82,
+      "improved_drinking_water": 98.58,
+      "improved_sanitation": 85.03,
+      "clean_cooking_fuel": 57.83,
+      "women_literacy": 81.39,
+      "institutional_births": 95.78,
+      "immunization": 48.79,
+      "exclusive_breastfeeding": -64.1,
+      "pregnant_women_anaemia": 60.86
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 0,
+      "anaemia_children": 8
+    }
+  },
+  "Himachal Pradesh": {
+    "state": "Himachal Pradesh",
+    "district_count": 12,
+    "means": {
+      "stunting": 31.54,
+      "wasting": 16.1,
+      "underweight": 24.67,
+      "anaemia_children": 59.94,
+      "anaemia_women": 54.16,
+      "low_bmi_women": 13.52,
+      "overweight_women": 29.79,
+      "improved_drinking_water": 95.01,
+      "improved_sanitation": 80.89,
+      "clean_cooking_fuel": 53.65,
+      "women_literacy": 90.25,
+      "institutional_births": 87.81,
+      "immunization": -59.35,
+      "exclusive_breastfeeding": -69.11,
+      "pregnant_women_anaemia": 54.48
+    },
+    "higher_than_most_summary": {
+      "stunting": 2,
+      "wasting": 1,
+      "anaemia_children": 3
+    }
+  },
+  "Jammu and Kashmir": {
+    "state": "Jammu and Kashmir",
+    "district_count": 20,
+    "means": {
+      "stunting": 26.14,
+      "wasting": 19.23,
+      "underweight": 21.08,
+      "anaemia_children": 73.18,
+      "anaemia_women": 66.92,
+      "low_bmi_women": 5.19,
+      "overweight_women": 28.18,
+      "improved_drinking_water": 90.35,
+      "improved_sanitation": 73.76,
+      "clean_cooking_fuel": 63.28,
+      "women_literacy": 75.04,
+      "institutional_births": 91.67,
+      "immunization": 14.77,
+      "exclusive_breastfeeding": -62.89,
+      "pregnant_women_anaemia": 68.25
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 7,
+      "anaemia_children": 10
+    }
+  },
+  "Jharkhand": {
+    "state": "Jharkhand",
+    "district_count": 24,
+    "means": {
+      "stunting": 40.18,
+      "wasting": 23.1,
+      "underweight": 40.39,
+      "anaemia_children": 68.21,
+      "anaemia_women": 66.27,
+      "low_bmi_women": 26.92,
+      "overweight_women": 10.59,
+      "improved_drinking_water": 84.73,
+      "improved_sanitation": 55.3,
+      "clean_cooking_fuel": 28.04,
+      "women_literacy": 63.26,
+      "institutional_births": 76.17,
+      "immunization": 75.2,
+      "exclusive_breastfeeding": -28.8,
+      "pregnant_women_anaemia": 66.65
+    },
+    "higher_than_most_summary": {
+      "stunting": 17,
+      "wasting": 13,
+      "anaemia_children": 9
+    }
+  },
+  "Karnataka": {
+    "state": "Karnataka",
+    "district_count": 30,
+    "means": {
+      "stunting": 34.57,
+      "wasting": 19.23,
+      "underweight": 31.3,
+      "anaemia_children": 64.56,
+      "anaemia_women": 48.21,
+      "low_bmi_women": 17.74,
+      "overweight_women": 29.38,
+      "improved_drinking_water": 94.94,
+      "improved_sanitation": 74.6,
+      "clean_cooking_fuel": 76.08,
+      "women_literacy": 75.83,
+      "institutional_births": 97.42,
+      "immunization": -14.75,
+      "exclusive_breastfeeding": -55.09,
+      "pregnant_women_anaemia": 48.21
+    },
+    "higher_than_most_summary": {
+      "stunting": 9,
+      "wasting": 11,
+      "anaemia_children": 4
+    }
+  },
+  "Kerala": {
+    "state": "Kerala",
+    "district_count": 14,
+    "means": {
+      "stunting": 23.28,
+      "wasting": 15.05,
+      "underweight": 19.36,
+      "anaemia_children": 38.29,
+      "anaemia_women": 35.74,
+      "low_bmi_women": 10.47,
+      "overweight_women": 37.57,
+      "improved_drinking_water": 94.23,
+      "improved_sanitation": 98.6,
+      "clean_cooking_fuel": 70.22,
+      "women_literacy": 97.87,
+      "institutional_births": 99.69,
+      "immunization": -33.53,
+      "exclusive_breastfeeding": -68.22,
+      "pregnant_women_anaemia": 35.94
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 2,
+      "anaemia_children": 0
+    }
+  },
+  "Ladakh": {
+    "state": "Ladakh",
+    "district_count": 2,
+    "means": {
+      "stunting": 30.39,
+      "wasting": 17.46,
+      "underweight": 20.37,
+      "anaemia_children": 91.66,
+      "anaemia_women": 92.75,
+      "low_bmi_women": 4.38,
+      "overweight_women": 28.27,
+      "improved_drinking_water": 88.65,
+      "improved_sanitation": 42.32,
+      "clean_cooking_fuel": 75.78,
+      "women_literacy": 76.81,
+      "institutional_births": 95.06,
+      "immunization": -88.17,
+      "exclusive_breastfeeding": -71.81,
+      "pregnant_women_anaemia": 93.69
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 0,
+      "anaemia_children": 2
+    }
+  },
+  "Lakshadweep": {
+    "state": "Lakshadweep",
+    "district_count": 1,
+    "means": {
+      "stunting": 32.02,
+      "wasting": 17.35,
+      "underweight": 25.78,
+      "anaemia_children": 43.08,
+      "anaemia_women": 25.8,
+      "low_bmi_women": 7.98,
+      "overweight_women": 33.52,
+      "improved_drinking_water": 92.88,
+      "improved_sanitation": 99.8,
+      "clean_cooking_fuel": 59.43,
+      "women_literacy": 96.5,
+      "institutional_births": 99.61,
+      "immunization": -86.14,
+      "exclusive_breastfeeding": -67.0,
+      "pregnant_women_anaemia": 25.98
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 0,
+      "anaemia_children": 0
+    }
+  },
+  "Madhya Pradesh": {
+    "state": "Madhya Pradesh",
+    "district_count": 51,
+    "means": {
+      "stunting": 34.66,
+      "wasting": 18.22,
+      "underweight": 31.94,
+      "anaemia_children": 67.37,
+      "anaemia_women": 55.18,
+      "low_bmi_women": 23.49,
+      "overweight_women": 16.02,
+      "improved_drinking_water": 88.25,
+      "improved_sanitation": 64.16,
+      "clean_cooking_fuel": 37.56,
+      "women_literacy": 67.59,
+      "institutional_births": 90.7,
+      "immunization": 53.02,
+      "exclusive_breastfeeding": -48.15,
+      "pregnant_women_anaemia": 55.3
+    },
+    "higher_than_most_summary": {
+      "stunting": 22,
+      "wasting": 14,
+      "anaemia_children": 31
+    }
+  },
+  "Maharashtra": {
+    "state": "Maharashtra",
+    "district_count": 36,
+    "means": {
+      "stunting": 35.11,
+      "wasting": 25.79,
+      "underweight": 36.44,
+      "anaemia_children": 70.34,
+      "anaemia_women": 54.71,
+      "low_bmi_women": 21.71,
+      "overweight_women": 20.45,
+      "improved_drinking_water": 91.76,
+      "improved_sanitation": 71.65,
+      "clean_cooking_fuel": 73.48,
+      "women_literacy": 82.79,
+      "institutional_births": 94.79,
+      "immunization": -0.48,
+      "exclusive_breastfeeding": -70.06,
+      "pregnant_women_anaemia": 54.97
+    },
+    "higher_than_most_summary": {
+      "stunting": 13,
+      "wasting": 27,
+      "anaemia_children": 15
+    }
+  },
+  "Manipur": {
+    "state": "Manipur",
+    "district_count": 9,
+    "means": {
+      "stunting": 24.61,
+      "wasting": 9.93,
+      "underweight": 13.75,
+      "anaemia_children": 41.96,
+      "anaemia_women": 28.71,
+      "low_bmi_women": 6.7,
+      "overweight_women": 30.52,
+      "improved_drinking_water": 69.72,
+      "improved_sanitation": 71.35,
+      "clean_cooking_fuel": 59.02,
+      "women_literacy": 85.14,
+      "institutional_births": 71.23,
+      "immunization": 48.34,
+      "exclusive_breastfeeding": -70.78,
+      "pregnant_women_anaemia": 28.59
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 0,
+      "anaemia_children": 0
+    }
+  },
+  "Meghalaya": {
+    "state": "Meghalaya",
+    "district_count": 11,
+    "means": {
+      "stunting": 43.0,
+      "wasting": 13.7,
+      "underweight": 25.44,
+      "anaemia_children": 41.93,
+      "anaemia_women": 54.94,
+      "low_bmi_women": 11.01,
+      "overweight_women": 10.66,
+      "improved_drinking_water": 73.49,
+      "improved_sanitation": 83.38,
+      "clean_cooking_fuel": 26.65,
+      "women_literacy": 85.95,
+      "institutional_births": 62.84,
+      "immunization": 31.43,
+      "exclusive_breastfeeding": 34.07,
+      "pregnant_women_anaemia": 55.44
+    },
+    "higher_than_most_summary": {
+      "stunting": 8,
+      "wasting": 0,
+      "anaemia_children": 0
+    }
+  },
+  "Mizoram": {
+    "state": "Mizoram",
+    "district_count": 8,
+    "means": {
+      "stunting": 29.29,
+      "wasting": 10.04,
+      "underweight": 13.29,
+      "anaemia_children": 46.02,
+      "anaemia_women": 34.09,
+      "low_bmi_women": 5.3,
+      "overweight_women": 24.11,
+      "improved_drinking_water": 91.75,
+      "improved_sanitation": 94.14,
+      "clean_cooking_fuel": 75.69,
+      "women_literacy": 91.32,
+      "institutional_births": 81.06,
+      "immunization": 35.49,
+      "exclusive_breastfeeding": -67.59,
+      "pregnant_women_anaemia": 34.15
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 0,
+      "anaemia_children": 0
+    }
+  },
+  "NCT of Delhi": {
+    "state": "NCT of Delhi",
+    "district_count": 11,
+    "means": {
+      "stunting": 30.7,
+      "wasting": 11.72,
+      "underweight": 22.12,
+      "anaemia_children": 69.16,
+      "anaemia_women": 49.49,
+      "low_bmi_women": 10.1,
+      "overweight_women": 41.4,
+      "improved_drinking_water": 99.41,
+      "improved_sanitation": 81.08,
+      "clean_cooking_fuel": 98.91,
+      "women_literacy": 85.14,
+      "institutional_births": 91.6,
+      "immunization": 5.69,
+      "exclusive_breastfeeding": -65.38,
+      "pregnant_women_anaemia": 49.71
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 1,
+      "anaemia_children": 3
+    }
+  },
+  "Nagaland": {
+    "state": "Nagaland",
+    "district_count": 11,
+    "means": {
+      "stunting": 33.16,
+      "wasting": 18.1,
+      "underweight": 26.54,
+      "anaemia_children": 42.97,
+      "anaemia_women": 29.21,
+      "low_bmi_women": 11.01,
+      "overweight_women": 12.91,
+      "improved_drinking_water": 89.9,
+      "improved_sanitation": 88.21,
+      "clean_cooking_fuel": 33.49,
+      "women_literacy": 84.52,
+      "institutional_births": 43.27,
+      "immunization": -1.65,
+      "exclusive_breastfeeding": -41.23,
+      "pregnant_women_anaemia": 29.58
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 5,
+      "anaemia_children": 0
+    }
+  },
+  "Odisha": {
+    "state": "Odisha",
+    "district_count": 30,
+    "means": {
+      "stunting": 31.65,
+      "wasting": 18.46,
+      "underweight": 30.24,
+      "anaemia_children": 64.65,
+      "anaemia_women": 64.31,
+      "low_bmi_women": 21.85,
+      "overweight_women": 21.19,
+      "improved_drinking_water": 90.26,
+      "improved_sanitation": 59.64,
+      "clean_cooking_fuel": 32.33,
+      "women_literacy": 70.28,
+      "institutional_births": 92.34,
+      "immunization": 11.93,
+      "exclusive_breastfeeding": -66.34,
+      "pregnant_women_anaemia": 64.38
+    },
+    "higher_than_most_summary": {
+      "stunting": 8,
+      "wasting": 11,
+      "anaemia_children": 7
+    }
+  },
+  "Puducherry": {
+    "state": "Puducherry",
+    "district_count": 4,
+    "means": {
+      "stunting": 28.9,
+      "wasting": 11.65,
+      "underweight": 21.02,
+      "anaemia_children": 52.06,
+      "anaemia_women": 48.17,
+      "low_bmi_women": 8.87,
+      "overweight_women": 42.04,
+      "improved_drinking_water": 99.46,
+      "improved_sanitation": 88.17,
+      "clean_cooking_fuel": 91.41,
+      "women_literacy": 91.08,
+      "institutional_births": 99.77,
+      "immunization": -85.99,
+      "exclusive_breastfeeding": null,
+      "pregnant_women_anaemia": 48.36
+    },
+    "higher_than_most_summary": {
+      "stunting": 1,
+      "wasting": 0,
+      "anaemia_children": 0
+    }
+  },
+  "Punjab": {
+    "state": "Punjab",
+    "district_count": 22,
+    "means": {
+      "stunting": 25.39,
+      "wasting": 10.8,
+      "underweight": 17.66,
+      "anaemia_children": 69.7,
+      "anaemia_women": 58.77,
+      "low_bmi_women": 12.94,
+      "overweight_women": 40.25,
+      "improved_drinking_water": 98.53,
+      "improved_sanitation": 86.5,
+      "clean_cooking_fuel": 74.72,
+      "women_literacy": 80.95,
+      "institutional_births": 94.88,
+      "immunization": -15.07,
+      "exclusive_breastfeeding": -55.12,
+      "pregnant_women_anaemia": 58.91
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 0,
+      "anaemia_children": 6
+    }
+  },
+  "Rajasthan": {
+    "state": "Rajasthan",
+    "district_count": 33,
+    "means": {
+      "stunting": 31.73,
+      "wasting": 18.04,
+      "underweight": 28.4,
+      "anaemia_children": 72.2,
+      "anaemia_women": 55.43,
+      "low_bmi_women": 20.17,
+      "overweight_women": 11.98,
+      "improved_drinking_water": 95.81,
+      "improved_sanitation": 68.57,
+      "clean_cooking_fuel": 38.3,
+      "women_literacy": 64.59,
+      "institutional_births": 95.28,
+      "immunization": 80.42,
+      "exclusive_breastfeeding": -5.51,
+      "pregnant_women_anaemia": 55.74
+    },
+    "higher_than_most_summary": {
+      "stunting": 8,
+      "wasting": 9,
+      "anaemia_children": 20
+    }
+  },
+  "Sikkim": {
+    "state": "Sikkim",
+    "district_count": 4,
+    "means": {
+      "stunting": 24.87,
+      "wasting": 11.96,
+      "underweight": 13.67,
+      "anaemia_children": 56.69,
+      "anaemia_women": 40.61,
+      "low_bmi_women": 4.67,
+      "overweight_women": 35.4,
+      "improved_drinking_water": 92.86,
+      "improved_sanitation": 87.37,
+      "clean_cooking_fuel": 72.46,
+      "women_literacy": 86.92,
+      "institutional_births": 96.47,
+      "immunization": -91.37,
+      "exclusive_breastfeeding": null,
+      "pregnant_women_anaemia": 40.71
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 1,
+      "anaemia_children": 0
+    }
+  },
+  "Tamil Nadu": {
+    "state": "Tamil Nadu",
+    "district_count": 32,
+    "means": {
+      "stunting": 25.31,
+      "wasting": 14.84,
+      "underweight": 22.25,
+      "anaemia_children": 57.44,
+      "anaemia_women": 53.91,
+      "low_bmi_women": 13.06,
+      "overweight_women": 39.35,
+      "improved_drinking_water": 98.37,
+      "improved_sanitation": 71.57,
+      "clean_cooking_fuel": 79.5,
+      "women_literacy": 85.68,
+      "institutional_births": 99.65,
+      "immunization": -48.53,
+      "exclusive_breastfeeding": -45.13,
+      "pregnant_women_anaemia": 54.07
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 4,
+      "anaemia_children": 3
+    }
+  },
+  "Telangana": {
+    "state": "Telangana",
+    "district_count": 31,
+    "means": {
+      "stunting": 33.17,
+      "wasting": 22.13,
+      "underweight": 32.76,
+      "anaemia_children": 70.19,
+      "anaemia_women": 58.44,
+      "low_bmi_women": 20.04,
+      "overweight_women": 27.22,
+      "improved_drinking_water": 98.45,
+      "improved_sanitation": 74.62,
+      "clean_cooking_fuel": 90.36,
+      "women_literacy": 64.09,
+      "institutional_births": 96.68,
+      "immunization": -10.36,
+      "exclusive_breastfeeding": -70.88,
+      "pregnant_women_anaemia": 58.6
+    },
+    "higher_than_most_summary": {
+      "stunting": 7,
+      "wasting": 16,
+      "anaemia_children": 10
+    }
+  },
+  "Tripura": {
+    "state": "Tripura",
+    "district_count": 8,
+    "means": {
+      "stunting": 32.98,
+      "wasting": 18.91,
+      "underweight": 26.16,
+      "anaemia_children": 65.85,
+      "anaemia_women": 67.03,
+      "low_bmi_women": 17.2,
+      "overweight_women": 20.16,
+      "improved_drinking_water": 85.21,
+      "improved_sanitation": 71.61,
+      "clean_cooking_fuel": 40.7,
+      "women_literacy": 79.34,
+      "institutional_births": 88.22,
+      "immunization": -16.66,
+      "exclusive_breastfeeding": -55.27,
+      "pregnant_women_anaemia": 67.16
+    },
+    "higher_than_most_summary": {
+      "stunting": 2,
+      "wasting": 2,
+      "anaemia_children": 3
+    }
+  },
+  "Uttar Pradesh": {
+    "state": "Uttar Pradesh",
+    "district_count": 75,
+    "means": {
+      "stunting": 39.63,
+      "wasting": 17.69,
+      "underweight": 32.31,
+      "anaemia_children": 66.39,
+      "anaemia_women": 50.44,
+      "low_bmi_women": 19.08,
+      "overweight_women": 20.83,
+      "improved_drinking_water": 99.06,
+      "improved_sanitation": 68.98,
+      "clean_cooking_fuel": 47.07,
+      "women_literacy": 68.24,
+      "institutional_births": 84.04,
+      "immunization": 70.12,
+      "exclusive_breastfeeding": 11.07,
+      "pregnant_women_anaemia": 50.66
+    },
+    "higher_than_most_summary": {
+      "stunting": 48,
+      "wasting": 22,
+      "anaemia_children": 21
+    }
+  },
+  "Uttarakhand": {
+    "state": "Uttarakhand",
+    "district_count": 13,
+    "means": {
+      "stunting": 27.28,
+      "wasting": 12.46,
+      "underweight": 19.17,
+      "anaemia_children": 56.47,
+      "anaemia_women": 40.17,
+      "low_bmi_women": 13.45,
+      "overweight_women": 25.23,
+      "improved_drinking_water": 93.47,
+      "improved_sanitation": 82.3,
+      "clean_cooking_fuel": 48.47,
+      "women_literacy": 83.96,
+      "institutional_births": 82.26,
+      "immunization": 33.76,
+      "exclusive_breastfeeding": -56.78,
+      "pregnant_women_anaemia": 40.15
+    },
+    "higher_than_most_summary": {
+      "stunting": 0,
+      "wasting": 0,
+      "anaemia_children": 1
+    }
+  },
+  "West Bengal": {
+    "state": "West Bengal",
+    "district_count": 20,
+    "means": {
+      "stunting": 33.17,
+      "wasting": 21.33,
+      "underweight": 32.7,
+      "anaemia_children": 69.78,
+      "anaemia_women": 71.84,
+      "low_bmi_women": 16.04,
+      "overweight_women": 21.64,
+      "improved_drinking_water": 96.92,
+      "improved_sanitation": 67.12,
+      "clean_cooking_fuel": 39.29,
+      "women_literacy": 74.83,
+      "institutional_births": 92.23,
+      "immunization": 34.11,
+      "exclusive_breastfeeding": -56.01,
+      "pregnant_women_anaemia": 72.13
+    },
+    "higher_than_most_summary": {
+      "stunting": 4,
+      "wasting": 10,
+      "anaemia_children": 7
+    }
+  }
+}

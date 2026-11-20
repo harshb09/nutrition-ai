@@ -1,0 +1,137 @@
+{
+  "stunting": {
+    "raw_column_name": "Children under 5 years who are stunted (height-for-age)18 (%)",
+    "cleaned_column_name": "Children under 5 years who are stunted (height-for-age)1 (%)",
+    "column_index": 77,
+    "label": "Children under 5 years who are stunted (%)",
+    "category": "grouping",
+    "description": "Height-for-age < -2 standard deviations from the WHO Child Growth Standards median.",
+    "target_population": "Children aged 0-59 months"
+  },
+  "wasting": {
+    "raw_column_name": "Children under 5 years who are wasted (weight-for-height)18 (%)",
+    "cleaned_column_name": "Children under 5 years who are wasted (weight-for-height)1 (%)",
+    "column_index": 78,
+    "label": "Children under 5 years who are wasted (%)",
+    "category": "grouping",
+    "description": "Weight-for-height < -2 standard deviations from the WHO Child Growth Standards median.",
+    "target_population": "Children aged 0-59 months"
+  },
+  "underweight": {
+    "raw_column_name": "Children under 5 years who are underweight (weight-for-age)18 (%)",
+    "cleaned_column_name": "Children under 5 years who are underweight (weight-for-age)1 (%)",
+    "column_index": 80,
+    "label": "Children under 5 years who are underweight (%)",
+    "category": "grouping",
+    "description": "Weight-for-age < -2 standard deviations from the WHO Child Growth Standards median.",
+    "target_population": "Children aged 0-59 months"
+  },
+  "anaemia_children": {
+    "raw_column_name": "Children age 6-59 months who are anaemic (<11.0 g/dl)22 (%)",
+    "cleaned_column_name": "Children age 6-59 months who are anaemic (<11.0 g/dl)2 (%)",
+    "column_index": 85,
+    "label": "Children age 6-59 months who are anaemic (%)",
+    "category": "grouping",
+    "description": "Haemoglobin concentration < 11.0 g/dl among children age 6-59 months.",
+    "target_population": "Children aged 6-59 months"
+  },
+  "anaemia_women": {
+    "raw_column_name": "All women age 15-49 years who are anaemic22 (%)",
+    "cleaned_column_name": "All women age 15-49 years who are anaemic2 (%)",
+    "column_index": 88,
+    "label": "All women age 15-49 years who are anaemic (%)",
+    "category": "grouping",
+    "description": "Haemoglobin concentration < 12.0 g/dl for non-pregnant and < 11.0 g/dl for pregnant women.",
+    "target_population": "Women aged 15-49 years"
+  },
+  "low_bmi_women": {
+    "raw_column_name": "Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18.5 kg/m2)21 (%)",
+    "cleaned_column_name": "Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18.5 kg/m2)2 (%)",
+    "column_index": 82,
+    "label": "Women age 15-49 years with BMI below normal (%)",
+    "category": "grouping",
+    "description": "Body Mass Index (BMI) < 18.5 kg/m\u00b2 indicating chronic adult energy deficiency.",
+    "target_population": "Women aged 15-49 years"
+  },
+  "overweight_women": {
+    "raw_column_name": "Women (age 15-49 years) who are overweight or obese (BMI \u226525.0 kg/m2)21 (%)",
+    "cleaned_column_name": "Women (age 15-49 years) who are overweight or obese (BMI \u226525.0 kg/m2)2 (%)",
+    "column_index": 83,
+    "label": "Women age 15-49 years who are overweight or obese (%)",
+    "category": "grouping",
+    "description": "Body Mass Index (BMI) >= 25.0 kg/m\u00b2 indicating adult adiposity.",
+    "target_population": "Women aged 15-49 years"
+  },
+  "improved_drinking_water": {
+    "raw_column_name": "Population living in households with an improved drinking-water source1 (%)",
+    "cleaned_column_name": "Population living in households with an improved drinking-water source (%)",
+    "column_index": 12,
+    "label": "Population with improved drinking-water source (%)",
+    "category": "context",
+    "description": "Population living in households with an improved drinking-water source.",
+    "target_population": "Total population"
+  },
+  "improved_sanitation": {
+    "raw_column_name": "Population living in households that use an improved sanitation facility2 (%)",
+    "cleaned_column_name": "Population living in households that use an improved sanitation facility (%)",
+    "column_index": 13,
+    "label": "Population with improved sanitation facility (%)",
+    "category": "context",
+    "description": "Population living in households that use an improved sanitation facility.",
+    "target_population": "Total population"
+  },
+  "clean_cooking_fuel": {
+    "raw_column_name": "Households using clean fuel for cooking3 (%)",
+    "cleaned_column_name": "Households using clean fuel for cooking (%)",
+    "column_index": 14,
+    "label": "Households using clean fuel for cooking (%)",
+    "category": "context",
+    "description": "Households using electricity, LPG/natural gas, or biogas for cooking.",
+    "target_population": "Households"
+  },
+  "women_literacy": {
+    "raw_column_name": "Women (age 15-49) who are literate4 (%)",
+    "cleaned_column_name": "Women (age 15-49) who are literate (%)",
+    "column_index": 18,
+    "label": "Women age 15-49 who are literate (%)",
+    "category": "context",
+    "description": "Women age 15-49 who completed standard 9 or higher or can read a whole sentence.",
+    "target_population": "Women aged 15-49 years"
+  },
+  "institutional_births": {
+    "raw_column_name": "Institutional births (in the 5 years before the survey) (%)",
+    "cleaned_column_name": "Institutional births (in the 5 years before the survey) (%)",
+    "column_index": 46,
+    "label": "Institutional births (%)",
+    "category": "context",
+    "description": "Percentage of births delivered in a health facility.",
+    "target_population": "Births in preceding 5 years"
+  },
+  "immunization": {
+    "raw_column_name": "Children age 12-23 months fully vaccinated based on information from either vaccination card or mother's recall11 (%)",
+    "cleaned_column_name": "Children age 12-23 months fully vaccinated based on information from either vaccination card or mother's recall1 (%)",
+    "column_index": 53,
+    "label": "Children age 12-23 months fully vaccinated (%)",
+    "category": "context",
+    "description": "Received BCG, measles, and 3 doses each of polio and DPT/penta.",
+    "target_population": "Children aged 12-23 months"
+  },
+  "exclusive_breastfeeding": {
+    "raw_column_name": "Children under age 6 months exclusively breastfed16 (%)",
+    "cleaned_column_name": "Children under age 6 months exclusively breastfed1 (%)",
+    "column_index": 72,
+    "label": "Children under 6 months exclusively breastfed (%)",
+    "category": "context",
+    "description": "Infants 0-5 months receiving only breast milk (no water or other liquids/foods).",
+    "target_population": "Infants aged 0-5 months"
+  },
+  "pregnant_women_anaemia": {
+    "raw_column_name": "Non-pregnant women age 15-49 years who are anaemic (<12.0 g/dl)22 (%)",
+    "cleaned_column_name": "Non-pregnant women age 15-49 years who are anaemic (<12.0 g/dl)2 (%)",
+    "column_index": 86,
+    "label": "Pregnant women age 15-49 who are anaemic (%)",
+    "category": "context",
+    "description": "Haemoglobin concentration < 11.0 g/dl in pregnant women.",
+    "target_population": "Pregnant women aged 15-49 years"
+  }
+}

@@ -2,8 +2,16 @@ import numpy as np
 from sklearn.decomposition import PCA
 from pipeline.preprocess import CLUSTERING_FEATURES
 
-def run_pca_analysis(X: np.ndarray, iso3_list: list[str]) -> dict:
+def run_pca_analysis(
+    X: np.ndarray,
+    id_list: list[str],
+    feature_names: list[str] | None = None,
+    id_key: str = "iso3"
+) -> dict:
     """Computes 2D PCA coordinates, explained variance, and feature loadings."""
+    if feature_names is None:
+        feature_names = CLUSTERING_FEATURES
+
     pca = PCA(n_components=2, random_state=42)
     coords_2d = pca.fit_transform(X)
     
@@ -12,7 +20,7 @@ def run_pca_analysis(X: np.ndarray, iso3_list: list[str]) -> dict:
     
     # Loadings (components_ has shape (n_components, n_features))
     loadings = []
-    for idx, feat in enumerate(CLUSTERING_FEATURES):
+    for idx, feat in enumerate(feature_names):
         loadings.append({
             "feature": feat,
             "pc1": round(float(pca.components_[0, idx]), 4),
@@ -20,9 +28,9 @@ def run_pca_analysis(X: np.ndarray, iso3_list: list[str]) -> dict:
         })
         
     points = []
-    for idx, iso in enumerate(iso3_list):
+    for idx, entity_id in enumerate(id_list):
         points.append({
-            "iso3": iso,
+            id_key: entity_id,
             "x": round(float(coords_2d[idx, 0]), 4),
             "y": round(float(coords_2d[idx, 1]), 4)
         })

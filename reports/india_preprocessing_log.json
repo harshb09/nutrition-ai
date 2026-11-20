@@ -1,0 +1,119 @@
+{
+  "dataset": "National Family Health Survey (NFHS-5, 2019-21)",
+  "source": "International Institute for Population Sciences (IIPS) & Ministry of Health and Family Welfare (MoHFW)",
+  "total_districts": 707,
+  "unique_district_names": 699,
+  "duplicate_name_districts": [
+    "Aurangabad",
+    "Balrampur",
+    "Bijapur",
+    "Bilaspur",
+    "Chandel",
+    "Hamirpur",
+    "Pratapgarh",
+    "Raigarh"
+  ],
+  "primary_join_key": "state + district",
+  "grouping_features": [
+    "stunting",
+    "wasting",
+    "underweight",
+    "anaemia_children",
+    "anaemia_women",
+    "low_bmi_women",
+    "overweight_women"
+  ],
+  "context_features": [
+    "improved_drinking_water",
+    "improved_sanitation",
+    "clean_cooking_fuel",
+    "women_literacy",
+    "institutional_births",
+    "immunization",
+    "exclusive_breastfeeding",
+    "pregnant_women_anaemia"
+  ],
+  "missingness": {
+    "grouping_features_missing": 0,
+    "exclusive_breastfeeding_missing": 262,
+    "pregnant_women_anaemia_missing": 134,
+    "immunization_missing": 13
+  },
+  "boundary_join": {
+    "total_nfhs_districts": 707,
+    "total_geo_features": 641,
+    "exact_matches": 604,
+    "close_matches": 15,
+    "total_matched": 619,
+    "unmatched_districts": 88,
+    "rapidfuzz_cutoff": 88.0,
+    "note": "Unmatched districts are newer districts created after the Census boundary file (e.g. Telangana, Chhattisgarh). They retain full data and profile access without spatial polygons."
+  },
+  "tertile_thresholds": {
+    "stunting": {
+      "p33": 29.13,
+      "p66": 37.21,
+      "median": 32.82
+    },
+    "wasting": {
+      "p33": 15.5,
+      "p66": 20.77,
+      "median": 18.1
+    },
+    "underweight": {
+      "p33": 25.04,
+      "p66": 33.61,
+      "median": 29.26
+    },
+    "anaemia_children": {
+      "p33": 62.69,
+      "p66": 71.61,
+      "median": 67.68
+    },
+    "anaemia_women": {
+      "p33": 52.03,
+      "p66": 61.23,
+      "median": 57.18
+    },
+    "low_bmi_women": {
+      "p33": 14.51,
+      "p66": 21.16,
+      "median": 17.99
+    },
+    "overweight_women": {
+      "p33": 16.59,
+      "p66": 26.95,
+      "median": 21.26
+    },
+    "improved_drinking_water": {
+      "p33": 94.03,
+      "p66": 98.69,
+      "median": 96.98
+    },
+    "improved_sanitation": {
+      "p33": 66.66,
+      "p66": 80.07,
+      "median": 73.73
+    },
+    "clean_cooking_fuel": {
+      "p33": 38.58,
+      "p66": 67.41,
+      "median": 50.42
+    },
+    "women_literacy": {
+      "p33": 69.67,
+      "p66": 80.39,
+      "median": 75.07
+    },
+    "institutional_births": {
+      "p33": 87.27,
+      "p66": 96.15,
+      "median": 92.2
+    },
+    "immunization": {
+      "p33": -38.26,
+      "p66": 75.83,
+      "median": 68.58
+    }
+  }
+}
