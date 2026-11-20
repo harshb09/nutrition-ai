@@ -190,5 +190,98 @@ export const api = {
         body: JSON.stringify(data)
       }
     );
+  },
+
+  // ==========================================
+  // INDIA DISTRICTS CLIENT METHODS
+  // ==========================================
+  getIndiaMeta: (onRetry?: (sec: number) => void) =>
+    fetchWithRetry<import("./types").IndiaMeta>("/api/india/meta", onRetry),
+
+  getIndiaStates: (onRetry?: (sec: number) => void) =>
+    fetchWithRetry<import("./types").StateSummary[]>("/api/india/states", onRetry),
+
+  getIndiaDistricts: (params?: { state?: string; group_id?: string; search?: string }, onRetry?: (sec: number) => void) => {
+    const q = new URLSearchParams();
+    if (params?.state) q.set("state", params.state);
+    if (params?.group_id) q.set("group_id", params.group_id);
+    if (params?.search) q.set("search", params.search);
+    const qs = q.toString() ? `?${q.toString()}` : "";
+    return fetchWithRetry<import("./types").DistrictSummary[]>(`/api/india/districts${qs}`, onRetry);
+  },
+
+  getDistrictDetail: (state: string, district: string, onRetry?: (sec: number) => void) =>
+    fetchWithRetry<import("./types").DistrictSummary>(
+      `/api/india/districts/${encodeURIComponent(state)}/${encodeURIComponent(district)}`,
+      onRetry
+    ),
+
+  getDistrictPeers: (state: string, district: string, onRetry?: (sec: number) => void) =>
+    fetchWithRetry<import("./types").DistrictPeer[]>(
+      `/api/india/districts/${encodeURIComponent(state)}/${encodeURIComponent(district)}/like`,
+      onRetry
+    ),
+
+  getIndiaStateSummary: (state: string, onRetry?: (sec: number) => void) =>
+    fetchWithRetry<import("./types").StateSummary>(
+      `/api/india/state/${encodeURIComponent(state)}/summary`,
+      onRetry
+    ),
+
+  getIndiaDistrictPdfUrl: (state: string, district: string) => {
+    return `${API_BASE}/api/india/district-brief.pdf?state=${encodeURIComponent(state)}&district=${encodeURIComponent(district)}`;
+  },
+
+  getIndiaMap: (indicator: string = "group", onRetry?: (sec: number) => void) =>
+    fetchWithRetry<any>(`/api/india/map?indicator=${encodeURIComponent(indicator)}`, onRetry),
+
+  getWorldMap: (indicator: string = "group", onRetry?: (sec: number) => void) =>
+    fetchWithRetry<any>(`/api/world/map?indicator=${encodeURIComponent(indicator)}`, onRetry),
+
+  // Analysis India endpoints
+  getIndiaMethodology: (onRetry?: (sec: number) => void) =>
+    fetchWithRetry<any>("/api/analysis/india/methodology", onRetry),
+
+  getIndiaCorrelation: (onRetry?: (sec: number) => void) =>
+    fetchWithRetry<any>("/api/analysis/india/correlation", onRetry),
+
+  getIndiaModelSelection: (onRetry?: (sec: number) => void) =>
+    fetchWithRetry<any>("/api/analysis/india/model-selection", onRetry),
+
+  getIndiaJoinReport: (onRetry?: (sec: number) => void) =>
+    fetchWithRetry<any>("/api/analysis/india/join-report", onRetry),
+
+  getIndiaPreprocessingLog: (onRetry?: (sec: number) => void) =>
+    fetchWithRetry<any>("/api/analysis/india/preprocessing-log", onRetry),
+
+  // Upload endpoint
+  getUploadTemplateUrl: () => `${API_BASE}/api/upload/template`,
+
+  analyseUploadedData: async (formData: FormData): Promise<import("./types").UploadResponse> => {
+    const url = `${API_BASE}/api/upload/analyse`;
+    const res = await fetch(url, {
+      method: "POST",
+      body: formData
+    });
+    if (!res.ok) {
+      const errJson = await res.json().catch(() => ({}));
+      throw new Error(errJson.detail || `Upload failed with status ${res.status}`);
+    }
+    return await res.json();
+  },
+
+  // Chat endpoint
+  sendChatMessage: async (message: string, history?: any[]): Promise<import("./types").ChatResponse> => {
+    const url = `${API_BASE}/api/chat`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, history })
+    });
+    if (!res.ok) {
+      const errJson = await res.json().catch(() => ({}));
+      throw new Error(errJson.detail || "Chat service temporarily unavailable.");
+    }
+    return await res.json();
   }
 };

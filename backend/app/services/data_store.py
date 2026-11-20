@@ -6,7 +6,7 @@ import math
 from pathlib import Path
 from typing import Any
 from fastapi import HTTPException
-from app.config import DEFAULT_ARTIFACTS_DIR
+from app.config import DEFAULT_ARTIFACTS_DIR, DEFAULT_INDIA_ARTIFACTS_DIR, GEO_DIR, REPORTS_DIR
 
 CLUSTERING_FEATURES = [
     "stunting",
@@ -18,9 +18,24 @@ CLUSTERING_FEATURES = [
     "low_birth_weight"
 ]
 
+INDIA_GROUPING_FEATURES = [
+    "stunting",
+    "wasting",
+    "underweight",
+    "anaemia_children",
+    "anaemia_women",
+    "low_bmi_women",
+    "overweight_women"
+]
+
 class DataStore:
-    def __init__(self, artifacts_dir: str = DEFAULT_ARTIFACTS_DIR):
+    def __init__(
+        self,
+        artifacts_dir: str = DEFAULT_ARTIFACTS_DIR,
+        india_artifacts_dir: str = DEFAULT_INDIA_ARTIFACTS_DIR
+    ):
         self.artifacts_dir = Path(artifacts_dir)
+        self.india_artifacts_dir = Path(india_artifacts_dir)
         self.metadata: dict[str, Any] = {}
         self.countries: list[dict[str, Any]] = []
         self.countries_by_iso: dict[str, dict[str, Any]] = {}
@@ -33,7 +48,27 @@ class DataStore:
         self.selection: dict[str, Any] = {}
         self.preprocessing_log: dict[str, Any] = {}
         self.csv_path: Path | None = None
+
+        # India artifacts
+        self.india_districts: list[dict[str, Any]] = []
+        self.india_districts_by_id: dict[str, dict[str, Any]] = {}
+        self.india_districts_by_state_dist: dict[str, dict[str, Any]] = {}
+        self.india_districts_by_name: dict[str, list[dict[str, Any]]] = {}
+        self.india_groups: list[dict[str, Any]] = []
+        self.india_groups_by_id: dict[str, dict[str, Any]] = {}
+        self.india_states: dict[str, Any] = {}
+        self.india_districts_like: dict[str, list[dict[str, Any]]] = {}
+        self.india_geojson: dict[str, Any] = {}
+        self.india_methodology: dict[str, Any] = {}
+        self.india_correlation: dict[str, Any] = {}
+        self.india_model_selection: dict[str, Any] = {}
+        self.india_join_report: dict[str, Any] = {}
+        self.india_join_review: list[dict[str, Any]] = []
+        self.india_preprocessing_log: dict[str, Any] = {}
+        self.india_indicator_mapping: dict[str, Any] = {}
+
         self._is_loaded = False
+
 
     def load_artifacts(self):
         """Loads all artifacts from the artifacts directory into memory.
@@ -91,6 +126,82 @@ class DataStore:
         # Build index lookups
         self.countries_by_iso = {c["iso3"].upper(): c for c in self.countries}
         self.groups_by_id = {g["id"].upper(): g for g in self.groups}
+
+        # Load India artifacts if present
+        if self.india_artifacts_dir.exists():
+            india_districts_file = self.india_artifacts_dir / "districts.json"
+            if india_districts_file.exists():
+                with open(india_districts_file) as f:
+                    self.india_districts = json.load(f)
+                self.india_districts_by_id = {d["district_id"]: d for d in self.india_districts}
+                self.india_districts_by_state_dist = {
+                    f"{d['state'].strip().lower()}::{d['district'].strip().lower()}": d
+                    for d in self.india_districts
+                }
+                self.india_districts_by_name = {}
+                for d in self.india_districts:
+                    name_key = d["district"].strip().lower()
+                    self.india_districts_by_name.setdefault(name_key, []).append(d)
+
+            india_groups_file = self.india_artifacts_dir / "groups.json"
+            if india_groups_file.exists():
+                with open(india_groups_file) as f:
+                    self.india_groups = json.load(f)
+                self.india_groups_by_id = {g["id"]: g for g in self.india_groups}
+
+            india_states_file = self.india_artifacts_dir / "states.json"
+            if india_states_file.exists():
+                with open(india_states_file) as f:
+                    self.india_states = json.load(f)
+
+            india_peers_file = self.india_artifacts_dir / "districts_like.json"
+            if india_peers_file.exists():
+                with open(india_peers_file) as f:
+                    self.india_districts_like = json.load(f)
+
+            india_geo_file = self.india_artifacts_dir / "districts_simplified.geojson"
+            if india_geo_file.exists():
+                with open(india_geo_file) as f:
+                    self.india_geojson = json.load(f)
+
+            india_method_file = self.india_artifacts_dir / "methodology_india.json"
+            if india_method_file.exists():
+                with open(india_method_file) as f:
+                    self.india_methodology = json.load(f)
+
+            india_corr_file = self.india_artifacts_dir / "correlation_matrix.json"
+            if india_corr_file.exists():
+                with open(india_corr_file) as f:
+                    self.india_correlation = json.load(f)
+
+            india_sel_file = self.india_artifacts_dir / "model_selection.json"
+            if india_sel_file.exists():
+                with open(india_sel_file) as f:
+                    self.india_model_selection = json.load(f)
+
+        # Load reports if present
+        if REPORTS_DIR.exists():
+            join_report_file = REPORTS_DIR / "india_join_report.json"
+            if join_report_file.exists():
+                with open(join_report_file) as f:
+                    self.india_join_report = json.load(f)
+
+            preproc_log_file = REPORTS_DIR / "india_preprocessing_log.json"
+            if preproc_log_file.exists():
+                with open(preproc_log_file) as f:
+                    self.india_preprocessing_log = json.load(f)
+
+            mapping_file = REPORTS_DIR / "india_indicator_mapping.json"
+            if mapping_file.exists():
+                with open(mapping_file) as f:
+                    self.india_indicator_mapping = json.load(f)
+
+            review_csv_file = REPORTS_DIR / "india_join_review.csv"
+            if review_csv_file.exists():
+                with open(review_csv_file, newline="", encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    self.india_join_review = list(reader)
+
         self._is_loaded = True
 
     def get_metadata(self) -> dict[str, Any]:
@@ -424,6 +535,253 @@ class DataStore:
             "clamped_inputs": clamped_inputs,
             "label": "Where this profile would sit relative to current countries. This is not a forecast."
         }
+
+    # ==========================================
+    # INDIA DISTRICTS & REGIONAL ACCESSORS
+    # ==========================================
+    def get_india_meta(self) -> dict[str, Any]:
+        """Returns metadata for India district nutrition dataset."""
+        return {
+            "total_districts": len(self.india_districts),
+            "mapped_districts": sum(1 for d in self.india_districts if d.get("has_boundary")),
+            "unmapped_districts": sum(1 for d in self.india_districts if not d.get("has_boundary")),
+            "total_states": len(self.india_states),
+            "survey": "National Family Health Survey (NFHS-5)",
+            "survey_period": "2019–2021",
+            "source_citation": "Ministry of Health and Family Welfare, Government of India & IIPS Mumbai (2021)",
+            "notice": "Based on NFHS-5 (2019-21) survey estimates. Not medical advice.",
+            "grouping_indicators": [
+                {"key": "stunting", "label": "Child Stunting", "sublabel": "Height-for-age below -2 SD (under 5 years)", "unit": "%"},
+                {"key": "wasting", "label": "Child Wasting", "sublabel": "Weight-for-height below -2 SD (under 5 years)", "unit": "%"},
+                {"key": "underweight", "label": "Child Underweight", "sublabel": "Weight-for-age below -2 SD (under 5 years)", "unit": "%"},
+                {"key": "anaemia_children", "label": "Child Anaemia", "sublabel": "Hb < 11.0 g/dl (6–59 months)", "unit": "%"},
+                {"key": "anaemia_women", "label": "Women Anaemia", "sublabel": "Hb < 12.0 g/dl (15–49 years)", "unit": "%"},
+                {"key": "low_bmi_women", "label": "Women with Low BMI", "sublabel": "BMI < 18.5 kg/m² (15–49 years)", "unit": "%"},
+                {"key": "overweight_women", "label": "Women Overweight / Obese", "sublabel": "BMI ≥ 25.0 kg/m² (15–49 years)", "unit": "%"}
+            ],
+            "context_indicators": [
+                {"key": "improved_drinking_water", "label": "Improved Drinking Water Source", "unit": "%"},
+                {"key": "improved_sanitation", "label": "Improved Sanitation Facility", "unit": "%"},
+                {"key": "clean_cooking_fuel", "label": "Clean Cooking Fuel", "unit": "%"},
+                {"key": "women_literacy", "label": "Women Literate (15–49 years)", "unit": "%"},
+                {"key": "institutional_births", "label": "Institutional Births", "unit": "%"},
+                {"key": "immunization", "label": "Children Fully Immunized (12–23 months)", "unit": "%"},
+                {"key": "exclusive_breastfeeding", "label": "Exclusive Breastfeeding (under 6 months)", "unit": "%", "note": "High missingness, shown where available"},
+                {"key": "pregnant_women_anaemia", "label": "Pregnant Women Anaemia", "unit": "%", "note": "High missingness, shown where available"}
+            ],
+            "groups": self.india_groups
+        }
+
+    def get_india_states(self) -> list[dict[str, Any]]:
+        """Returns sorted list of states with summary statistics."""
+        states_list = list(self.india_states.values())
+        states_list.sort(key=lambda s: s.get("state", "").lower())
+        return states_list
+
+    def get_india_districts(
+        self,
+        state: str | None = None,
+        group_id: str | None = None,
+        search: str | None = None
+    ) -> list[dict[str, Any]]:
+        """Returns list of districts with optional filtering."""
+        results = self.india_districts
+
+        if state:
+            st_clean = state.strip().lower()
+            results = [d for d in results if d.get("state", "").strip().lower() == st_clean]
+
+        if group_id:
+            g_str = str(group_id).strip()
+            results = [d for d in results if str(d.get("group_id")) == g_str]
+
+        if search:
+            q = search.strip().lower()
+            results = [
+                d for d in results
+                if q in d.get("district", "").lower() or q in d.get("state", "").lower()
+            ]
+
+        return results
+
+    def get_district_detail(self, state: str, district: str) -> dict[str, Any]:
+        """Returns full detail for a district. Resolves state + district combinations."""
+        s_clean = state.strip()
+        d_clean = district.strip()
+        exact_key = f"{s_clean.lower()}::{d_clean.lower()}"
+
+        # 1. Exact match
+        if exact_key in self.india_districts_by_state_dist:
+            return self.india_districts_by_state_dist[exact_key]
+
+        # 2. Check if district name uniquely matches across states
+        name_matches = self.india_districts_by_name.get(d_clean.lower(), [])
+        if len(name_matches) == 1:
+            return name_matches[0]
+        elif len(name_matches) > 1:
+            # Try to match state substring
+            for m in name_matches:
+                if s_clean.lower() in m.get("state", "").lower() or m.get("state", "").lower() in s_clean.lower():
+                    return m
+
+        # 3. Fuzzy match fallback
+        import rapidfuzz
+        all_keys = list(self.india_districts_by_state_dist.keys())
+        match = rapidfuzz.process.extractOne(exact_key, all_keys, score_cutoff=80)
+        if match:
+            return self.india_districts_by_state_dist[match[0]]
+
+        raise HTTPException(
+            status_code=404,
+            detail=f"District '{d_clean}' in state '{s_clean}' not found in NFHS-5 dataset."
+        )
+
+    def get_district_like(self, state: str, district: str) -> list[dict[str, Any]]:
+        """Returns 10 nearest districts in feature space."""
+        d = self.get_district_detail(state, district)
+        d_id = d.get("district_id")
+        if d_id and d_id in self.india_districts_like:
+            return self.india_districts_like[d_id]
+        key = f"{d.get('state')}::{d.get('district')}"
+        return self.india_districts_like.get(key, [])
+
+    def get_india_state_summary(self, state: str) -> dict[str, Any]:
+        """Returns state summary and all its districts."""
+        s_clean = state.strip()
+        state_obj = None
+
+        for k, v in self.india_states.items():
+            if k.lower() == s_clean.lower():
+                state_obj = dict(v)
+                break
+
+        if not state_obj:
+            import rapidfuzz
+            match = rapidfuzz.process.extractOne(s_clean, list(self.india_states.keys()), score_cutoff=75)
+            if match:
+                state_obj = dict(self.india_states[match[0]])
+
+        if not state_obj:
+            raise HTTPException(status_code=404, detail=f"State '{s_clean}' not found.")
+
+        # Attach list of districts for this state
+        matched_state_name = state_obj.get("state", "")
+        state_obj["districts"] = [
+            d for d in self.india_districts
+            if d.get("state", "").strip().lower() == matched_state_name.strip().lower()
+        ]
+        return state_obj
+
+    def get_india_map(self, indicator: str = "group") -> dict[str, Any]:
+        """Returns GeoJSON FeatureCollection enriched with indicator/group properties."""
+        if not self.india_geojson:
+            raise HTTPException(status_code=404, detail="India district GeoJSON not available.")
+
+        features = []
+        for feat in self.india_geojson.get("features", []):
+            props = dict(feat.get("properties", {}))
+            d_id = props.get("district_id")
+            d = self.india_districts_by_id.get(d_id) if d_id else None
+
+            if d:
+                props["has_boundary"] = True
+                props["group_id"] = d.get("group_id")
+                props["group_name"] = d.get("group_name")
+                props["group_descriptor"] = d.get("group_descriptor")
+
+                if indicator and indicator != "group":
+                    ind_info = d.get("indicators", {}).get(indicator, {})
+                    props["indicator_key"] = indicator
+                    props["indicator_value"] = ind_info.get("value")
+                    props["indicator_band"] = ind_info.get("band")
+                    props["is_missing"] = ind_info.get("is_missing", False)
+                    props["state_average"] = ind_info.get("state_average")
+            else:
+                props["has_boundary"] = False
+                props["label"] = "no boundary available"
+                props["indicator_key"] = indicator
+                props["indicator_value"] = None
+                props["is_missing"] = True
+
+            features.append({
+                "type": feat.get("type", "Feature"),
+                "geometry": feat.get("geometry"),
+                "properties": props
+            })
+
+        return {
+            "type": "FeatureCollection",
+            "indicator": indicator,
+            "features": features
+        }
+
+    def get_world_map(self, indicator: str = "group") -> dict[str, Any]:
+        """Returns world GeoJSON FeatureCollection or clear missing notice."""
+        world_file = GEO_DIR / "world.geojson"
+        if not world_file.exists():
+            alt_file = GEO_DIR / "countries.geojson"
+            if not alt_file.exists():
+                return {
+                    "available": False,
+                    "message": "world.geojson boundary file is missing"
+                }
+            world_file = alt_file
+
+        try:
+            with open(world_file, "r") as f:
+                data = json.load(f)
+
+            features = []
+            for feat in data.get("features", []):
+                props = dict(feat.get("properties", {}))
+                iso = props.get("ISO3166-1-Alpha-3") or props.get("iso3") or props.get("ISO_A3")
+                if iso:
+                    iso = str(iso).upper()
+                    c = self.countries_by_iso.get(iso)
+                    if c:
+                        props["country_name"] = c.get("country_name")
+                        props["iso3"] = c.get("iso3")
+                        props["group_id"] = c.get("group_id")
+                        props["group_name"] = c.get("group_name")
+                        if indicator and indicator != "group":
+                            props["indicator_key"] = indicator
+                            props["indicator_value"] = c.get(indicator)
+                features.append({
+                    "type": feat.get("type", "Feature"),
+                    "geometry": feat.get("geometry"),
+                    "properties": props
+                })
+
+            return {
+                "available": True,
+                "type": "FeatureCollection",
+                "indicator": indicator,
+                "features": features
+            }
+        except Exception as e:
+            return {
+                "available": False,
+                "message": f"Could not load world boundary file: {str(e)}"
+            }
+
+    # Analysis domain accessors
+    def get_analysis_india_methodology(self) -> dict[str, Any]:
+        return self.india_methodology
+
+    def get_analysis_india_correlation(self) -> dict[str, Any]:
+        return self.india_correlation
+
+    def get_analysis_india_model_selection(self) -> dict[str, Any]:
+        return self.india_model_selection
+
+    def get_analysis_india_join_report(self) -> dict[str, Any]:
+        return {
+            "report": self.india_join_report,
+            "reviews": self.india_join_review
+        }
+
+    def get_analysis_india_preprocessing_log(self) -> dict[str, Any]:
+        return self.india_preprocessing_log
 
 # Global singleton
 store = DataStore()

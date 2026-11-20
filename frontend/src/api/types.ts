@@ -310,3 +310,138 @@ export interface MethodologyData {
   limitations: string[];
   responsible_use: string[];
 }
+
+// ==========================================
+// INDIA DISTRICT TYPES
+// ==========================================
+export interface DistrictIndicatorInfo {
+  value: number | null;
+  is_missing: boolean;
+  band?: "higher_than_most" | "about_typical" | "lower_than_most" | "not_available" | string;
+  state_average?: number | null;
+  diff_from_state?: number | null;
+}
+
+export interface DistrictSummary {
+  district_id: string; // "State::District"
+  district: string;
+  state: string;
+  group_id: string;
+  group_name: string;
+  group_descriptor: string;
+  stability_score?: number;
+  has_boundary: boolean;
+  match_type?: string;
+  indicators: Record<string, DistrictIndicatorInfo>;
+}
+
+export interface DistrictPeer {
+  district_id: string;
+  district: string;
+  state: string;
+  group_id: string;
+  group_name: string;
+  distance: number;
+  stunting?: number;
+  wasting?: number;
+  underweight?: number;
+  anaemia_children?: number;
+  anaemia_women?: number;
+  low_bmi_women?: number;
+  overweight_women?: number;
+  plain_comparison: string;
+}
+
+export interface StateSummary {
+  state: string;
+  district_count: number;
+  means: Record<string, number>;
+  higher_than_most_summary?: Record<string, number>;
+  districts?: DistrictSummary[];
+}
+
+export interface IndiaMeta {
+  total_districts: number;
+  mapped_districts: number;
+  unmapped_districts: number;
+  total_states: number;
+  survey: string;
+  survey_period: string;
+  source_citation: string;
+  notice: string;
+  grouping_indicators: Array<{
+    key: string;
+    label: string;
+    sublabel?: string;
+    unit: string;
+  }>;
+  context_indicators: Array<{
+    key: string;
+    label: string;
+    unit: string;
+    note?: string;
+  }>;
+  groups: Array<{
+    id: string;
+    name: string;
+    provisional_name: string;
+    descriptor: string;
+    district_count: number;
+    means: Record<string, number>;
+    medians: Record<string, number>;
+  }>;
+}
+
+export interface UploadRecord {
+  area_name: string;
+  state: string;
+  group_id: number;
+  group_name: string;
+  distance_to_center: number;
+  matched_district_id: string | null;
+  values: Record<string, number>;
+}
+
+export interface UploadGroup {
+  group_id: number;
+  group_name: string;
+  descriptor: string;
+  count: number;
+  share_percent: number;
+  means: Record<string, number>;
+}
+
+export interface UploadResponse {
+  summary: {
+    total_rows_received: number;
+    valid_observations: number;
+    excluded_rows: number;
+    feature_columns_used: string[];
+    groups_discovered: number;
+    confidence: string;
+    confidence_explanation: string;
+    boundary_match_rate: number;
+    can_render_map: boolean;
+  };
+  warnings: string[];
+  groups: UploadGroup[];
+  records: UploadRecord[];
+}
+
+export interface ChatMessage {
+  sender: "user" | "assistant";
+  text: string;
+  citations?: string[];
+  district_id?: string | null;
+  state?: string | null;
+  district?: string | null;
+}
+
+export interface ChatResponse {
+  reply: string;
+  citations: string[];
+  district_id?: string | null;
+  state?: string | null;
+  district?: string | null;
+}
+
