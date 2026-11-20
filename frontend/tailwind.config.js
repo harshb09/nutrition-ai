@@ -9,19 +9,20 @@ export default {
     extend: {
       colors: {
         brand: {
-          bg: "#0B0F14",
-          surface: "#121821",
-          raised: "#18202B",
-          border: "#243042",
-          text: "#E6EDF3",
-          muted: "#8B98A9",
-          accent: "#2DD4BF"
+          bg: "#F8FAFC",
+          surface: "#FFFFFF",
+          raised: "#F1F5F9",
+          border: "#E2E8F0",
+          text: "#0F172A",
+          muted: "#64748B",
+          accent: "#0284C7",
+          accentLight: "#E0F2FE"
         },
         group: {
-          a: "#38BDF8", // Sky blue
+          a: "#0284C7", // Sky blue
           b: "#F59E0B", // Amber
-          c: "#A78BFA", // Soft violet
-          d: "#34D399"  // Emerald
+          c: "#8B5CF6", // Violet
+          d: "#10B981"  // Emerald
         }
       },
       fontFamily: {

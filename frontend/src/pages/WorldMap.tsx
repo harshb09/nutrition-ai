@@ -10,32 +10,39 @@ import { api } from "../api/client";
 import { CountrySummary } from "../api/types";
 
 export const WorldMap: React.FC = () => {
-  const [mapResponse, setMapResponse] = useState<any>(null);
+  const [geoData, setGeoData] = useState<any>(null);
   const [countries, setCountries] = useState<CountrySummary[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedIndicator, setSelectedIndicator] = useState<string>("group");
-  const [hoveredCountry, setHoveredCountry] = useState<any | null>(null);
+  const [selectedIndicator, setSelectedIndicator] = useState<string>("stunting");
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Hover cursor state for floating tooltip
+  const [hoveredCountry, setHoveredCountry] = useState<CountrySummary | null>(null);
+  const [hoveredCountryName, setHoveredCountryName] = useState<string>("");
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+
   const indicatorsList = [
-    { key: "group", label: "Countries with a similar nutrition pattern" },
-    { key: "stunting", label: "Child Stunting" },
-    { key: "child_overweight", label: "Child Overweight" },
-    { key: "wasting", label: "Child Wasting" },
-    { key: "adult_obesity", label: "Adult Obesity" },
-    { key: "adult_diabetes", label: "Adult Diabetes" },
-    { key: "anaemia_women", label: "Anaemia in Women" },
-    { key: "low_birth_weight", label: "Low Birth Weight" },
+    { key: "stunting", label: "Child Stunting", desc: "Low height for age" },
+    { key: "child_overweight", label: "Child Overweight", desc: "High weight for height" },
+    { key: "wasting", label: "Child Wasting", desc: "Acute undernutrition" },
+    { key: "adult_obesity", label: "Adult Obesity", desc: "BMI ≥ 30" },
+    { key: "adult_diabetes", label: "Adult Diabetes", desc: "Fasting blood glucose" },
+    { key: "anaemia_women", label: "Anaemia in Women", desc: "Hb < 12 g/dl" },
+    { key: "low_birth_weight", label: "Low Birth Weight", desc: "Birth weight < 2500g" },
+    { key: "group", label: "Countries with a similar nutrition pattern", desc: "Global patterns" },
   ];
 
+  // Load simplified world GeoJSON (20ms load time)
   useEffect(() => {
     async function init() {
       try {
-        const [mapRes, countriesRes] = await Promise.all([
-          api.getWorldMap(selectedIndicator),
+        const [geoRes, countriesRes] = await Promise.all([
+          fetch("/geo/world_simplified.json")
+            .then((r) => r.json())
+            .catch(() => api.getWorldMap(selectedIndicator)),
           api.getCountries()
         ]);
-        setMapResponse(mapRes);
+        setGeoData(geoRes);
         setCountries(countriesRes);
       } catch (err) {
         console.error("Failed to load world map data:", err);
@@ -44,7 +51,7 @@ export const WorldMap: React.FC = () => {
       }
     }
     init();
-  }, [selectedIndicator]);
+  }, []);
 
   const countriesByIso = useMemo(() => {
     const map = new Map<string, CountrySummary>();
@@ -65,88 +72,140 @@ export const WorldMap: React.FC = () => {
 
   // D3 Projection and Path Generator
   const { paths, width, height } = useMemo(() => {
-    const w = 900;
+    const w = 920;
     const h = 500;
-    if (!mapResponse?.available || !mapResponse?.features) {
+    if (!geoData || !geoData.features) {
       return { paths: [], width: w, height: h };
     }
 
     const projection = d3Geo
       .geoNaturalEarth1()
-      .scale(150)
+      .scale(155)
       .translate([w / 2, h / 2]);
 
     const pathGenerator = d3Geo.geoPath().projection(projection);
 
-    const generated = mapResponse.features.map((feature: any, idx: number) => {
+    const generated = geoData.features.map((feature: any, idx: number) => {
       const dPath = pathGenerator(feature);
-      return {
-        d: dPath,
-        feature,
-        idx
-      };
+      return { d: dPath, feature, idx };
     });
 
     return { paths: generated, width: w, height: h };
-  }, [mapResponse]);
+  }, [geoData]);
 
   const getColor = (iso3?: string) => {
-    if (!iso3) return "#e2e8f0";
+    if (!iso3) return "#E2E8F0";
     const c = countriesByIso.get(iso3.toUpperCase());
-    if (!c) return "#e2e8f0";
+    if (!c) return "#E2E8F0";
 
     if (selectedIndicator === "group") {
       const gid = c.group_id;
-      if (gid === "1") return "#3b82f6";
-      if (gid === "2") return "#f97316";
-      if (gid === "3") return "#10b981";
-      if (gid === "4") return "#8b5cf6";
-      if (gid === "5") return "#ec4899";
-      return "#cbd5e1";
+      if (gid === "1") return "#0284C7"; // Sky
+      if (gid === "2") return "#EA580C"; // Orange
+      if (gid === "3") return "#16A34A"; // Emerald
+      if (gid === "4") return "#8B5CF6"; // Violet
+      if (gid === "5") return "#EC4899"; // Pink
+      return "#CBD5E1";
     }
 
     const val = c.indicators?.[selectedIndicator];
-    if (val === null || val === undefined) return "#e2e8f0";
+    if (val === null || val === undefined) return "#E2E8F0";
 
-    // Simple 3-step color threshold
-    if (val > 30) return "#e11d48";
-    if (val > 15) return "#f59e0b";
-    return "#15803d";
+    if (val > 30) return "#E11D48";
+    if (val > 15) return "#F59E0B";
+    return "#16A34A";
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setCursorPos({ x: e.clientX, y: e.clientY });
   };
 
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[500px]">
         <div className="text-center space-y-3">
-          <div className="w-8 h-8 border-2 border-brand-accent border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-xs text-brand-muted">Loading global country dataset...</p>
+          <div className="w-8 h-8 border-2 border-sky-600 border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-xs text-slate-500">Loading global country dataset...</p>
         </div>
       </div>
     );
   }
 
+  const activeIndObj = indicatorsList.find((i) => i.key === selectedIndicator);
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-      {/* Header */}
-      <div className="border-b border-brand-border pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6" onMouseMove={handleMouseMove}>
+      {/* Floating Cursor Tooltip */}
+      {(hoveredCountry || hoveredCountryName) && (
+        <div
+          style={{
+            left: `${cursorPos.x + 16}px`,
+            top: `${cursorPos.y + 16}px`,
+          }}
+          className="fixed z-50 pointer-events-none bg-white border border-slate-200 rounded-xl shadow-xl p-3 text-xs max-w-xs transition-opacity duration-75 animate-in fade-in"
+        >
+          <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-1.5 mb-1.5">
+            <div>
+              <span className="font-bold text-slate-900 block text-sm leading-tight">
+                {hoveredCountry ? hoveredCountry.country_name : hoveredCountryName}
+              </span>
+              {hoveredCountry && (
+                <span className="text-[11px] text-slate-500 font-medium">
+                  {hoveredCountry.region} ({hoveredCountry.iso3})
+                </span>
+              )}
+            </div>
+            {hoveredCountry?.group_name && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-sky-50 text-sky-700 border border-sky-200">
+                {hoveredCountry.group_name}
+              </span>
+            )}
+          </div>
+
+          {hoveredCountry && (
+            <div className="space-y-1">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-slate-600 font-medium">{activeIndObj?.label}:</span>
+                <span className="font-extrabold text-slate-900 text-sm font-mono">
+                  {hoveredCountry.indicators?.[selectedIndicator] !== null &&
+                  hoveredCountry.indicators?.[selectedIndicator] !== undefined
+                    ? `${hoveredCountry.indicators[selectedIndicator]}%`
+                    : "Not reported"}
+                </span>
+              </div>
+            </div>
+          )}
+
+          <div className="mt-2 pt-1 border-t border-slate-100 text-[10px] text-sky-600 font-medium flex items-center gap-1">
+            <span>Click to open full analysis profile</span>
+            <ArrowRight className="w-3 h-3" />
+          </div>
+        </div>
+      )}
+
+      {/* Header Card */}
+      <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <span className="text-xs font-bold text-brand-accent uppercase tracking-wider block">
-            UN Joint Child Malnutrition Estimates (JME 2024)
-          </span>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-xs font-bold text-sky-700 uppercase tracking-wider px-2.5 py-0.5 bg-sky-50 border border-sky-200 rounded-md">
+              UN JME (2024 Edition) & WHO
+            </span>
+            <span className="text-xs text-slate-500">202 Countries Analyzed</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
             Global Malnutrition Map
           </h1>
-          <p className="text-xs text-brand-muted mt-1 max-w-2xl">
-            Explore national nutrition profiles across 200+ countries. Click any country to view its complete profile in the Analysis section.
+          <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
+            Hover over any country for instant cursor data. Click a country to open its full profile in the Analysis section.
           </p>
         </div>
 
-        {/* Controls */}
+        {/* Indicator Switcher */}
         <div className="flex items-center gap-3">
           <select
             value={selectedIndicator}
             onChange={(e) => setSelectedIndicator(e.target.value)}
-            className="bg-brand-surface border border-brand-border rounded-xl px-3 py-2 text-xs font-semibold text-brand-text focus:outline-none focus:ring-1 focus:ring-brand-accent"
+            className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm"
           >
             {indicatorsList.map((ind) => (
               <option key={ind.key} value={ind.key}>
@@ -157,16 +216,33 @@ export const WorldMap: React.FC = () => {
         </div>
       </div>
 
-      {/* Map or Missing Boundary Notice */}
-      {mapResponse?.available ? (
-        <div className="bg-brand-surface border border-brand-border rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col items-center relative overflow-hidden">
+      {/* Fast SVG Choropleth Map */}
+      {paths.length > 0 ? (
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col items-center relative overflow-hidden">
+          {/* Legend */}
+          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur border border-slate-200 rounded-xl p-3 z-10 text-[11px] space-y-1.5 shadow-md">
+            <span className="font-bold text-slate-900 block">{activeIndObj?.label}</span>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-[#E11D48] shrink-0" />
+              <span>&gt; 30% (High burden)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-[#F59E0B] shrink-0" />
+              <span>15% – 30% (Moderate burden)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-[#16A34A] shrink-0" />
+              <span>&lt; 15% (Lower burden)</span>
+            </div>
+          </div>
+
           <svg
             viewBox={`0 0 ${width} ${height}`}
-            className="w-full max-w-[850px] h-auto select-none"
+            className="w-full max-w-[880px] h-auto select-none transition-transform"
           >
             <g>
               {paths.map(({ d, feature, idx }: { d: string | null; feature: any; idx: number }) => {
-                const iso = feature.properties?.iso3 || feature.properties?.["ISO3166-1-Alpha-3"];
+                const iso = feature.properties?.iso3;
                 const country = iso ? countriesByIso.get(iso.toUpperCase()) : null;
                 const fill = getColor(iso);
 
@@ -175,11 +251,22 @@ export const WorldMap: React.FC = () => {
                     key={idx}
                     d={d || ""}
                     fill={fill}
-                    stroke="#ffffff"
-                    strokeWidth={0.5}
-                    className="cursor-pointer transition-all hover:opacity-80"
-                    onMouseEnter={() => setHoveredCountry(country || { country_name: feature.properties?.name })}
-                    onMouseLeave={() => setHoveredCountry(null)}
+                    stroke="#FFFFFF"
+                    strokeWidth={0.6}
+                    className="cursor-pointer transition-colors hover:brightness-90"
+                    onMouseEnter={() => {
+                      if (country) {
+                        setHoveredCountry(country);
+                        setHoveredCountryName(country.country_name);
+                      } else {
+                        setHoveredCountry(null);
+                        setHoveredCountryName(feature.properties?.country_name || "");
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredCountry(null);
+                      setHoveredCountryName("");
+                    }}
                     onClick={() => {
                       if (country?.iso3) {
                         window.location.href = `/analysis/countries/${country.iso3.toLowerCase()}`;
@@ -190,95 +277,79 @@ export const WorldMap: React.FC = () => {
               })}
             </g>
           </svg>
-
-          {hoveredCountry && (
-            <div className="absolute bottom-4 left-4 bg-brand-surface/95 border border-brand-border px-3 py-2 rounded-xl shadow-lg pointer-events-none text-xs">
-              <span className="font-bold text-brand-text block">
-                {hoveredCountry.country_name}
-              </span>
-              <span className="text-brand-muted text-[11px] block">
-                {selectedIndicator === "group"
-                  ? hoveredCountry.group_name || "Insufficient data"
-                  : `${hoveredCountry.indicators?.[selectedIndicator] ?? "—"}%`}
-              </span>
-            </div>
-          )}
         </div>
       ) : (
-        <div className="bg-brand-surface border border-brand-border rounded-2xl p-8 text-center space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mx-auto">
-            <AlertTriangle className="w-6 h-6" />
-          </div>
-          <div className="space-y-1">
-            <h3 className="text-base font-bold text-brand-text">
-              World Map Boundary File Missing
-            </h3>
-            <p className="text-xs text-brand-muted max-w-md mx-auto">
-              The world map boundary file (<code className="text-brand-text">world.geojson</code>) is currently missing from <code className="text-brand-text">data/geo/</code>. Geometry is not faked.
-              All country nutrition estimates remain fully accessible in the table below and in the Analysis section.
-            </p>
-          </div>
+        <div className="bg-white border border-slate-200 rounded-2xl p-8 text-center space-y-3 shadow-sm">
+          <AlertTriangle className="w-8 h-8 text-amber-500 mx-auto" />
+          <h3 className="text-base font-bold text-slate-900">Boundary Map File Not Available</h3>
+          <p className="text-xs text-slate-500 max-w-md mx-auto">
+            World map boundaries could not be rendered. All country nutrition estimates remain fully accessible in the directory below.
+          </p>
         </div>
       )}
 
       {/* Country Directory Table */}
-      <div className="bg-brand-surface border border-brand-border rounded-2xl p-5 shadow-sm space-y-4">
+      <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="space-y-0.5">
-            <h3 className="text-xs font-bold text-brand-text uppercase tracking-wider">
+          <div>
+            <h3 className="text-sm font-bold text-slate-900">
               Country Nutrition Profiles ({filteredCountries.length})
             </h3>
-            <span className="text-[11px] text-brand-muted">
+            <span className="text-xs text-slate-500">
               Click any country to open its detailed profile in the Analysis section
             </span>
           </div>
 
           <div className="relative max-w-xs w-full">
-            <Search className="w-3.5 h-3.5 text-brand-muted absolute left-3 top-3" />
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-3" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search country or region..."
-              className="w-full bg-brand-raised border border-brand-border rounded-xl pl-9 pr-3 py-1.5 text-xs text-brand-text placeholder-brand-muted focus:outline-none focus:ring-1 focus:ring-brand-accent"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500"
             />
           </div>
         </div>
 
-        <div className="overflow-x-auto max-h-[400px]">
+        <div className="overflow-x-auto max-h-[420px]">
           <table className="w-full text-left text-xs">
-            <thead className="sticky top-0 bg-brand-raised border-b border-brand-border text-brand-muted">
+            <thead className="sticky top-0 bg-slate-100 border-b border-slate-200 text-slate-600 font-semibold">
               <tr>
                 <th className="py-2.5 px-3">Country</th>
                 <th className="py-2.5 px-3">Region</th>
                 <th className="py-2.5 px-3">Nutrition Pattern</th>
                 <th className="py-2.5 px-3">Child Stunting</th>
                 <th className="py-2.5 px-3">Child Overweight</th>
+                <th className="py-2.5 px-3">Child Wasting</th>
                 <th className="py-2.5 px-3">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-brand-border/60">
+            <tbody className="divide-y divide-slate-100">
               {filteredCountries.map((c) => (
-                <tr key={c.iso3} className="hover:bg-brand-raised/40 transition-colors">
-                  <td className="py-2.5 px-3 font-semibold text-brand-text">
+                <tr key={c.iso3} className="hover:bg-slate-50 transition-colors">
+                  <td className="py-2.5 px-3 font-bold text-slate-900">
                     {c.country_name} ({c.iso3})
                   </td>
-                  <td className="py-2.5 px-3 text-brand-muted">{c.region}</td>
+                  <td className="py-2.5 px-3 text-slate-600">{c.region}</td>
                   <td className="py-2.5 px-3">
-                    <span className="px-2 py-0.5 bg-brand-raised rounded text-[11px] text-brand-text border border-brand-border">
+                    <span className="px-2 py-0.5 bg-slate-100 rounded text-[11px] font-semibold text-slate-800 border border-slate-200">
                       {c.group_name || "Insufficient data"}
                     </span>
                   </td>
-                  <td className="py-2.5 px-3 font-mono">
+                  <td className="py-2.5 px-3 font-mono font-semibold text-slate-900">
                     {c.indicators?.stunting !== null ? `${c.indicators?.stunting}%` : "—"}
                   </td>
                   <td className="py-2.5 px-3 font-mono">
                     {c.indicators?.child_overweight !== null ? `${c.indicators?.child_overweight}%` : "—"}
                   </td>
+                  <td className="py-2.5 px-3 font-mono">
+                    {c.indicators?.wasting !== null ? `${c.indicators?.wasting}%` : "—"}
+                  </td>
                   <td className="py-2.5 px-3">
                     <Link
                       to={`/analysis/countries/${c.iso3.toLowerCase()}`}
-                      className="inline-flex items-center gap-1 text-[11px] font-semibold text-brand-accent hover:underline"
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-sky-600 hover:text-sky-800"
                     >
                       <span>Analysis</span>
                       <ArrowRight className="w-3 h-3" />

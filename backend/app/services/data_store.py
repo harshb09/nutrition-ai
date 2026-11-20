@@ -66,6 +66,7 @@ class DataStore:
         self.india_join_review: list[dict[str, Any]] = []
         self.india_preprocessing_log: dict[str, Any] = {}
         self.india_indicator_mapping: dict[str, Any] = {}
+        self.world_geojson: dict[str, Any] = {}
 
         self._is_loaded = False
 
@@ -201,6 +202,17 @@ class DataStore:
                 with open(review_csv_file, newline="", encoding="utf-8") as f:
                     reader = csv.DictReader(f)
                     self.india_join_review = list(reader)
+
+        # Cache world geojson in memory for instant responses
+        world_file = GEO_DIR / "world.geojson"
+        if not world_file.exists():
+            world_file = GEO_DIR / "countries.geojson"
+        if world_file.exists():
+            try:
+                with open(world_file, "r") as f:
+                    self.world_geojson = json.load(f)
+            except Exception:
+                self.world_geojson = {}
 
         self._is_loaded = True
 
@@ -717,22 +729,15 @@ class DataStore:
 
     def get_world_map(self, indicator: str = "group") -> dict[str, Any]:
         """Returns world GeoJSON FeatureCollection or clear missing notice."""
-        world_file = GEO_DIR / "world.geojson"
-        if not world_file.exists():
-            alt_file = GEO_DIR / "countries.geojson"
-            if not alt_file.exists():
-                return {
-                    "available": False,
-                    "message": "world.geojson boundary file is missing"
-                }
-            world_file = alt_file
+        if not self.world_geojson or not self.world_geojson.get("features"):
+            return {
+                "available": False,
+                "message": "world.geojson boundary file is missing"
+            }
 
         try:
-            with open(world_file, "r") as f:
-                data = json.load(f)
-
             features = []
-            for feat in data.get("features", []):
+            for feat in self.world_geojson.get("features", []):
                 props = dict(feat.get("properties", {}))
                 iso = props.get("ISO3166-1-Alpha-3") or props.get("iso3") or props.get("ISO_A3")
                 if iso:
@@ -761,7 +766,7 @@ class DataStore:
         except Exception as e:
             return {
                 "available": False,
-                "message": f"Could not load world boundary file: {str(e)}"
+                "message": f"Could not process world boundary file: {str(e)}"
             }
 
     # Analysis domain accessors

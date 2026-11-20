@@ -7,8 +7,17 @@ import {
   Bookmark,
   Share2,
   Trash2,
-  Check
+  Check,
+  BarChart3
 } from "lucide-react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip as RechartsTooltip,
+  ResponsiveContainer
+} from "recharts";
 import { api } from "../api/client";
 import { DistrictSummary, StateSummary } from "../api/types";
 
@@ -144,6 +153,30 @@ export const ForOrganisations: React.FC = () => {
       .filter((d) => d.indicators?.anaemia_children?.band === "higher_than_most")
       .sort((a, b) => (b.indicators?.anaemia_children?.value ?? 0) - (a.indicators?.anaemia_children?.value ?? 0));
   }, [stateDistricts]);
+
+  const districtColors = ["#0284C7", "#EA580C", "#16A34A", "#8B5CF6"];
+
+  const comparisonChartData = useMemo(() => {
+    if (comparedDistricts.length === 0) return [];
+
+    const indicatorsToChart = [
+      { key: "stunting", label: "Stunting" },
+      { key: "wasting", label: "Wasting" },
+      { key: "underweight", label: "Underweight" },
+      { key: "anaemia_children", label: "Child Anaemia" },
+      { key: "anaemia_women", label: "Women Anaemia" },
+      { key: "low_bmi_women", label: "Low BMI" },
+      { key: "overweight_women", label: "Overweight" },
+    ];
+
+    return indicatorsToChart.map((ind) => {
+      const row: any = { indicator: ind.label };
+      comparedDistricts.forEach((d) => {
+        row[d.district] = d.indicators?.[ind.key]?.value ?? 0;
+      });
+      return row;
+    });
+  }, [comparedDistricts]);
 
   // CSV Export handler
   const handleExportCsv = () => {
@@ -282,7 +315,7 @@ export const ForOrganisations: React.FC = () => {
             </div>
           </div>
 
-          {/* Side by side comparison table */}
+          {/* Side by side comparison chart & table */}
           {comparedDistricts.length === 0 ? (
             <div className="bg-brand-surface border border-brand-border rounded-2xl p-8 text-center space-y-2">
               <p className="text-xs text-brand-muted">
@@ -290,7 +323,81 @@ export const ForOrganisations: React.FC = () => {
               </p>
             </div>
           ) : (
-            <div className="bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-sm">
+            <>
+              {/* Interactive Grouped Comparison Bar Chart */}
+              <div className="bg-brand-surface border border-brand-border rounded-2xl p-5 shadow-sm space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-brand-border pb-3">
+                  <div>
+                    <h3 className="text-sm font-bold text-brand-text flex items-center gap-2">
+                      <BarChart3 className="w-4 h-4 text-brand-accent" />
+                      Visual Comparison Across Key Indicators (%)
+                    </h3>
+                    <p className="text-[11px] text-brand-muted mt-0.5">
+                      Hover over any bar to inspect the exact prevalence for each selected district.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3 text-xs">
+                    {comparedDistricts.map((d, idx) => (
+                      <span key={d.district_id} className="inline-flex items-center gap-1.5 font-medium text-brand-text">
+                        <span
+                          className="w-2.5 h-2.5 rounded-sm"
+                          style={{ backgroundColor: districtColors[idx % districtColors.length] }}
+                        />
+                        {d.district}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="h-72 w-full pt-2">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={comparisonChartData}
+                      margin={{ top: 10, right: 10, left: -10, bottom: 25 }}
+                    >
+                      <XAxis
+                        dataKey="indicator"
+                        stroke="#64748B"
+                        fontSize={11}
+                        tickLine={false}
+                        interval={0}
+                        angle={-15}
+                        textAnchor="end"
+                      />
+                      <YAxis
+                        stroke="#64748B"
+                        fontSize={11}
+                        tickLine={false}
+                        domain={[0, 100]}
+                        unit="%"
+                      />
+                      <RechartsTooltip
+                        cursor={{ fill: "rgba(148, 163, 184, 0.15)" }}
+                        contentStyle={{
+                          backgroundColor: "#FFFFFF",
+                          borderColor: "#E2E8F0",
+                          borderRadius: "12px",
+                          color: "#0F172A",
+                          fontSize: "12px",
+                          boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)"
+                        }}
+                        formatter={(val: any) => [`${val}%`, ""]}
+                      />
+                      {comparedDistricts.map((d, idx) => (
+                        <Bar
+                          key={d.district_id}
+                          dataKey={d.district}
+                          fill={districtColors[idx % districtColors.length]}
+                          radius={[4, 4, 0, 0]}
+                        />
+                      ))}
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+
+              {/* Side by side comparison table */}
+              <div className="bg-brand-surface border border-brand-border rounded-2xl overflow-hidden shadow-sm">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
                   <thead>
@@ -382,6 +489,7 @@ export const ForOrganisations: React.FC = () => {
                 </table>
               </div>
             </div>
+          </>
           )}
         </div>
       )}

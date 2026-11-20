@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import * as d3Geo from "d3-geo";
 import {
   Layers,
+  Search,
   X,
   ExternalLink,
-  AlertCircle
+  AlertCircle,
+  BarChart2,
+  Map as MapIcon,
+  ArrowRight
 } from "lucide-react";
 import { api } from "../api/client";
 import { DistrictSummary, StateSummary } from "../api/types";
@@ -30,30 +34,33 @@ export const IndiaMap: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   // Filters & State
-  const [selectedIndicator, setSelectedIndicator] = useState<string>("group");
+  const [selectedIndicator, setSelectedIndicator] = useState<string>("stunting");
   const [selectedState, setSelectedState] = useState<string>("");
   const [selectedDistrict, setSelectedDistrict] = useState<DistrictSummary | null>(null);
-  const [hoveredFeature, setHoveredFeature] = useState<any | null>(null);
+  const [viewMode, setViewMode] = useState<"map" | "grid">("map");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // SVG ref
+  // Cursor Hover Tooltip State
+  const [hoveredDistrict, setHoveredDistrict] = useState<DistrictSummary | null>(null);
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+
   const svgRef = useRef<SVGSVGElement>(null);
 
   const indicatorsList = [
-    { key: "group", label: "Districts with a similar nutrition pattern" },
-    { key: "stunting", label: "Child Stunting (under 5 years)" },
-    { key: "wasting", label: "Child Wasting (under 5 years)" },
-    { key: "underweight", label: "Child Underweight (under 5 years)" },
-    { key: "anaemia_children", label: "Child Anaemia (6–59 months)" },
-    { key: "anaemia_women", label: "Women Anaemia (15–49 years)" },
-    { key: "low_bmi_women", label: "Women with Low BMI" },
-    { key: "overweight_women", label: "Women Overweight or Obese" },
+    { key: "stunting", label: "Child Stunting (under 5 years)", unit: "%", desc: "Low height for age" },
+    { key: "wasting", label: "Child Wasting (under 5 years)", unit: "%", desc: "Low weight for height" },
+    { key: "underweight", label: "Child Underweight (under 5 years)", unit: "%", desc: "Low weight for age" },
+    { key: "anaemia_children", label: "Child Anaemia (6–59 months)", unit: "%", desc: "Hb < 11.0 g/dl" },
+    { key: "anaemia_women", label: "Women Anaemia (15–49 years)", unit: "%", desc: "Hb < 12.0 g/dl" },
+    { key: "low_bmi_women", label: "Women Low BMI (< 18.5)", unit: "%", desc: "Chronic thinness" },
+    { key: "overweight_women", label: "Women Overweight / Obese", unit: "%", desc: "BMI ≥ 25.0" },
+    { key: "group", label: "Districts with a similar nutrition pattern", unit: "", desc: "Group patterns" },
   ];
 
-  // Load geojson & district data
+  // Fetch GeoJSON and datasets
   useEffect(() => {
     async function init() {
       try {
-        // Fetch simplified geojson from static public or API
         const [geoRes, distsRes, statesRes] = await Promise.all([
           fetch("/geo/districts_simplified.json")
             .then((r) => r.json())
@@ -73,44 +80,77 @@ export const IndiaMap: React.FC = () => {
     init();
   }, []);
 
-  // Quick lookup dictionary for districts by district_id
   const districtsById = useMemo(() => {
     const map = new Map<string, DistrictSummary>();
-    districts.forEach((d) => {
-      map.set(d.district_id, d);
-    });
+    districts.forEach((d) => map.set(d.district_id, d));
     return map;
   }, [districts]);
 
-  // Unmatched districts (no shape)
+  const filteredDistricts = useMemo(() => {
+    let list = districts;
+    if (selectedState) {
+      list = list.filter((d) => d.state.toLowerCase() === selectedState.toLowerCase());
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(
+        (d) => d.district.toLowerCase().includes(q) || d.state.toLowerCase().includes(q)
+      );
+    }
+    return list;
+  }, [districts, selectedState, searchQuery]);
+
   const unshapedDistricts = useMemo(() => {
     return districts.filter((d) => !d.has_boundary);
   }, [districts]);
 
+  // Distribution counts for the selected indicator
+  const distributionData = useMemo(() => {
+    if (selectedIndicator === "group") {
+      const g1 = districts.filter((d) => d.group_id === "1").length;
+      const g2 = districts.filter((d) => d.group_id === "2").length;
+      const g3 = districts.filter((d) => d.group_id === "3").length;
+      return [
+        { name: "Group 1", count: g1, color: "#EA580C", label: "Higher undernutrition" },
+        { name: "Group 2", count: g2, color: "#0284C7", label: "Higher adult overweight" },
+        { name: "Group 3", count: g3, color: "#16A34A", label: "Lower overall burden" },
+      ];
+    }
+
+    let higher = 0, typical = 0, lower = 0;
+    districts.forEach((d) => {
+      const band = d.indicators?.[selectedIndicator]?.band;
+      if (band === "higher_than_most") higher++;
+      else if (band === "about_typical") typical++;
+      else if (band === "lower_than_most") lower++;
+    });
+
+    return [
+      { name: "Higher than most", count: higher, color: "#E11D48", label: "Top third of districts" },
+      { name: "About typical", count: typical, color: "#F59E0B", label: "Middle third of districts" },
+      { name: "Lower than most", count: lower, color: "#16A34A", label: "Bottom third of districts" },
+    ];
+  }, [districts, selectedIndicator]);
+
   // D3 Projection and Path Generator
   const { paths, width, height } = useMemo(() => {
-    const w = 700;
-    const h = 750;
+    const w = 720;
+    const h = 760;
     if (!geoData || !geoData.features) {
       return { paths: [], width: w, height: h };
     }
 
-    // Centered on India
     const projection = d3Geo
       .geoMercator()
       .center([82.5, 22.5])
-      .scale(1050)
+      .scale(1100)
       .translate([w / 2, h / 2]);
 
     const pathGenerator = d3Geo.geoPath().projection(projection);
 
     const generated = geoData.features.map((feature: GeoFeature, idx: number) => {
       const dPath = pathGenerator(feature as any);
-      return {
-        d: dPath,
-        feature,
-        idx
-      };
+      return { d: dPath, feature, idx };
     });
 
     return { paths: generated, width: w, height: h };
@@ -118,29 +158,25 @@ export const IndiaMap: React.FC = () => {
 
   // Color determination function
   const getColor = (dist: DistrictSummary | undefined) => {
-    if (!dist) {
-      return "#cbd5e1"; // Slate 300 neutral for unmatched / no data
-    }
+    if (!dist) return "#E2E8F0"; // Slate 200 for unmatched
 
     if (selectedIndicator === "group") {
-      // Color by Group ID: Group 1, 2, 3
-      if (dist.group_id === "1") return "#f97316"; // Orange
-      if (dist.group_id === "2") return "#3b82f6"; // Blue
-      if (dist.group_id === "3") return "#10b981"; // Emerald
-      return "#94a3b8";
+      if (dist.group_id === "1") return "#EA580C"; // Orange
+      if (dist.group_id === "2") return "#0284C7"; // Sky blue
+      if (dist.group_id === "3") return "#16A34A"; // Emerald
+      return "#94A3B8";
     }
 
-    // Color by relative band: higher_than_most, about_typical, lower_than_most
     const band = dist.indicators?.[selectedIndicator]?.band;
     if (band === "higher_than_most") {
-      return selectedIndicator === "overweight_women" ? "#c2410c" : "#e11d48"; // Rose / Orange-red
+      return selectedIndicator === "overweight_women" ? "#EA580C" : "#E11D48";
     } else if (band === "lower_than_most") {
-      return "#15803d"; // Green
+      return "#16A34A";
     } else if (band === "about_typical") {
-      return "#f59e0b"; // Amber
+      return "#F59E0B";
     }
 
-    return "#94a3b8";
+    return "#94A3B8";
   };
 
   const formatBandText = (band?: string) => {
@@ -148,6 +184,11 @@ export const IndiaMap: React.FC = () => {
     if (band === "lower_than_most") return "Lower than most districts";
     if (band === "about_typical") return "About typical";
     return "Not reported";
+  };
+
+  // Track cursor position for floating tooltip
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setCursorPos({ x: e.clientX, y: e.clientY });
   };
 
   if (loading) {
@@ -161,274 +202,467 @@ export const IndiaMap: React.FC = () => {
     );
   }
 
+  const activeIndObj = indicatorsList.find((i) => i.key === selectedIndicator);
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-      {/* Page Header */}
-      <div className="border-b border-brand-border pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6" onMouseMove={handleMouseMove}>
+      {/* Floating Cursor Tooltip */}
+      {hoveredDistrict && (
+        <div
+          style={{
+            left: `${cursorPos.x + 16}px`,
+            top: `${cursorPos.y + 16}px`,
+          }}
+          className="fixed z-50 pointer-events-none bg-white border border-slate-200 rounded-xl shadow-xl p-3 text-xs max-w-xs transition-opacity duration-75 animate-in fade-in"
+        >
+          <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-1.5 mb-1.5">
+            <div>
+              <span className="font-bold text-slate-900 block text-sm leading-tight">
+                {hoveredDistrict.district}
+              </span>
+              <span className="text-[11px] text-slate-500 font-medium">
+                {hoveredDistrict.state}
+              </span>
+            </div>
+            <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-sky-50 text-sky-700 border border-sky-200">
+              {hoveredDistrict.group_name}
+            </span>
+          </div>
+
+          {selectedIndicator !== "group" ? (
+            <div className="space-y-1">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-slate-600 font-medium">{activeIndObj?.label}:</span>
+                <span className="font-extrabold text-slate-900 text-sm font-mono">
+                  {hoveredDistrict.indicators?.[selectedIndicator]?.value ?? "—"}%
+                </span>
+              </div>
+              <div className="flex items-center justify-between text-[11px] pt-1">
+                <span className="px-1.5 py-0.5 rounded font-semibold text-[10px] bg-slate-100 text-slate-700">
+                  {formatBandText(hoveredDistrict.indicators?.[selectedIndicator]?.band)}
+                </span>
+                <span className="text-slate-500 text-[10px]">
+                  State avg: {hoveredDistrict.indicators?.[selectedIndicator]?.state_average ?? "—"}%
+                </span>
+              </div>
+            </div>
+          ) : (
+            <p className="text-[11px] text-slate-600 leading-relaxed">
+              {hoveredDistrict.group_descriptor}
+            </p>
+          )}
+
+          <div className="mt-2 pt-1 border-t border-slate-100 text-[10px] text-sky-600 font-medium flex items-center gap-1">
+            <span>Click to inspect full details</span>
+            <ArrowRight className="w-3 h-3" />
+          </div>
+        </div>
+      )}
+
+      {/* Header Bar */}
+      <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <span className="text-xs font-bold text-brand-accent uppercase tracking-wider block">
-            National Family Health Survey (NFHS-5)
-          </span>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-text">
-            India District Malnutrition Map
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-xs font-bold text-sky-700 uppercase tracking-wider px-2.5 py-0.5 bg-sky-50 border border-sky-200 rounded-md">
+              NFHS-5 Factsheets (707 Districts)
+            </span>
+            <span className="text-xs text-slate-500">Ministry of Health & Family Welfare</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            India District Malnutrition Atlas
           </h1>
-          <p className="text-xs text-brand-muted mt-1 max-w-2xl">
-            Compare child and maternal health across 707 districts. Select an indicator or explore districts with a similar nutrition pattern.
+          <p className="text-xs text-slate-600 mt-1 max-w-2xl leading-relaxed">
+            Hover over any district to instantly view local rates at your cursor. Compare indicators against state averages and relative national patterns.
           </p>
         </div>
 
-        {/* Indicator & State Controls */}
+        {/* View Switcher & Indicator Selectors */}
         <div className="flex flex-wrap items-center gap-2">
-          {/* Indicator Switcher */}
-          <div className="relative">
-            <select
-              value={selectedIndicator}
-              onChange={(e) => setSelectedIndicator(e.target.value)}
-              className="bg-brand-surface border border-brand-border rounded-xl px-3 py-2 text-xs font-semibold text-brand-text focus:outline-none focus:ring-1 focus:ring-brand-accent"
+          {/* View Toggle */}
+          <div className="bg-slate-100 p-1 rounded-xl flex items-center border border-slate-200">
+            <button
+              onClick={() => setViewMode("map")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                viewMode === "map"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
             >
-              {indicatorsList.map((ind) => (
-                <option key={ind.key} value={ind.key}>
-                  {ind.label}
-                </option>
-              ))}
-            </select>
+              <MapIcon className="w-3.5 h-3.5" />
+              <span>Map</span>
+            </button>
+            <button
+              onClick={() => setViewMode("grid")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                viewMode === "grid"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              <BarChart2 className="w-3.5 h-3.5" />
+              <span>All 707 Districts</span>
+            </button>
           </div>
 
+          {/* Indicator Switcher */}
+          <select
+            value={selectedIndicator}
+            onChange={(e) => setSelectedIndicator(e.target.value)}
+            className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm"
+          >
+            {indicatorsList.map((ind) => (
+              <option key={ind.key} value={ind.key}>
+                {ind.label}
+              </option>
+            ))}
+          </select>
+
           {/* State Filter */}
-          <div className="relative">
-            <select
-              value={selectedState}
-              onChange={(e) => setSelectedState(e.target.value)}
-              className="bg-brand-surface border border-brand-border rounded-xl px-3 py-2 text-xs text-brand-text focus:outline-none focus:ring-1 focus:ring-brand-accent"
-            >
-              <option value="">All States & UTs (36)</option>
-              {states.map((s) => (
-                <option key={s.state} value={s.state}>
-                  {s.state}
-                </option>
-              ))}
-            </select>
-          </div>
+          <select
+            value={selectedState}
+            onChange={(e) => setSelectedState(e.target.value)}
+            className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm"
+          >
+            <option value="">All States & UTs (36)</option>
+            {states.map((s) => (
+              <option key={s.state} value={s.state}>
+                {s.state} ({s.district_count} dists)
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
-      {/* Main Map Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
-        {/* SVG Map Canvas */}
-        <div className="lg:col-span-3 bg-brand-surface border border-brand-border rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col items-center relative overflow-hidden">
-          {/* Legend Overlay */}
-          <div className="absolute top-4 left-4 bg-brand-raised/90 backdrop-blur border border-brand-border rounded-xl p-3 z-10 text-[11px] space-y-2 shadow-sm max-w-[240px]">
-            <span className="font-bold text-brand-text block">
-              {indicatorsList.find((i) => i.key === selectedIndicator)?.label}
+      {/* Interactive Distribution Summary Bar */}
+      <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+          <div>
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+              National Distribution for {activeIndObj?.label}
             </span>
-
-            {selectedIndicator === "group" ? (
-              <div className="space-y-1.5 pt-1">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#f97316] shrink-0" />
-                  <span>District Group 1 (Higher undernutrition)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#3b82f6] shrink-0" />
-                  <span>District Group 2 (Higher adult overweight)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#10b981] shrink-0" />
-                  <span>District Group 3 (Lower overall burden)</span>
-                </div>
-              </div>
-            ) : (
-              <div className="space-y-1.5 pt-1">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#e11d48] shrink-0" />
-                  <span>Higher than most districts (Top third)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#f59e0b] shrink-0" />
-                  <span>About typical (Middle third)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded bg-[#15803d] shrink-0" />
-                  <span>Lower than most districts (Bottom third)</span>
-                </div>
-              </div>
-            )}
-
-            <div className="flex items-center gap-2 pt-1 border-t border-brand-border/60 text-brand-muted text-[10px]">
-              <span className="w-3 h-3 rounded bg-[#cbd5e1] shrink-0" />
-              <span>No boundary available</span>
-            </div>
+            <span className="text-xs text-slate-600">
+              Proportion of 707 districts falling into each comparative band
+            </span>
           </div>
-
-          {/* SVG Elements */}
-          <svg
-            ref={svgRef}
-            viewBox={`0 0 ${width} ${height}`}
-            className="w-full max-w-[650px] h-auto select-none"
-          >
-            <g>
-              {paths.map(({ d, feature, idx }: { d: string | null; feature: any; idx: number }) => {
-                const distId = feature.properties?.district_id;
-                const dist = distId ? districtsById.get(distId) : undefined;
-                const isSelected = selectedDistrict?.district_id === distId;
-                const isStateMatch =
-                  !selectedState ||
-                  (dist && dist.state.toLowerCase() === selectedState.toLowerCase());
-
-                const fillColor = getColor(dist);
-                const opacity = isStateMatch ? 1 : 0.2;
-
-                return (
-                  <path
-                    key={idx}
-                    d={d || ""}
-                    fill={fillColor}
-                    opacity={opacity}
-                    stroke={isSelected ? "#000000" : "#ffffff"}
-                    strokeWidth={isSelected ? 1.8 : 0.4}
-                    className="cursor-pointer transition-all hover:opacity-80"
-                    onMouseEnter={() => setHoveredFeature({ feature, dist })}
-                    onMouseLeave={() => setHoveredFeature(null)}
-                    onClick={() => {
-                      if (dist) {
-                        setSelectedDistrict(dist);
-                      }
-                    }}
-                  />
-                );
-              })}
-            </g>
-          </svg>
-
-          {/* Tooltip Hover Pill */}
-          {hoveredFeature && hoveredFeature.dist && (
-            <div className="absolute bottom-4 left-4 bg-brand-surface/95 border border-brand-border px-3 py-2 rounded-xl shadow-lg pointer-events-none text-xs">
-              <span className="font-bold text-brand-text block">
-                {hoveredFeature.dist.district}, {hoveredFeature.dist.state}
-              </span>
-              <span className="text-brand-muted text-[11px] block">
-                {selectedIndicator === "group"
-                  ? hoveredFeature.dist.group_name
-                  : `${hoveredFeature.dist.indicators?.[selectedIndicator]?.value ?? "—"}% (${formatBandText(
-                      hoveredFeature.dist.indicators?.[selectedIndicator]?.band
-                    )})`}
-              </span>
-            </div>
-          )}
+          <span className="text-xs font-bold text-slate-900">Total: 707 Districts</span>
         </div>
 
-        {/* Side Drawer / Detail Panel */}
-        <div className="bg-brand-surface border border-brand-border rounded-2xl p-5 shadow-sm space-y-4">
-          {selectedDistrict ? (
-            <div className="space-y-4">
-              <div className="flex items-start justify-between border-b border-brand-border pb-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {distributionData.map((d, i) => (
+            <div
+              key={i}
+              className="p-3 rounded-xl border border-slate-200 bg-slate-50/70 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="w-3.5 h-3.5 rounded-full shrink-0" style={{ backgroundColor: d.color }} />
                 <div>
-                  <h3 className="text-base font-bold text-brand-text">
-                    {selectedDistrict.district}
-                  </h3>
-                  <span className="text-xs text-brand-muted">
-                    {selectedDistrict.state}
+                  <span className="font-bold text-xs text-slate-900 block">{d.name}</span>
+                  <span className="text-[10px] text-slate-500">{d.label}</span>
+                </div>
+              </div>
+              <div className="text-right">
+                <span className="font-extrabold text-slate-900 text-sm font-mono block">
+                  {d.count}
+                </span>
+                <span className="text-[10px] text-slate-500">
+                  {((d.count / 707) * 100).toFixed(1)}%
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Main View: Map or 707 Districts Grid */}
+      {viewMode === "map" ? (
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+          {/* Interactive SVG Choropleth */}
+          <div className="lg:col-span-3 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col items-center relative overflow-hidden">
+            {/* Quick Map Legend */}
+            <div className="absolute top-4 left-4 bg-white/95 backdrop-blur border border-slate-200 rounded-xl p-3 z-10 text-[11px] space-y-2 shadow-md max-w-[240px]">
+              <span className="font-bold text-slate-900 block">
+                {activeIndObj?.label}
+              </span>
+
+              {selectedIndicator === "group" ? (
+                <div className="space-y-1.5 pt-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#EA580C] shrink-0" />
+                    <span>Group 1: Higher undernutrition</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#0284C7] shrink-0" />
+                    <span>Group 2: Higher adult overweight</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#16A34A] shrink-0" />
+                    <span>Group 3: Lower overall burden</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-1.5 pt-1">
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#E11D48] shrink-0" />
+                    <span>Higher than most districts</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#F59E0B] shrink-0" />
+                    <span>About typical across India</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-3 h-3 rounded-full bg-[#16A34A] shrink-0" />
+                    <span>Lower than most districts</span>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex items-center gap-2 pt-1 border-t border-slate-100 text-slate-500 text-[10px]">
+                <span className="w-3 h-3 rounded-full bg-[#E2E8F0] shrink-0" />
+                <span>No Census 2011 shape (accessible below)</span>
+              </div>
+            </div>
+
+            {/* SVG Map Canvas */}
+            <svg
+              ref={svgRef}
+              viewBox={`0 0 ${width} ${height}`}
+              className="w-full max-w-[680px] h-auto select-none transition-transform"
+            >
+              <g>
+                {paths.map(({ d, feature, idx }: { d: string | null; feature: any; idx: number }) => {
+                  const distId = feature.properties?.district_id;
+                  const dist = distId ? districtsById.get(distId) : undefined;
+                  const isSelected = selectedDistrict?.district_id === distId;
+                  const isStateMatch =
+                    !selectedState ||
+                    (dist && dist.state.toLowerCase() === selectedState.toLowerCase());
+
+                  const fillColor = getColor(dist);
+                  const opacity = isStateMatch ? 1 : 0.25;
+
+                  return (
+                    <path
+                      key={idx}
+                      d={d || ""}
+                      fill={fillColor}
+                      opacity={opacity}
+                      stroke={isSelected ? "#0F172A" : "#FFFFFF"}
+                      strokeWidth={isSelected ? 2 : 0.4}
+                      className="cursor-pointer transition-colors hover:brightness-90"
+                      onMouseEnter={() => {
+                        if (dist) setHoveredDistrict(dist);
+                      }}
+                      onMouseLeave={() => setHoveredDistrict(null)}
+                      onClick={() => {
+                        if (dist) setSelectedDistrict(dist);
+                      }}
+                    />
+                  );
+                })}
+              </g>
+            </svg>
+          </div>
+
+          {/* District Detail Drawer / Inspector */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
+            {selectedDistrict ? (
+              <div className="space-y-4">
+                <div className="flex items-start justify-between border-b border-slate-100 pb-3">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900">
+                      {selectedDistrict.district}
+                    </h3>
+                    <span className="text-xs text-slate-500 font-medium">
+                      {selectedDistrict.state}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => setSelectedDistrict(null)}
+                    className="p-1 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                {/* Pattern Box */}
+                <div className="p-3 bg-sky-50/70 border border-sky-100 rounded-xl space-y-1">
+                  <span className="font-bold text-xs text-sky-900 block">
+                    {selectedDistrict.group_name}
                   </span>
+                  <p className="text-[11px] text-sky-800 leading-relaxed">
+                    {selectedDistrict.group_descriptor}
+                  </p>
                 </div>
-                <button
-                  onClick={() => setSelectedDistrict(null)}
-                  className="p-1 text-brand-muted hover:text-brand-text rounded"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
 
-              {/* Pattern Summary */}
-              <div className="p-3 bg-brand-raised rounded-xl text-xs space-y-1">
-                <span className="font-bold text-brand-text block">
-                  {selectedDistrict.group_name}
-                </span>
-                <p className="text-[11px] text-brand-muted leading-relaxed">
-                  {selectedDistrict.group_descriptor}
-                </p>
-              </div>
-
-              {/* Indicators List */}
-              <div className="space-y-2">
-                <span className="text-[11px] font-bold text-brand-text uppercase tracking-wider block">
-                  Key Indicators
-                </span>
-                <div className="space-y-2 text-xs max-h-[300px] overflow-y-auto pr-1">
-                  {Object.entries(selectedDistrict.indicators || {}).map(([key, ind]) => {
-                    const label =
-                      indicatorsList.find((i) => i.key === key)?.label ||
-                      key.replace(/_/g, " ");
-                    return (
-                      <div
-                        key={key}
-                        className="p-2 bg-brand-raised/50 rounded-lg flex items-center justify-between"
-                      >
-                        <div className="max-w-[70%]">
-                          <span className="font-medium text-brand-text block truncate capitalize">
-                            {label}
-                          </span>
-                          <span className="text-[10px] text-brand-muted">
-                            {formatBandText(ind.band)} (State avg: {ind.state_average ?? "—"}%)
-                          </span>
-                        </div>
-                        <span className="font-bold text-brand-text text-sm">
-                          {ind.value !== null ? `${ind.value}%` : "—"}
-                        </span>
-                      </div>
-                    );
-                  })}
+                {/* Comparison Indicators */}
+                <div className="space-y-2">
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+                    District Indicators (NFHS-5)
+                  </span>
+                  <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
+                    {indicatorsList
+                      .filter((i) => i.key !== "group")
+                      .map((ind) => {
+                        const info = selectedDistrict.indicators?.[ind.key];
+                        return (
+                          <div
+                            key={ind.key}
+                            className="p-2.5 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-between"
+                          >
+                            <div className="max-w-[65%]">
+                              <span className="font-semibold text-xs text-slate-800 block truncate">
+                                {ind.label}
+                              </span>
+                              <span className="text-[10px] text-slate-500">
+                                {formatBandText(info?.band)} • State avg: {info?.state_average ?? "—"}%
+                              </span>
+                            </div>
+                            <span className="font-extrabold text-slate-900 text-sm font-mono">
+                              {info?.value !== null && info?.value !== undefined ? `${info.value}%` : "—"}
+                            </span>
+                          </div>
+                        );
+                      })}
+                  </div>
                 </div>
-              </div>
 
-              {/* Link to Full District Profile */}
-              <div className="pt-2">
+                {/* Link to Dedicated District Page */}
                 <Link
                   to={`/district/${encodeURIComponent(selectedDistrict.state)}/${encodeURIComponent(
                     selectedDistrict.district
                   )}`}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-accent text-white rounded-xl text-xs font-semibold hover:bg-brand-accent/90 transition-all shadow-sm"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-sky-600 text-white rounded-xl text-xs font-bold hover:bg-sky-700 transition-all shadow-sm"
                 >
                   <span>Open Full District Profile</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
-          ) : (
-            <div className="text-center py-12 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-raised flex items-center justify-center text-brand-muted mx-auto">
-                <Layers className="w-5 h-5" />
+            ) : (
+              <div className="text-center py-14 space-y-3">
+                <div className="w-10 h-10 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center mx-auto">
+                  <Layers className="w-5 h-5" />
+                </div>
+                <div className="space-y-1">
+                  <h4 className="text-xs font-bold text-slate-800">Select Any District</h4>
+                  <p className="text-xs text-slate-500 max-w-[200px] mx-auto leading-relaxed">
+                    Hover on the map for instant data, or click a district to inspect all 7 child and maternal indicators.
+                  </p>
+                </div>
               </div>
-              <p className="text-xs text-brand-muted max-w-[200px] mx-auto">
-                Click or tap any district on the map to view its complete nutrition indicators and pattern.
+            )}
+          </div>
+        </div>
+      ) : (
+        /* Grid View: All 707 Districts */
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 className="text-sm font-bold text-slate-900">
+                All 707 Districts in NFHS-5 Survey ({filteredDistricts.length} displayed)
+              </h3>
+              <span className="text-xs text-slate-500">
+                Includes all 619 mapped boundaries and 88 post-2014 reorganized districts
+              </span>
+            </div>
+
+            <div className="relative max-w-xs w-full">
+              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-3" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search district or state..."
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500"
+              />
+            </div>
+          </div>
+
+          <div className="overflow-x-auto max-h-[500px]">
+            <table className="w-full text-left text-xs">
+              <thead className="sticky top-0 bg-slate-100 border-b border-slate-200 text-slate-600 font-semibold">
+                <tr>
+                  <th className="py-2.5 px-3">District</th>
+                  <th className="py-2.5 px-3">State / UT</th>
+                  <th className="py-2.5 px-3">Nutrition Pattern</th>
+                  <th className="py-2.5 px-3">Child Stunting</th>
+                  <th className="py-2.5 px-3">Child Wasting</th>
+                  <th className="py-2.5 px-3">Child Anaemia</th>
+                  <th className="py-2.5 px-3">Women Overweight</th>
+                  <th className="py-2.5 px-3">Boundary Status</th>
+                  <th className="py-2.5 px-3">Action</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {filteredDistricts.map((d) => (
+                  <tr key={d.district_id} className="hover:bg-slate-50 transition-colors">
+                    <td className="py-2 px-3 font-bold text-slate-900">{d.district}</td>
+                    <td className="py-2 px-3 text-slate-600">{d.state}</td>
+                    <td className="py-2 px-3">
+                      <span className="px-2 py-0.5 rounded font-medium text-[11px] bg-slate-100 text-slate-800 border border-slate-200">
+                        {d.group_name}
+                      </span>
+                    </td>
+                    <td className="py-2 px-3 font-mono font-semibold text-slate-900">
+                      {d.indicators?.stunting?.value ?? "—"}%
+                    </td>
+                    <td className="py-2 px-3 font-mono">
+                      {d.indicators?.wasting?.value ?? "—"}%
+                    </td>
+                    <td className="py-2 px-3 font-mono">
+                      {d.indicators?.anaemia_children?.value ?? "—"}%
+                    </td>
+                    <td className="py-2 px-3 font-mono">
+                      {d.indicators?.overweight_women?.value ?? "—"}%
+                    </td>
+                    <td className="py-2 px-3">
+                      {d.has_boundary ? (
+                        <span className="text-[11px] text-emerald-600 font-medium">Mapped shape</span>
+                      ) : (
+                        <span className="text-[11px] text-amber-600 font-medium">Post-2014 district</span>
+                      )}
+                    </td>
+                    <td className="py-2 px-3">
+                      <Link
+                        to={`/district/${encodeURIComponent(d.state)}/${encodeURIComponent(d.district)}`}
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-sky-600 hover:text-sky-800"
+                      >
+                        <span>View</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
+      {/* Prominent Section for Districts Created After Census 2011 Boundary File */}
+      {unshapedDistricts.length > 0 && (
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+          <div className="flex items-center gap-2">
+            <AlertCircle className="w-5 h-5 text-amber-500" />
+            <div>
+              <h3 className="text-sm font-bold text-slate-900">
+                All 88 Post-2014 Reorganized Districts (Full Survey Factsheets Available)
+              </h3>
+              <p className="text-xs text-slate-500 mt-0.5">
+                These districts were created after the 2011 Census boundary files (e.g. Telangana 21 districts, Chhattisgarh, Ladakh, Assam).
+                Their NFHS-5 factsheet data is complete. Click any district to open its profile:
               </p>
             </div>
-          )}
-        </div>
-      </div>
-
-      {/* Unmatched / Districts with No Shape Section */}
-      {unshapedDistricts.length > 0 && (
-        <div className="bg-brand-surface border border-brand-border rounded-2xl p-5 shadow-sm space-y-3">
-          <div className="flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 text-brand-muted" />
-            <h3 className="text-xs font-bold text-brand-text uppercase tracking-wider">
-              Districts with No Boundary Shape Available ({unshapedDistricts.length})
-            </h3>
           </div>
-          <p className="text-xs text-brand-muted">
-            These districts were created after the 2011 Census boundary file (e.g. newly formed districts in Telangana,
-            Chhattisgarh, Gujarat, Ladakh). Their survey factsheets are complete and fully accessible below:
-          </p>
 
-          <div className="flex flex-wrap gap-2 pt-1 max-h-48 overflow-y-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 max-h-52 overflow-y-auto pt-1">
             {unshapedDistricts.map((d) => (
               <Link
                 key={d.district_id}
                 to={`/district/${encodeURIComponent(d.state)}/${encodeURIComponent(d.district)}`}
-                className="px-2.5 py-1 bg-brand-raised hover:bg-brand-surface border border-brand-border rounded-lg text-xs text-brand-text hover:text-brand-accent transition-colors flex items-center gap-1.5"
+                className="px-2.5 py-1.5 bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-300 rounded-xl text-xs transition-colors block text-left"
               >
-                <span>{d.district}</span>
-                <span className="text-[10px] text-brand-muted">({d.state})</span>
+                <span className="font-semibold text-slate-900 block truncate">{d.district}</span>
+                <span className="text-[10px] text-slate-500 block truncate">{d.state}</span>
               </Link>
             ))}
           </div>
