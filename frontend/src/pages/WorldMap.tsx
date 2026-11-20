@@ -19,7 +19,8 @@ export const WorldMap: React.FC = () => {
   // Hover cursor state for floating tooltip
   const [hoveredCountry, setHoveredCountry] = useState<CountrySummary | null>(null);
   const [hoveredCountryName, setHoveredCountryName] = useState<string>("");
-  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [hoveredIso, setHoveredIso] = useState<string | null>(null);
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: -9999, y: -9999 });
 
   const indicatorsList = [
     { key: "stunting", label: "Child Stunting", desc: "Low height for age" },
@@ -251,10 +252,11 @@ export const WorldMap: React.FC = () => {
                     key={idx}
                     d={d || ""}
                     fill={fill}
-                    stroke="#FFFFFF"
-                    strokeWidth={0.6}
-                    className="cursor-pointer transition-colors hover:brightness-90"
+                    stroke={hoveredIso && iso && hoveredIso === iso ? "#0F172A" : "#94A3B8"}
+                    strokeWidth={hoveredIso && iso && hoveredIso === iso ? 1.5 : 0.5}
+                    className="cursor-pointer transition-colors hover:brightness-95"
                     onMouseEnter={() => {
+                      setHoveredIso(iso || null);
                       if (country) {
                         setHoveredCountry(country);
                         setHoveredCountryName(country.country_name);
@@ -264,6 +266,7 @@ export const WorldMap: React.FC = () => {
                       }
                     }}
                     onMouseLeave={() => {
+                      setHoveredIso(null);
                       setHoveredCountry(null);
                       setHoveredCountryName("");
                     }}

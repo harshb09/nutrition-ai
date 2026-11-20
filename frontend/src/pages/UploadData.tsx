@@ -4,7 +4,8 @@ import {
   FileSpreadsheet,
   Download,
   AlertTriangle,
-  ShieldCheck
+  ShieldCheck,
+  Sparkles
 } from "lucide-react";
 import { api } from "../api/client";
 import { UploadResponse } from "../api/types";
@@ -42,6 +43,26 @@ export const UploadData: React.FC = () => {
       setResult(resp);
     } catch (err: any) {
       setError(err.message || "Failed to process uploaded file.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLoadSampleFile = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const res = await fetch("/data/test_upload_sample.csv");
+      const text = await res.text();
+      const sampleBlob = new Blob([text], { type: "text/csv" });
+      const testFile = new File([sampleBlob], "test_upload_sample.csv", { type: "text/csv" });
+      setFile(testFile);
+      const formData = new FormData();
+      formData.append("file", testFile);
+      const resp = await api.analyseUploadedData(formData);
+      setResult(resp);
+    } catch (err: any) {
+      setError(err.message || "Failed to load and analyse sample data.");
     } finally {
       setLoading(false);
     }
@@ -131,13 +152,37 @@ export const UploadData: React.FC = () => {
             </span>
           </div>
 
-          <a
-            href={api.getUploadTemplateUrl()}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-raised hover:bg-brand-surface border border-brand-border rounded-xl text-xs text-brand-text hover:text-brand-accent transition-colors shadow-sm shrink-0"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Download Sample CSV Template</span>
-          </a>
+          <div className="flex flex-wrap items-center gap-2">
+            <a
+              href="/data/test_upload_sample.csv"
+              download="test_nutrition_data.csv"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl text-xs font-semibold text-emerald-800 transition-colors shadow-sm shrink-0"
+              title="Download pre-filled 15-area dataset ready for immediate upload"
+            >
+              <Download className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Download Test CSV (15 Areas)</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={handleLoadSampleFile}
+              disabled={loading}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-xl text-xs font-semibold text-sky-800 transition-colors shadow-sm shrink-0 disabled:opacity-40"
+              title="Instantly test without downloading"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+              <span>1-Click Test Sample</span>
+            </button>
+
+            <a
+              href={api.getUploadTemplateUrl()}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-raised hover:bg-brand-surface border border-brand-border rounded-xl text-xs text-brand-text hover:text-brand-accent transition-colors shadow-sm shrink-0"
+              title="Download empty CSV template"
+            >
+              <Download className="w-3.5 h-3.5 text-brand-muted" />
+              <span>Blank Template</span>
+            </a>
+          </div>
         </div>
 
         <form onSubmit={handleUploadSubmit} className="space-y-5">

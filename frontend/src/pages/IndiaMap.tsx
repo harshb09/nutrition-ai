@@ -42,7 +42,8 @@ export const IndiaMap: React.FC = () => {
 
   // Cursor Hover Tooltip State
   const [hoveredDistrict, setHoveredDistrict] = useState<DistrictSummary | null>(null);
-  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [hoveredDistrictId, setHoveredDistrictId] = useState<string | null>(null);
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: -9999, y: -9999 });
 
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -446,13 +447,46 @@ export const IndiaMap: React.FC = () => {
                       d={d || ""}
                       fill={fillColor}
                       opacity={opacity}
-                      stroke={isSelected ? "#0F172A" : "#FFFFFF"}
-                      strokeWidth={isSelected ? 2 : 0.4}
-                      className="cursor-pointer transition-colors hover:brightness-90"
+                      stroke={
+                        isSelected
+                          ? "#0F172A"
+                          : hoveredDistrictId && distId && hoveredDistrictId === distId
+                          ? "#0F172A"
+                          : "#64748B"
+                      }
+                      strokeWidth={
+                        isSelected
+                          ? 2
+                          : hoveredDistrictId && distId && hoveredDistrictId === distId
+                          ? 1.8
+                          : 0.6
+                      }
+                      className="cursor-pointer transition-colors hover:brightness-95"
                       onMouseEnter={() => {
-                        if (dist) setHoveredDistrict(dist);
+                        setHoveredDistrictId(distId || null);
+                        if (dist) {
+                          setHoveredDistrict(dist);
+                        } else {
+                          const fallbackName =
+                            feature.properties?.Dist_name ||
+                            feature.properties?.DISTRICT ||
+                            "District";
+                          const fallbackState = feature.properties?.ST_NM || "";
+                          setHoveredDistrict({
+                            district_id: distId || "",
+                            district: fallbackName,
+                            state: fallbackState,
+                            group_id: "",
+                            group_name: "No Boundary Factsheet",
+                            indicators: {},
+                            has_boundary: true
+                          } as any);
+                        }
                       }}
-                      onMouseLeave={() => setHoveredDistrict(null)}
+                      onMouseLeave={() => {
+                        setHoveredDistrictId(null);
+                        setHoveredDistrict(null);
+                      }}
                       onClick={() => {
                         if (dist) setSelectedDistrict(dist);
                       }}

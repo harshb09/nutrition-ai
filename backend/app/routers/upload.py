@@ -36,11 +36,21 @@ def get_csv_template() -> Response:
     """Returns a sample CSV template for area-level nutrition data upload."""
     sample_csv = (
         "area_name,state,stunting,wasting,underweight,anaemia_children,anaemia_women,low_bmi_women,overweight_women\n"
-        "Sample Block 1,Sample State,32.4,18.5,29.1,65.2,54.8,19.2,22.4\n"
-        "Sample Block 2,Sample State,24.1,12.0,20.4,45.8,42.1,12.5,31.8\n"
-        "Sample Block 3,Sample State,41.2,24.6,38.9,72.1,63.4,26.8,14.2\n"
-        "Sample Block 4,Sample State,18.7,9.8,15.2,38.4,36.5,9.4,38.2\n"
-        "Sample Block 5,Sample State,35.8,20.1,33.7,68.9,58.2,22.1,18.9\n"
+        "Central Block A,Madhya Pradesh,44.2,22.1,41.5,72.4,62.1,28.4,11.2\n"
+        "North Sector 1,Uttar Pradesh,39.8,19.4,36.2,68.9,59.3,24.7,14.6\n"
+        "Eastern Cluster 3,Bihar,46.1,24.8,43.0,76.2,65.8,29.1,9.8\n"
+        "Western Tehsil B,Gujarat,28.5,14.2,22.8,55.1,48.2,16.5,24.9\n"
+        "Southern Valley 4,Kerala,16.2,8.4,12.7,34.2,31.5,8.9,38.4\n"
+        "Coastal Subdivision,Tamil Nadu,21.4,11.6,18.3,42.8,39.1,12.3,34.1\n"
+        "Highland Zone 2,Himachal Pradesh,19.8,9.7,15.6,39.5,36.2,10.4,29.8\n"
+        "Plateau District West,Maharashtra,31.7,16.3,26.4,59.4,51.8,18.7,21.5\n"
+        "River Basin Circle,Punjab,23.5,10.8,17.9,46.2,43.5,11.8,32.6\n"
+        "Forest Division North,Odisha,42.6,21.5,38.7,71.8,63.2,26.9,12.4\n"
+        "Industrial Ward 7,Haryana,26.9,13.1,21.4,52.3,47.9,14.2,28.7\n"
+        "Tribal Block 12,Jharkhand,47.8,25.2,44.6,78.1,67.4,31.2,8.9\n"
+        "Border Sub-District,Rajasthan,38.2,18.9,34.8,66.4,57.6,23.1,16.8\n"
+        "Metro Outskirts East,Karnataka,24.8,12.5,19.7,49.1,44.8,13.6,30.5\n"
+        "Delta Agricultural Belt,Andhra Pradesh,27.4,13.8,22.1,53.7,48.6,15.8,25.3\n"
     )
     return Response(
         content=sample_csv,
