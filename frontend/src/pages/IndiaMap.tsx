@@ -143,9 +143,7 @@ export const IndiaMap: React.FC = () => {
 
     const projection = d3Geo
       .geoMercator()
-      .center([82.5, 22.5])
-      .scale(1100)
-      .translate([w / 2, h / 2]);
+      .fitExtent([[20, 20], [w - 20, h - 20]], geoData);
 
     const pathGenerator = d3Geo.geoPath().projection(projection);
 
@@ -331,6 +329,46 @@ export const IndiaMap: React.FC = () => {
               </option>
             ))}
           </select>
+
+          {/* Quick District Finder Search */}
+          <div className="relative min-w-[200px]">
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Find any district..."
+              className="bg-white border border-slate-200 rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm w-full"
+            />
+            {searchQuery.trim().length >= 2 && (
+              <div className="absolute right-0 left-0 top-full mt-1 bg-white border border-slate-200 rounded-xl shadow-xl z-50 max-h-56 overflow-y-auto divide-y divide-slate-100">
+                {districts
+                  .filter(
+                    (d) =>
+                      d.district.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                      d.state.toLowerCase().includes(searchQuery.toLowerCase())
+                  )
+                  .slice(0, 8)
+                  .map((d) => (
+                    <button
+                      key={d.district_id}
+                      onClick={() => {
+                        setSelectedDistrict(d);
+                        setSelectedState(d.state);
+                        setSearchQuery("");
+                      }}
+                      className="w-full text-left px-3 py-2 text-xs hover:bg-slate-50 flex items-center justify-between transition-colors"
+                    >
+                      <div>
+                        <span className="font-bold text-slate-900">{d.district}</span>
+                        <span className="text-[10px] text-slate-500 ml-1.5">• {d.state}</span>
+                      </div>
+                      <span className="text-[10px] text-sky-600 font-semibold">Select</span>
+                    </button>
+                  ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -679,11 +717,11 @@ export const IndiaMap: React.FC = () => {
             <AlertCircle className="w-5 h-5 text-amber-500" />
             <div>
               <h3 className="text-sm font-bold text-slate-900">
-                All 88 Post-2014 Reorganized Districts (Full Survey Factsheets Available)
+                {unshapedDistricts.length} Post-2014 Districts (Complete NFHS-5 Survey Factsheets Available)
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
-                These districts were created after the 2011 Census boundary files (e.g. Telangana 21 districts, Chhattisgarh, Ladakh, Assam).
-                Their NFHS-5 factsheet data is complete. Click any district to open its profile:
+                These districts were created after the 2011 Census boundary baseline (e.g. newly formed districts in Telangana, Gujarat, Assam, Punjab).
+                Their NFHS-5 factsheet indicators are 100% complete and verified. Click any district below to view its profile:
               </p>
             </div>
           </div>
